@@ -1,0 +1,61 @@
+﻿l_russian:
+#Anatolian
+ ARMY_NAME_anatolian:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_anatolian:0 "$NUM$$ORDER$-я эскадра"
+ COHORT_NAME_anatolian:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Arabian
+ ARMY_NAME_arabian:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_arabian:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_arabian:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Barbarian
+ ARMY_NAME_barbarian:0 "$NUM$$ORDER$-я Орда"
+ NAVY_NAME_barbarian:0 "$NUM$$ORDER$ Лодка"
+ COHORT_NAME_barbarian:0 "$NUM$$ORDER$-я отряд города $HOME$"
+ #Britannic
+ ARMY_NAME_britannic:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_britannic:0 "$NUM$$ORDER$-я Королевская Эксадра"
+ COHORT_NAME_britannic:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Carpathian
+ ARMY_NAME_carpathian:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_carpathian:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_carpathian:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Caucasian
+ ARMY_NAME_caucasian:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_caucasian:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_caucasian:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Celtic
+ ARMY_NAME_arabian:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_arabian:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_arabian:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #East Slavic
+ ARMY_NAME_east_slavic:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_east_slavic:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_east_slavic:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Gallic
+ ARMY_NAME_gallic:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_gallic:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_gallic:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Germanic
+ ARMY_NAME_germanic:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_germanic:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_germanic:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Huns
+ ARMY_NAME_hunnic:0 "$NUM$$ORDER$-я Орда"
+ NAVY_NAME_hunnic:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_hunnic:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Italian
+ ARMY_NAME_italian:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_italian:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_italian:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #Scandinavian
+ ARMY_NAME_scandinavian:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_scandinavian:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_scandinavian:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #West Slavic
+ ARMY_NAME_west_slavic:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_west_slavic:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_west_slavic:0 "$NUM$$ORDER$-я когорта города $HOME$"
+ #South Slavic
+ ARMY_NAME_south_slavic:0 "$NUM$$ORDER$-я армия"
+ NAVY_NAME_south_slavic:0 "$NUM$$ORDER$ -я эксадра"
+ COHORT_NAME_south_slavic:0 "$NUM$$ORDER$-я когорта города $HOME$"

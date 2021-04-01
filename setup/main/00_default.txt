@@ -1,0 +1,2126 @@
+treasure_manager = {
+
+}
+family={
+	families={
+		0 = {
+			key="Nerva_Antonine"
+			owner=ROM
+			culture = roman
+			prestige=300
+			color = 5
+		}
+		1 = {
+			key="Julii"
+			owner=EGY
+			culture = roman
+			prestige=300
+			color = 3
+		}
+		2 = {
+			key="Ptolemaic"
+			owner=EGY
+			culture = macedonian
+			prestige=300
+			color = 2
+		}
+		3 = {
+			key="Periklid"
+			owner=ATH
+			culture = athenian
+			prestige=300
+			color = 1
+		}
+		4 = {
+			key="Agiad"
+			owner=SPA
+			culture = peloponnesian
+			prestige=300
+			color = 3
+		}
+		5 = {
+			key="Argead"
+			owner=MAC
+			culture = macedonian
+			prestige=300
+			color = 1
+		}
+		6 = {
+			key="Justinian"
+			owner=BYZ
+			culture = byzantine
+			prestige=300
+			color = 5
+		}
+		7 = {
+			key="Osmanoglu"
+			owner=OTT
+			culture = turkish
+			prestige=300
+			color = 5
+		}
+		8 = {
+			key="Bagrateoni"
+			owner=GEO
+			culture = georgian
+			prestige=300
+			color = 2
+		}
+		9 = {
+			key="Rurikovich"
+			owner=KRU
+			culture = ruthenian
+			prestige=300
+			color = 1
+		}
+		10 = {
+			key="of_Huns"
+			owner=HNZ
+			culture = hunnic
+			prestige=300
+			color = 0
+		}
+		11 = {
+			key="Tomyrid"
+			owner=SCA
+			culture = scythian
+			prestige=300
+			color = 2
+		}
+		12 = {
+			key="Achaemenid"
+			owner=PER
+			culture = persian
+			prestige=300
+			color = 5
+		}
+		13 = {
+			key="Abbasid"
+			owner=ARB
+			culture = bedouin
+			prestige=300
+			color = 4
+		}
+		14 = {
+			key="of_Carthage"
+			owner=CAR
+			culture = carthaginian
+			prestige=300
+			color = 5
+		}
+		15 = {
+			key="Sargonid"
+			owner=ASY
+			culture = assyrian
+			prestige=300
+			color = 2
+		}
+		16={
+			key="Chaldean"
+			owner=BAB
+			culture = babylonian
+			prestige=300
+			color = 1
+		}
+		17 = {
+			key="Urukid"
+			owner=SUM
+			culture = sumerian
+			prestige=300
+			color = 1
+		}
+		18 = {
+			key="Dandolo"
+			owner=VNT
+			culture = italian
+			prestige=300
+			color = 3
+		}
+		19 = {
+			key="Hanover"
+			owner=ENG
+			culture = english
+			prestige=300
+			color = 3
+		}
+		20 = {
+			key="Bruce"
+			owner=SCO
+			culture = scottish
+			prestige=300
+			color = 2
+		}
+		21 = {
+			key="Iceni"
+			owner=ICE
+			culture = celtic
+			prestige=300
+			color = 4
+		}
+		22 = {
+			key="Habsburg"
+			owner=AUS
+			culture = south_german
+			prestige=300
+			color = 3
+		}
+		23 = {
+			key="Braganza"
+			owner=POR
+			culture = portugese
+			prestige=300
+			color = 1
+		}
+		24 = {
+			key="Saadi"
+			owner=MOR
+			culture = moroccan
+			prestige=300
+			color = 3
+		}
+		25 = {
+			key="Meroitic"
+			owner=NUB
+			culture = meroitic
+			prestige=300
+			color = 0
+		}
+		26 = {
+			key="Ayyubid"
+			owner=AYU
+			culture = bedouin
+			prestige=300
+			color = 2
+		}
+		27 = {
+			key="Selassie"
+			owner=ETH
+			culture = amhara
+			prestige=300
+			color = 4
+		}
+		28 = {
+			key="Bonaparte"
+			owner=FRA
+			culture = french
+			prestige=300
+			color = 1
+		}
+		29 = {
+			key="Poitier"
+			owner=AQT
+			culture = occitan
+			prestige=300
+			color = 3
+		}
+		30 = {
+			key="Maurya"
+			owner=MRY
+			culture = magadhi
+			prestige=300
+			color = 1
+		}
+		31 = {
+			key="Gandhi"
+			owner=HND
+			culture = kanauji
+			prestige=300
+			color = 5
+		}
+		32 = {
+			key="Piast"
+			owner=POL
+			culture = polish
+			prestige=300
+			color = 3
+		}
+		33 = {
+			key="Romanov"
+			owner=RUS
+			culture = russian
+			prestige=300
+			color = 4
+		}
+		34 = {
+			key="von_Bismarck"
+			owner=GER
+			culture = north_german
+			prestige=300
+			color = 0
+		}
+		35 = {
+			key="Vasa"
+			owner=SWE
+			culture = swedish
+			prestige=300
+			color = 1
+		}
+		36 = {
+			key="Hardrada"
+			owner=NOR
+			culture = norwegian
+			prestige=300
+			color = 1
+		}
+		37 = {
+			key="Hohenstaufen"
+			owner=HRE
+			culture = north_german
+			prestige=300
+			color = 2
+		}
+		38 = {
+			key="van_Oranje_Nassau"
+			owner=NET
+			culture = dutch
+			prestige=300
+			color = 2
+		}
+		39 = {
+			key="Hunyadi"
+			owner=HUN
+			culture = hungarian
+			prestige=300
+			color = 4
+		}
+		40 = {
+			key="Gorm"
+			owner=DAN
+			culture = danish
+			prestige=300
+			color = 3
+		}
+		41 = {
+			key="Caesar"
+			owner=ROM
+			culture = roman
+			prestige=300
+			color = 3
+		}
+		42 = {
+			key="of_Phoenicia"
+			owner=PHO
+			culture = phoenician
+			prestige=300
+			color = 5
+		}
+		43 = {
+			key="Habsburg"
+			owner=SPN
+			culture = south_german
+			prestige=300
+			color = 3
+		}
+		44 = {
+			key="Solomonid"
+			owner=ABY
+			culture = amhara
+			prestige=300
+			color = 4
+		}
+		45 = {
+			key="Makedon"
+			owner=BYZ
+			culture=byzantine
+			prestige=300
+			color=3
+		}
+		46 = {
+			key="Eburones"
+			owner=GAU
+			culture=gallic
+			prestige=300
+			color=2
+		}
+		47 = {
+			key="Amorite"
+			owner=BAB
+			culture=babylonian
+			prestige=300
+			color=3
+		}
+		48 = {
+			key="Trastamara"
+			owner=CAS
+			culture=spanish
+			prestige=300
+			color=3
+		}
+	}
+}
+diplomacy = {
+
+}
+
+provinces = {
+	#Anu Temple of Uruk
+	937 = {
+		modifier = { modifier = anu_temple always = yes }
+	}
+	#
+	290 = { #Ephesos
+		temple_building = 2
+		modifier = { modifier = artemis_temple always = yes }
+	}
+
+	#Bosporus
+	1453 = {
+		modifier = { modifier = bosporus always = yes }
+	}
+	240 = {
+		modifier = { modifier = bosporus always = yes }
+	}
+	241 = {
+		modifier = { modifier = bosporus always = yes }
+	}
+	#Olympia
+	439 = {
+		modifier = { modifier = olympic_games_modifier always = yes }
+	}
+
+	########################################
+	# Barbarian Spawn Spots
+	########################################
+
+	#Egypt & Surroundings
+
+
+	5294 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5293 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5321 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5334 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5333 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5337 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5338 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5341 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5352 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5355 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5366 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5367 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5947 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5948 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5989 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5991 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5992 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5993 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5994 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5995 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5157 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+
+	#Mauretania
+	5984 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5985 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5986 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5987 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+
+	#Germany
+	5023 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5029 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5031 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5141 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5114 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5145 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5047 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5068 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5076 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5079 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5085 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5103 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5110 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5136 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5298 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5283 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5284 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5381 = {
+		modifier = { modifier = minor_barbarian_spawn_place }
+	}
+	#Iberia
+	5184 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+
+
+	5093 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+
+	#East
+	5217 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5263 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5232 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5233 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5237 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5247 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5274 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5226 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6046 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5290 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5291 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5296 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5300 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5301 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7558 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6045 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7573 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6049 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5208 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5224 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5252 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5303 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5934 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6064 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+
+	#India
+	5248 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5249 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5270 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5277 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5280 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5305 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5308 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5313 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5314 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5315 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5359 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5378 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5962 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	5958 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6057 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6058 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6059 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	3316 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7291 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6050 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6051 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6052 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6053 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6054 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6055 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	6056 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7051 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7021 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7357 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7299 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7640 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7641 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7642 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7643 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+	7644 = {
+		modifier = { modifier = generic_barbarian_spawn_place }
+	}
+
+}
+road_network = {
+}
+country = {
+	countries = {
+
+		BAR = {
+			government = tribal_chiefdom
+		}
+
+		#Italia
+
+		ROM = { #Rome
+			family = 0
+			family = 41
+			government = tribal_kingdom
+			diplomatic_stance=warmongering_stance
+			primary_culture = roman
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			capital = 1
+
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				1 2 3
+			}
+		}
+
+		VNT = { #Venice
+			family = 18
+			government = tribal_kingdom
+			primary_culture = italian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=trading_stance
+			capital = 3598
+
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				3598 3599 3594
+			}
+		}
+
+		#Africa
+
+		CAR = { #Carthage
+			family = 14
+			government = tribal_kingdom
+			primary_culture = carthaginian
+			religion = default_pantheon
+			diplomatic_stance=trading_stance
+			tribal_authority_laws = absolute_authority
+			capital = 3256
+
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				3256 3257 3261
+			}
+
+		}
+
+		EGY = { #Egypt
+			family = 2
+			family = 1
+			government = tribal_kingdom
+			diplomatic_stance=appeasement_stance
+			primary_culture = egyptian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+			capital = 569 #Luxor
+			own_control_core = 	{
+				569 567 568
+			}
+
+		}
+
+		MOR = { #Morocco
+			family = 24
+			government = tribal_kingdom
+			diplomatic_stance=trading_stance
+			primary_culture = moroccan
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			capital = 6492
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				6492 6490 6478
+			}
+		}
+
+		NUB = { #Nubia
+			family = 25
+			government = tribal_kingdom
+			diplomatic_stance=warmongering_stance
+			primary_culture = meroitic
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			capital = 641
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				641 639 642
+			}
+
+		}
+
+		AYU = { #Ayyubids
+			family = 26
+			government = tribal_kingdom
+			diplomatic_stance=appeasement_stance
+			primary_culture = egyptian_arabic
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			capital = 536 #Cairo
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				536 500 501
+			}
+		}
+
+		ETH = { #Ethiopia
+			family = 27
+			government = tribal_kingdom
+			diplomatic_stance=appeasement_stance
+			primary_culture = amhara
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			capital = 7536
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				7536 7539 7538
+			}
+		}
+
+		ABY = { #Abyssinia
+			family = 44
+			government = tribal_kingdom
+			diplomatic_stance=appeasement_stance
+			primary_culture = amhara
+			religion = default_pantheon
+			capital = 7506
+
+			historical_regnal_numbers = {
+				Menelik = 1
+			}
+
+			own_control_core = {
+				7506 7540 651
+			}
+		}
+
+		#Britannia
+
+		ENG = { #England
+			family = 19
+			government = tribal_kingdom
+			primary_culture = english
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 2038
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				2038 2018 2022
+			}
+		}
+
+		SCO = { #Scotland
+			family = 20
+			government = tribal_kingdom
+			primary_culture = scottish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 2114
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				2114 2115 2111
+			}
+		}
+
+		ICE = {
+			family = 21
+			government = tribal_kingdom
+			primary_culture = celtic
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 2190
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				2190 2192 2165
+			}
+		}
+
+
+		#IBERIA
+
+
+		SPN = {
+			family = 43
+			government = tribal_kingdom
+			primary_culture = spanish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 1023
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			historical_regnal_numbers = {
+				Philip = 1
+			}
+
+			own_control_core = 	{
+				1023 1204 1206
+			}
+		}
+
+		CAS = {
+			family = 48
+			government = tribal_kingdom
+			primary_culture = spanish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 1119
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				1119 1111 1044
+			}
+		}
+
+		POR = {
+			family = 23
+			government = tribal_kingdom
+			primary_culture = portugese
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=trading_stance
+			capital = 1319
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			historical_regnal_numbers = {
+				Maria = 0
+			}
+
+			own_control_core = {
+				1319 1318 1320
+			}
+		}
+
+		#Greece, Macedonia & Thrace
+
+		BYZ = {
+			family = 6
+			family = 45
+			government = tribal_kingdom
+			primary_culture = byzantine
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 1453
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+			historical_regnal_numbers = {
+				Basil = 1
+			}
+
+			own_control_core = {
+				1453 341 345
+			}
+
+		}
+
+
+		MAC = {
+			family = 5
+			government = tribal_kingdom
+			primary_culture = macedonian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 379
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+			historical_regnal_numbers = {
+				Alexander = 2
+			}
+
+			own_control_core = 	{
+				379 384 385
+			}
+		}
+
+		ATH = {
+			family = 3
+			government = tribal_kingdom
+			primary_culture = athenian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 416
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				416 413 417
+
+			}
+
+		}
+
+		SPA = { #Sparta
+			family = 4
+			government = tribal_kingdom
+			primary_culture = peloponnesian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 427
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				427 450 429
+			}
+
+		}
+
+		#Anatolia
+
+		OTT = { #Ottomans
+			family = 7
+			government = tribal_kingdom
+			primary_culture = turkish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 194
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				194 226 222
+			}
+		}
+
+		#Arabia
+
+		ARB = { #Arabia
+			family = 13
+			government = tribal_kingdom
+			primary_culture = bedouin
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=trading_stance
+			capital = 4720
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				4720 4716 4616
+			}
+		}
+
+
+
+		#Syria
+
+		BAB = { #Babylon
+			family = 16
+			family = 47
+			government = tribal_kingdom
+			primary_culture = babylonian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 918
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			historical_regnal_numbers = {
+				Nebuchadnezzar = 1
+			}
+
+			own_control_core = {
+				918 919 917
+			}
+		}
+
+		ASY = { #Assyria
+			family = 15
+			government = tribal_kingdom
+			primary_culture = assyrian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 883
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				883 882 955
+			}
+		}
+
+		SUM = { #Sumeria
+			family = 17
+			government = tribal_kingdom
+			primary_culture = sumerian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 937
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				937 935 936
+			}
+		}
+
+		PHO	= { #Phoenicia
+			family = 42
+			government = tribal_kingdom
+			primary_culture = phoenician
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=trading_stance
+			capital = 743
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				743 744 746
+			}
+
+		}
+
+		PER = {
+			family = 12
+			government = tribal_kingdom
+			primary_culture = persian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 4951
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			historical_regnal_numbers = {
+				Cyrus = 1
+			}
+
+			own_control_core = {
+				4951 4799 3406
+			}
+
+		}
+
+		#North Caucasus
+
+		SCA = {
+			family = 11
+			government = tribal_kingdom
+			primary_culture = scythian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 6791
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = 	{
+				6791 7265 7264
+			}
+		}
+
+		HNZ = {
+			family = 10
+			government = tribal_kingdom
+			primary_culture = hunnic
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 6188
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				6188 6191 6189
+			}
+		}
+
+		GEO = {
+			family = 8
+			government = tribal_kingdom
+			primary_culture = georgian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 1612
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				1612 1610 1611
+			}
+		}
+
+		KRU = { #Kievan Rus
+			family = 9
+			government = tribal_kingdom
+			primary_culture = ruthenian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 6090
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				6090 6081 6082
+			}
+		}
+
+		# India and Tibet
+
+		MRY = {
+			family = 30
+			government = tribal_kingdom
+			primary_culture = magadhi
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 4440 # Pataliputra
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			is_antagonist = yes
+
+			own_control_core = {
+				4440 4441 4442
+			}
+
+		}
+
+		HND = {
+			family = 31
+			government = tribal_kingdom
+			primary_culture = kanauji
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 4413
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			is_antagonist = yes
+
+			own_control_core = {
+				4413 4412 4404
+			}
+
+		}
+
+		### Germania
+
+		POL = { #Poland
+			family = 32
+			government = tribal_kingdom
+			primary_culture = polish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 6274
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			historical_regnal_numbers = {
+				Casimir = 2
+			}
+
+			own_control_core = {
+				6274 6271 6272
+			}
+		}
+
+		RUS = { #Russia
+			family = 33
+			government = tribal_kingdom
+			primary_culture = russian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 4865
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			historical_regnal_numbers = {
+				Peter = 0
+			}
+
+			own_control_core = {
+				4865 4864 6285
+			}
+		}
+
+		SWE = { #Sweden
+			family = 35
+			government = tribal_kingdom
+			primary_culture = swedish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=trading_stance
+			capital = 6030
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				6030 6026 6029
+			}
+		}
+
+
+		GER = { #Germany?
+			family = 34
+			government = tribal_kingdom
+			primary_culture = north_german
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 3986
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				3986 3982 3983
+			}
+		}
+
+		DAN = { #Denmark
+			family = 40
+			government = tribal_kingdom
+			primary_culture = danish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 3887
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				3887 6003 3885
+			}
+		}
+
+		NOR = { #Norway
+			family = 36
+			government = tribal_kingdom
+			primary_culture = norwegian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 6043
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+			historical_regnal_numbers = {
+				Harald = 2
+			}
+
+			own_control_core = {
+				6043 6042 6041
+			}
+		}
+
+		#South Germany
+
+		AUS = { #Austria?
+			family = 22
+			government = tribal_kingdom
+			primary_culture = south_german
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			capital = 3653
+			diplomatic_stance=vassaling_stance
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				3653 3652 3921
+			}
+		}
+
+		HUN = { #Hungary?
+			family = 39
+			government = tribal_kingdom
+			primary_culture = hungarian
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=neutral_stance
+			capital = 4158
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				4158 4855 4157
+			}
+		}
+
+		#Gaul and Low Countries
+
+		HRE = { #Holy Roman Empire
+			family = 37
+			government = tribal_kingdom
+			primary_culture = north_german
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=vassaling_stance
+			capital = 3727
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				3727 3717 3720
+			}
+		}
+
+		NET = { #Netherlands
+			family = 38
+			government = tribal_kingdom
+			primary_culture = dutch
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=trading_stance
+			capital = 3848
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				3848 3847 3846
+			}
+		}
+
+		FRA = { #France
+			family = 28
+			government = tribal_kingdom
+			primary_culture = french
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 2475
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				2475 2484 2444
+			}
+		}
+
+		GAU = { #Gaul
+			family = 46
+			government = tribal_kingdom
+			primary_culture = gallic
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=warmongering_stance
+			capital = 3681
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				3681 3706 3708
+			}
+		}
+
+		AQT = { #Aquitaine
+			family = 29
+			government = tribal_kingdom
+			primary_culture = occitan
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=vassaling_stance
+			capital = 2236
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			own_control_core = {
+				2236 2289 2234
+			}
+		}
+
+		#############City-States######################################
+
+		ANT = { #Antioch
+			government = city_state
+			primary_culture = macedonian
+			religion = default_pantheon
+			capital = 790
+
+			own_control_core = 	{
+				790
+			}
+		}
+
+		BLN = { #Bologna #TBD
+			government = city_state
+			primary_culture = italian
+			religion = default_pantheon
+			capital = 146
+
+			own_control_core = 	{
+				146
+			}
+		}
+
+		FLR = { #Florence
+			government = city_state
+			primary_culture = italian
+			religion = default_pantheon
+			capital = 134
+
+			own_control_core = 	{
+				134
+			}
+		}
+
+		CDF = { #Cardiff
+			government = city_state
+			primary_culture = welsh
+			religion = default_pantheon
+			capital = 2092
+
+			own_control_core = 	{
+				2092
+			}
+		}
+
+		FEZ = { #Fez #TBD
+			government = city_state
+			primary_culture = moroccan
+			religion = default_pantheon
+			capital = 3072
+
+			own_control_core = 	{
+				3072
+			}
+		}
+
+		GEN = { #Geneva #TBD
+			government = city_state
+			primary_culture = helvetian
+			religion = default_pantheon
+			capital = 3624
+
+			own_control_core = 	{
+				3624
+			}
+		}
+
+		GRA = { #Granada #TBD
+			government = city_state
+			primary_culture = moorish
+			religion = default_pantheon
+			capital = 1385
+
+			own_control_core = 	{
+				1385
+			}
+		}
+
+		HAT = { #Hattusa #TBD
+			government = city_state
+			primary_culture = turkish
+			religion = default_pantheon
+			capital = 1841
+
+			own_control_core = 	{
+				1841
+			}
+		}
+
+		JER = { #Jerusalem
+			government = city_state
+			primary_culture = hebrew
+			religion = default_pantheon
+			capital = 687
+
+			own_control_core = 	{
+				687
+			}
+		}
+
+		KAB = { #Kabul #TBD
+			government = city_state
+			primary_culture = parthian
+			religion = default_pantheon
+			capital = 6608
+
+			own_control_core = 	{
+				6608
+			}
+		}
+
+		KAN = { #Kandy #TBD
+			government = city_state
+			primary_culture = tamil
+			religion = default_pantheon
+			capital = 6980
+
+			own_control_core = 	{
+				6980
+			}
+		}
+
+		MHJ = { #Mohenjo-daro #TBD
+			government = city_state
+			primary_culture = kanauji
+			religion = default_pantheon
+			capital = 4365
+
+			own_control_core = 	{
+				4365
+			}
+		}
+
+		GOA = { #Goa #TBD
+			government = city_state
+			primary_culture = kanauji
+			religion = default_pantheon
+			capital = 6881
+
+			own_control_core = 	{
+				6881
+			}
+		}
+
+		LHR = { #Lahore #TBD
+			government = city_state
+			primary_culture = kanauji
+			religion = default_pantheon
+			capital = 7485
+
+			own_control_core = 	{
+				7485
+			}
+		}
+
+		KAT = { #Kathmandu #TBD
+			government = city_state
+			primary_culture = nepali
+			religion = default_pantheon
+			capital = 4459
+
+			own_control_core = 	{
+				4459
+			}
+		}
+
+		LHS = { #Lhasa #TBD
+			government = city_state
+			primary_culture = nepali
+			religion = default_pantheon
+			capital = 5618
+
+			own_control_core = 	{
+				5618
+			}
+		}
+
+		SMT = { #Somnath #TBD
+			government = city_state
+			primary_culture = kanauji
+			religion = default_pantheon
+			capital = 6816
+
+			own_control_core = 	{
+				6816
+			}
+		}
+
+		MUS = { #Muscat #TBD
+			government = city_state
+			primary_culture = bedouin
+			religion = default_pantheon
+			capital = 7212
+
+			own_control_core = 	{
+				7212
+			}
+		}
+
+		PSL = { #Preslav #TBD
+			government = city_state
+			primary_culture = bulgarian
+			religion = default_pantheon
+			capital = 4258
+
+			own_control_core = 	{
+				4258
+			}
+		}
+
+		VLT = { #Valetta #TBD
+			government = city_state
+			primary_culture = maltese
+			religion = default_pantheon
+			capital = 1471
+
+			own_control_core = 	{
+				1471
+			}
+		}
+
+		YER = { #Yerevan #TBD
+			government = city_state
+			primary_culture = armenian
+			religion = default_pantheon
+			capital = 1575
+
+			own_control_core = 	{
+				1575
+			}
+		}
+
+		HMP = { #Hermopolis #TBD
+			government = city_state
+			primary_culture = egyptian
+			religion = default_pantheon
+			capital = 549
+
+			own_control_core = 	{
+				549
+			}
+		}
+
+		BBL = { #Byblos #TBD
+			government = city_state
+			primary_culture = phoenician
+			religion = default_pantheon
+			capital = 766
+
+			own_control_core = 	{
+				766
+			}
+		}
+
+		SMK = { #Samarkand
+			government = city_state
+			primary_culture = parthian
+			religion = default_pantheon
+			capital = 6682
+
+			own_control_core = 	{
+				6682
+			}
+		}
+
+		RGS = { #Ragusa #TBD
+			government = city_state
+			primary_culture = sicilian
+			religion = default_pantheon
+			capital = 101
+
+			own_control_core = 	{
+				101
+			}
+		}
+
+		DBR = { #Dubrovnik #TBD
+			government = city_state
+			primary_culture = croatian
+			religion = default_pantheon
+			capital = 4085
+
+			own_control_core = 	{
+				4085
+			}
+		}
+
+		CLM = { #Colombo #TBD
+			government = city_state
+			primary_culture = tamil
+			religion = default_pantheon
+			capital = 6982
+
+			own_control_core = 	{
+				6982
+			}
+		}
+
+		BUC = { #Bucharest #TBD
+			government = city_state
+			primary_culture = romanian
+			religion = default_pantheon
+			capital = 4809
+
+			own_control_core = 	{
+				4809
+			}
+		}
+
+		MLN = { #Milan #TBD
+			government = city_state
+			primary_culture = italian
+			religion = default_pantheon
+			capital = 3571
+
+			own_control_core = 	{
+				3571
+			}
+		}
+
+		MNC = { #Monaco #TBD
+			government = city_state
+			primary_culture = french
+			religion = default_pantheon
+			capital = 3544
+
+			own_control_core = 	{
+				3544
+			}
+		}
+
+		GNO = { #Genoa #TBD
+			government = city_state
+			primary_culture = italian
+			religion = default_pantheon
+			capital = 3549
+
+			own_control_core = 	{
+				3549
+			}
+		}
+
+		PRG = { #Prague #TBD
+			government = city_state
+			primary_culture = czech
+			religion = default_pantheon
+			capital = 3943
+
+			own_control_core = 	{
+				3943
+			}
+		}
+
+		OMZ = { #Ormuz #TBD
+			government = city_state
+			primary_culture = persian
+			religion = default_pantheon
+			capital = 4791
+
+			own_control_core = 	{
+				4791
+			}
+		}
+
+		ZUR = { #Zurich #TBD
+			government = city_state
+			primary_culture = helvetian
+			religion = default_pantheon
+			capital = 3633
+
+			own_control_core = 	{
+				3633
+			}
+		}
+
+		BGR = { #Belgrad #TBD
+			government = city_state
+			primary_culture = serbian
+			religion = default_pantheon
+			capital = 4195
+
+			own_control_core = 	{
+				4195
+			}
+		}
+
+		SOF = { #Sofia #TBD
+			government = city_state
+			primary_culture = bulgarian
+			religion = default_pantheon
+			capital = 477
+
+			own_control_core = 	{
+				477
+			}
+		}
+
+		HMB = { #Hamburg #TBD
+			government = city_state
+			primary_culture = north_german
+			religion = default_pantheon
+			capital = 3888
+
+			own_control_core = 	{
+				3888
+			}
+		}
+
+		PMP = { #Pompeii #TBD
+			government = city_state
+			primary_culture = roman
+			religion = default_pantheon
+			capital = 9
+
+			own_control_core = 	{
+				9
+			}
+		}
+	}
+}
+trade = {}

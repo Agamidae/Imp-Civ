@@ -1,0 +1,5 @@
+﻿immortal = {
+	type = health
+	congenital = no
+	health = 9
+}

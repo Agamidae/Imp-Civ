@@ -1,0 +1,26 @@
+﻿"GER"={
+	country="GER"
+	38={
+		first_name="Otto"
+		family= c:GER.fam:von_Bismarck
+		birth_date=44.4.1
+		culture="north_german"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=12
+		add_finesse=8
+		add_zeal=6
+		no_traits=yes
+		add_trait="bismarks"
+		add_trait="immortal"
+		add_trait="tactician"
+		add_trait="ambitious"
+		add_gold=100
+		add_popularity=100
+		c:GER={
+			set_as_ruler=char:38
+		}
+		dna="2KPyRoBOgE5DbUNvAnYCdgJyAnICjQKNAoQChAS6BLoCkwKTAmcCZwKKAn4DZQOrAoECgQJ0AnQCjQKNApkCmQKOAo4CcAJwApQClAJ6AnoCbwJvAnsCewKQApAClwKXAmYCZgKZApkCagJqACYAJgJ4AngCbAJsApICkgKGAoYCgwKDAnECcQJ8AnwChAKEAnoCegJtAm0CcAJwAo0CjQJyAnICiQKJAnsCewKGAoYCbgJuApMCkwKOAo4CQQKLAnICcgJ8AnwCTwJyArYCaQKIAogCZgJmBOADpwKXApcCbAJsBFACgwP/A8wAbQBtAVwBXAEKAQoAXwBfAA8ADwJNAFYBQAFAAQ8BDwAXABcBFAEUAJ4AngB/AH8AnQCdAWgCwgAXABcAOQA5AGUAZQL5AvkARwBHAQMBAwAAAH8A1wDXABgAGAF4AXgAIgAiAFAAUAMSAxIA/QD9AHAAcAC2ALYCkQKRACEAIQMAA3MBpQi1AH8AfwR/BH8BOAmGAP8AxAjcBWoHvAe6CC0IewAAAAAAAAAAAAAAAA=="
+	}
+}

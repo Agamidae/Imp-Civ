@@ -1,0 +1,513 @@
+﻿namespace = rel_flavor_arabian
+
+# Ancestor veneration cult
+rel_flavor_arabian.1 = {
+	type = country_event
+	title = "rel_flavor_arabian.1.t"
+	desc = "rel_flavor_arabian.1.desc"
+	picture = ascetic
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		NOR = { 
+			has_variable = ancestor_veneration_disallowed 
+			has_variable = rel_flavor_arabian_1_cooldown
+		}
+		religion = arabian_pantheon
+		any_owned_province = {
+			dominant_province_religion = arabian_pantheon
+			num_of_tribesmen > num_of_citizen
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = province_modifier_arabian_ancestor_veneration_cult
+			}
+		}
+	}
+
+	weight_multiplier = {
+		modifier = {
+			factor = 10
+			any_owned_province = {
+				has_province_modifier = province_modifier_arabian_wiseman
+			}
+		}
+	}
+
+	immediate = {
+		save_scope_as = country_nation
+		set_variable = {
+			name = rel_flavor_arabian_1_cooldown
+			days = 7300
+		}
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = arabian_pantheon
+				num_of_tribesmen > num_of_citizen
+				NOT = { has_province_modifier = province_modifier_arabian_ancestor_veneration_cult }
+			}
+			weight = {
+				modifier = {
+					factor = 20
+					has_province_modifier = province_modifier_arabian_wiseman
+				}
+			}
+			save_scope_as = country_province
+		}
+	}
+
+
+	option = { # Bring them to a national level
+		name = "rel_flavor_arabian.1.a"
+		custom_tooltip = "rel_flavor_arabian.1.a.tt"
+		remove_stability_effect = yes
+		add_country_modifier = {
+			name = country_modifier_arabian_ancestor_veneration_cult
+			duration = -1
+		}
+	}
+
+	option = { # Leave them be in <province> only
+		name = "rel_flavor_arabian.1.b"
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_modifier_arabian_ancestor_veneration_cult
+				duration = 3650
+			}
+			while = {
+				count = 2
+				if = {
+					limit = {
+						any_pops_in_province = {
+							pop_type = citizen
+						}
+					}
+					random_pops_in_province = {
+						limit = {
+							pop_type = citizen
+						}
+						set_pop_type = tribesmen
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Remove them -permanently-
+		name = "rel_flavor_arabian.1.c"
+		custom_tooltip = "rel_flavor_arabian.1.c.tt"
+		add_tyranny = tyranny_large
+		scope:country_province = {
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_type = tribesmen
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_type = tribesmen
+					}
+					kill_pop = yes	
+				}
+				if = {
+					limit = {
+						any_pops_in_province = {
+							pop_type = tribesmen
+						}
+					}
+					random_pops_in_province = {
+						limit = {
+							pop_type = tribesmen
+						}
+						kill_pop = yes	
+					}
+				}
+			}
+		}
+		set_variable = {
+			name = ancestor_veneration_disallowed
+		}
+	}
+}
+
+# Ancestor Cult tries to turn citizens to tribesmen
+rel_flavor_arabian.2 = {
+	type = country_event
+	title = "rel_flavor_arabian.2.t"
+	desc = "rel_flavor_arabian.2.desc"
+	picture = ascetic
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = arabian_pantheon
+		NOR = { 
+			has_variable = ancestor_veneration_disallowed 
+			has_variable = rel_flavor_arabian_2_cooldown
+		}
+		has_country_modifier = country_modifier_arabian_ancestor_veneration_cult
+		any_owned_province = {
+			is_capital = no
+			dominant_province_religion = arabian_pantheon
+			any_pops_in_province = {
+				pop_type = citizen
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_arabian_2_cooldown
+			days = 3650
+		}
+		save_scope_as = country_nation
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				dominant_province_religion = arabian_pantheon
+				any_pops_in_province = {
+					pop_type = citizen
+				}
+			}
+			save_scope_as = country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.2.a"
+		trigger = {
+			scope:country_province = {
+				any_pops_in_province = {
+					count > 2
+					pop_type = citizen
+				}
+			}
+		}
+		remove_stability_effect = yes
+		scope:country_province = {
+			every_pops_in_province = {
+				limit = {
+					pop_type = citizen
+				}
+				set_pop_type = tribesmen
+			}
+			add_province_modifier = {
+				name = province_modifier_arabian_cult_urban_decay
+				duration = 5475
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.2.b"
+		scope:country_province = {
+			random_pops_in_province = {
+				limit = {
+					pop_type = citizen
+				}
+				set_pop_type = tribesmen
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_type = citizen
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_type = citizen
+					}
+					set_pop_type = tribesmen
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.2.c"
+		custom_tooltip = "no_effect_tooltip"
+	}
+
+	option = {
+		name = "rel_flavor_arabian.2.d"
+		custom_tooltip = "rel_flavor_arabian.2.d.tt"
+		add_tyranny = tyranny_large
+		remove_country_modifier = country_modifier_arabian_ancestor_veneration_cult
+		add_country_modifier = {
+			name = country_modifier_arabian_removed_cult
+			duration = 1825
+		}
+	}
+}
+
+# Decentralizing effort by the ancestor cult
+rel_flavor_arabian.3 = {
+	type = country_event
+	title = "rel_flavor_arabian.3.t"
+	desc = "rel_flavor_arabian.3.desc"
+	picture = ascetic
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = arabian_pantheon
+		NOR = { 
+			has_variable = ancestor_veneration_disallowed 
+			has_variable = rel_flavor_arabian_3_cooldown
+		}
+		has_country_modifier = country_modifier_arabian_ancestor_veneration_cult
+		any_owned_province = {
+			NOR = {
+				has_province_modifier = province_modifier_arabian_cult_urban_decay
+				any_pops_in_province = {
+					pop_type = citizen
+				}
+			}
+			any_pops_in_province = {
+				pop_type = tribesmen
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_arabian_3_cooldown
+			days = 3650
+		}
+		random_owned_province = {
+			limit = {
+				NOR = {
+					has_province_modifier = province_modifier_arabian_cult_urban_decay
+					any_pops_in_province = {
+						pop_type = citizen
+					}
+				}
+				any_pops_in_province = {
+					pop_type = tribesmen
+				}
+			}
+			save_scope_as = country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.3.a"
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_modifier_arabian_cult_urban_decay
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.3.b"
+		add_political_influence = subtract_influence_medium
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_modifier_recentralization_effort
+				duration = 1825
+			}
+			random_pops_in_province = {
+				limit = {
+					pop_type = tribesmen
+				}
+				set_pop_type = citizen
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.2.d"
+		custom_tooltip = "rel_flavor_arabian.2.d.tt"
+		add_tyranny = tyranny_large
+		remove_country_modifier = country_modifier_arabian_ancestor_veneration_cult
+		add_country_modifier = {
+			name = country_modifier_arabian_removed_cult
+			duration = 1825
+		}
+	}
+}
+
+# Focus on converting a city
+rel_flavor_arabian.4 = {
+	type = country_event
+	title = "rel_flavor_arabian.4.t"
+	desc = "rel_flavor_arabian.4.desc"
+	picture = slaves_working
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_priest
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = arabian_pantheon
+		NOT = { has_variable = rel_flavor_arabian_4_cooldown }
+		any_owned_province = {
+			NOT = { dominant_province_religion = arabian_pantheon }
+			has_city_status = yes
+		}
+		capital_scope = {
+			dominant_province_religion = arabian_pantheon
+			any_pops_in_province = {
+				OR = {
+					pop_type = citizen
+					pop_type = tribesmen
+					pop_type = freemen
+				}
+			}
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_arabian_4_cooldown
+			days = 3650
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { dominant_province_religion = arabian_pantheon }
+				has_city_status = yes
+			}
+			save_scope_as = country_province
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.4.a"
+		capital_scope = {
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_type = slaves }
+					pop_religion = arabian_pantheon
+				}
+				order_by = pop_hapiness
+				max = 2
+				check_range_bounds = no
+				move_pop = scope:country_province
+			}
+		}
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = arabian_pantheon }
+				}
+				order_by = pop_hapiness
+				max = {
+					value = total_population
+					divide = 4
+				}
+				check_range_bounds = no
+				set_pop_religion = arabian_pantheon
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_allowed
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.4.b"
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_improvement_arabian_religious_freedom
+				duration = 1825
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}
+
+# The wandering wiseman
+rel_flavor_arabian.5 = {
+	type = country_event
+	title = "rel_flavor_arabian.5.t"
+	desc = "rel_flavor_arabian.5.desc"
+	picture = ascetic
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = arabian_pantheon
+		any_owned_province = {
+			dominant_province_religion = arabian_pantheon
+			any_pops_in_province = {
+				NOT = { pop_religion = arabian_pantheon }
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = arabian_pantheon
+				any_pops_in_province = {
+					NOT = { pop_religion = arabian_pantheon }
+				}
+			}
+			save_scope_as = country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.5.a"
+		add_stability_effect_small = yes
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_modifier_arabian_wiseman
+				duration = 1095
+			}
+			random_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = arabian_pantheon }
+				}
+				set_pop_religion = arabian_pantheon
+			}
+			if = { 
+				limit = {
+					any_pops_in_province = {
+						NOT = { pop_religion = arabian_pantheon }
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						NOT = { pop_religion = arabian_pantheon }
+					}
+					set_pop_religion = arabian_pantheon
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_arabian.5.b"
+		add_stability_effect = yes
+		add_tyranny = tyranny_medium
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 5
+		}
+	}
+}

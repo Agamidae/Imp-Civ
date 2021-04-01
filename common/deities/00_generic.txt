@@ -1,0 +1,662 @@
+﻿### General Deity Checks ###
+deity_burial_grounds = { # WAR
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { enact_holy_site_cost_modifier = -0.1 }
+	omen = { civic_tech_investment = 0.1 } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_church_property = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_wealth
+	passive_modifier = { global_tax_modifier = deity_global_tax_modifier_svalue }
+	omen = { stability_cost_modifier = -0.1 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_choral_music = { # FERTILITY
+	trigger = {
+		any_owned_province = {
+			has_building = temple_building
+		}
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_love
+	passive_modifier = { oratory_tech_investment = 0.07 }
+	omen = { happiness_for_same_culture_modifier = omen_happiness_for_same_culture_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_food_effect = yes
+	}
+	religion = generic
+	deity_category = fertility #This Deity uses a Fertility Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_cathedral = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { civic_tech_investment = 0.1 } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier 2
+
+deity_crusade = { # WAR
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_war
+	passive_modifier = { land_morale = 0.2 }
+	omen = { happiness_for_same_religion_modifier = omen_happiness_for_same_religion_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_cross_cult = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { civic_tech_investment = deity_civic_tech_investment_svalue }
+	omen = { global_pop_assimilation_speed_modifier = omen_global_pop_assimilation_speed_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_dare_mehr = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { religious_tech_investment = omen_religious_tech_investment_svalue } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_feed_world = { # FERTILITY
+	trigger = {
+		any_owned_province = {
+			has_building = temple_building
+		}
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_love
+	passive_modifier = { global_food_capacity = deity_global_food_capacity_svalue }
+	omen = { global_monthly_food_modifier = omen_global_monthly_food_modifier } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_food_effect = yes
+	}
+	religion = generic
+	deity_category = fertility #This Deity uses a Fertility Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier 3
+
+deity_def_o_faith = { # WAR
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_war
+	passive_modifier = { happiness_for_same_religion_modifier = 0.2 }
+	omen = { global_cohort_recruit_speed = 0.1 } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_papal_primac = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { diplomatic_reputation = 0.1 }
+	omen = { diplomatic_range_modifier = 0.2 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_gurdwara = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { global_monthly_food_modifier = deity_global_monthly_food_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_jesuit_ed = { # FERTILITY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_love
+	passive_modifier = { civic_tech_investment = 0.1 }
+	omen = { build_cost = omen_build_cost_svalue } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_food_effect = yes
+	}
+	religion = generic
+	deity_category = fertility #This Deity uses a Fertility Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier 4
+
+deity_holy_order = { # WAR
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_war
+	passive_modifier = { happiness_for_same_religion_modifier = 0.2 }
+	omen = { global_pop_conversion_speed_modifier = omen_global_pop_conversion_speed_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_piligrim = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.1 }
+	omen = { happiness_for_same_religion_modifier = 0.2 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_meeting_house = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { build_time = -0.2 } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_rel_commune = { # FERTILITY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_love
+	passive_modifier = { global_population_capacity_modifier = deity_global_population_capacity_modifier_svalue }
+	omen = { global_commerce_modifier = omen_global_commerce_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_food_effect = yes
+	}
+	religion = generic
+	deity_category = fertility #This Deity uses a Fertility Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier 5
+
+deity_holy_water = { # WAR
+	trigger = {
+		any_owned_province = {	
+			terrain = riverine_terrain
+		}
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_war
+	passive_modifier = { land_morale = 0.1 }
+	omen = { cohort_reinforcement_speed = 0.1 } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_rel_unity = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { diplomatic_reputation = 0.1 }
+	omen = { happiness_for_same_religion_modifier = 0.2 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_mosque = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { manpower_recovery_speed = omen_manpower_recovery_speed } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_war_monks = { # FERTILITY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_love
+	passive_modifier = { military_tech_investment = deity_military_tech_investment_svalue }
+	omen = { global_commerce_modifier = omen_global_commerce_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_food_effect = yes
+	}
+	religion = generic
+	deity_category = fertility #This Deity uses a Fertility Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier 6
+
+deity_miss_zeal = { # WAR
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_war
+	passive_modifier = { cohort_reinforcement_speed = 0.1 }
+	omen = { heavy_infantry_movement_speed = 0.1 } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_sacred_place = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { research_points = 0.1 }
+	omen = { global_tax_modifier = omen_global_tax_modifier_svalue } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_pagoda = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { global_population_capacity_modifier = 0.2 } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_work_ethic = { # FERTILITY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_love
+	passive_modifier = { build_time = -0.1 }
+	omen = { build_expensive_roads_cost_modifier = -0.2 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_food_effect = yes
+	}
+	religion = generic
+	deity_category = fertility #This Deity uses a Fertility Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier 7
+
+deity_monastic_isol = { # WAR
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_war
+	passive_modifier = { happiness_for_same_religion_modifier = omen_happiness_for_same_religion_modifier_svalue }
+	omen = { religious_tech_investment = 0.1 } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_stewardship = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { global_tax_modifier = deity_global_tax_modifier_svalue }
+	omen = { civic_tech_investment = 0.1 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_stupa = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { global_import_commerce_modifier = 0.2 } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_zen_meditation = { # FERTILITY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_love
+	passive_modifier = { build_time = -0.1 }
+	omen = { build_expensive_roads_cost_modifier = -0.2 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_food_effect = yes
+	}
+	religion = generic
+	deity_category = fertility #This Deity uses a Fertility Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier 8
+
+deity_rel_colony = { # WAR
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_war
+	passive_modifier = { religious_tech_investment = 0.2 }
+	omen = { price_found_city_cost_modifier = 0.1 } #Bonus from Omen
+	on_activate = {
+		military_apotheosis_defensive_effect = yes
+	}
+	religion = generic
+	deity_category = war #This Deity uses a War slot.
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_world_church = { # ECONOMY
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { happiness_for_same_religion_modifier = 0.1 }
+	omen = { omen_power = 0.1 } #Bonus from Omen
+	on_activate = {
+		fertility_apotheosis_capital_slaves_effect = yes
+	}
+	religion = generic
+	deity_category = economy #This Deity uses an Economy Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+deity_synagogue = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { global_population_happiness = omen_global_population_happiness } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}
+
+#Tier9
+
+deity_wat = { # CULTURE
+	trigger = {
+		always = yes
+		NOT = {
+			religion = default_pantheon
+		}
+	}
+	icon = deity_eloquence
+	passive_modifier = { omen_power = 0.2 }
+	omen = { research_points = 0.2 } #Bonus from Omen
+	on_activate = {
+		culture_apotheosis_capital_effect = yes
+	}
+	religion = generic
+	deity_category = culture #This Deity uses a Culture Slot
+	deification_trigger = {
+		can_deify_trigger = no
+	}
+}

@@ -1,0 +1,26 @@
+﻿"SWE"={
+	country="SWE"
+	39={
+		first_name="Gustav_Adolf"
+		family= c:SWE.fam:Vasa
+		birth_date=83.12.9
+		culture="swedish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=8
+		add_finesse=8
+		add_zeal=6
+		no_traits=yes
+		add_trait="vasas"
+		add_trait="immortal"
+		add_trait="kindly"
+		add_trait="scholar"
+		add_gold=100
+		add_popularity=100
+		c:SWE={
+			set_as_ruler=char:39
+		}
+		dna="/wBja3lReVETixOLAmYCZgJnAmcCawJrAmoCagJ/An8CkwKTA54DngApACkCcgJyA5wDnAKDAoMChQKFAowCjAJpAmkCcQJxAnkCeQTLBMsCcgJyApECkQJ6AnoCeAJ4An4CfgJwAnACeQJ5AoACgAKUApQCUAJ7A5kDmQKZApkCjAKMAoQChAJ0AnQCbQJtA6sDqwKPAo8CfgJ+BNkE2QKIAogCdQJ1AnkCeQAyADICjgKOAmYCZgJ2AnYCfgJ+ApcClwKUApQBTQFNAm0CbQJ9An0CewJ7AnUCdQKTApMCbwJvAoMCgwIcAhwBEwETAIMAgwCDAIMAyQDJADAAMAFxAXEAswCzAI4AjgL7AvsBZAFkAA4ADgB/AH8ATABMAHEAcQDVANUCnwKfAPMA8wF7AXsC0QLRADMAMwB/AH8ACQAJAMcAxwA+AD4BfAF8APQA9AM1AzUAeQB5AAcABwAJAAkAqgCqAwsDCwNHA0cGvAa8AH8AfwLQAtABTAerAA4ADgngBGYDbQW/A0ENlAAAAAAAAAAAAAAAAA=="
+	}
+}

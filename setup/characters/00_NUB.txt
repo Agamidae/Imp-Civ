@@ -1,0 +1,26 @@
+﻿"NUB"={
+	country="NUB"
+	29={
+		first_name="Amanitore"
+		family= c:NUB.fam:Meroitic
+		birth_date=50.8.18
+		female=yes
+		culture="meroitic"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=9
+		add_finesse=9
+		add_zeal=10
+		no_traits=yes
+		add_trait="immortal"
+		add_trait="meroitics"
+		add_trait="kindly"
+		add_gold=100
+		add_popularity=100
+		c:NUB={
+			set_as_ruler=char:29
+		}
+		dna="AP8I///Wwpy76bvpAnECcQBuAU8CdAJ0BF8CZgJ8AnwCbQJtAv8ChAJ+An4CgQKBBMcExwKZApkCawJrAnICcgN6A7QCfAJ8AoECgQOdA50CQQJBAqECoQKBAoEChQKFAmoCagT6BPoCiwKLAVwBXAJvAm8CpQKIAUMBQwJ9An0CfwJ/AmkCaQFqAWoCgwKDApcClwAvAC8CsQKVAp8CnwKDAoMCgwKDAowCjAKWApYChQKFAnwCfAKRArsCjgK/AoACgAKMAowCkQKRAnYCdgPAA8ACdQJ1A4MDgwJ+An4E/wKQAm4CbgKOAsgCswEsApYATQErASsBeAF4Au4A/wLRAPsA2QDZAFYAVgA6ADoAVABUAAsACwB/AH8ALwAvAnABfQFYAVgCjQKNAVsBegAbABsCFgIWAH4AfgB/AH8BNAE0ABcAFwBFAEUAxQDFAQgBCAEhASEAFgAWAxkDGQDeAN4CoALBAToBOgNXA1cIOwpaAH8AfwWWBZYOAAqQATkBOQYIBggH/wy7AQALbQAAAAAAAAAAAAAAAA=="
+	}
+}

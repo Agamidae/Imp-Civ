@@ -1,0 +1,84 @@
+﻿namespace = flavor_syr
+
+# Archimedes trigger
+flavor_syr.1 = {
+	type = province_event
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		exists = owner 
+		this = p:84
+	}
+
+	immediate = {
+		owner = { 
+			trigger_event = { id = flavor_syr.2 }
+		}
+	}
+}
+
+# Archimedes
+flavor_syr.2 = {
+	type = country_event
+	title = "flavor_syr.2.t"
+	desc = "flavor_syr.2.desc"
+	picture = greek_philosophers
+	left_portrait = current_ruler
+	right_portrait = scope:archimedes_scope
+	fire_only_once = yes
+	
+	immediate = {
+		p:84 = { save_scope_as = syracuse_scope }
+		hidden_effect = {
+			create_character = {
+				first_name = "Archimedes"
+				family_name = "Phidid"
+				culture = syracusan
+				religion = roman_pantheon
+				age = 25
+				female = no
+				no_stats = yes
+				add_martial = 9
+				add_finesse = 13
+				add_charisma = 6
+				add_zeal = 8
+				no_traits = yes
+				add_trait = scholar
+				add_trait = original_thinker
+				set_variable = archimedes_flag
+				save_scope_as = archimedes_scope
+				dna = "ANhO2Jp4mnjFpcWlAoICggFQAVACeAJ4ApACkAJqAmoCbgJuBOUE5QKEAoQCmQKZAnECcQKBAoECegJ6AnkCeQBoACACjwKPApcClwTBBMECfAJ8AocChwKWApYCbwJvAm0CbQJtAm0ClAKUAnYCdgTcBNwCbwJvAnQCdAJyAnIClQKVAV0BXQKMAowCfwJ/AmwCbAAdAB0CbgJuAmwCbAJ3AncCaAJoApECkQJvAm8BVwFXAoECgQJmAmYCfwJ/A6EDoQKDAoMClwKXAnUCdQJ0AnQChQKFAnkCeQKDAoMCiwKLApcClwI3AjcANAA0AOQA5AAVABUATQBNAMwAzAFqAWoAmACYAv4C/gF+AX4ABQAFAu8C7wB/AH8BFQEVANUA1QCQAJAA9AD0ABEAEQKoAqgAQQBBAR4BHgB/AH8AcABwAH8AfwFVAVUBWgFaAN4A3gDqAOoC5wLnAGYAZgEDAQMBSQFJAK8ArwEvAS8EnAScAH8AfwNyA3IFmgWaANcA1wXhBeEC/wL/Ag8CDwAAAAAAAAAAAAAAAA=="
+			}
+		}
+	}
+
+	option = {
+		name = flavor_syr.2.a
+		custom_tooltip = flavor_syr.2.at
+		add_country_modifier = { 
+			name = archimedes_modifier 
+			duration = 14600 # 40 years
+		}
+	}
+}
+
+# Corcyra
+flavor_syr.3 = {
+	type = country_event
+	title = "flavor_syr.3.t"
+	desc = "flavor_syr.3.desc"
+	picture = grand_ship
+	left_portrait = current_ruler
+	goto_location = p:470
+
+	trigger = {
+		is_monarchy = yes
+		NOT = { owns_or_subject_owns = 470 }
+	}
+
+	option = {
+		name = flavor_syr.3.a
+		p:470 = { add_claim = root }
+	}
+}

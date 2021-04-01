@@ -1,0 +1,26 @@
+﻿"SCA"={
+	country="SCA"
+	14={
+		first_name="Tomyris"
+		family= c:SCA.fam:Tomyrid
+		birth_date=80.3.6
+		female=yes
+		culture="scythian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=7
+		add_finesse=9
+		add_zeal=5
+		no_traits=yes
+		add_trait="tomyrids"
+		add_trait="immortal"
+		add_trait="brave"
+		add_gold=100
+		add_popularity=100
+		c:SCA={
+			set_as_ruler=char:14
+		}
+		dna="L/8v7qd/p3/X4tfiAncCdwKCAoICdQJ1Aj4CcwJxAnECaQJpAtgClQJ4AngBTQFNAnMCcwKhApQCXgKLAmcCfgGWAV8CfAJ8AnMCcwJpAmkCfwJ/AoICggFfAV8CdgJ2AosCiwKEAoQCcwJzApgCmAFVAVUClgKWBL0EvQKDAoMBVAFUAn8CfwKKAooClgKWA6oDqgKRApECbgJuAoMCgwIAAo8CgAKAAngCeAKWApYCaAJqAngCeAIjApUDrAOsAnICcgOlA6UCFQJvAmYCZgKbApsAGwAbAEMAQwT/BMsCpwKMAo4CjgImAiYAAgACAHwAfABzAHMANgA2AQQBBACsAKwAogCiAXABcAA8ADwDDgMOAL8AvwB/AH8BLgEuAIUAhQLQAtAA4QDhAv0C/QEKAQoA/AD8ALEAsQB/AH8CygLKApsCmwL4AvgAqgCqAP4A/gDhAOEAOQA5BMIEwgCYAJgEZwRnAvQC9ABoAGgKKwyHAH8AfwUPBQ8HTwvEAdMB0wMKAwoLAgvkBOUE5QAAAAAAAAAAAAAAAA=="
+	}
+}

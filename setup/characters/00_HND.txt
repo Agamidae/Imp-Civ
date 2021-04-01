@@ -1,0 +1,27 @@
+﻿"HND"={
+	country="HND"
+	35={
+		first_name="Mohandas_Mahatma"
+		family= c:HND.fam:Gandhi
+		birth_date=45.10.2
+		culture="kanauji"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=15
+		add_charisma=10
+		add_finesse=9
+		add_zeal=10
+		no_traits=yes
+		add_trait="gandhis"
+		add_trait="immortal"
+		add_trait="pious"
+		add_trait="scholar"
+		add_trait="aggressive"
+		add_gold=100
+		add_popularity=100
+		c:HND={
+			set_as_ruler=char:35
+		}
+		dna="FPUU9bu/zrHP+c/5ApMCkwKYApgCewJ7AnQCdAKGAoYCkQKRAoUChQKAAoACfAJ8ApMCkwKNAo0CdAJ0An0CfQKLAosCpQJtApQClAJ0AnQCMAKQApACkAJpAmkC4gJ3Am4CbwR+ApMCaQJ6AToBOgAsACwCjgKIArEChAJ2AnYCgAKAApECkQJ7AnsBQgFCAisChgJrAmsCcwJzAmsCawKUApQCbwJvAoUChQKNAo0DmgOaAoMCgwKUApQCjAKMAoECgQKRApECewJ7AWUBZQKOAo4ALAAsAVcBVwTjBOMChgKGApgCmAIAAg0AJAAkApMCkwAgACAArgCuAV8AJABoAGgBCAEIAI0AjQB/AH8BHQEdAC8ALwB/AH8AGgAaADAAMAJJADMBZAFkAVgBWABBAEEBNAE0AXcBUQB/AH8ArACsAEsASwFdAV0A6wDrAEsASwN3A3cA5gDmAK4ArgBcAFwDFwMXAQMBAwEJAQkKlQrdAJgAfwZkBjAQAAyMAYgBjgj/CGgeggnRAAEGZQAAAAAAAAAAAAAAAA=="
+	}
+}

@@ -1,0 +1,25 @@
+﻿"ARB"={
+	country="ARB"
+	16={
+		first_name="Harun_al-Rashid"
+		family= c:ARB.fam:Abbasid
+		birth_date=77.3.17
+		culture="bedouin"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=5
+		add_charisma=7
+		add_finesse=8
+		add_zeal=10
+		no_traits=yes
+		add_trait="abbasids"
+		add_trait="immortal"
+		add_trait="pious"
+		add_gold=100
+		add_popularity=100
+		c:ARB={
+			set_as_ruler=char:16
+		}
+		dna="F/wX/AJUypz//8G0ApcClwKPAo8CaAJoAVcBVwKBAoECegJ6AoUCZgFMAUwCegJ6Am0CcQOcA5wEzgTOAn0CfQPJA8kClwKXAmcCZwGbAV4CPQI9ArQCtAAhACEDoQOhAn4CfgPYA9gCgwKDAnwCfAKBAoEClQKVA4cDhwKSApICkgKSApICkgKXApcCdQJ1Am0CbQJrAmsCkwKTAHMAcwI7AosCVQKIAB0BZQEeAWAAKAJ1AroCkAJnAswDYwPPAU0BTQKWApYCNAKNAqUCdgN2A7cCTwJ0A4kDiQJ1AnUCgAKAArUCmAJZAlkAYgBiACsAKwB3AHcAVABUAF4AXgE2ATYAoACgAsgCyAEGAQYC5QLlAJ8AnwB/AH8AZQBlAUIBQgFjAVAAZQBlAEcAYgAhABACbQKnAAMAAwB/AH8A/wD/ADkAWgAQABYAJwAnALMAswB5AHkAzwDPAA4ADgAIAAgCmQKZAUcBRwDCAMIAyQN0AH8AfwUyBTIMNgrcASMBIwY6BrAM/wwKEQALkQAAAAAAAAAAAAAAAA=="
+	}
+}

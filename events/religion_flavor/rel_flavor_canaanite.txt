@@ -1,0 +1,641 @@
+﻿namespace = rel_flavor_canaanite
+
+# Sending a donation to Tyrus
+rel_flavor_canaanite.1 = {
+	type = country_event
+	title = "rel_flavor_canaanite.1.t"
+	desc = "rel_flavor_canaanite.1.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	trigger = {
+		NOT = { has_variable = rel_flavor_canaanite_1_cooldown }
+		religion = carthaginian_pantheon
+		NOT = {
+			any_owned_province = {
+				OR = {
+					is_in_area = south_phoenicia_area
+					is_in_area = north_phoenicia_area
+				}
+			}
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_canaanite_1_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.1.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		add_country_modifier = {
+			name = country_improvement_blessing_of_melqart
+			duration = 1825
+		}
+		
+		scope:randomized_priest = {
+			add_loyalty = loyalty_priest_allowed
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.1.b"
+		scope:randomized_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}
+
+# Melqart / Heracles - Hellenic Neighbor Event
+rel_flavor_canaanite.2 = {
+	type = country_event
+	title = "rel_flavor_canaanite.2.t"
+	desc = "rel_flavor_canaanite.2.desc"
+	picture = great_city
+	
+	left_portrait = current_ruler
+	right_portrait = scope:neighbor_country.current_ruler
+
+	goto_location = scope:neighbor_country_province
+	
+	trigger = {
+		religion = carthaginian_pantheon
+		NOT = { has_variable = rel_flavor_canaanite_2_cooldown }
+		any_owned_province = {
+			province_is_heracles_way_trigger = yes
+			has_city_status = yes
+			any_neighbor_province = {
+				exists = owner
+				owner = {
+					religion = roman_pantheon
+				}
+				any_pops_in_province = {
+					pop_type = freemen
+					pop_religion = roman_pantheon
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				province_is_heracles_way_trigger = yes
+				has_city_status = yes
+				any_neighbor_province = {
+					exists = owner
+					owner = {
+						religion = roman_pantheon
+					}
+					any_pops_in_province = {
+						pop_type = freemen
+						pop_religion = roman_pantheon
+					}
+				}
+			}
+			save_scope_as = randomized_country_province
+			random_neighbor_province = {
+				limit = {
+					exists = owner
+					owner = {
+						religion = roman_pantheon
+					}
+					any_pops_in_province = {
+						pop_type = freemen
+						pop_religion = roman_pantheon
+					}
+				}
+				save_scope_as = neighbor_country_province
+				owner = {
+					save_scope_as = neighbor_country
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_canaanite_2_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.2.a"
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = opinion_religious_syncretization
+				target = ROOT
+			}
+		}
+		hidden_effect = {
+			scope:neighbor_country_province = {
+				create_state_pop = freemen
+			}
+		}
+		scope:neighbor_country_province = {
+			random_pops_in_province = {
+				limit = {
+					pop_type = freemen
+					pop_religion = roman_pantheon
+				}
+				move_pop = scope:randomized_country_province
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.2.b"
+		add_stability_effect_small = yes
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = opinion_religious_differences
+				target = ROOT
+			}
+		}
+	}
+}
+
+# Ba'al Hammon / Ba'al event
+rel_flavor_canaanite.3 = {
+	type = country_event
+	title = "rel_flavor_canaanite.3.t"
+	desc = "rel_flavor_canaanite.3.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	trigger = {
+		religion = carthaginian_pantheon
+		NOT = { has_variable = rel_flavor_canaanite_3_cooldown }
+		NOR = {
+			has_country_modifier = country_improvement_blessing_of_baal
+			has_country_modifier = country_diminishment_curse_of_baal
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_canaanite_3_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = { # Large ceremony
+		name = "rel_flavor_canaanite.3.a"
+		add_political_influence = influence_medium
+		add_country_modifier = {
+			name = country_improvement_blessing_of_baal
+			duration = 3650
+		}
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 8
+		}
+		scope:randomized_priest = {
+			add_loyalty = loyalty_priest_allowed
+		}
+	}
+
+	option = { # Small ceremony
+		name = "rel_flavor_canaanite.3.b"
+		add_political_influence = influence_medium
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 2
+		}
+	}
+
+	option = { # No ceremony
+		name = "rel_flavor_canaanite.3.c"
+		scope:randomized_priest = {
+			add_loyalty = loyalty_insulted_priest
+		}
+	}
+}
+
+# Tanit / Astarte event - Lacking in fertility, eh?
+rel_flavor_canaanite.4 = {
+	type = country_event
+	title = "rel_flavor_canaanite.4.t"
+	desc = "rel_flavor_canaanite.4.desc"
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = carthaginian_pantheon
+		current_ruler = {
+			num_of_children = 0
+			age >= 30
+			NOR = { 
+				has_character_modifier = character_improvement_blessing_of_tanit 
+				has_trait = chaste
+			}
+		}
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.4.a"
+		add_political_influence = subtract_influence_medium
+		current_ruler = {
+			add_character_modifier = {
+				name = character_improvement_blessing_of_tanit
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.4.b"
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+}
+
+# A Stele as a testament to our rule
+rel_flavor_canaanite.5 = {
+	type = country_event
+	title = "rel_flavor_canaanite.5.t"
+	desc = "rel_flavor_canaanite.5.desc"
+	picture = quarry
+
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = carthaginian_pantheon
+		current_ruler = {
+			char_is_good_leader_trigger = yes
+			NOT = { has_variable = stele_assigned }
+			popularity >= 60
+		}
+	}
+
+	immediate = {
+		current_ruler = {
+			set_variable = {
+				name = stele_assigned
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.5.a"
+		add_political_influence = subtract_influence_large
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = legitimacy_large
+		}
+		current_ruler = {
+			add_popularity = popularity_medium
+			add_character_modifier = {
+				name = character_improvement_stele_memory
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.5.b"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}
+
+# Shadrafa Syncretism
+rel_flavor_canaanite.6 = {
+	type = country_event
+	title = "rel_flavor_canaanite.6.t"
+	desc = "rel_flavor_canaanite.6.desc"
+	picture = celtic_religious_festival
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = carthaginian_pantheon
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = province_improvement_shadrafa_shrine
+			}
+		}
+		any_owned_province = {
+			NOT = {
+				is_in_area = root.capital_scope
+			}
+			OR = {
+				is_in_area = tripolitania_occidentalis_area
+				is_in_area = tripolitania_centralis_area
+				is_in_area = tripolitania_orientalis_area
+				is_in_area = cyrenaica_inferioris_area
+				is_in_area = cyrenaica_superioris_area
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = {
+					is_in_area = root.capital_scope
+				}
+				OR = {
+					is_in_area = tripolitania_occidentalis_area
+					is_in_area = tripolitania_centralis_area
+					is_in_area = tripolitania_orientalis_area
+					is_in_area = cyrenaica_inferioris_area
+					is_in_area = cyrenaica_superioris_area
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.6.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_shadrafa_shrine
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.6.b"
+		scope:randomized_country_province = {
+			add_state_loyalty = subtract_state_province_loyalty_large
+		}
+	}
+}
+
+# Healed by Eshmun
+rel_flavor_canaanite.7 = {
+	type = country_event
+	title = "rel_flavor_canaanite.7.t"
+	desc = "rel_flavor_canaanite.7.desc"
+	picture = celtic_religious_festival
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = carthaginian_pantheon
+		current_ruler = {
+			char_is_ill_trigger = yes
+		}
+	}
+
+	immediate = {
+		current_ruler = {
+			mystic_healing_effect = yes
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.7.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 4
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.7.b"
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+	}
+}
+
+# Harvest of Ba'al
+rel_flavor_canaanite.8 = {
+	type = country_event
+	title = "rel_flavor_canaanite.8.t"
+	desc = "rel_flavor_canaanite.8.desc"
+	picture = farming
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = carthaginian_pantheon
+		NOR = {
+			any_owned_province = {
+				has_province_modifier = province_improvement_baal_harvest
+			}
+			has_country_modifier = country_improvement_baal_harvest
+		}
+		any_owned_province = { 
+			dominant_province_religion = carthaginian_pantheon 
+			trade_goods = grain
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = carthaginian_pantheon
+				trade_goods = grain
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.8.a"
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_baal_harvest
+				duration = 1825
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.8.b"
+		add_country_modifier = {
+			name = country_improvement_baal_harvest
+			duration = 1825
+		}
+	}
+}
+
+# Choose the focus for new shrine
+rel_flavor_canaanite.9 = {
+	type = country_event
+	title = "rel_flavor_canaanite.9.t"
+	desc = "rel_flavor_canaanite.9.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = carthaginian_pantheon
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+		NOT = { has_variable = rel_flavor_canaanite_9_cooldown }
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_canaanite_9_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = { # Melqart
+		name = "rel_flavor_canaanite.9.a"
+		add_country_modifier = {
+			name = country_improvement_shrine_to_melqart
+			duration = 3650
+		}
+	}
+
+	option = { # Ba'al
+		name = "rel_flavor_canaanite.9.b"
+		add_country_modifier = {
+			name = country_improvement_shrine_to_baal
+			duration = 3650
+		}
+	}
+
+	option = { # Tanit / Astarte
+		name = "rel_flavor_canaanite.9.c"
+		add_country_modifier = {
+			name = country_improvement_shrine_to_tanit
+			duration = 3650
+		}
+	}
+}
+
+# Melqart for the new province
+rel_flavor_canaanite.10 = {
+	type = country_event
+	title = "rel_flavor_canaanite.10.t"
+	desc = "rel_flavor_canaanite.10.desc"
+	
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = carthaginian_pantheon
+		any_owned_province = {
+			NOT = { 
+				dominant_province_religion = carthaginian_pantheon 
+			}
+			any_pops_in_province = {
+				NOT = {
+					pop_religion = carthaginian_pantheon
+				}
+				NOR = {
+					pop_type = freemen
+					pop_type = slaves
+				}
+			}
+		}
+		NOT = { has_variable = rel_flavor_canaanite_10_cooldown }
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = {
+					dominant_province_religion = carthaginian_pantheon
+				}
+				any_pops_in_province = {
+					NOT = {
+						pop_religion = carthaginian_pantheon
+					}
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_canaanite_10_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.10.a"
+		add_political_influence = subtract_influence_medium
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_melqart_faith
+				duration = 3650
+			}
+			random_pops_in_province = {
+				limit = {
+					NOT = {
+						pop_religion = carthaginian_pantheon
+					}
+					NOR = {
+						pop_type = freemen
+						pop_type = slaves
+					}
+				}
+				set_pop_religion = carthaginian_pantheon
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_canaanite.10.b"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}

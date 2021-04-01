@@ -1,0 +1,135 @@
+﻿REB = "setup/countries/rebels.txt"
+PIR = "setup/countries/pirates.txt"
+BAR = "setup/countries/barbarians.txt"
+MER = "setup/countries/mercenaries.txt"
+
+# Greece/Macedonia
+#CRT = "setup/countries/crete.txt"
+
+#New:
+ATH = "setup/countries/greece/athens.txt"
+SPA = "setup/countries/greece/sparta.txt"
+MAC = "setup/countries/greece/macedonia.txt"
+BYZ = "setup/countries/greece/byzantion.txt"
+OTT = "setup/countries/anatolia/ottomans.txt"
+
+
+# Crimea and Abkhazia
+GEO = "setup/countries/caucasiamesopotamia/georgia.txt"
+KRU = "setup/countries/caucasiamesopotamia/kievanrus.txt"
+HNZ = "setup/countries/caucasiamesopotamia/huns.txt"
+SCA = "setup/countries/caucasiamesopotamia/scythia.txt"
+PER = "setup/countries/caucasiamesopotamia/persia.txt"
+
+# Arabia
+ARB = "setup/countries/arabia/arabia.txt"
+
+#Syria
+PHO = "setup/countries/syria/phoenicia.txt"
+ASY = "setup/countries/syria/assyria.txt"
+BAB = "setup/countries/syria/babylon.txt"
+SUM = "setup/countries/syria/sumeria.txt"
+
+####SULLA####
+
+# Italic
+
+ROM = "setup/countries/italia/rome.txt"
+VNT = "setup/countries/italia/veneti.txt"
+
+#Britannic
+ENG = "setup/countries/britannia/england.txt"
+SCO = "setup/countries/britannia/scotland.txt"
+ICE = "setup/countries/britannia/iceni.txt"
+
+#Iberian
+
+SPN = "setup/countries/iberia/spain.txt"
+CAS = "setup/countries/iberia/castille.txt"
+POR = "setup/countries/iberia/portugal.txt"
+
+
+#African
+
+CAR = "setup/countries/africa/carthage.txt"
+EGY = "setup/countries/africa/egypt.txt"
+MOR = "setup/countries/africa/morocco.txt"
+NUB = "setup/countries/africa/nubia.txt"
+AYU = "setup/countries/africa/ayyubid.txt"
+ETH = "setup/countries/africa/ethiopia.txt"
+ABY = "setup/countries/africa/abyssinia.txt"
+
+#Gaul
+
+FRA = "setup/countries/gaul/france.txt"
+AQT = "setup/countries/gaul/aquitaine.txt"
+GAU = "setup/countries/gaul/gaul.txt"
+
+
+#India/Tibet
+MRY = "setup/countries/india/mauryas.txt"
+HND = "setup/countries/india/india.txt"
+
+
+#Germanic
+POL = "setup/countries/germania/poland.txt"
+RUS = "setup/countries/germania/russia.txt"
+GER = "setup/countries/germania/germany.txt"
+SWE = "setup/countries/germania/sweden.txt"
+NOR = "setup/countries/germania/norway.txt"
+HRE = "setup/countries/germania/hre.txt"
+NET = "setup/countries/germania/netherlands.txt"
+
+
+
+
+#Extra Crimea
+SCY = "setup/countries/greece/scythia_europea.txt"
+
+
+#Extra Germany
+HUN = "setup/countries/germania/hungary.txt"
+AUS = "setup/countries/germania/austria.txt"
+DAN = "setup/countries/germania/dania.txt"
+
+
+
+#City-States
+ANT = "setup/countries/city-states/antioch.txt"
+BLN = "setup/countries/city-states/bologna.txt"
+CDF = "setup/countries/city-states/cardiff.txt"
+FLR = "setup/countries/city-states/florence.txt"
+FEZ = "setup/countries/city-states/fez.txt"
+GEN = "setup/countries/city-states/geneva.txt"
+GRA = "setup/countries/city-states/granada.txt"
+HAT = "setup/countries/city-states/hattusa.txt"
+JER = "setup/countries/city-states/jerusalem.txt"
+KAB = "setup/countries/city-states/kabul.txt"
+KAN = "setup/countries/city-states/kandy.txt"
+MHJ = "setup/countries/city-states/mohenjo.txt"
+LHR = "setup/countries/city-states/lahore.txt"
+KAT = "setup/countries/city-states/kathmandu.txt"
+LHS = "setup/countries/city-states/lhasa.txt"
+GOA = "setup/countries/city-states/goa.txt"
+SMT = "setup/countries/city-states/somnath.txt"
+MUS = "setup/countries/city-states/muscat.txt"
+PSL = "setup/countries/city-states/preslav.txt"
+VLT = "setup/countries/city-states/valetta.txt"
+YER = "setup/countries/city-states/yerevan.txt"
+HMP = "setup/countries/city-states/hermopolis.txt"
+BBL = "setup/countries/city-states/byblos.txt"
+SMK = "setup/countries/city-states/samarkand.txt"
+RGS = "setup/countries/city-states/ragusa.txt"
+DBR = "setup/countries/city-states/dubrovnik.txt"
+CLM = "setup/countries/city-states/colombo.txt"
+BUC = "setup/countries/city-states/bucharest.txt"
+MLN = "setup/countries/city-states/milan.txt"
+MNC = "setup/countries/city-states/monaco.txt"
+GNO = "setup/countries/city-states/genoa.txt"
+PRG = "setup/countries/city-states/prague.txt"
+OMZ = "setup/countries/city-states/ormuz.txt"
+ZUR = "setup/countries/city-states/zurich.txt"
+BGR = "setup/countries/city-states/belgrade.txt"
+SOF = "setup/countries/city-states/sofia.txt"
+HMB = "setup/countries/city-states/hamburg.txt"
+PMP = "setup/countries/city-states/pompeii.txt"

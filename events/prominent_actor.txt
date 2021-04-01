@@ -1,0 +1,119 @@
+﻿namespace = p_actor
+
+p_actor.1 = {
+	type = country_event
+	title = "p_actor.1.t"
+	desc = "p_actor.1.desc"
+	
+	picture = senate_debate
+	
+	left_portrait = scope:pa_1_protagonist
+	right_portrait = scope:pa_1_antagonist
+	
+	trigger = {
+		NOT = {
+			has_variable = pa_1_toggle
+		}
+		any_character = {
+			count >= 2
+			has_variable = prominent_actor
+			var:prominent_actor = 1
+			prisoner = no
+			is_ruler = no
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = pa_1_toggle
+			days = 3650
+		}
+		random_character = {
+			limit = {
+				has_variable = prominent_actor
+				var:prominent_actor = 1
+				prisoner = no
+				is_ruler = no
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = pa_1_protagonist
+		}
+		random_character = {
+			limit = {
+				has_variable = prominent_actor
+				var:prominent_actor = 1
+				prisoner = no
+				is_ruler = no
+				NOT = {
+					this = scope:pa_1_protagonist
+				}
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = pa_1_antagonist
+		}
+	}
+	
+	option = {
+		name = "p_actor.1.a"
+		if = {
+			limit = {
+				root.current_ruler = {
+					can_get_friends = yes
+				}
+				scope:pa_1_protagonist = {
+					can_get_friends = yes
+				}
+			}
+			root.current_ruler = {
+				add_friend = scope:pa_1_protagonist
+			}
+		}
+		scope:pa_1_protagonist = {
+			add_loyalty = loyalty_picked_side
+		}
+		scope:pa_1_antagonist = {
+			add_loyalty = loyalty_picked_other_side
+		}
+	}
+	
+	option = {
+		name = "p_actor.1.b"
+		if = {
+			limit = {
+				root.current_ruler = {
+					can_get_friends = yes
+				}
+				scope:pa_1_antagonist = {
+					can_get_friends = yes
+				}
+			}
+			root.current_ruler = {
+				add_friend = scope:pa_1_antagonist
+			}
+		}
+		scope:pa_1_antagonist = {
+			add_loyalty = loyalty_picked_side
+		}
+		scope:pa_1_protagonist = {
+			add_loyalty = loyalty_picked_other_side
+		}
+	}
+	
+	option = {
+		name = "p_actor.1.c"
+		scope:pa_1_protagonist = {
+			add_loyalty = loyalty_chided_bickering
+		}
+		scope:pa_1_antagonist = {
+			add_loyalty = loyalty_chided_bickering
+		}
+		current_ruler = {
+			add_popularity = popularity_large
+		}
+	}
+	
+}

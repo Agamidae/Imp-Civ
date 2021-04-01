@@ -1,0 +1,5 @@
+﻿on_province_colonized = {
+	events = {
+		colony.1
+	}
+}

@@ -1,0 +1,95 @@
+﻿country_decisions = {
+	negotiate_with_slaves = {
+		potential = {
+			num_of_cities >= 1
+			has_country_modifier = ongoing_slave_revolt
+		}
+		allow = {
+			stability > 50
+			treasury >= 250
+		}
+		effect = {
+			if = {
+				limit = { 
+					is_republic = yes
+					has_party_type = optimates_party
+				}
+				add_party_approval = {
+					party_type = optimates_party
+					value = -10
+				}
+			}
+			if = {
+				limit = { 
+					is_republic = yes
+					has_party_type = oligarchic_party
+				}
+				add_party_approval = {
+					party_type = oligarchic_party
+					value = -10
+				}
+			}
+			add_stability = -10 #Negotiation is not expected
+			add_treasury = -250 #Money to the slaves
+			custom_tooltip = allow_slaves_to_settle
+			remove_country_modifier = ongoing_slave_revolt
+			add_country_modifier = {
+				name = "slave_revolt_succesful"
+				duration = 5475
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { controller = c:REB }
+					set_controller = owner
+				}
+				if = {
+					limit = {
+						any_owned_province = {
+							any_unit_in_province = { #Snowball is here
+								unit_owner = c:REB
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_unit_in_province = { #Snowball is here
+								unit_owner = c:REB
+							}
+						}
+						random_unit_in_province = {
+							limit = {
+								unit_owner = c:REB
+							}
+							every_sub_unit = {
+								owning_unit.unit_location = {
+									owner = {
+										random_owned_province = {
+											limit = { is_in_region = owner.capital_scope }
+											create_state_pop = freemen									
+											weight = {
+												modifier = {
+													factor = 10
+													is_capital = yes
+												}
+												modifier = {
+													factor = 5
+													total_population > 10
+												}
+											}
+										}
+									}
+								}
+								destroy_subunit = yes
+							}
+							destroy_unit = yes
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

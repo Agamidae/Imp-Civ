@@ -1,0 +1,68 @@
+﻿"BYZ"={
+	country="BYZ"
+	7={
+		first_name="Justinian"
+		family= c:BYZ.fam:Justinian
+		birth_date=55.5.11
+		culture="byzantine"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=6
+		add_finesse=6
+		add_zeal=2
+		no_traits=yes
+		add_trait="justinians"
+		add_trait="immortal"
+		add_trait="just"
+		add_trait="wise"
+		add_gold=100
+		add_popularity=100
+		dna="Av0I7EFUsnvr/7LvAncCdwAaABoCaAJoAlICmQKAAoACjQKNAnQCdAKKAooCfwJ/AoICggJtAm0CsQKOAngCeANtA64CggJwAXYBWwKHAocCbQJtAo8CjwJgAm4CbgKMBEYCdQA+AD4ClwKXAnMCcwJ7AnsCfQJ9A/8CkgKZApkCfQJ9ApYClgJ0AnQCaAJoAWQBZAKUApQCfgJ+AoQChAKNAo0CcAJwAogCiAKAAoACewJ7AnsCewKQApACkAKQAocChwKMAowCZwJ+ArcCiwKHAngCYgJ2ApcClwKKAooCbgJuAnkCeQEAAvAAiwCLAoICggCzALMAZwBnAMEAwQCMAIwBUAFQAVsBWwEyATIAkgCSAGkAaQB/AH8A2wDbAT8BPwBmAGYC/QLMAf0A9QIAAD8BWwFbAsoCygB/AH8BAACkAa8BJAFBAEIAlwDXAXoBegB3AKABSwFLA1MDUwIZAD0EAAAMAjgAYQBKAEoHbAHUAH8AfwKVApUFUAXoAIIACwL/BfYeTAJMAwECYQD/AAAAAAAAAAAAAA=="
+	}
+
+	8={
+		first_name="Theodora"
+		family= c:BYZ.fam:Justinian
+		birth_date=73.8.12
+		female=yes
+		culture="byzantine"
+		religion="default_pantheon"
+		marry_character=char:7
+		no_stats=yes
+		add_martial=7
+		add_charisma=5
+		add_finesse=5
+		add_zeal=6
+		no_traits=yes
+		add_trait="justinians"
+		add_trait="immortal"
+		add_trait="silver_tongued"
+		add_gold=100
+		add_popularity=89
+		dna="K/8Z7Y9+j37AxcDFAoECgQICAm0CmAJqAmgCjAOhA6EBWQFZAhMCkQKFAmkCbAJsAr8CcAKOAmkCkAKQA70DqgJ2AncCeAJ4A3cCcgKqAoMCZwJnAv8ChQJ0AnQDWgOsAoUChQKNAo0BOAFTApECkQKVAnMCfgJ+ApcCZgKZApkDjQObAoACgAK3ApcEkgJwAQABUwKTApMCbwJvAnkCeQJ1AnUCdQJ1BLIEsgKAAoACbwJvAoQChAJ2AnYCjAKMApICkgKIAogCcAJwApMCkwKLAosCtQKOApYClgJpAmkCjAOkAoICggAAA64CywDHAqoCqgFZAVkA4wDjAPkA+QE0ATQAawBrAIkAiQChAKEAhwCHAPMA8wB/AH8CowKjAbEA7wEmASYAOgA6AVMBUwDxAPEBYwFjAHwAfAB/AH8BGgEaALEAsQE7ATsCkAKQAFUAVQM8AzwAdAB0AzYDNgASABIBSgFKAx8DHwEoASgKAAmQAI4AfwLvAu8BtQVfABMAEwVDBUMC1AI8AogCiAAAAAAAAAAAAAAAAA=="
+	}
+
+	51={
+		first_name="Basil"
+		family= c:BYZ.fam:Makedon
+		birth_date=38.1.1
+		culture="byzantine"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=4
+		add_finesse=8
+		add_zeal=4
+		no_traits=yes
+		add_trait="makedons"
+		add_trait="immortal"
+		add_trait="brave"
+		add_trait="cruel"
+		add_gold=100
+		add_popularity=100
+		c:BYZ={
+			set_as_ruler=char:51
+		}
+	}
+}

@@ -1,0 +1,1798 @@
+﻿REB = {
+	pattern = "pattern_diagonal_split_01.tga"
+	color1 = "barbarian_red"
+	color2 = "pitch_black"
+}
+
+BAR = {
+	pattern = "pattern_solid.tga"
+	color1 = "barbarian_red"
+	color2 = "pitch_black"
+	
+	colored_emblem = {
+		texture = "ce_barb.dds"
+		color1 = "pitch_black"
+	}
+}
+
+MER = {
+	pattern = "pattern_solid.tga"
+	color1 = "pitch_black"
+	color2 = "grey"
+
+	textured_emblem = {
+		texture = "te_mercenary.dds"
+	}
+}
+
+PIR = {
+	pattern = "pattern_solid.tga"
+	color1 = "pitch_black"
+	color2 = "cyan"
+
+	colored_emblem = {
+		texture = "ce_pirates.dds"
+		color1 = "cyan"
+		color2 = "green"
+	}
+}
+
+ROM = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 70 0 118 }
+	color2 = rgb { 254 245 0 } 
+
+	colored_emblem = {
+		texture = "ce_rome.dds"
+		color1 = rgb { 254 245 0 }
+	}
+}
+
+ROM_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_red"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_rome.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+MAC = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 0 79 206 }
+	color2 = rgb { 247 216 2 }
+
+	colored_emblem = {
+		texture = "ce_macedon.dds"
+		color1 = rgb { 247 216 2 }
+	}
+}
+
+MAC_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "grey"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_macedon.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+EGY = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 234 225 157 }
+	color2 = rgb { 21 87 96 }
+
+	colored_emblem = {
+		texture = "ce_egypt.dds"
+		color1 = rgb { 21 87 96 }
+	}
+}
+
+EGY_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "witch_haze"
+	color2 = "violet"
+
+	colored_emblem = {
+		texture = "ce_egypt.dds"
+		color1 = "violet"
+	}
+}
+
+SPA = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 115 52 44 }
+	color2 = rgb { 191 217 219 }
+
+	colored_emblem = {
+		texture = "ce_greece.dds"
+		color1 = rgb { 191 217 219 }
+	}
+}
+
+SPA_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_red"
+	color2 = "witch_haze"
+
+	colored_emblem = {
+		texture = "ce_greece.dds"
+		color1 = "witch_haze"
+	}
+}
+
+CAR = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 213 213 213 }
+	color2 = rgb { 86 0 143 }
+
+	colored_emblem = {
+		texture = "ce_carthage.dds"
+		color1 = rgb { 86 0 143 }
+	}
+}
+
+CAR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 102 2 60 }
+	color2 = rgb { 226 217 200 }
+
+	colored_emblem = {
+		texture = "ce_carthage.dds"
+		color1 = rgb { 226 217 200 }
+	}
+}
+
+ATH = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 79 132 185 }
+	color2 = rgb { 251 253 252 }
+
+	colored_emblem = {
+		texture = "ce_greece.dds"
+		color1 = rgb { 251 253 252 }
+	}
+}
+
+ATH_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "cornflower_blue"
+
+	colored_emblem = {
+		texture = "ce_greece.dds"
+		color1 = "cornflower_blue"
+	}
+}
+
+BYZ = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 112 41 99 }
+	color2 = rgb { 234 225 157 }
+
+	colored_emblem = {
+		texture = "ce_byzantium.dds"
+		color1 = rgb { 234 225 157 }
+	}
+}
+
+BYZ_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "cornflower_blue"
+	color2 = "dark_purple"
+
+	colored_emblem = {
+		texture = "ce_byzantium.dds"
+		color1 = "dark_purple"
+	}
+}
+
+OTT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 6 80 5 }
+	color2 = rgb { 247 248 199 }
+
+	colored_emblem = {
+		texture = "ce_ottoman.dds"
+		color1 = rgb { 247 248 199 }
+	}
+}
+
+OTT_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_ottoman.dds"
+		color1 = "white"
+	}
+}
+
+GEO = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "pumkin"
+
+	colored_emblem = {
+		texture = "ce_georgia.dds"
+		color1 = "pumkin"
+	}
+}
+
+GEO_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_red"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_georgia.dds"
+		color1 = "white"
+	}
+}
+
+KRU = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 16 51 166 }
+	color2 = rgb { 247 216 2 }
+
+	colored_emblem = {
+		texture = "ce_kiev.dds"
+		color1 = rgb { 247 216 2 }
+	}
+}
+
+KRU_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 247 216 2 }
+	color2 = rgb { 13 72 124 }
+
+	colored_emblem = {
+		texture = "ce_kiev.dds"
+		color1 = rgb { 13 72 124 }
+	}
+}
+
+HNZ = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 180 178 164 }
+	color2 = rgb { 72 0 4 }
+
+	colored_emblem = {
+		texture = "ce_huns.dds"
+		color1 = rgb { 72 0 4 }
+	}
+}
+
+HNZ_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 72 0 4 }
+	color2 = rgb { 180 178 164 }
+
+	colored_emblem = {
+		texture = "ce_huns.dds"
+		color1 = rgb { 180 178 164 }
+	}
+}
+
+SCA = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 170 156 109 }
+	color2 = rgb { 164 16 14 }
+
+	colored_emblem = {
+		texture = "ce_scythia.dds"
+		color1 = rgb { 164 16 14 }
+	}
+}
+
+SCA_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 85 44 0 }
+	color2 = rgb { 168 202 233 }
+
+	colored_emblem = {
+		texture = "ce_scythia.dds"
+		color1 = rgb { 168 202 233 }
+	}
+}
+
+PER = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 107 151 255 }
+	color2 = rgb { 144 23 22 }
+
+	colored_emblem = {
+		texture = "ce_persia.dds"
+		color1 = rgb { 144 23 22 }
+	}
+}
+
+PER_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_red"
+	color2 = "biloba_purple"
+
+	colored_emblem = {
+		texture = "ce_persia.dds"
+		color1 = "biloba_purple"
+	}
+}
+
+ARB = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 43 88 46 }
+	color2 = rgb { 148 222 10 }
+
+	colored_emblem = {
+		texture = "ce_arabia.dds"
+		color1 = rgb { 148 222 10 }
+	}
+}
+
+ARB_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_grey"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_arabia.dds"
+		color1 = "white"
+	}
+}
+
+PHO = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 102 2 60 }
+	color2 = rgb { 201 160 220 }
+
+	colored_emblem = {
+		texture = "ce_phoe.dds"
+		color1 = rgb { 201 160 220 }
+	}
+}
+
+PHO_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "magenta3"
+
+	colored_emblem = {
+		texture = "ce_phoe.dds"
+		color1 = "magenta3"
+	}
+}
+
+ASY = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 255 244 174 }
+	color2 = rgb { 255 170 13 }
+
+	colored_emblem = {
+		texture = "ce_assyria.dds"
+		color1 = rgb { 255 170 13 }
+	}
+}
+
+ASY_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "biloba_purple"
+	color2 = "dark_purple"
+
+	colored_emblem = {
+		texture = "ce_assyria.dds"
+		color1 = "dark_purple"
+	}
+}
+
+BAB = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 50 94 114 }
+	color2 = rgb { 204 248 255 }
+
+	colored_emblem = {
+		texture = "ce_baby.dds"
+		color1 = rgb { 204 248 255 }
+	}
+}
+
+BAB_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 13 72 124 }
+	color2 = rgb { 247 216 0 }
+
+	colored_emblem = {
+		texture = "ce_baby.dds"
+		color1 = rgb { 247 216 0 }
+	}
+}
+
+SUM = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 64 76 134 }
+	color2 = rgb { 248 162 2 }
+
+	colored_emblem = {
+		texture = "ce_sumer.dds"
+		color1 = rgb { 248 162 2 }
+	}
+}
+
+SUM_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "witch_haze"
+	color2 = "sapphire"
+
+	colored_emblem = {
+		texture = "ce_sumer.dds"
+		color1 = "sapphire"
+	}
+}
+
+VNT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 124 60 181 }
+	color2 = rgb { 255 254 218 }
+
+	colored_emblem = {
+		texture = "ce_venice.dds"
+		color1 = rgb { 255 254 218 }
+	}
+}
+
+VNT_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 88 119 168 }
+	color2 = rgb { 255 234 0 }
+
+	colored_emblem = {
+		texture = "ce_venice.dds"
+		color1 = rgb { 255 234 0 }
+	}
+}
+
+ENG = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 99 2 0 }
+	color2 = rgb { 255 255 255 }
+
+	colored_emblem = {
+		texture = "ce_eng.dds"
+		color1 = rgb { 255 255 255 }
+	}
+}
+
+ENG_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "sapphire"
+
+	colored_emblem = {
+		texture = "ce_eng.dds"
+		color1 = "sapphire"
+	}
+}
+
+SCO = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 112 136 213 }
+	color2 = rgb { 249 249 249 }
+
+	colored_emblem = {
+		texture = "ce_scot.dds"
+		color1 = rgb { 249 249 249 }
+	}
+}
+
+SCO_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 168 202 233 }
+	color2 = rgb { 13 72 124 }
+
+	colored_emblem = {
+		texture = "ce_scot.dds"
+		color1 = rgb { 13 72 124 }
+	}
+}
+
+ICE = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 26 109 75 }
+	color2 = rgb { 149 171 255 }
+
+	colored_emblem = {
+		texture = "ce_celt.dds"
+		color1 = rgb { 149 171 255 }
+	}
+}
+
+ICE_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 149 171 255 }
+	color2 = rgb { 26 109 75 }
+
+	colored_emblem = {
+		texture = "ce_celt.dds"
+		color1 = rgb { 26 109 75 }
+	}
+}
+
+SPN = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 250 236 127 }
+	color2 = rgb { 169 12 21 }
+
+	colored_emblem = {
+		texture = "ce_spain.dds"
+		color1 = rgb { 169 12 21 }
+	}
+}
+
+SPN_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 169 12 21 }
+	color2 = rgb { 254 235 0 }
+
+	colored_emblem = {
+		texture = "ce_spain.dds"
+		color1 = rgb { 254 235 0 }
+	}
+}
+
+CAS = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 84 26 26 }
+	color2 = rgb { 255 171 171 }
+
+	colored_emblem = {
+		texture = "ce_castille.dds"
+		color1 = rgb { 255 171 171 }
+	}
+}
+
+CAS_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_castille.dds"
+		color1 = "venice_red"
+	}
+}
+
+POR = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 255 255 255 }
+	color2 = rgb { 4 22 140 }
+
+	colored_emblem = {
+		texture = "ce_port.dds"
+		color1 = rgb { 4 22 140 }
+	}
+}
+
+POR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 4 22 140 }
+	color2 = rgb { 255 255 255 }
+
+	colored_emblem = {
+		texture = "ce_port.dds"
+		color1 = rgb { 255 255 255 }
+	}
+}
+
+MOR = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 149 2 0 }
+	color2 = rgb { 40 179 80 }
+
+	colored_emblem = {
+		texture = "ce_moroc.dds"
+		color1 = rgb { 40 179 80 }
+	}
+}
+
+MOR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 40 179 80 }
+	color2 = rgb { 149 2 0 }
+
+	colored_emblem = {
+		texture = "ce_moroc.dds"
+		color1 = rgb { 149 2 0 }
+	}
+}
+
+NUB = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 197 189 160 }
+	color2 = rgb { 88 47 27 }
+
+	colored_emblem = {
+		texture = "ce_nubia.dds"
+		color1 = rgb { 88 47 27 }
+	}
+}
+
+NUB_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 146 36 121 }
+	color2 = rgb { 255 214 170 }
+
+	colored_emblem = {
+		texture = "ce_nubia.dds"
+		color1 = rgb { 255 214 170 }
+	}
+}
+
+AYU = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 251 228 104 }
+	color2 = rgb { 37 98 16 }
+
+	colored_emblem = {
+		texture = "ce_ayyub.dds"
+		color1 = rgb { 37 98 16 }
+	}
+}
+
+AYU_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "light_green"
+	color2 = "nero"
+
+	colored_emblem = {
+		texture = "ce_ayyub.dds"
+		color1 = "nero"
+	}
+}
+
+ETH = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 28 66 25 }
+	color2 = rgb { 255 36 36 }
+
+	colored_emblem = {
+		texture = "ce_ethiop.dds"
+		color1 = rgb { 255 36 36 }
+	}
+}
+
+ETH_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "sapphire"
+	color2 = rgb { 255 36 36 }
+
+	colored_emblem = {
+		texture = "ce_ethiop.dds"
+		color1 = rgb { 255 36 36 }
+	}
+}
+
+FRA = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 76 160 254 }
+	color2 = rgb { 235 235 140 }
+
+	colored_emblem = {
+		texture = "ce_france.dds"
+		color1 = rgb { 235 235 140 }
+	}
+}
+
+FRA_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "olive"
+
+	colored_emblem = {
+		texture = "ce_france.dds"
+		color1 = "olive"
+	}
+}
+
+AQT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta1"
+	color2 = "witch_haze"
+
+	colored_emblem = {
+		texture = "ce_aquit.dds"
+		color1 = "witch_haze"
+	}
+}
+
+AQT_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_red"
+	color2 = "witch_haze"
+
+	colored_emblem = {
+		texture = "ce_aquit.dds"
+		color1 = "witch_haze"
+	}
+}
+
+MRY = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 116 219 202 }
+	color2 = rgb { 146 36 121 }
+
+	colored_emblem = {
+		texture = "ce_india.dds"
+		color1 = rgb { 146 36 121 }
+	}
+}
+
+MRY_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "supernova"
+	color2 = "dark_red"
+
+	colored_emblem = {
+		texture = "ce_india.dds"
+		color1 = "dark_red"
+	}
+}
+
+HND = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 146 36 122 }
+	color2 = rgb { 116 219 202 }
+
+	colored_emblem = {
+		texture = "ce_india.dds"
+		color1 = rgb { 116 219 202 }
+	}
+}
+
+HND_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 18 136 7 }
+	color2 = rgb { 255 153 50 }
+
+	colored_emblem = {
+		texture = "ce_india.dds"
+		color1 = rgb { 255 153 50 }
+	}
+}
+
+POL = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 245 5 0 }
+	color2 = rgb { 59 0 0 }
+
+	colored_emblem = {
+		texture = "ce_poland.dds"
+		color1 = rgb { 59 0 0 }
+	}
+}
+
+POL_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "pink"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_poland.dds"
+		color1 = "white"
+	}
+}
+
+RUS = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "nero"
+
+	colored_emblem = {
+		texture = "ce_russia.dds"
+		color1 = "nero"
+	}
+}
+
+RUS_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "nero"
+
+	colored_emblem = {
+		texture = "ce_russia.dds"
+		color1 = "nero"
+	}
+}
+
+GER = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 179 178 184 }
+	color2 = rgb { 37 43 33 }
+
+	colored_emblem = {
+		texture = "ce_german.dds"
+		color1 = rgb { 37 43 33 }
+	}
+}
+
+GER_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_german.dds"
+		color1 = "white"
+	}
+}
+
+SWE = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 50 109 162 }
+	color2 = rgb { 250 248 3 }
+
+	colored_emblem = {
+		texture = "ce_swed.dds"
+		color1 = rgb { 250 248 3 }
+	}
+}
+
+SWE_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "sapphire"
+
+	colored_emblem = {
+		texture = "ce_swed.dds"
+		color1 = "sapphire"
+	}
+}
+
+NOR = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 27 33 96 }
+	color2 = rgb { 255 10 10 }
+
+	colored_emblem = {
+		texture = "ce_norweg.dds"
+		color1 = rgb { 255 10 10 }
+	}
+}
+
+NOR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "cornflower_blue"
+	color2 = "dark_red"
+
+	colored_emblem = {
+		texture = "ce_norweg.dds"
+		color1 = "dark_red"
+	}
+}
+
+HRE = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 250 206 72 }
+	color2 = "nero"
+
+	colored_emblem = {
+		texture = "ce_hre.dds"
+		color1 = "nero"
+	}
+}
+
+HRE_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 13 72 124 }
+	color2 = rgb { 211 211 211 }
+
+	colored_emblem = {
+		texture = "ce_hre.dds"
+		color1 = rgb { 211 211 211 }
+	}
+}
+
+NET = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 255 143 2 }
+	color2 = rgb { 255 255 255 }
+
+	colored_emblem = {
+		texture = "ce_nether.dds"
+		color1 = rgb { 255 255 255 }
+	}
+}
+
+NET_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 43 76 186 }
+	color2 = "supernova"
+
+	colored_emblem = {
+		texture = "ce_nether.dds"
+		color1 = "supernova"
+	}
+}
+
+HUN = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_green"
+	color2 = "pumkin"
+
+	colored_emblem = {
+		texture = "ce_hunger.dds"
+		color1 = "pumkin"
+	}
+}
+
+HUN_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "navy_blue"
+	color2 = "nero"
+
+	colored_emblem = {
+		texture = "ce_hunger.dds"
+		color1 = "nero"
+	}
+}
+
+AUS = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 184 0 0 }
+	color2 = rgb { 255 255 255 }
+
+	colored_emblem = {
+		texture = "ce_austria.dds"
+		color1 = rgb { 255 255 255 }
+	}
+}
+
+AUS_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "nero"
+
+	colored_emblem = {
+		texture = "ce_austria.dds"
+		color1 = "nero"
+	}
+}
+
+DAN = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 118 70 29 }
+	color2 = rgb { 214 194 139 }
+
+	colored_emblem = {
+		texture = "ce_danish.dds"
+		color1 = rgb { 214 194 139 }
+	}
+}
+
+DAN_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_danish.dds"
+		color1 = "white"
+	}
+}
+
+ABY = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 9 80 144 }
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_abyss.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+ABY_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "dark_green"
+
+	colored_emblem = {
+		texture = "ce_abyss.dds"
+		color1 = "dark_green"
+	}
+}
+
+GAU = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 53 98 78 }
+	color2 = "turq_blue"
+
+	colored_emblem = {
+		texture = "ce_gaul.dds"
+		color1 = "turq_blue"
+	}
+}
+
+GAU_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = rgb { 211 112 24 }
+	color2 = "witch_haze"
+
+	colored_emblem = {
+		texture = "ce_gaul.dds"
+		color1 = "witch_haze"
+	}
+}
+#City-States
+ANT = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+ANT_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+BLN = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "cornflower_blue"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "cornflower_blue"
+	}
+}
+
+BLN_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "cornflower_blue"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+CDF = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "pumkin"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "pumkin"
+	}
+}
+
+CDF_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "pumkin"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+FLR = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "magenta2"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "magenta2"
+	}
+}
+
+FLR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta2"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+FEZ = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "cornflower_blue"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "cornflower_blue"
+	}
+}
+
+FEZ_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "cornflower_blue"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+GEN = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "cornflower_blue"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "cornflower_blue"
+	}
+}
+
+GEN_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "cornflower_blue"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+GRA = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "venice_red"
+	}
+}
+
+GRA_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+HAT = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "cornflower_blue"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "cornflower_blue"
+	}
+}
+
+HAT_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "cornflower_blue"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+JER = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "white"
+	}
+}
+
+JER_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+KAB = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "venice_red"
+	}
+}
+
+KAB_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+KAN = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "white"
+	}
+}
+
+KAN_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+MHJ = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "magenta2"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "magenta2"
+	}
+}
+
+MHJ_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta2"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+MUS = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+MUS_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+PSL = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "venice_red"
+	}
+}
+
+PSL_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+VLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "venice_red"
+	}
+}
+
+VLT_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+YER = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "white"
+	}
+}
+
+YER_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+HMP = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "venice_red"
+	}
+}
+
+HMP_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+BBL = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+BBL_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+SBT = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "pumkin"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "pumkin"
+	}
+}
+
+SBT_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "pumkin"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+SMK = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+SMK_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+SOM = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "white"
+	}
+}
+
+SOM_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+RGS = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+RGS_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+DBR = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+DBR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+CLM = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+CLM_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+BUC = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "magenta2"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "magenta2"
+	}
+}
+
+BUC_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta2"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+MLN = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "magenta2"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "magenta2"
+	}
+}
+
+MLN_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta2"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+MNC = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "magenta2"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "magenta2"
+	}
+}
+
+MNC_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta2"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+GNO = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+GNO_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+PRG = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "magenta2"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "magenta2"
+	}
+}
+
+PRG_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta2"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+OMZ = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+OMZ_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+ZUR = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+ZUR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+BGR = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "venice_red"
+	}
+}
+
+BGR_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+SOF = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "venice_red"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "venice_red"
+	}
+}
+
+SOF_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "venice_red"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+HMB = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "bus_yellow"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "bus_yellow"
+	}
+}
+
+HMB_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "bus_yellow"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}
+
+PMP = {
+	pattern = "pattern_solid.tga"
+	color1 = "city_state_black"
+	color2 = "magenta2"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "magenta2"
+	}
+}
+
+PMP_REVOLT = {
+	pattern = "pattern_solid.tga"
+	color1 = "magenta2"
+	color2 = "city_state_black"
+
+	colored_emblem = {
+		texture = "ce_city_state.dds"
+		color1 = "city_state_black"
+	}
+}

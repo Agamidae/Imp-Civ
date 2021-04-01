@@ -1,0 +1,35 @@
+﻿# Assimilate Barbarians Execution Script
+
+monthly_country_pulse = {
+    on_actions = {
+	    assimilate_barbarians_pulse
+	}
+}
+
+assimilate_barbarians_pulse = {
+    trigger = {
+	    any_owned_province = {
+		    any_pops_in_province = {
+			    limit = {
+			        pop_culture = barbarian
+				}
+			}
+		}
+	}
+	
+	effect = {
+	    every_owned_province = {
+		    limit = {
+                any_pops_in_province = {
+                    pop_culture = barbarian
+                }
+            }
+			every_pops_in_province = {
+		    	limit = {
+		    		pop_culture = barbarian
+		    	}
+		    	set_pop_culture	= country.culture
+		    }
+		}
+	}
+}

@@ -1,0 +1,26 @@
+﻿"HUN"={
+	country="HUN"
+	43={
+		first_name="Matthias_Corvinus"
+		family= c:HUN.fam:Hunyadi
+		birth_date=80.1.23
+		culture="hungarian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=7
+		add_finesse=6
+		add_zeal=8
+		no_traits=yes
+		add_trait="hunyadis"
+		add_trait="immortal"
+		add_trait="brave"
+		add_trait="tactician"
+		add_gold=100
+		add_popularity=100
+		c:HUN={
+			set_as_ruler=char:43
+		}
+		dna="twB9wqVepV79jEiSAn4CfgDaApUCmAKYAJgATAJ4AngCmAKYAncCdwOlA6UDnwOfApQClAKIAogEwATAAmsCawKqApUCmAKYAVsBWwTpAo8CcgJyAmgCaAOpA6kBZgFmAjgCeQKTApMClgKWAo8CjwJyAnICnAJzAnQCdAKQApACbwJvAn0CfQJxAnEDtwOjAkMCdAKFAoUDpgOmAo8CjwFVAVUCQwJxAU0BTQJvAm8ClQKVAoQChAFcAVwCgQKBApICkgKVApUCTAJ3AX8BUQS2AnoCggJtAiQCggJmAmYCkQKRApMCkwE5AlABSQFJAQ8BDwBDAEMAGAAYAosCiwEsASwAdwB3AUcBRwFEAUQAjACMAV0AEQAAAAAAHACFAoQAtQCfAJ8BAABNAYkA5AAAAHoDdgN2ASEBIQAAAAACRgKhAGMAYwF1AE8AEAAQAHgAeABIANYBeAF4AH8AVgI/ArQCzgKuATABMAD/AP8MQgWfAAAAAAAYABgEcgn6AIoAPwUABbgHVAc9CEMIWwAAAAAAAAAAAAAAAA=="
+	}
+}

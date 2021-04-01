@@ -1,0 +1,61 @@
+﻿l_german:
+#Anatolian
+ ARMY_NAME_anatolian:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_anatolian:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_anatolian:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Arabian
+ ARMY_NAME_arabian:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_arabian:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_arabian:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Barbarian
+ ARMY_NAME_barbarian:0 "$NUM$$ORDER$ Horde"
+ NAVY_NAME_barbarian:0 "$NUM$$ORDER$ Boot"
+ COHORT_NAME_barbarian:0 "$HOME$'s $NUM$$ORDER$ Trupp"
+ #Britannic
+ ARMY_NAME_britannic:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_britannic:0 "$NUM$$ORDER$ Königliche Marine"
+ COHORT_NAME_britannic:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Carpathian
+ ARMY_NAME_carpathian:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_carpathian:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_carpathian:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Caucasian
+ ARMY_NAME_caucasian:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_caucasian:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_caucasian:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Celtic
+ ARMY_NAME_arabian:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_arabian:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_arabian:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #East Slavic
+ ARMY_NAME_east_slavic:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_east_slavic:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_east_slavic:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Gallic
+ ARMY_NAME_gallic:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_gallic:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_gallic:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Germanic
+ ARMY_NAME_germanic:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_germanic:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_germanic:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Huns
+ ARMY_NAME_hunnic:0 "$NUM$$ORDER$ Horde"
+ NAVY_NAME_hunnic:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_hunnic:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Italian
+ ARMY_NAME_italian:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_italian:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_italian:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #Scandinavian
+ ARMY_NAME_scandinavian:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_scandinavian:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_scandinavian:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #West Slavic
+ ARMY_NAME_west_slavic:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_west_slavic:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_west_slavic:0 "$HOME$'s $NUM$$ORDER$ Kohorte"
+ #South Slavic
+ ARMY_NAME_south_slavic:0 "$NUM$$ORDER$ Armee"
+ NAVY_NAME_south_slavic:0 "$NUM$$ORDER$ Marine"
+ COHORT_NAME_south_slavic:0 "$HOME$'s $NUM$$ORDER$ Kohorte"

@@ -1,0 +1,6 @@
+﻿color = rgb { 123  236  232 }
+color2 = rgb { 60 0 105 }
+
+ship_names = {
+	Dharma
+}

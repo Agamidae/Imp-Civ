@@ -1,0 +1,1021 @@
+﻿#Rules for religious conversions can be found in 00_religions in common/scripted_triggers, the effect for changing religion is in common/00_religions in scripted_effects.
+
+country_decisions = {
+
+	convert_to_buddhist = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = buddhism
+            }
+			NOT = {
+				religion = buddhism
+			}
+			religion = default_pantheon
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = buddhism
+            }
+		}
+
+		effect = {
+			set_country_religion = buddhism
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = buddhism }
+					}
+					set_character_religion = buddhism
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = buddhism }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = buddhism
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = buddhism }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = buddhism
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = buddhism }
+				}
+			}
+		}
+	}
+
+	convert_to_hinduism = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = hindu
+            }
+			NOT = {
+				religion = hindu
+			}
+			religion = default_pantheon
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = hindu
+            }
+		}
+
+		allow = {
+			could_change_religion_trigger = {
+				RELIGION = hindu
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		effect = {
+			set_country_religion = hindu
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = hindu }
+					}
+					set_character_religion = hindu
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = hindu }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = hindu
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = hindu }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = hindu
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = hindu }
+				}
+			}
+		}
+	}
+
+	convert_to_judaism = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = judaism
+            }
+			NOT = {
+				religion = judaism
+			}
+			religion = default_pantheon
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = judaism
+            }
+		}
+
+		effect = {
+			set_country_religion = judaism
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = judaism }
+					}
+					set_character_religion = judaism
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = judaism }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = judaism
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = judaism }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = judaism
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = judaism }
+				}
+			}
+		}
+	}
+
+	convert_to_zoroastrianism = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = zoroaster
+            }
+			NOT = {
+				religion = zoroaster
+			}
+			religion = default_pantheon
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = zoroaster
+            }
+		}
+
+		effect = {
+			set_country_religion = zoroaster
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = zoroaster }
+					}
+					set_character_religion = zoroaster
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = zoroaster }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = zoroaster
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = zoroaster }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = zoroaster
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = zoroaster }
+				}
+			}
+		}
+	}
+
+	convert_to_germanic_religion = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = germanic_religion
+            }
+			NOT = {
+				religion = germanic_religion
+			}
+			religion = default_pantheon
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = germanic_religion
+            }
+		}
+
+		effect = {
+			set_country_religion = germanic_religion
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = germanic_religion }
+					}
+					set_character_religion = germanic_religion
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = germanic_religion }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = germanic_religion
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = germanic_religion }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = germanic_religion
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = germanic_religion }
+				}
+			}
+		}
+	}
+	#NEW
+	convert_to_catholic = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = catholic
+            }
+			NOT = {
+				religion = catholic
+			}
+			religion = default_pantheon
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = catholic
+            }
+		}
+
+		effect = {
+			set_country_religion = catholic
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = catholic }
+					}
+					set_character_religion = catholic
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = catholic }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = catholic
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = catholic }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = catholic
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = catholic }
+				}
+			}
+		}
+	}
+	convert_to_protestant = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = protestant
+            }
+			NOT = {
+				religion = protestant
+			}
+			religion = default_pantheon
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = protestant
+            }
+		}
+
+		effect = {
+			set_country_religion = protestant
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = protestant }
+					}
+					set_character_religion = protestant
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = protestant }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = protestant
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = protestant }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = protestant
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = protestant }
+				}
+			}
+		}
+	}
+	convert_to_orthodox = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = orthodox
+            }
+			NOT = {
+				religion = orthodox
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = orthodox
+            }
+		}
+
+		effect = {
+			set_country_religion = orthodox
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = orthodox }
+					}
+					set_character_religion = orthodox
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = orthodox }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = orthodox
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = orthodox }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = orthodox
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = orthodox }
+				}
+			}
+		}
+	}
+	convert_to_sunni = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = sunni
+            }
+			NOT = {
+				religion = sunni
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = sunni
+            }
+		}
+
+		effect = {
+			set_country_religion = sunni
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = sunni }
+					}
+					set_character_religion = sunni
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = sunni }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = sunni
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = sunni }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = sunni
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = sunni }
+				}
+			}
+		}
+	}
+	convert_to_confucianism = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = confucianism
+            }
+			NOT = {
+				religion = confucianism
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = confucianism
+            }
+		}
+
+		effect = {
+			set_country_religion = confucianism
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = confucianism }
+					}
+					set_character_religion = confucianism
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = confucianism }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = confucianism
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = confucianism }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = confucianism
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = confucianism }
+				}
+			}
+		}
+	}
+	convert_to_taosism = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = taosism
+            }
+			NOT = {
+				religion = taosism
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = taosism
+            }
+		}
+
+		effect = {
+			set_country_religion = taosism
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = taosism }
+					}
+					set_character_religion = taosism
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = taosism }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = taosism
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = taosism }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = taosism
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = taosism }
+				}
+			}
+		}
+	}
+	convert_to_sikh = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = sikh
+            }
+			NOT = {
+				religion = sikh
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = sikh
+            }
+		}
+
+		effect = {
+			set_country_religion = sikh
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = sikh }
+					}
+					set_character_religion = sikh
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = sikh }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = sikh
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = sikh }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = sikh
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = sikh }
+				}
+			}
+		}
+	}
+	convert_to_tengri = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = tengri
+            }
+			NOT = {
+				religion = tengri
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = tengri
+            }
+		}
+
+		effect = {
+			set_country_religion = tengri
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = tengri }
+					}
+					set_character_religion = tengri
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = tengri }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = tengri
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = tengri }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = tengri
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = tengri }
+				}
+			}
+		}
+	}
+	convert_to_shinto = {
+
+		potential = {
+			num_of_cities >= 1
+			any_neighbour_country = {
+                religion = shinto
+            }
+			NOT = {
+				religion = shinto
+			}
+		}
+
+		ai_allow = {
+
+		}
+
+		allow = {
+			any_neighbour_country = {
+                religion = shinto
+            }
+		}
+
+		effect = {
+			set_country_religion = shinto
+			current_ruler = {
+				if = {
+					limit = {
+						NOT = { has_religion = shinto }
+					}
+					set_character_religion = shinto
+				}
+			}
+
+			ordered_character = {
+				limit = {
+					loyalty >= 60
+					NOT = { has_religion = shinto }
+					is_ruler = no
+					from_ruler_family = no
+				}
+				max = 15
+				order_by = prominence
+				set_character_religion = shinto
+			}
+
+			every_owned_province = {
+				ordered_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = shinto }
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 2
+						}
+						check_range_bounds = no
+						set_pop_religion = shinto
+					}
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 1
+				any_owned_province = {
+					any_pops_in_province = { pop_religion = shinto }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+﻿"PHO"={
+	country="PHO"
+
+	17={ #Dido father
+		first_name="Mattan"
+		family = c:PHO.fam:of_Phoenicia
+		birth_date=25.9.28
+		death_date=98.1.1
+		culture="phoenician"
+		religion="default_pantheon"
+		add_trait="carthagins"
+	}
+	18={ #Dido twin
+		first_name="Dido"
+		family= c:PHO.fam:of_Phoenicia
+		birth_date=75.3.8
+		female=yes
+		culture="phoenician"
+		religion="default_pantheon"
+		father="char:17"
+		no_stats=yes
+		add_martial=6
+		add_charisma=12
+		add_finesse=9
+		add_zeal=6
+		no_traits=yes
+		add_trait="carthagins"
+		add_trait="immortal"
+		add_trait="lustful"
+		add_gold=100
+		add_popularity=100
+		c:PHO={
+			set_as_ruler=char:18
+		}
+		dna="Qe9B70FQrYy127XbAncCdwJ8AnwEdAJnAm0CbQKVAnoCmAKYAs8ChwKQApADmgOaAo0CjQKCApEAZgBmAnICcgFGAVYCagJqAW4BZQJJAnUCmQKZBLcEtwFiAWIChAKEAoACgAOrA6sCkQKRAU4BTgJnAmcCggKCAoYChgFfAV8CjgKOA6kCiQKDAoMCnAKEAmgCkQKIAogCjAKMAoACgAIAAmoCZwJnAtcChAOmA6YCkAJ2AX4BWwKFAoUCMgKDAVQBVAKJAokCTAKLBCoEIwJyApgC3AJyAnkCeQK/ApACZwJnAqUCiQJfAoEBTwFPALUAtQAmACYBQAFAAQABAAKOAo4C+gL6AAUABQC+AL4AtAC0AB0AHQB/AH8AeAB4AS8BLwBuAG4A8QDxArYCtgE5ATkA1QDVAMEAwQBXAH8AtQC1ACIAIgA4AFEC9AL0ASMBIwECAQIBTAFMBCMEpwBlAGUDNgM2BJkEmQMcAxwLAAuZAH8AfwX9BecMdwQnASMByQL3AvcDUAMRAz4DPgD/AAAAAAAAAAAAAA=="
+	}
+}

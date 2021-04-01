@@ -1,0 +1,72 @@
+﻿iberian = {
+	color = hsv { 0.1776 0.2919 0.8196 }
+	
+	primary = archers
+	second = chariots
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = hexere
+	flank_navy = liburnian
+	
+	
+	levy_template = levy_iberic
+	
+	male_names = { 
+		Enrique Fernando Juan Felipe Alfonso Carlos 
+		Sancho Ramiro Pedro Alonso Alvaro Baltasar 
+		Bernardo Bertran Hernando Cristobal Diego Domingo 
+		Esteban Fadrique Francisco Garcia Gomez Gonzalo 
+		Gutierre Hermenegildo Ignacio Lain Lope Miguel 
+		Nuno Odon Ramon Rodrigo Tomas Valeriano
+		Alphonse Alvar Oliver Bermudo Vermudo Diaco Philip
+	}
+	female_names = { 
+		Aldonza Anderquina Beatriz Berenguela Berengaria Blanca 
+		Constanza Elvira Estefania Fronilda Gontroda Agnes
+		Elisabeth Jimena Juana Leonor Mafalda Maria 
+		Marina Mayor Mencia Milia Emily Sancha 
+		Teresa Toda Urraca Isabel
+	}
+	family = { 
+		deTrastamara deGuzman Alvarez_deToledo dela_Cerda deCastilla deValencia
+		Tellez_Giron Manrique_deLara deAvalos Enriquez Osuna Argavieso 
+		Ruspoli LassodelaVega deHoyos Zayas deAlcala deMenezes 
+		deMendoza deNiebla deSilva deAlba deBorja deMedinaceli  
+		deCastro deHaro Santcliment deAltamira Osorio Zuniga 
+		deVillahermosa Vilafermosa Garmendia deRocamora deGoyeneche 
+	}
+	
+	culture = {
+		spanish = {}
+		portugese = { 
+			male_names = { 
+				Joao Filipe Afonso Pedro Antonio Duarte 
+				Henrique Jose Manuel Sebastiao Miguel Teodosio 
+				Dinis Alexandre Carlos Diego Jaime Luis 
+				Alvaro Andre Bartolomeu Caetano Damiao Estevao 
+				Francisco Xavier Gabriel Garcia Gaspar Gil 
+				Goncalo Guilherme Inacio Joaquim Jorge Lourenco 
+				Marco Nicolau Paulo Rafael Rogerio Rui
+			}
+			female_names = { 
+				Aldara Alduara Aldonca Aldonza Beatriz Berengaria 
+				Branca Blanche Constance Dordia Elvira Estevainha 
+				Stephania Fruilhe Fronilde Gontinha Gontroda Guiomar 
+				Ines Agnes Joana Leonor Mafalda Margarida 
+				Maria Marinha Mor Mayor Ouroana Sancha Teresa
+				Urraca Gotruda Constanca 
+			}
+			family = { 
+				deAviz deBraganca deCrato d_Alburquerque deLencastre 
+				deMelo deMoura deNapoles deMenezes deSaldanha daCamara
+				daMaia deAbrantes deMouraBarreto deSousa 
+			}
+		}
+	}
+	graphical_culture = western_european_gfx
+	ethnicities = {
+		10 = iberian
+	}
+}	
+	

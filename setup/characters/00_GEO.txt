@@ -1,0 +1,29 @@
+﻿"GEO"={
+	country="GEO"
+	11={
+		first_name="Tamar"
+		family= c:GEO.fam:Bagrateoni
+		birth_date=80.3.6
+		female=yes
+		culture="georgian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=4
+		add_charisma=5
+		add_finesse=6
+		add_zeal=6
+		no_traits=yes
+		add_trait="bagrateoni"
+		add_trait="generous"
+		add_trait="lustful"
+		add_trait="immortal"
+		add_trait="just"
+		add_trait="zealous"
+		add_gold=100
+		add_popularity=100
+		c:GEO={
+			set_as_ruler=char:11
+		}
+		dna="4t/i36GFoYUBxNPnAmYCZgJmAmYCggKCAEoASgJzAnMCegJ6AmcCZwJ0AnQCdwJ3Am8CbwJ9An0CqQKpAmkCaQCnAEQCbAJsAnICcgKTAnMCeAJ4AWYBZgJ2AnYCggKCApkCmQTQBNACkAKQAAcABwKCAoICYAKVAn8CfwJ0AnQCiwKLAsACkwKLAosBQgFdAKACiQJwAnACjAKMAowCjAKMAowCcAJwA7ADsAOrA6sDowOjAnUCdQOZA5kCjAKMApICkgKGAoYCWQJ0AogChAF2AXYCewJ7A4YDhgJ+An4CgQKBAoMCgwLKAsoB1ALwAroCugAnACcApwCnAOwA7AFSAVICqAKoARUBFQF+AX4A5wDnAEEAQQB/AH8A+QD5AuABfwDhAOEAVQBVATMBMwFBAUEBvAG8AP4A/gB/AH8AkACQALoAugA9AD0AYgBiADcANwBFAEUACQAJBJ0EnQBRAFEC4QLhBKwErAM4AzgB/wbLAH8AfwVzBXMFZwSAAVgBWAKpAqkE/wPpA6YDpgAAAAAAAAAAAAAAAA=="
+	}
+}

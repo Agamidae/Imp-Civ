@@ -1,0 +1,26 @@
+﻿"AUS"={
+	country="AUS"
+	44={
+		first_name="Maria_Theresia"
+		family= c:AUS.fam:Habsburg
+		birth_date=70.6.20
+		female=yes
+		culture="south_german"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=9
+		add_finesse=7
+		add_zeal=10
+		no_traits=yes
+		add_trait="habsburgs"
+		add_trait="immortal"
+		add_trait="wise"
+		add_gold=100
+		add_popularity=100
+		c:AUS={
+			set_as_ruler=char:44
+		}
+		dna="SAJxO6FcoVwtXZ9/AWMBYwJ+An4CcwJzApECkQJsAmwCfAJ8An0CfQKAAoACgwKDApACkAOgA6AClAKUAmgCaAFYAVgCcQJxAmoCagNnA6AAKAAoAokCiQJrAmsBbwFvAiYCfwJnAmcCawJrAnwCfAKQApACmAKYApYClgBLAEsChAKEApcClwOhA6ECjAKMAm8CbwKWApYCjQKNAo8CjwKZApkCawJrAnoCegKOAo4CbgJuAokCiQJrAmsCaAJoAm8CbwJrAmsCjwKPAogCiAKHAocCZgJmApcClwKSApICigKKAm0CbQPfA48BEwETAD0APQBUAFQBOAE4AQABAAFQAVAAwADAAK4ArgFHAUcArgCuATsBOwAAAAAACAAIAHYAdgBYAFgA4wDjATABMACTAJMAYgBiANgA2AAAAAABMgEyAEIAQgEfAR8AzQDNAUwBTAE7ATsAHAAcAFoAWgATABMBYQFhA1MDUwNLA0sJUgluAAAAAARMBEwFAAmkAHUAiQV9BX0B4AdaCG0IowAAAAAAAAAAAAAAAA=="
+	}
+}

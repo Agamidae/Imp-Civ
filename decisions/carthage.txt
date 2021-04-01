@@ -1,0 +1,101 @@
+﻿country_decisions = {
+	found_carthago_nova = {
+		potential = {
+			NOT = { has_dlc = "The Punic Wars" }
+			num_of_cities >= 1
+			tag = CAR
+			NOT = { has_variable = carthago_nova_founded }
+		}
+		highlight = {
+			scope:province = {
+				OR = {
+					is_in_area = mastiania_area
+					is_in_area = contestania_meridionalis_area
+					is_in_area = contestania_septentrionalis_area
+				}
+			}
+		}
+		allow = {
+			treasury > 500
+			owns = 1036
+			owns_or_subject_owns_area = mastiania_area
+			owns_or_subject_owns_area = contestania_meridionalis_area
+			owns_or_subject_owns_area = contestania_septentrionalis_area
+		}
+		effect = {
+			set_variable = carthago_nova_founded
+			add_treasury = -500
+			p:1036 = {
+				add_province_modifier = {
+					name = carthago_nova_modifier
+					duration = -1
+				}
+				capital_formable_huge_effect = yes
+			}
+			custom_tooltip = carthage_claims_hispania
+			hidden_effect = {
+				area:malacita_area = { mission_area_claim_effect = yes }
+				area:gaditanus_area = { mission_area_claim_effect = yes }
+				area:oretania_area = { mission_area_claim_effect = yes }
+				area:turdetania_occidentalis_area = { mission_area_claim_effect = yes }
+				area:edetania_area = { mission_area_claim_effect = yes }
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	restructure_military_port_of_carthage = {
+		potential = {
+			NOT = { has_dlc = "The Punic Wars" }
+			num_of_cities >= 1
+			tag = CAR
+			NOT = { has_variable = carthage_military_harbor }
+			owns = 3256
+		}
+		allow = {
+			p:3256 = {
+				controller = ROOT
+			}
+			treasury > 300
+			manpower >= 12
+		}
+		effect = {
+			add_treasury = -300
+			add_manpower = -12
+			set_variable = carthage_military_harbor
+			p:3256 = {
+				add_province_modifier = {
+					name = "carthage_military_harbor"
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			base = 20
+		}
+	}
+	carthage_mercenary_overlord = {
+		potential = {
+			NOT = { has_dlc = "The Punic Wars" }
+			num_of_cities >= 1
+			tag = CAR
+			NOT = { has_country_modifier = country_improvement_mercenary_patron }
+			owns = 3256
+		}
+		allow = {
+			civic_tech > 3
+			treasury > 550
+		}
+		effect = {
+			add_treasury = -550
+			add_country_modifier = {
+				name = country_improvement_mercenary_patron
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+}

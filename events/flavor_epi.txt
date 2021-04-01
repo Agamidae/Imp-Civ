@@ -1,0 +1,215 @@
+﻿namespace = flavor_epi
+
+# Deidamia and Demetrius - EPI
+flavor_epi.1 = {
+	type = country_event
+	title = "flavor_epi.1.t"
+	desc = "flavor_epi.1.desc"
+	picture = greek_court
+	left_portrait = current_ruler
+	left_portrait = char:116
+	right_portrait = c:PRY.current_ruler
+	right_portrait = char:38
+	goto_location = C:PRY.capital_scope
+	
+	trigger = {
+		NOT = { has_dlc = "Epirus Flavor Pack" }
+		exists = c:EPI
+		exists = c:PRY
+		exists = char:38
+		char:38 = { is_alive = yes }
+		exists = char:116
+		char:116 = { is_alive = yes }
+	}
+
+	# Send Proposal
+	option = {
+		name = flavor_epi.1.a
+		c:PRY = {
+			trigger_event = { id = flavor_epi.2 }
+		}
+		custom_tooltip = flavor_epi.1.at
+		custom_tooltip = dhe_thrace.1.at2
+		ai_chance = { factor = 100 }
+	}
+
+	# Reject Marriage
+	option = {
+		name = flavor_epi.1.b
+		reverse_add_opinion = { modifier = flavor_epi_pry_rejected_op target = c:PRY }
+		ai_chance = { factor = 0 }
+	}
+}
+
+# Deidamia and Demetrius - PRY
+flavor_epi.2 = {
+	type = country_event
+	title = "flavor_epi.2.t"
+	desc = "flavor_epi.2.desc"
+	picture = greek_court
+	left_portrait = current_ruler
+	left_portrait = char:38
+	right_portrait = c:EPI.current_ruler
+	right_portrait = char:116
+	goto_location = C:EPI.capital_scope
+	
+	# Accept Proposal
+	option = {
+		name = flavor_epi.2.a
+		c:PRY = {
+			trigger_event = {
+				id = flavor_epi.3
+			}
+		}
+		c:EPI = {
+			trigger_event = {
+				id = flavor_epi.3
+			}
+		}
+		ai_chance = { factor = 95 }
+		custom_tooltip = flavor_epi.2.at
+		custom_tooltip = dhe_thrace.1.at2
+	}
+	
+	# Reject Marriage
+	option = {
+		name = flavor_epi.2.b
+		c:EPI = {
+			trigger_event = {
+				id = flavor_epi.4
+			}
+		}
+		custom_tooltip = flavor_epi.2.bt
+		ai_chance = { factor = 5 }
+	}
+}
+
+# Marriage
+flavor_epi.3 = {
+	type = country_event
+	title = "flavor_epi.3.t"
+	desc = {
+		first_valid = {
+			triggered_desc = { # EPI
+				trigger = {
+					tag = EPI
+				}
+				desc = "flavor_epi.3.desc_1"
+			}
+			triggered_desc = { # PRY
+				trigger = {
+					always = yes
+				}
+				desc = "flavor_epi.3.desc_2"
+			}
+		}
+	}
+	picture = celtic_religious_festival
+	left_portrait = c:EPI.current_ruler
+	left_portrait = char:116
+	right_portrait = c:PRY.current_ruler
+	right_portrait = char:38
+	goto_location = C:PRY.capital_scope
+	
+	immediate = {
+		char:38 = { 
+			save_scope_as = me_epi_royal_wedding_groom_scope
+			employer = { save_scope_as = me_epi_royal_wedding_country_scope }
+		}
+		char:116 = { 
+			save_scope_as = me_epi_royal_wedding_bride_scope
+			employer = { save_scope_as = me_epirus_scope }
+		}
+	}
+
+	# EPI
+	option = {
+		name = flavor_epi.3.a
+		trigger = {
+			tag = EPI
+		}
+		char:116 = {  
+			if = {
+				limit = { is_married = yes}
+				hidden_effect = { divorce_character = char:116.spouse }
+			}
+			move_country = c:PRY
+			hidden_effect = { remove_character_modifier = foreign_citizen }
+			if = {
+				limit = { has_variable = betrothed_flag }
+				var:betrothed_flag = { remove_variable = betrothed_flag }
+				remove_variable = betrothed_flag
+			}
+		}
+		char:38 = {
+			if = {
+				limit = { is_married = yes}
+				hidden_effect = { divorce_character = char:38.spouse }
+			}
+			if = {
+				limit = { has_variable = betrothed_flag }
+				var:betrothed_flag = { remove_variable = betrothed_flag }
+				remove_variable = betrothed_flag
+			}
+			marry_character = char:116
+		}
+		c:PRY = {
+			add_opinion = { modifier = flavor_epi_pry_marriage_op target = c:EPI }
+			reverse_add_opinion = { modifier = flavor_epi_pry_marriage_op target = c:EPI }
+		}
+		char:70 = {
+			set_variable = { name = flavor_epi_deidamia_demetrius_married_flag }
+		}
+	}
+	
+	# PRY
+	option = {
+		name = "flavor_epi.3.a"
+		trigger = { tag = PRY }
+		custom_tooltip = flavor_epi.3.bt
+	}
+}
+
+# Rejection from PRY
+flavor_epi.4 = {
+	type = country_event
+	title = "flavor_epi.4.t"
+	desc = "flavor_epi.4.desc"
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	left_portrait = char:116
+	right_portrait = c:PRY.current_ruler
+	right_portrait = char:38
+	
+	fire_only_once = yes
+	
+	goto_location = C:PRY.capital_scope
+	
+	option = {
+		name = flavor_epi.4.a
+		add_opinion = { modifier = flavor_epi_pry_rejected_op target = c:PRY }
+	}
+}
+
+# Startup trigger
+flavor_epi.5 = {
+	type = country_event
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		tag = EPI
+	}
+	
+	immediate = {
+		c:EPI = {
+			trigger_event = {
+				id = flavor_epi.1
+				days = 1
+			}
+		}
+	}
+}

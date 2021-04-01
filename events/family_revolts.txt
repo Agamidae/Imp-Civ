@@ -1,0 +1,219 @@
+﻿namespace = family_revolt
+
+family_revolt.1 = {
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_minor_character = no
+		has_variable = disloyal_count
+		NOT = { has_character_modifier = disloyal_family_head_cmod }
+		employer = {
+			has_land = yes
+			NOT = {
+				is_tutorial_active = yes
+			}
+		}
+		is_ruler = no
+		trigger_if = {
+			limit = {
+				exists = employer.current_ruler
+				employer.current_ruler = {
+					is_minor_character = no
+				}
+			}
+			from_ruler_family = no
+		}
+		is_mercenary = no
+		family = {
+			is_scorned = yes
+		}
+		loyalty < 33
+		prisoner = no
+		wealth >= 400
+		employer = {
+			num_of_cities >= 10
+			NOR = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+			any_owned_province = {
+				controller = root.employer
+			}
+			has_civil_war = no
+		}
+	}
+	
+	immediate = {
+		add_triggered_character_modifier = {
+			name = disloyal_family_head_cmod
+			duration = 1825
+		}
+		add_loyalty = disloyal_family_head_cmod
+		add_gold = 200
+		set_variable = {
+			name = disloyal_family_head_var
+		}
+		save_scope_as = revolt_target
+		while = {
+			limit = {
+				num_loyal_veterans < country_size_revolt_value_family
+				root.wealth >= 400
+			}
+			add_gold = -10
+			add_loyal_veterans = 1
+			if = {
+				limit = {	
+					NOT = { has_variable = disloyal_veterans_raised }
+				}
+				set_variable = {
+					name = "disloyal_veterans_raised"
+					value = 1
+				}
+			}
+			else = {
+				change_variable = {
+					name = "disloyal_veterans_raised"
+					add = 1
+				}
+			}
+		}
+		employer = {
+			trigger_event = {
+				id = family_revolt.3
+			}
+		}
+	}
+}
+
+family_revolt.2 = {
+	type = country_event
+	title = "family_revolt.2.t"
+	desc = "family_revolt.2.desc"
+	
+	left_portrait = root.current_ruler
+	right_portrait = scope:revolt_target
+	
+	picture = farming
+	
+	trigger = {
+		exists = scope:revolt_target
+	}
+	
+	immediate = {
+		scope:revolt_target = {
+			while = {
+				limit = {
+					num_loyal_veterans >= 1
+					trigger_if = {
+						limit = { has_variable = disloyal_veterans_raised }
+						num_loyal_veterans >= var:disloyal_veterans_raised
+					}
+				}
+				add_loyal_veterans = -1
+			}
+			if = {
+				limit = {
+					has_variable = disloyal_family_head_var
+				}
+				remove_variable = disloyal_family_head_var
+			}
+		}
+	}
+	
+	option = {
+		name = "family_revolt.2.a"
+		if = {
+			limit = {
+				scope:revolt_target = {
+					is_alive = yes
+				}
+			}
+			custom_tooltip = family_revolt_averted_tt
+		}
+	}
+}
+
+family_revolt.3 = {
+	type = country_event
+	title = "family_revolt.3.t"
+	desc = "family_revolt.3.desc"
+	
+	picture = romans_marching
+	
+	left_portrait = root.current_ruler
+	right_portrait = scope:revolt_target
+	
+	trigger = {
+		exists = scope:revolt_target
+	}
+	
+	immediate = {
+		scope:revolt_target = {
+			add_loyalty = loyalty_family_revolt
+			location = {
+				save_scope_as = sbgnq1
+			}
+		}
+	}
+	
+	option = { 
+		name = "family_revolt.3.a"
+		custom_tooltip = family_troops_mobilized_tooltip
+	}
+	
+}
+
+family_revolt.4 = {
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_minor_character = no
+		NOT = { has_character_modifier = disloyal_family_head_cmod }
+		NOT = { has_variable = disloyal_count }
+		employer = {
+			has_land = yes
+			NOT = {
+				is_tutorial_active = yes
+			}
+		}
+		is_ruler = no
+		trigger_if = {
+			limit = {
+				exists = employer.current_ruler
+				employer.current_ruler = {
+					is_minor_character = no
+				}
+			}
+			from_ruler_family = no
+		}
+		is_mercenary = no
+		family = {
+			is_scorned = yes
+		}
+		loyalty < 33
+		prisoner = no
+		wealth >= 400
+		employer = {
+			num_of_cities >= 10
+			NOR = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+			any_owned_province = {
+				controller = root.employer
+			}
+			has_civil_war = no
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = disloyal_count
+			days = 90
+		}
+	}
+}

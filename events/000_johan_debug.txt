@@ -1,0 +1,501 @@
+﻿namespace = johan
+
+
+johan.1 = {
+	type = character_event	
+	
+	trigger = {
+		country = { 
+			tag = ROM 
+			
+		
+			country_culture_group = latin
+			
+			
+			
+			
+			
+			any_army = {
+				#in_province = 1
+				is_moving = no
+				any_sub_unit = {
+					is_cohort = yes
+				}
+				#is_army = yes
+				#in_combat = yes
+				#in_siege = no
+			}
+			p:1 = {
+				num_other_religion > 0
+				num_foreign_culture <= 10
+
+			
+			
+				any_pops_in_province = {
+					pop_culture = hebrew
+					pop_type = citizen
+				}
+				
+				
+			}
+			p:2 = {
+				any_pops_in_province = {
+					pop_religion = druidism
+					
+				}
+			}
+			
+			any_owned_province = { 
+			  NOT = { 
+				any_pops_in_province = { 
+				  pop_culture_group = hellenic 
+				} 
+			  }
+			}
+			
+		}
+		age = 10
+		
+		# >= 10
+	}	
+	
+	
+	title = Johan_event.1.t
+	desc = Johan_event.1.d
+	
+	immediate = {
+		country = {
+			add_new_family = Marii	#plural form is the key
+		}
+	}
+	
+
+	left_portrait = root
+
+	
+	option = {
+		#add_nickname = NICKNAME_THE_COOL
+		add_nickname = random
+		
+		
+		
+	
+		country = {
+		
+			
+			create_character = {
+				first_name = "Gaius"
+				age = 44
+				female = no
+				culture = roman
+				family = fam:Marii
+			}
+			
+			
+		}
+	}
+	
+
+	option = {
+		name = Johan_event.1.a
+		add_martial = 1
+		#add_loyalty = -100
+		add_popularity = 10
+		
+		#country = {
+			#add_political_influence = influence_small
+#			
+			#add_party_support = {
+				#party = 
+				#value = 5
+			#}
+			#add_party_support  = {
+				#party = 
+				#value = -2
+			#}
+		#}
+		
+		family = { add_prestige = 2 }
+		give_office = office_physician 
+		
+		
+		#add_party_conviction  = {
+			#party = 
+			#value = 5
+		#}
+		
+	}
+	
+	option = {
+		name = "check_army_scope"
+		
+		country = {
+			random_army = {
+				limit =  {
+					is_moving = no
+				}
+				add_morale = 1.0
+			}
+		}
+	}
+	
+	option = {
+		name = "and_add_a_modifier"
+		
+		country = {
+			random_army = {
+				limit =  {
+					is_moving = no
+				}
+				add_unit_modifier = {
+					name = better_morale
+					duration = 30
+					mode = add_and_extend
+				}
+				
+				random_sub_unit = {
+					limit =  {
+						is_cohort = yes
+					}
+					destroy_subunit = yes
+				}
+			}
+		}
+	}
+}
+
+johan.2 = {
+	type = province_event	
+	
+	trigger = {
+		owner = { tag = ROM }
+		is_capital = yes
+		is_port = no
+		
+		owner = {
+			num_of_unit_type = {
+				type = light_infantry
+				value < 5
+			}
+			
+			num_of_unit_type = {
+				type = heavy_infantry
+				value >= 2
+			}
+		}
+	}	
+	
+	
+	title = EPI_Events.1.t
+	desc = EPI_Events.1.d
+	
+
+
+	option = {
+		name = EPI_Events.1.a
+		random_pops_in_province = {
+			limit = {
+				pop_type = citizen
+			}
+			set_pop_religion = druidism
+			set_pop_culture = macedonian
+		}
+		add_building_level = fortress_building
+		create_pop = slaves
+	}
+	
+	option = {
+		name = "move_the_pops"
+		p:2 = {
+			every_pops_in_province = {
+				limit = {
+					pop_type = citizen
+				}
+				move_pop = 1
+			}
+		}
+	}
+}
+
+
+johan.3 = {
+	type = country_event	
+	
+	trigger = {
+		any_countries_at_war_with = {  opinion = { target = ROM value > 10 } }
+	}	
+	
+	
+	title = "test_country_thingies"
+	desc = "todo_test_event"
+	
+	option = {
+		every_subject = {
+			add_opinion = { target = ROM modifier = positive_test }
+		}
+		
+		every_subject = {
+			add_opinion = { target = c:ROM modifier = positive_test }
+		}
+		
+		imprison = { target = c:ROM.current_ruler }
+	}
+
+
+	option = {
+		name = "relation_test"
+		random_countries_at_war_with = {
+			add_opinion = { target = ROM modifier = positive_test }
+		}
+		
+		random_neighbour_country = {
+			add_opinion = { target = ROM modifier = negative_test }
+		}
+	}
+	
+	option = {
+		add_research = {
+			technology = military_tech
+			value = {
+				value = root.current_ruler.martial
+				multiply = 2
+			}
+		}
+	}
+	
+	option = {
+		#random_list = {
+			#1 = {
+				#modifier = {
+					#add = root.
+				#}
+				#add_tyranny = 5
+			#}
+			#1 = {
+				#modifier = {
+					#add = {
+						#value = root.current_ruler.martial
+						#multiply = 5
+					#}
+				#}
+				#add_manpower = 10
+			#}
+			#1 = {
+				#modifier = {
+					#add = {
+						#value = root.current_ruler.zeal
+						#multiply = 5
+					#}
+				#}
+				#add_manpower = 20
+			#}
+		#}
+	}
+}
+
+
+
+johan.4 = {
+	type = country_event	
+	
+	trigger = {
+		tag = SWE
+	}	
+	
+	
+	title = "test_country_thingies"
+	desc = "todo_test_event"
+	
+
+
+	option = {
+		change_country_name = "ROM_REVOLT"
+		change_country_flag = "ROM_REVOLT"
+		change_country_tag = "ROM_REVOLT"
+		change_country_adjective = "ROM_REVOLT_ADJ"
+		change_country_color =  "phrygia_red"
+	}
+	
+}
+
+
+
+
+
+johan.5 = {
+	type = country_event	
+	
+	trigger = {
+		
+	}	
+	
+	
+	title = "country_creation_test"
+	desc = "todo_test_event"
+	
+
+
+	option = {
+		p:15 = {
+			create_country = {}
+		}
+	}
+}
+
+johan.6 = {
+	type = country_event	
+	
+	trigger = {
+		
+	}	
+	
+	
+	title = "country_creation_test"
+	desc = "todo_test_event"
+	
+
+
+	option = {
+		make_subject = { target = p:15.owner type = satrapy }
+	}
+}
+
+
+johan.7 = {
+	type = province_event	
+	
+	trigger = {
+		
+	}	
+	
+	
+	title = "country_creation_test"
+	desc = "todo_test_event"
+	
+	
+	
+
+	option = {
+		set_as_governor = char:113
+			
+		owner = {
+			random_army = {
+				limit = {
+					is_moving = no
+				}
+				set_as_commander = char:14
+			}
+		}
+	}
+}
+
+johan.8 = {
+	type = province_event	
+	trigger = {
+	}	
+	
+	title = "province_test_stuff"
+	desc = "todo_test_event"
+	
+	option = {
+		show_model = "wonder_lighthouse_of_pharos"
+		show_model = "wonder_giza"
+	}
+	
+	option = {
+		trigger = {
+			NOT = {
+				is_model_shown = "wonder_halicarnassus"
+			}
+		}
+		show_model = "wonder_halicarnassus"
+	}
+	
+	option = {
+		owner = {
+			add_treasury = 1
+		}
+	}
+}
+
+johan.9 = {
+	type = province_event	
+	trigger = {
+	}	
+	
+	title = "province_test_stuff"
+	desc = "todo_test_event"
+
+	# tested on province 2075
+	option = {
+		trigger = {
+			NOT = {
+				is_model_shown = "wonder_tomb_of_alexander"
+			}
+		}
+		show_model = "wonder_tomb_of_alexander"
+	}
+	
+	option = {
+		trigger = {
+			is_model_shown = "wonder_tomb_of_alexander"
+		}
+		hide_model = "wonder_tomb_of_alexander"
+	}
+	
+	option = {
+		owner = {
+			add_treasury = 1
+		}
+	}
+}
+
+johan.10 = {
+	type = character_event
+	trigger = {
+	}	
+	
+	title = "test_loyalty"
+	desc = "todo_test_event"
+
+	option = {
+		#add_loyalty = -33
+		add_holding = p:2
+	}
+	
+}
+
+johan.11 = {
+	type = country_event
+	trigger = {
+	}	
+	
+	title = "test_civil_war"
+	desc = "todo_test_event"
+
+	option = {
+		start_civil_war = char:6
+	}
+}
+
+
+
+johan.12 = {
+	type = province_event	
+	
+	trigger = {
+		
+	}	
+	
+	
+	title = "todo_test_event"
+	desc = "todo_test_event"
+	
+	
+	
+
+	option = {
+	
+		show_animated_text = animated_text_effect
+	}
+}

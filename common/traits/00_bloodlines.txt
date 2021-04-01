@@ -1,0 +1,491 @@
+﻿argeads = {
+	type = status
+	
+	prominence = 20
+	martial = 1
+	
+	support_for_character_as_heir = 5
+
+	country = {
+		agressive_expansion_impact = -0.1
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+antonines = {
+	type = status
+	
+	prominence = 20
+	martial = 1
+	country = {
+		agressive_expansion_impact = -0.2
+		monthly_legitimacy = 0.06
+	}
+	
+}
+
+caesars = {
+	type = status
+	
+	prominence = 20
+	martial = 2
+	charisma = 3
+	country = {
+		agressive_expansion_impact = -0.3
+		monthly_legitimacy = 0.03
+	}
+	
+}
+
+ptolemaics = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+periklids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+agiads = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+justinians = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+ottomans = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+bagrateoni = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+rurikids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+hunnics = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+tomyrids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+achaemenids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+abbasids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+carthagins = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+sargonids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+chaldeans = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+urukids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+dandolans = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+hanovers = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+bruces = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+icenians = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+habsburgs = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+braganza = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+saadis = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+meroitics = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+ayyubids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+solomonids = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+bonaparts = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+poitiers = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+mauryas = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+gandhis = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+piasts = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+romanovs = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+bismarks = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+vasas = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+hardradas = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+barbarossas = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+oranjes = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+hunyadis = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+gorms = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+makedons = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+eburones = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+
+amorites = {
+	type = status
+	
+	prominence = 20
+	charisma = 4
+	country = {
+		monthly_legitimacy = 0.05
+	}
+	
+}
+

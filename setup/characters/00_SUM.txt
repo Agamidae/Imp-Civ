@@ -1,0 +1,26 @@
+﻿"SUM"={
+	country="SUM"
+	21={
+		first_name="Gilgamesh"
+		family= c:SUM.fam:Urukid
+		birth_date=55.2.1
+		culture="sumerian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=14
+		add_charisma=10
+		add_finesse=9
+		add_zeal=6
+		no_traits=yes
+		add_trait="urukids"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="brave"
+		add_gold=100
+		add_popularity=100
+		c:SUM={
+			set_as_ruler=char:21
+		}
+		dna="D/8p+7eNlYrl9+X3AU8BTwOpA6AEqgJ/Aj0CggJyAnICiQKJAm4CbgKKAooCdAJ0AnsCewOyA7IEzwTPAlYChASOBL0CsQJvAmsCawTVBNUCkgKSAm4CbgJrAmsCcgJyAo8CjwIsAnMCjAKMAVIBUgJwAnACnAJoAm4CgAKTApMChgKGApICkgJnAmcChAKEA6ADoAJoAmgCkAKQAmkCaQKRApECfAJ8AoMCgwOlA6UDnwOfAo0CjQKAAoACggKCAnACcAJ1AnUCGgJ5As4CdATBApcCngKKAYIBYgKbAmsClQKVAVUBVQKRApEABAAEAPMA8wAIAAgC4wLjAVUBVQDaANoBDAEMASsBKwACAAIAswCzAH8AfwB/AH8A1wDXAQcBBwLJAskAmwCbAEQARAB8AHwAkQCRATUBNQB/AH8AjACMAQQBBAFUAVQAXwBfAHgAeAFEAUQATABMA10DXQCOAI4CsgKyAXcBdwAJAAkCygqTAH8AfwVsBWwEGAQYATkBOQO3AkAeCANeA3IDywAAAAAAAAAAAAAAAA=="
+	}
+}

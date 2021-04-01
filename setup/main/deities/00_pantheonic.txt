@@ -1,0 +1,37 @@
+deity_manager = {
+	deities_database = { ### KEYS 1432-1411 ###
+		1432 = {
+			key = omen_god_of_forge
+			deity = deity_god_of_forge
+		}
+		1433 = {
+			key = omen_city_patron
+			deity = deity_city_patron
+		}
+		1434 = {
+			key = omen_fertility_rites
+			deity = deity_fertility_rites
+		}
+		1435 = {
+			key = omen_o_open_sky
+			deity = deity_o_open_sky
+		}
+		1436 = { #Tier2
+			key = omen_god_of_sea
+			deity = deity_god_of_sea
+		}
+		1437 = {
+			key = omen_desert_folklore
+			deity = deity_desert_folklore
+		}
+		1438 = {
+			key = omen_o_harvest
+			deity = deity_o_harvest
+		}
+		1439 = {
+			key = omen_o_festivals
+			deity = deity_o_festivals
+		}
+	}
+}
+

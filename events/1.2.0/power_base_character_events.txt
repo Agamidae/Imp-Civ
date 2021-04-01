@@ -1,0 +1,1519 @@
+﻿namespace = pbc_event
+
+# CHAIN 1 - Massive Treasury and not afraid to spend it
+pbc_event.1 = {
+	type = country_event
+	title = "pbc_event.1.t"
+	desc = "pbc_event.1.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		any_character = {
+			loyalty > 33
+			power_base >= 10
+			is_ruler = no
+			prisoner = no
+			employer = root
+			trigger_if = {
+				limit = {
+					root = {
+						is_monarchy = yes
+					}
+				}
+				is_primary_heir = no
+			}
+			trigger_if = {
+				limit = {
+					root = {
+						has_co_ruler_government = yes
+					}
+				}
+				is_co_ruler = no
+			}
+			NOT = { is_friend = root.current_ruler }
+		}
+		NOT = { has_variable = pbc_event_1_cooldown }
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_1_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				loyalty > 33
+				power_base >= 10
+				is_ruler = no
+				prisoner = no
+				employer = root
+				trigger_if = {
+					limit = {
+						root = {
+							is_monarchy = yes
+						}
+					}
+					is_primary_heir = no
+				}
+				trigger_if = {
+					limit = {
+						root = {
+							has_co_ruler_government = yes
+						}
+					}
+					is_co_ruler = no
+				}
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+		}
+		scope:power_character = {
+			if = {
+				limit = {
+					popularity < 100
+				}
+				add_popularity = popularity_medium
+			}
+			add_corruption = corruption_medium
+			add_gold = 	{
+				value = root.has_monthly_income
+				multiply = 5
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.1.a"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_small
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		scope:power_character = {
+			add_loyalty = loyalty_growing_coffers
+		}
+		hidden_effect = {
+			random_list = {
+				5 = { # Second insult
+					trigger_event = {
+						id = pbc_event.2
+						days = { 200 300 }
+					}
+				} 
+				10 = {} # Nothing Happens
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.1.b"
+		add_tyranny = tyranny_medium
+		add_treasury = root.has_monthly_income
+		scope:power_character = {
+			add_loyalty = loyalty_appropriated_wealth
+			add_gold = {
+				subtract = root.has_monthly_income
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.1.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = arbitrary
+			}
+		}
+		custom_tooltip = "arbitrary_tooltip"
+		add_tyranny = tyranny_large
+		imprison = {
+			target = scope:power_character
+		}
+		scope:power_character = {
+			add_loyalty = loyalty_unjustly_imprisoned
+		}
+	}
+
+	option = {
+		name = "pbc_event.1.d"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = corrupt
+			}
+		}
+		custom_tooltip = "corrupt_tooltip"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 2
+		}
+		current_ruler = {
+			add_corruption = corruption_small
+		}
+		scope:power_character = {
+			add_corruption = corruption_small
+			add_loyalty = loyalty_gift_bribe_1
+			add_gold = {
+				value = root.has_monthly_income
+				multiply = 2
+			}
+		}
+	}
+}
+
+# CHAIN 1 - Second Insult
+pbc_event.2 = {
+	type = country_event
+	title = "pbc_event.2.t"
+	desc = "pbc_event.2.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		exists = scope:power_character
+		scope:power_character = {
+			is_alive = yes
+			employer = root
+			is_ruler = no
+			is_primary_heir = no
+			prisoner = no
+		}
+	}
+
+	option = {
+		name = "pbc_event.2.a"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_large
+		}
+		scope:power_character = {
+			add_loyalty = loyalty_unchecked_arrogance
+			if = {
+				limit = {
+					NOT = { has_trait = arrogant }
+				}
+				add_trait = arrogant
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				5 = {
+					trigger_event = {
+						id = pbc_event.3
+						days = { 50 100 }
+					}
+				}
+				10 = {}
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.2.b"
+		add_tyranny = tyranny_medium
+		imprison = {
+			target = scope:power_character
+		}
+		scope:power_character = {
+			add_loyalty = loyalty_imprisoned_ambition
+		}
+	}
+
+	option = {
+		name = "pbc_event.2.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = vengeful
+			}
+		}
+		custom_tooltip = "vengeful_tooltip"
+		add_tyranny = tyranny_large
+		scope:power_character = {
+			death = {
+				death_reason = death_execution
+				killer = root.current_ruler
+			}
+		}
+	}
+}
+
+# CHAIN 1 - Third Insult
+pbc_event.3 = {
+	type = country_event
+	title = "pbc_event.3.t"
+	desc = "pbc_event.3.desc"
+	picture = revolt
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		exists = scope:power_character
+		scope:power_character = {
+			is_alive = yes
+			employer = root
+			is_ruler = no
+			is_primary_heir = no
+			prisoner = no
+		}
+	}
+
+	option = {
+		name = "pbc_event.3.a"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_small
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		scope:power_character = {
+			add_health = -15
+			if = {
+				limit = {
+					has_trait = arrogant
+					is_alive = yes
+				}
+				remove_trait = arrogant
+			}
+		}
+	}
+}
+
+# NOT CHAIN - Unpredictable General
+pbc_event.4 = {
+	type = country_event
+	title = "pbc_event.4.t"
+	desc = "pbc_event.4.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		any_character = {
+			loyalty > 33
+			power_base >= 10
+			is_general = yes
+			is_mercenary = no
+			any_character_unit = {
+				unit_size >= 5
+			}
+			is_ruler = no
+			trigger_if = {
+				limit = {
+					root = {
+						is_monarchy = yes
+					}
+				}
+				is_primary_heir = no
+			}
+			trigger_if = {
+				limit = {
+					root = {
+						has_co_ruler_government = yes
+					}
+				}
+				is_co_ruler = no
+			}
+			NOT = { is_friend = root.current_ruler }
+		}
+		NOT = { has_variable = pbc_event_4_cooldown }
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_4_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				loyalty > 33
+				power_base >= 10
+				is_general = yes
+				any_character_unit = {
+					unit_size >= 5
+				}
+				is_ruler = no
+				trigger_if = {
+					limit = {
+						root = {
+							is_monarchy = yes
+						}
+					}
+					is_primary_heir = no
+				}
+				trigger_if = {
+					limit = {
+						root = {
+							has_co_ruler_government = yes
+						}
+					}
+					is_co_ruler = no
+				}
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+		}
+	}
+
+	option = {
+		name = "pbc_event.4.a"
+		custom_tooltip = "pbc_event.4.a.tt"
+		hidden_effect = {
+			scope:power_character = {
+				random_character_unit = {
+					limit = {
+						unit_size >= 5
+					}
+					ordered_sub_unit = {
+						limit = {
+							has_personal_loyalty = no
+						}
+						max = {
+							value = unit_size
+							multiply = 0.45
+							subtract = 1
+						}
+						check_range_bounds = no
+						set_personal_loyalty = scope:power_character
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:power_character = {
+					martial < 10
+				}
+			}
+			scope:power_character = {
+				add_martial = 1
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.4.b"
+		scope:power_character = {
+			add_loyalty = loyalty_frightened_intervention
+		}
+	}
+
+	option = {
+		name = "pbc_event.4.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = assertive
+			}
+		}
+		custom_tooltip = "assertive_tooltip"
+		custom_tooltip = "pbc_event.4.c.tt"
+		scope:power_character = {
+			add_loyalty = loyalty_frightened_intervention_2
+		}
+		hidden_effect = {
+			random_unit = {
+				limit = {
+					commander = scope:power_character
+				}
+				ordered_sub_unit = {
+					limit = {
+						has_personal_loyalty = no
+					}
+					max = {
+						value = unit_size
+						multiply = 0.05
+						subtract = 1
+					}
+					check_range_bounds = no
+					set_personal_loyalty = scope:power_character
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.4.d"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = crafty
+			}
+		}
+		custom_tooltip = "crafty_tooltip"
+		add_treasury = {
+			subtract = root.has_monthly_income
+		}
+		current_ruler = {
+			add_corruption = corruption_small
+		}
+	}
+}
+
+# NOT CHAIN - Corrupt Governor
+pbc_event.5 = {
+	type = country_event
+	title = "pbc_event.5.t"
+	desc = "pbc_event.5.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		root.current_ruler = {
+			char_can_have_rivals_trigger = yes
+		}
+		any_character = {
+			char_can_have_rivals_trigger = yes
+			loyalty > 33
+			power_base >= 10
+			corruption >= 20
+			is_governor = yes
+			is_ruler = no
+			trigger_if = {
+				limit = {
+					root = {
+						is_monarchy = yes
+					}
+				}
+				is_primary_heir = no
+			}
+			trigger_if = {
+				limit = {
+					root = {
+						has_co_ruler_government = yes
+					}
+				}
+				is_co_ruler = no
+			}
+			NOT = { is_friend = root.current_ruler }
+			any_governor_state = {
+				any_state_province = {
+					state_loyalty >= 50
+				}
+			}
+		}
+		NOT = { has_variable = pbc_event_5_cooldown }
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_5_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				loyalty > 33
+				power_base >= 10
+				corruption >= 20
+				is_governor = yes
+				is_ruler = no
+				trigger_if = {
+					limit = {
+						root = {
+							is_monarchy = yes
+						}
+					}
+					is_primary_heir = no
+				}
+				trigger_if = {
+					limit = {
+						root = {
+							has_co_ruler_government = yes
+						}
+					}
+					is_co_ruler = no
+				}
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+			random_governor_state = {
+				limit = {
+					any_state_province = {
+						state_loyalty >= 50
+					}
+				}
+				save_scope_as = affected_province
+				governorship = {
+					save_scope_as = affected_governorship
+				}
+			}
+		}
+		scope:power_character = {
+			add_gold = {
+				value = root.has_monthly_income
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.5.a"
+		scope:affected_province = {
+			random_state_province = {
+				add_state_loyalty = -20
+			}
+			add_state_modifier = {
+				name = state_modifier_poor_governorship
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.5.b"
+		add_political_influence = -15
+		scope:power_character = {
+			add_loyalty = loyalty_governor_intervention
+			add_gold = {
+				subtract = root.has_monthly_income
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.5.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = benefactor
+			}
+		}
+		custom_tooltip = "benefactor_tooltip"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 2
+		}
+		scope:power_character = {
+			add_gold = {
+				value = root.has_monthly_income
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.5.d"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = gluttonous
+			}
+		}
+		custom_tooltip = "greedy_tooltip"
+		add_treasury = {
+			value = root.has_monthly_income
+			divide = 2
+		}
+		scope:power_character = {
+			add_gold = {
+				subtract = root.has_monthly_income
+				divide = 2
+			}
+		}
+		scope:affected_province = {
+			random_state_province = {
+				add_state_loyalty = -20
+			}
+			add_state_modifier = {
+				name = state_modifier_poor_governorship
+				duration = 3650
+			}
+		}
+	}
+}
+
+# NOT CHAIN - Rival at Court
+pbc_event.6 = {
+	type = country_event
+	title = "pbc_event.6.t"
+	desc = "pbc_event.6.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		NOT = { has_variable = pbc_event_6_cooldown }
+		current_ruler = {
+			char_can_have_friends_trigger = yes
+		}
+		any_character = {
+			char_can_have_friends_trigger = yes
+			loyalty > 33
+			power_base >= 10
+			is_ruler = no
+			trigger_if = {
+				limit = {
+					root = {
+						is_monarchy = yes
+					}
+				}
+				is_primary_heir = no
+			}
+			trigger_if = {
+				limit = {
+					root = {
+						has_co_ruler_government = yes
+					}
+				}
+				is_co_ruler = no
+			}
+			NOT = { is_friend = root.current_ruler }
+			NOT = { is_rival = root.current_ruler }
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_6_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				loyalty > 33
+				power_base >= 10
+				is_ruler = no
+				trigger_if = {
+					limit = {
+						root = {
+							is_monarchy = yes
+						}
+					}
+					is_primary_heir = no
+				}
+				trigger_if = {
+					limit = {
+						root = {
+							has_co_ruler_government = yes
+						}
+					}
+					is_co_ruler = no
+				}
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+		}
+	}
+
+	option = {
+		name = "pbc_event.6.a"
+		current_ruler = {
+			add_popularity = subtract_popularity_large
+		}
+		scope:power_character = {
+			add_popularity = popularity_medium
+		}
+	}
+
+	option = {
+		name = "pbc_event.6.b"
+		scope:power_character = {
+			add_rival = root.current_ruler
+			add_loyalty = loyalty_power_dismissed
+		}
+	}
+
+	option = {
+		name = "pbc_event.6.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = vengeful
+			}
+		}
+		custom_tooltip = "vengeful_tooltip"
+		add_tyranny = 6
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		scope:power_character = {
+			death = {
+				death_reason = death_execution
+				killer = root.current_ruler
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.6.d"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = submissive
+			}
+		}
+		custom_tooltip = "submissive_tooltip"
+		scope:power_character = {
+			add_friend = root.current_ruler
+			add_popularity = popularity_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_large
+		}
+	}
+}
+
+# NOT CHAIN - Questionable Legitimacy
+pbc_event.7 = {
+	type = country_event
+	title = "pbc_event.7.t"
+	desc = "pbc_event.7.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		NOT = { has_variable = pbc_event_7_cooldown }
+		legitimacy <= 50
+		is_monarchy = yes
+		any_character = {
+			loyalty > 33
+			power_base >= 10
+			is_ruler = no
+			trigger_if = {
+				limit = {
+					root = {
+						is_monarchy = yes
+					}
+				}
+				is_primary_heir = no
+			}
+			trigger_if = {
+				limit = {
+					root = {
+						has_co_ruler_government = yes
+					}
+				}
+				is_co_ruler = no
+			}
+			NOT = { is_friend = root.current_ruler }
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_7_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				loyalty > 33
+				power_base >= 10
+				is_ruler = no
+				is_primary_heir = no
+				trigger_if = {
+					limit = {
+						root = {
+							has_co_ruler_government = yes
+						}
+					}
+					is_co_ruler = no
+				}
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+		}
+	}
+
+	option = {
+		name = "pbc_event.7.a"
+		scope:power_character = {
+			add_loyalty = loyalty_insulted_influencer
+		}
+	}
+
+	option = {
+		name = "pbc_event.7.b"
+		add_tyranny = tyranny_small
+	}
+
+	option = {
+		name = "pbc_event.7.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				wealth >= 50
+				has_trait = silver_tongued
+			}
+		}
+		custom_tooltip = "silver_tongued_tooltip"
+		current_ruler = {
+			add_gold = -50
+		}
+		scope:power_character = {
+			add_gold = 50
+			add_loyalty = loyalty_legitimacy_assured
+		}
+	}
+}
+
+# NOT CHAIN - Disagreeable Co-Ruler
+pbc_event.8 = {
+	type = country_event
+	title = "pbc_event.8.t"
+	desc = "pbc_event.8.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+	right_portrait = scope:faction_character_1
+	right_portrait = scope:faction_character_2
+
+	trigger = {
+		NOT = { has_variable = pbc_event_8_cooldown }
+		is_republic = yes
+		has_co_ruler_government = yes
+		any_character = {
+			loyalty > 33
+			NOT = { is_same_party_as = root.current_ruler }
+			power_base >= 5
+			is_ruler = no
+			is_co_ruler = yes
+			NOT = { is_friend = root.current_ruler }
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_8_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				loyalty > 33
+				NOT = { is_same_party_as = root.current_ruler }
+				power_base >= 5
+				is_ruler = no
+				is_co_ruler = yes
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+		}
+		if = {
+			limit = {
+				any_character = {
+					is_same_party_as = scope:power_character
+					is_party_leader = no
+					NOT = { this = scope:power_character }
+					trigger_if = {
+						limit = {
+							employer = {
+								gender_equality = no
+							}
+						}
+						is_female = no
+					}
+				}
+			}
+			random_character = {
+				limit = {
+					is_same_party_as = scope:power_character
+					is_party_leader = no
+					NOT = { this = scope:power_character }
+					trigger_if = {
+						limit = {
+							employer = {
+								gender_equality = no
+							}
+						}
+						is_female = no
+					}
+				}
+				weight = {
+					modifier = {
+						factor = 3
+						power_base >= 2
+					}
+					modifier = {
+						factor = 3
+						power_base >= 5
+					}
+				}
+				save_scope_as = faction_character_1
+			}
+			if = {
+				limit = {
+					any_character = {
+						is_same_party_as = scope:power_character
+						is_party_leader = no
+						NOR = { 
+							this = scope:faction_character_1 
+							this = scope:power_character
+						}
+						trigger_if = {
+							limit = {
+								employer = {
+									gender_equality = no
+								}
+							}
+							is_female = no
+						}
+					}
+				}
+				random_character = {
+					limit = {
+						is_same_party_as = scope:power_character
+						is_party_leader = no
+						NOR = { 
+							this = scope:faction_character_1 
+							this = scope:power_character
+						}
+						trigger_if = {
+							limit = {
+								employer = {
+									gender_equality = no
+								}
+							}
+							is_female = no
+						}
+					}
+					weight = {
+						modifier = {
+							factor = 3
+							power_base >= 2
+						}
+						modifier = {
+							factor = 3
+							power_base >= 5
+						}
+					}
+					save_scope_as = faction_character_2
+				}
+			}
+		}
+
+	}
+
+	option = {
+		name = "pbc_event.8.a"
+		add_party_approval = {
+			party = root.current_ruler.character_party
+			value = party_approval_medium
+		}
+		scope:power_character = {
+			add_loyalty = loyalty_disgruntled_influencer
+		}
+		add_party_approval = {
+			party = scope:power_character.character_party
+			value = party_disapproval_large
+		}
+		if = {
+			limit = {
+				exists = scope:faction_character_1
+			}
+			scope:faction_character_1 = {
+				add_party_conviction = {
+					party = root.current_ruler.character_party
+					value = 10
+				}
+			}
+			if = {
+				limit = {
+					exists = scope:faction_character_2
+				}
+				scope:faction_character_2 = {
+					add_party_conviction = {
+						party = root.current_ruler.character_party
+						value = 10
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.8.b"
+		add_party_approval = {
+			party = root.current_ruler.character_party
+			value = party_disapproval_medium
+		}
+		add_party_approval = {
+			party = scope:power_character.character_party
+			value = party_approval_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		if = {
+			limit = {
+				exists = scope:faction_character_1
+			}
+			scope:faction_character_1 = {
+				add_loyalty = loyalty_ignored_faction
+			}
+			if = {
+				limit = {
+					exists = scope:faction_character_2
+				}
+				scope:faction_character_2 = {
+					add_loyalty = loyalty_ignored_faction
+				}
+			}
+		}
+	}
+}
+
+# NOT CHAIN - Problematic Clan Chief
+pbc_event.10 = {
+	type = country_event
+	title = "pbc_event.10.t"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					centralization >= 0
+				}
+				desc = "pbc_event.10.desc.a"
+			}
+			triggered_desc = {
+				trigger = {
+					centralization < 0
+				}
+				desc = pbc_event.10.desc.b
+			}
+		}
+	}
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		NOT = { has_variable = pbc_event_10_cooldown }
+		is_tribal = yes
+		any_character = {
+			loyalty > 33
+			power_base >= 5
+			is_ruler = no
+			is_clan_chief = yes
+			NOT = { is_friend = root.current_ruler }
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_10_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				loyalty > 33
+				power_base >= 5
+				is_ruler = no
+				is_clan_chief = yes
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+			weight = {
+				modifier = {
+					factor = 3
+					power_base >= 10
+				}
+				modifier = {
+					factor = 3
+					power_base >= 20
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.10.a"
+		if = {
+			limit = {
+				centralization >= 0
+			}
+			add_country_modifier = {
+				name = pbc_event_10_decentralization_modifier
+				duration = 3650
+			}
+		}
+		else_if = {
+			limit = {
+				centralization < 0
+			}
+			add_country_modifier = {
+				name = pbc_event_10_centralization_modifier
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.10.b"
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+		scope:power_character = {
+			add_loyalty = loyalty_clan_dismissed
+		}
+	}
+}
+
+# NOT CHAIN - Corrupt Researcher
+pbc_event.11 = {
+	type = country_event
+	title = "pbc_event.11.t"
+	desc = "pbc_event.11.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		NOT = { has_variable = pbc_event_11_cooldown }
+		is_tribal = no
+		any_character = {
+			has_tech_office = yes
+			loyalty > 33
+			power_base >= 2
+			is_ruler = no
+			NOT = { is_friend = root.current_ruler }
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_11_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				has_tech_office = yes
+				loyalty > 33
+				power_base >= 2
+				is_ruler = no
+				NOT = { is_friend = root.current_ruler }
+			}
+			save_scope_as = power_character
+		}
+	}
+
+	option = {
+		name = "pbc_event.11.a"
+		if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = military_tech
+				}
+			}
+			add_research = {
+				technology = military_tech
+				value = 85
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = civic_tech
+				}
+			}
+			add_research = {
+				technology = civic_tech
+				value = 85
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = oratory_tech
+				}
+			}
+			add_research = {
+				technology = oratory_tech
+				value = 85
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = religious_tech
+				}
+			}
+			add_research = {
+				technology = religious_tech
+				value = 85
+			}
+		}
+		add_country_modifier = {
+			name = corrupt_research_modifier
+			duration = 3650
+		}
+		current_ruler = {
+			add_corruption = corruption_small
+		}
+		scope:power_character = {
+			add_corruption = corruption_small
+		}
+	}
+
+	option = {
+		name = "pbc_event.11.b"
+		scope:power_character = {
+			add_loyalty = loyalty_researcher_dismissed
+		}
+	}
+
+	option = {
+		name = "pbc_event.11.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = scholar
+			}
+		}
+		custom_tooltip = "scholar_tooltip"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = military_tech
+				}
+			}
+			add_research = {
+				technology = military_tech
+				value = 20
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = civic_tech
+				}
+			}
+			add_research = {
+				technology = civic_tech
+				value = 20
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = oratory_tech
+				}
+			}
+			add_research = {
+				technology = oratory_tech
+				value = 20
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = religious_tech
+				}
+			}
+			add_research = {
+				technology = religious_tech
+				value = 20
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.11.d"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = intelligent
+			}
+		}
+		custom_tooltip = "intelligent_tooltip"
+		if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = military_tech
+				}
+			}
+			add_research = {
+				technology = military_tech
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = civic_tech
+				}
+			}
+			add_research = {
+				technology = civic_tech
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = oratory_tech
+				}
+			}
+			add_research = {
+				technology = oratory_tech
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				scope:power_character = {
+					has_tech_office_of = religious_tech
+				}
+			}
+			add_research = {
+				technology = religious_tech
+				value = 5
+			}
+		}
+	}
+}
+
+# NOT CHAIN - Lazy Officer
+pbc_event.12 = {
+	type = country_event
+	title = "pbc_event.12.t"
+	desc = "pbc_event.12.desc"
+	picture = council_country
+
+	left_portrait = current_ruler
+	right_portrait = scope:power_character
+
+	trigger = {
+		NOT = { has_variable = pbc_event_12_cooldown }
+		any_character = {
+			has_any_office = yes
+			loyalty > 33
+			power_base >= 5
+			is_ruler = no
+			NOT = { is_friend = root.current_ruler }
+			NOR = {
+				has_trait = righteous
+				has_trait = guileless
+			}
+			trigger_if = {
+				limit = {
+					root = {
+						is_monarchy = yes
+					}
+				}
+				is_primary_heir = no
+			}
+			trigger_if = {
+				limit = {
+					root = {
+						has_co_ruler_government = yes
+					}
+				}
+				is_co_ruler = no
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = pbc_event_12_cooldown
+			days = 10950
+		}
+		random_character = {
+			limit = {
+				has_any_office = yes
+				loyalty > 33
+				power_base >= 5
+				is_ruler = no
+				NOT = { is_friend = root.current_ruler }
+				NOR = {
+					has_trait = righteous
+					has_trait = guileless
+				}
+				trigger_if = {
+					limit = {
+						root = {
+							is_monarchy = yes
+						}
+					}
+					is_primary_heir = no
+				}
+				trigger_if = {
+					limit = {
+						root = {
+							has_co_ruler_government = yes
+						}
+					}
+					is_co_ruler = no
+				}
+			}
+			save_scope_as = power_character
+		}
+	}
+
+	option = {
+		name = "pbc_event.12.a"
+		if = {
+			limit = { current_ruler.corruption > 0 }
+			current_ruler = { add_corruption = subtract_corruption_small }
+		}
+		scope:power_character = {
+			add_loyalty = loyalty_funding_refused
+		}
+	}
+
+	option = {
+		name = "pbc_event.12.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 2
+		}
+		if = {
+			limit = { current_ruler.corruption < 100 }
+			current_ruler = { add_corruption = corruption_medium }
+		}
+		scope:power_character = {
+			add_gold = {
+				value = root.has_monthly_income
+				multiply = 2
+			}
+			add_loyalty = loyalty_granted_funds
+			if = {
+				limit = { corruption < 100 }
+				add_corruption = corruption_medium 
+			}
+		}
+	}
+
+	option = {
+		name = "pbc_event.12.c"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = vengeful
+			}
+		}
+		add_tyranny = tyranny_small
+		custom_tooltip = "vengeful_tooltip"
+		imprison = {
+			target = scope:power_character
+		}
+	}
+}

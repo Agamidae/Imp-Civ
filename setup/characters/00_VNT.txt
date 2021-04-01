@@ -1,0 +1,28 @@
+﻿"VNT"={
+	country="VNT"
+	22={
+		first_name="Enrico"
+		family= c:VNT.fam:Dandolo
+		birth_date=15.8.3
+		culture="italian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=16
+		add_charisma=16
+		add_finesse=6
+		add_zeal=12
+		no_traits=yes
+		add_trait="dandolans"
+		add_trait="immortal"
+		add_trait="blind"
+		add_trait="wise"
+		add_trait="pious"
+		add_trait="shrewd"
+		add_gold=100
+		add_popularity=100
+		c:VNT={
+			set_as_ruler=char:22
+		}
+		dna="IbwJ58pbyltNhU2FAnwCfAFZAVkCgAKAAQIBTwKBAoEDsAOwAm8CbwFdAV0CkAKQAnkCeQKRApECjgKOAnUCdQKZApkCkgJuAoUChQJ7AnsAKwArAnYCdgRwA50CUQJ9AnACbAL9ApICowKVApYClgJ1AnUCZQKPAVsBWwKLAosCkwKTAosCiwJ8AnwCiwKLA54DngKWApYCmAKYA60DrQJxAnECdQJ1AnwCfAKIAogCaQJpApYClgKBAoEChQKFAnwCfAKQApACiAKIAo4CjgJ0AnQCiwKLAnYCdgJ0AnQCjQKNApUClQOCA4IACAAIAS4BLgFtAW0AUgBSALgAuABdAF0AswCzAu4C7gBlAGUBdQF1Av8AmAB/AH8A9gD2AaAAhwAjACMAgwCDAUQBRALuAu4CCgIKATwBPAB/AH8BOgE6AMEAwQDZANkA9QD1AWUBZQM1AzUC/AL8A24DbgBJAEkAzwDPAGMAYwNWA1YE/wdvAH8AfwFeAV4LwAEqAKQA9QnNCS0HKgHRBwAAugH/AAAAAAAAAAAAAA=="
+	}
+}

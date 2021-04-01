@@ -1,0 +1,193 @@
+﻿l_english:
+ #GROUPS
+ aksumite:0 "Aksumite"
+ anatolian:0 "Anatolian"
+ arabian:0 "Arabian"
+ aryan:0 "Aryan"
+ barbarian:0 "Barbarian"
+ britannic:0 "Britannic"
+ carpathian:0 "Carpatian"
+ caucasian:0 "Caucasian"
+ east_levantine:0 "East Levantine"
+ east_slavic:0 "East Slavic"
+ frankish:0 "Frankish"
+ gallic:0 "Gallic"
+ germanic:0 "Germanic"
+ hellenic:0 "Hellenistic"
+ huns:0 "Hunnic"
+ iberian:0 "Iberian"
+ latin:0 "Latin"
+ north_african:0 "North African"
+ numidian:0 "Numidian"
+ persia:0 "Persian"
+ scandinavian:0 "Scandinavian"
+ scythia:0 "Scythian"
+ west_levantine:0 "West Levantine"
+ west_slavic:0 "West Slavic"
+ celtic:0 "Celtic"
+ italian:0 "Italian"
+ 
+ #Aksumite
+ amhara:0 "Amhara"
+ 
+ #Anatolian
+ turkish:0 "Turkish"
+ 
+ #Arabian
+ bedouin:0 "Arabic"
+ egyptian_arabic:0 "Arabic Egyptian"
+ kurdish:0 "Kurdish"
+
+ #Aryan
+ magadhi:0 "Magadhi"
+ kanauji:0 "Hindvi"
+ 
+ #Barbarian
+ barbarian:0 "Barbarian"
+ 
+ #Britannic
+ celts:0 "Celtic"
+ engish:0 "English"
+ scottish:0 "Scottish"
+ 
+ #Carpathian
+ hungarian:0 "Hungarian"
+ romanian:0 "Romanian"
+ 
+ #Caucasian
+ georgian:0 "Georgian"
+ armenian:0 "Armenian"
+ 
+ #East Levantine
+ assyrian:0 "Assyrian"
+ babylonian:0 "Babylonian"
+ sumerian:0 "Sumerian"
+ 
+ #East Slivic
+ russian:0 "Russian"
+ ruthenian:0 "Ruthenian"
+ 
+ #Gallic
+ french:0 "French"
+ occitan:0 "Occitan"
+ maltese:0 "Maltese"
+ helvetian:0 "Helvetian"
+ gallic:0 "Gallic"
+ 
+ #Germanic
+ north_german:0 "North German"
+ south_german:0 "South German"
+ dutch:0 "Dutch"
+ 
+ #Hellenic
+ byzantine:0 "Greek"
+ macedonian:0 "Macedonian"
+ athenian:0 "Athenian"
+ peloponnesian:0 "Spartan"
+ #Huns
+ hunnic:0 "Hunnic"
+ 
+ #Iberian
+ spanish:0 "Spanish"
+ portugese:0 "Portugese"
+ 
+ #Italian
+ italian:0 "Italian"
+ sicilian:0 "Sicilian"
+ 
+ #Latin
+ roman:0 "Roman"
+ 
+ #North African:0 "African"
+ egyptian:0 "Egyptian"
+ meroitic:0 "Meroitic"
+ 
+ #Numidian
+ numidian:0 "Numidian"
+ berber:0 "Berber"
+ moroccan:0 "Moroccan"
+ moorish:0 "Moorish"
+ 
+ #Persian
+ persian:0 "Persian"
+ parthian:0 "Parthian"
+ 
+ #Scandinavian
+ swedish:0 "Swedish"
+ norwegian:0 "Norwegian"
+ danish:0 "Danish"
+ 
+ #Scythian
+ scythian:0 "Scythian"
+ 
+ #South Slavic
+ bulgarian:0 "Bulgarian"
+ serbian:0 "Serbian"
+ croatian:0 "Croatian"
+ 
+ #West Levantine:0 "West Levantine"
+ carthaginian:0 "Carthaginian"
+ phoenician:0 "Phoenician"
+ hebrew:0 "Hebrew"
+ 
+ #West Slavic
+ polish:0 "Polish"
+ czech:0 "Czech"
+ 
+ 
+ #Naming
+ aksumite_group_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ aksumite_group_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ anatolian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ anatolian_femalename:0 "$NAME_FEMALE$ $NICKNAME$"
+ arabian_malename:0 "$NAME_MALE$ $NICKNAME$ $FAMILY_MALE$"
+ arabian_femalename:0 "$NAME_FEMALE$ $FAMILY_MALE$"
+ aryan_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ aryan_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$"
+ barbarian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $NICKNAME$" av $FAMILY_MALE$ 
+ barbarian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $NICKNAME$" $FAMILY_MALE$
+ britannic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ britannic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ celtic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ celtic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ carpathian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ carpathian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ caucasian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ caucasian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ east_levantine_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ east_levantine_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ east_slavic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ east_slavic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ gallic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ gallic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ germanic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ germanic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ hellenic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $NICKNAME$ $FAMILY_MALE$"
+ hellenic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ hunnic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ hunnic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ iberian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ iberian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ indian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ indian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$"
+ italian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ italian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ latin_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ latin_femalename:1 "$FAMILY_FEMALE$ $FEMALE_ORDER$ $REGNALNUMBER$ $NICKNAME$"
+ north_african_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ north_african_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ numidian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ numidian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ persia_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ persia_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ scandinavian_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $NICKNAME$ $FAMILY_MALE$"
+ scandinavian_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $NICKNAME$ $FAMILY_MALE$"
+ scythia_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ scythia_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ south_slavic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ south_slavic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ west_levantine_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ west_levantine_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ west_slavic_malename:0 "$NAME_MALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ west_slavic_femalename:0 "$NAME_FEMALE$ $REGNALNUMBER$ $FAMILY_MALE$ $NICKNAME$"
+ 

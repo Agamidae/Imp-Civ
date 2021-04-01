@@ -1,0 +1,579 @@
+﻿#Only release this file if searching for UPDATE yields no results.
+namespace = stability
+
+# Minor Addendum
+stability.1 = {
+	type = minor_country_event
+	title = "stability.1.t"
+	desc = "stability.1.d"
+	picture = bakery
+	
+	left_portrait = scope:target_officer
+	goto_location = root.capital_scope
+	
+	interface_lock = no
+	
+	trigger = {
+		stability <= 80
+		NOT = {
+			has_variable = stab_1_cd
+		}
+		any_character = {
+			has_any_office = yes
+			character_experience >= high_expertise_threshold
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_office = yes
+				character_experience >= high_expertise_threshold
+			}
+			save_scope_as = target_officer
+		}
+		set_variable = {
+			name = stab_1_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.1.a"					# No ty
+		custom_tooltip = no_effect_tooltip
+		custom_tooltip = high_experience_event
+	}
+	
+	option = { 
+		name = "stability.1.b"		   			# Yes
+		add_stability_effect = yes
+		add_political_influence = subtract_influence_small
+		custom_tooltip = high_experience_event
+	}
+	
+}
+
+#Untiring Devotion
+stability.2 = {
+	type = minor_country_event
+	title = "stability.2.t"
+	desc = "stability.2.d"
+	picture = throneroom
+	
+	left_portrait = scope:target_officer
+	
+	interface_lock = no
+	
+	trigger = {
+		stability <= 80
+		NOT = {
+			has_variable = stab_2_cd
+		}
+		any_character = {
+			has_any_office = yes
+			character_experience >= high_expertise_threshold
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_office = yes
+				character_experience >= high_expertise_threshold
+			}
+			save_scope_as = target_officer
+		}
+		set_variable = {
+			name = stab_2_cd
+			days = 1440
+		}
+	}
+
+	option = {
+		name = "stability.2.a"					# Glorious!
+		add_stability_effect_small = yes
+		custom_tooltip = high_experience_event
+	}
+}
+
+# The Faith of XXXX
+stability.3 = {
+	type = minor_country_event
+	title = "stability.3.t"
+	desc = "stability.3.d"
+	picture = hellenic_temple
+	
+	left_portrait = scope:target_officer
+	
+	interface_lock = no
+	
+	trigger = {
+		stability <= 80
+		any_character = {
+			has_any_religious_office_trigger = yes
+			character_experience >= high_expertise_threshold
+		}
+		NOR = {
+			has_country_modifier = blessed_by_the_gods
+			has_variable = stab_3_cd
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_religious_office_trigger = yes
+				character_experience >= high_expertise_threshold
+			}
+			save_scope_as = target_officer
+		}
+		set_variable = {
+			name = stab_3_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.3.b"					# No
+		custom_tooltip = no_effect_tooltip
+		custom_tooltip = high_experience_event
+	}
+	
+	option = {
+		name = "stability.3.a"					# Yes
+		add_treasury = {
+			value = subtract_monthly_income_medium
+			multiply = 3
+		}
+		add_stability_effect = yes
+		add_country_modifier = {
+			name = "blessed_by_the_gods"
+			duration = 1440
+		}
+		custom_tooltip = high_experience_event
+	}
+	
+}
+
+
+# A Parlous State
+stability.4 = {
+	type = minor_country_event
+	title = "stability.4.t"
+	desc = "stability.4.desc"
+	picture = war_chest
+	
+	left_portrait = scope:officer_target
+	
+	interface_lock = no
+	
+	trigger = {
+		treasury >= 80
+		any_character = {
+			has_any_office = yes
+			character_experience <= low_expertise_threshold
+		}
+		NOT = {
+			has_variable = stab_4_cd
+		}
+	}	
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_office = yes
+				character_experience <= low_expertise_threshold
+			}
+			save_scope_as = officer_target
+		}
+		set_variable = {
+			name = stab_4_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.4.b"					
+		current_ruler = {
+			add_popularity = -10
+		}
+		custom_tooltip = low_experience_event
+	}
+	
+	option = {
+		name = "stability.4.a"					
+		ai_chance = { factor = 50 }
+		add_treasury  = {
+			value = root.has_monthly_income
+			multiply = -3
+		}
+		add_stability_effect = yes
+		current_ruler = { add_popularity = popularity_small }
+		custom_tooltip = low_experience_event
+	}
+	
+}
+
+#Plentiful Harvest
+stability.5 = {
+	type = minor_country_event
+	title = "stability.5.t"
+	desc = "stability.5.d"
+	picture = slaves_working
+	
+	left_portrait = scope:officer_target
+	
+	goto_location = scope:grain_province
+	
+	interface_lock = no
+	
+	trigger = {
+		not = { stability >= 90 }
+		any_owned_province = { trade_goods = grain }
+		any_character = {
+			has_any_admin_office_trigger = yes
+			character_experience >= high_experience_threshold
+		}
+		NOT = {
+			has_variable = stab_5_cd
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_admin_office_trigger = yes
+				character_experience >= high_experience_threshold
+			}
+			save_scope_as = officer_target
+		}
+		random_owned_province = {
+			limit = {
+				trade_goods = grain
+			}
+			save_scope_as = grain_province 
+		}
+		set_variable = {
+			name = stab_5_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.5.a"					# Huzzah!
+		add_stability_effect_small = yes
+		custom_tooltip = "high_experience_event"
+	}
+	
+	option = {
+		name = "stability.5.b"
+		traditionalist_approval_effect = {
+			VALUE = party_approval_medium
+		}
+		add_treasury  = {
+			value = root.has_monthly_income
+			multiply = add_monthly_income_medium
+		}
+		custom_tooltip = "high_experience_event"
+	}
+	
+}
+
+stability.6 = {
+	type = minor_country_event
+	title = "stability.6.t"
+	desc = "stability.6.d"
+	picture = throneroom
+	
+	left_portrait = scope:target_officer
+	
+	interface_lock = no
+	
+	trigger = {
+		war = yes
+		has_war_exhaustion >= 5
+		any_character = {
+			character_experience >= high_experience_threshold
+			has_any_military_office_trigger = yes
+		}
+		NOT = {
+			has_variable = stab_6_cd
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				character_experience >= high_experience_threshold
+				has_any_military_office_trigger = yes
+			}
+			save_scope_as = target_officer
+		}
+		set_variable = {
+			name = stab_6_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.6.a"					# Thank the people
+		add_war_exhaustion = -5
+	}
+	
+}
+
+#A Turn for the Worse
+stability.7 = {
+	type = country_event
+	title = "stability.7.t"
+	desc = "stability.7.d"
+	picture = greek_court
+	
+	left_portrait = root.current_ruler
+	
+	trigger = {
+		stability >= 25
+		current_ruler = { char_is_ill_trigger = yes }
+	}
+	
+	option = {
+		name = "stability.7.a"					# Medicus!
+		trigger = {
+			current_ruler = { 
+				NOT = {
+					char_is_paranoid_trigger = yes
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+		add_treasury  = {
+			value = root.has_monthly_income
+			multiply = subtract_monthly_income_medium
+		}
+
+		random_list = {
+			25 = { 
+				current_ruler = { 
+					death = {
+						death_reason = death_old_ailment
+					}
+				}
+			}
+			25 = { remove_stability_effect = yes }
+			50 = { current_ruler = { remove_illness_trait_effect = yes } }
+		}
+		
+	}
+	
+	option = {
+		name = "stability.7.b"					# Nope.
+		trigger = {
+			current_ruler = { 
+				char_is_paranoid_trigger = yes
+			}
+		}
+		ai_chance = { factor = 20 }
+		remove_stability_effect = yes
+	}
+	
+	option = {
+		name = "stability.7.c"					# Pray.
+		trigger = {
+			current_ruler = { 
+				char_is_religious_trigger = yes
+			}
+		}
+		ai_chance = { factor = 20 }
+		add_political_influence = influence_medium
+	}
+	
+	option = {
+		name = "stability.7.e"					# Nothing
+		trigger = {
+			NOT = {
+				current_ruler = { 
+					char_is_paranoid_trigger = yes
+				}
+			}
+		}
+		ai_chance = { factor = 20 }
+		random_list = {
+			50 = { 
+				current_ruler = { 
+					death = { 
+						death_reason = death_old_ailment 
+					} 
+				}
+			}
+			50 = { }
+		}
+	}
+}
+
+stability.8 = {
+	type = minor_country_event
+	title = "stability.8.t"
+	desc = "stability.8.d"
+	picture = bakery
+	
+	left_portrait = root.current_ruler
+	
+	interface_lock = no
+	
+	trigger = {
+		stability >= 25
+		any_owned_province = {
+			trade_goods = grain
+		}
+		any_character = {
+			has_any_office = yes
+			character_experience <= low_experience_threshold
+		}
+		NOT = {
+			has_variable = stab_8_cd 
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_office = yes
+				character_experience <= low_experience_threshold
+			}
+			save_scope_as = target_officer
+		}
+		set_variable = {
+			name = stab_8_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.8.b"					# Nah
+		current_ruler = { add_popularity = subtract_popularity_medium }
+		custom_tooltip = low_experience_event
+	}
+	
+	option = {
+		name = "stability.8.a"					# Seize bread
+		current_ruler = { 
+			add_popularity = popularity_large
+			add_corruption = corruption_large
+		}
+		custom_tooltip = low_experience_event
+	}
+}
+
+#Prosperity
+stability.9 = {
+	type = minor_country_event
+	title = "stability.9.t"
+	desc = "stability.9.d"
+	picture = war_chest
+	
+	left_portrait = scope:target_officer
+	
+	interface_lock = no
+	
+	trigger = {
+		NOR = {
+			has_country_modifier = raised_taxes
+			has_variable = stab_9_cd
+		}
+		any_character = {
+			has_any_admin_office_trigger = yes
+			character_experience >= high_experience_threshold
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_admin_office_trigger = yes
+				character_experience >= high_experience_threshold
+			}
+			save_scope_as = target_officer
+		}
+		set_variable = {
+			name = stab_9_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.9.a"					# It's best to be careful
+		add_country_modifier = {
+			name = "raised_taxes"
+			duration = 1825
+		}
+		scope:target_officer = {
+			add_popularity = subtract_popularity_large
+		}
+	}
+
+	option = {
+		name = "stability.9.c"					# It's probably not such a good idea
+		current_ruler = { 
+			if = {
+				limit = {
+					NOT = { has_trait = good_natured  }
+					number_of_personality_traits < max_number_of_traits_svalue
+				}
+				add_trait = good_natured
+			}
+			else = {
+				ROOT = {
+					add_stability_effect = yes
+				}
+			}
+		}
+		scope:target_officer = {
+			add_popularity = popularity_medium
+		}
+	}
+}
+
+#XXXX The Inept 
+stability.10 = {
+	type = minor_country_event
+	title = "stability.10.t"
+	desc = "stability.10.d"
+	picture = greek_court
+	
+	left_portrait = scope:target_officer
+	
+	interface_lock = no
+	
+	trigger = {
+		any_character = {
+			has_any_office = yes
+			character_experience <= low_experience_threshold
+		}
+		NOT = {
+			has_variable = stab_10_cd
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_office = yes
+				character_experience <= low_experience_threshold
+			}
+			save_scope_as = target_officer
+		}
+		set_variable = {
+			name = stab_10_cd
+			days = 1440
+		}
+	}
+	
+	option = {
+		name = "stability.10.a"					# He just needs some time to figure things out
+		ai_chance = { factor = 100 }
+		scope:target_officer = { 
+			add_popularity = subtract_popularity_medium
+		}
+		remove_stability_effect = yes
+	}
+}

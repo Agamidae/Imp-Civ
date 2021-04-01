@@ -1,0 +1,26 @@
+﻿"ABY"={
+	country="ABY"
+	50={
+		first_name="Menelik"
+		family= c:ABY.fam:Solomonid
+		birth_date=55.8.17
+		culture="amhara"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=5
+		add_charisma=8
+		add_finesse=9
+		add_zeal=12
+		no_traits=yes
+		add_trait="solomonids"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="pious"
+		add_gold=100
+		add_popularity=100
+		c:ABY={
+			set_as_ruler=char:50
+		}
+		dna="BvwG/GOuqdW8jryOApYClgJpAnsCiQKJADsCjwKUApQALAAsAnICcgKYApgCkgKSApICkgKNAo0ChgKGAoACgASFBNoCewJ7Ao4CjgKzAnkCPAI8AsYCxgF/AX8CYAKRAqcCbgLJAskCkQKRAm0CbQKMAowCdgJ2AFsADQJuAm4CcAJwAoUChQKuAq4CgwKDAn8CfwKHAocCZwJnAqYCpgKNAo0CsgKHAC4ALgOuA64CdwJ3AocChwK3ArcCvQK9AmYCZgE4ATgCMgJmAo0CjQPrA+sCbwJvA40DjQK3An0CjgKOBL4EvgKzAuIBLgEuAEgASADFAMUAcABwAEAAQAC0ALQBRQFFARsBGwBiAGIA0ADQAOsA6wAAAAAAlQCVAP8A/wEUARQBAQEBAT0BPQDqAOoCzQLNAtkC2QAAAAABFQEVANEA0QExATEAWwBbAKUApQDwAPAA4ADgBFIAuwC2ALYBoQGhAuwC7AAABLgArQfDAAAAAAJ4AngOSw5LANYAwgOWB8AIUA5sDH4K1wAAAAAAAAAAAAAAAA=="
+	}
+}

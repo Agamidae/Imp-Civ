@@ -1,0 +1,28 @@
+﻿"AYU"={
+	country="AYU"
+	30={
+		first_name="Saladin"
+		family= c:AYU.fam:Ayyubid
+		birth_date=63.9.12
+		culture="kurdish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=4
+		add_charisma=7
+		add_finesse=8
+		add_zeal=10
+		no_traits=yes
+		add_trait="immortal"
+		add_trait="ayyubids"
+		add_trait="generous"
+		add_trait="just"
+		add_trait="pious"
+		add_trait="scholar"
+		add_gold=100
+		add_popularity=100
+		c:AYU={
+			set_as_ruler=char:30
+		}
+		dna="AP++nNh7n4j92/3bAU4BTgJ9An0CdgJ2An8CfwKZApkCbQJtAosCiwJ0AnQCZwJnApcClwFOAU4CnwKfAo4CjgFTAVMCkQJtAnECigJ/An8CkgKSApMCkwJxAnEDrQOtAncCdwJ8AnwCZwJnAV8BXwLRApMCRAKXAtQCeAJ0AnQCZwJnBJ4BUgJsAmwCmQKZAnQCdAJqAmoDnwOfAmoCagJ0AnQATABMAoECgQKKAooChwKHApECkQKWApYChQKFAnUCdQJsAmwCTwJwAnwCfAKJAokBVwFXAVsBWwJ1AnUClwKXAmcCZwKKAooA6QDpANEA0QKAAoAACAAIADEAMQEZARkAlgCWAL4AvgAwADABOgE6AJ0AnQB/AH8BAQEBAXwBfABzAHMAsgCyAXcBdwCuAK4CVQJVAoMCgwB/AH8AJgAmASABIAC6ALoBCAEIAHYAdgFPAU8ANQA1A1ADUAKeAp4BRgFGAXcBdwDHAMcB5gHmAH8AfwW2BbYMRwRgAH8BdwL/AvsM/wMMFCkDKQAAAAAAAAAAAAAAAA=="
+	}
+}

@@ -1,0 +1,192 @@
+﻿namespace = gw_ai_build
+
+# Every year there is a simple random chance for any country that meets the criteria to start making a gw
+# Some tags will always make a specific more advanced gw, some will select from a list of basic ones
+gw_ai_build.1 = {
+	type = country_event     
+    hidden = yes
+
+	trigger = {
+		has_dlc = "Heirs of Alexander"
+		is_ai = yes
+				
+		#civilization_value >= 60 # only a great civilization would do this
+		treasury >= 5000 # half the approximate average template cost since the AI won't save up for this specifically
+		
+		any_owned_province = {
+            has_great_work = no
+		}
+	}
+	
+	immediate = {	
+		random_owned_province = {
+            limit = {
+                has_great_work = no
+            } 
+            save_scope_as = province
+		}			
+	
+		#Rome 
+		if = {
+			limit = {
+				tag = ROM
+			}
+			random_list = {
+				95 = {}
+                5 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_09"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    } 
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }                
+			}
+		}
+		#Carthage 
+		else_if = {
+            limit = {
+				tag = CAR
+			}
+			random_list = {
+				95 = {}
+                5 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_06"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    }
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }                
+			}
+		}
+		#Egypt 
+		else_if = {
+            limit = {
+				tag = EGT
+			}
+			random_list = {
+				95 = {}
+                5 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_02"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    }
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }                
+			}
+		}
+		#Sparta 
+		else_if = {
+            limit = {
+				tag = SPA
+			}
+			random_list = {
+				95 = {}
+                5 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_08"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    }
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }                
+			}
+		}
+		#Antigonus 
+		else_if = {
+            limit = {
+				tag = PRY
+			}
+			random_list = {
+				95 = {}
+                5 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_05"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    }
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }                
+			}
+		}		
+		else = {
+			random_list = {
+				97 = {}
+                1 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_01"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    }
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }                
+				1 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_04"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    }
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }
+				1 = {
+					scope:province = {
+						begin_great_work_construction = {
+							great_work = "great_work_template_07"
+							locator = primary_great_work
+							is_ancient = no							
+						}						
+                    }
+					set_variable = {
+						name = gw_built_var
+						value = 1
+					}
+					add_treasury = -5000
+                }
+			}
+		}		
+	}
+}

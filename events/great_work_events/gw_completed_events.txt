@@ -1,0 +1,110 @@
+﻿namespace = gw_completed
+
+gw_completed.1 = {
+    type = country_event
+    title = gw_completed.1.t
+    desc = gw_completed.1.desc
+    picture = great_work_celebration
+    goto_location = scope:province
+
+    trigger = {
+		has_dlc = "Heirs of Alexander"
+        stability <= 79
+        stability >= 41
+    }
+
+    option = { # Focus on the ruler and his might
+        name = "gw_completed_flavor.1.a"
+        current_ruler = {
+            add_popularity = popularity_large
+            add_martial = 1
+            add_zeal = 1
+        }
+    }
+    option = { # Focus on the ruler and his intellect
+        name = "gw_completed_flavor.1.b"
+        add_stability = 10
+        current_ruler = {
+            add_popularity = popularity_large
+            add_finesse = 1
+            add_charisma = 1
+        }
+    }
+    option = { # Focus on the people, population happiness
+        name = "gw_completed_flavor.1.c"
+        add_country_modifier = {
+            name = great_work_completed
+            duration = 730
+        }
+    }
+}
+
+gw_completed.2 = { #Bad
+    type = country_event
+    title = gw_completed.2.t
+    desc = gw_completed.2.desc
+    picture = great_work_celebration
+    goto_location = scope:province
+
+    trigger = {
+		has_dlc = "Heirs of Alexander"
+        stability <= 40
+    }
+
+    option = { # Focus on the ruler and his intellect
+        name = "gw_completed_flavor.1.a"
+        add_treasury = {
+            add = root.has_monthly_income
+            multiply = 2
+        }
+        current_ruler = {
+            add_popularity = popularity_large
+        }
+        add_manpower = 3
+        add_stability = 5
+    }
+    option = { # Focus on the people, population happiness
+        name = "gw_completed_flavor.1.b"
+        scope:province = {
+            add_province_modifier = {
+                name = great_work_completed_bad
+                duration = 730
+            }
+        }
+    }
+}
+
+gw_completed.3 = { #Great!
+    type = country_event
+    title = gw_completed.3.t
+    desc = gw_completed.3.desc
+    picture = great_work_celebration
+    goto_location = scope:province
+
+    trigger = {
+		has_dlc = "Heirs of Alexander"
+        stability >= 80
+    }
+
+    option = { 
+        name = "gw_completed_flavor.3.a"
+        add_aggressive_expansion = -3
+        add_war_exhaustion = -3
+    }
+
+    option = { 
+        name = "gw_completed_flavor.3.b"
+        add_tyranny = -10
+        add_political_influence = 100
+    }
+
+    option = { 
+        name = "gw_completed_flavor.3.c"
+        scope:province = {
+            add_province_modifier = {
+                name = great_work_completed_great
+                duration = 730
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿"MRY"={
+	country="MRY"
+	34={
+		first_name="Chandragupta"
+		family= c:MRY.fam:Maurya
+		birth_date=64.5.9
+		culture="magadhi"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=9
+		add_finesse=8
+		add_zeal=7
+		no_traits=yes
+		add_trait="mauryas"
+		add_trait="immortal"
+		add_trait="scholar"
+		add_trait="wise"
+		add_trait="victorious"
+		add_gold=100
+		add_popularity=100
+		c:MRY={
+			set_as_ruler=char:34
+		}
+		dna="AP9f3tSg1KABw/TcAnsCewJ4AngDsQOxApQClAKQApACmQKZAoICggJ1AnUCgwKDAmgCaAJ+An4CaAJoAokCiQKEAoQCmQKZApMCkwT3BLUCZwJnAoMCgwKFAoUCfwJ/AmoCagKLAosCiQKJACoAKgGxAUYCigKKAm8CbwJyAnICiAKIArcClwJ6AnoCoAJiAIMEswJ2AnYChAKEAnACcAJSAn0CfAJwAnkCeQF6AXoCcwJzAnICcgAfApcEKwTbA6oDqgKGAoYARQBFBJUElQOwA7ACjwKPAV0BXQJwAnACewJ7AosCiwQCAtMAQQBBAlcCVwC0ALQA/AD8AJoAmgBMAEwA1QDVABAAEABaAFoCwALAAOEA4QB/AH8A2ADYAbIAKwADAAMBJwFTALUAtQBnACQAywDLAVsBWwB/AH8BGwEbAIsAiwK0ArQAxQDFAJEAkQNNA00AZQBlACIAIgB/AH8BdwF3AUMBQwAqACoB3wHfAH8AfwYZBhkMSQzvASIBIgj/CK4JAQl7C+4GVQAAAAAAAAAAAAAAAA=="
+	}
+}

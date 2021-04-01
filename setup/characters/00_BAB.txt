@@ -1,0 +1,44 @@
+﻿"BAB"={
+	country="BAB"
+	20={
+		first_name="Nebuchadnezzar"
+		family= c:BAB.fam:Chaldean
+		birth_date=75.4.23
+		culture="babylonian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=9
+		add_finesse=8
+		add_zeal=8
+		no_traits=yes
+		add_trait="chaldeans"
+		add_trait="immortal"
+		add_trait="just"
+		add_gold=100
+		add_popularity=100
+		dna="/Ycu6qGQoZD1+/X7AbwBWQITAooCawJrAoACgATFBMUCeQJ5AmkCaQJ/An8CbQJtAoMCgwFhAWEDtAO0AnwCfAAtAC0CegJ6AncCdwJzAnMCewJ7AmYCZgJ7AnsCaAJoAnQCdAKPAo8EwgTCAEEAQQJwAnACiAKIAnwCfAKLAosClAKUAm0CbQJpAmkEFgKKAm4CbgT/A68AkAJmAI0CeAJvAm8CcQJxAokCiQJuAm4DrAOsAo0CjQKVApUBbAFsAoECgQJ6AnoCdgJ2AWwBZQKYAoUD/wKVAnACcALNAnwCcwJzAmYCZgIAAg0BXQFdAK8ArwEEAQQABQAFAGoAagEFAQUAZQBlAC4ALgCyALIATgBOAtkC2QB/AH8BPQE9AV0BXQBXACIBBQEFAKcA3QEAAQwAqQCpACgAKAB/AH8AcQDyAGIA0QAqAKIA5gDmAFkAWQLhAMAAHgAeAkoCSgDsAOwEYQRhAVYBVgM1AzUHFQLgAP8AfwX/BdkMAAQeAZUB3AnaAmMDzwOoAxADAAAAAAAAAAAAAAAAAA=="
+	}
+
+	53={ #Last one
+		first_name="Hammurabi"
+		family= c:BAB.fam:Amorite
+		birth_date=82.1.1
+		culture="babylonian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=13
+		add_finesse=12
+		add_zeal=9
+		no_traits=yes
+		add_trait="amorites"
+		add_trait="immortal"
+		add_trait="wise"
+		add_gold=100
+		add_popularity=100
+		c:BAB={
+			set_as_ruler=char:53
+		}
+	}
+}

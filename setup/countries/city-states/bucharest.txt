@@ -1,0 +1,6 @@
+﻿color = "nero"
+color2 = "magenta2"
+
+ship_names = {
+	
+}

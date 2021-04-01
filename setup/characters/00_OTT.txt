@@ -1,0 +1,67 @@
+﻿"OTT"={
+	country="OTT"
+	9={
+		first_name="Suleiman"
+		family= c:OTT.fam:Osmanoglu
+		birth_date=74.11.6
+		culture="turkish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=6
+		add_finesse=6
+		add_zeal=2
+		no_traits=yes
+		add_trait="justinians"
+		add_trait="immortal"
+		add_trait="just"
+		add_trait="wise"
+		add_gold=100
+		add_popularity=100
+		c:OTT={
+			set_as_ruler=char:9
+		}
+		dna="Av0I7EFUsnvr/7LvAncCdwAaABoCaAJoAlICmQKAAoACjQKNAnQCdAKKAooCfwJ/AoICggJtAm0CsQKOAngCeANtA64CggJwAXYBWwKHAocCbQJtAo8CjwJgAm4CbgKMBEYCdQA+AD4ClwKXAnMCcwJ7AnsCfQJ9A/8CkgKZApkCfQJ9ApYClgJ0AnQCaAJoAWQBZAKUApQCfgJ+AoQChAKNAo0CcAJwAogCiAKAAoACewJ7AnsCewKQApACkAKQAocChwKMAowCZwJ+ArcCiwKHAngCYgJ2ApcClwKKAooCbgJuAnkCeQEAAvAAiwCLAoICggCzALMAZwBnAMEAwQCMAIwBUAFQAVsBWwEyATIAkgCSAGkAaQB/AH8A2wDbAT8BPwBmAGYC/QLMAf0A9QIAAD8BWwFbAsoCygB/AH8BAACkAa8BJAFBAEIAlwDXAXoBegB3AKABSwFLA1MDUwIZAD0EAAAMAjgAYQBKAEoHbAHUAH8AfwKVApUFUAXoAIIACwL/BfYeTAJMAwECYQD/AAAAAAAAAAAAAA=="
+	}
+
+	10={
+		first_name="Hurrem"
+		family= c:OTT.fam:Osmanoglu
+		birth_date=71.8.12
+		female=yes
+		culture="ruthenian"
+		religion="default_pantheon"
+		marry_character=char:9
+		no_stats=yes
+		add_martial=7
+		add_charisma=5
+		add_finesse=5
+		add_zeal=6
+		no_traits=yes
+		add_trait="agiads"
+		add_trait="immortal"
+		add_trait="silver_tongued"
+		add_gold=100
+		add_popularity=89
+		dna="K/8Z7Y9+j37AxcDFAoECgQICAm0CmAJqAmgCjAOhA6EBWQFZAhMCkQKFAmkCbAJsAr8CcAKOAmkCkAKQA70DqgJ2AncCeAJ4A3cCcgKqAoMCZwJnAv8ChQJ0AnQDWgOsAoUChQKNAo0BOAFTApECkQKVAnMCfgJ+ApcCZgKZApkDjQObAoACgAK3ApcEkgJwAQABUwKTApMCbwJvAnkCeQJ1AnUCdQJ1BLIEsgKAAoACbwJvAoQChAJ2AnYCjAKMApICkgKIAogCcAJwApMCkwKLAosCtQKOApYClgJpAmkCjAOkAoICggAAA64CywDHAqoCqgFZAVkA4wDjAPkA+QE0ATQAawBrAIkAiQChAKEAhwCHAPMA8wB/AH8CowKjAbEA7wEmASYAOgA6AVMBUwDxAPEBYwFjAHwAfAB/AH8BGgEaALEAsQE7ATsCkAKQAFUAVQM8AzwAdAB0AzYDNgASABIBSgFKAx8DHwEoASgKAAmQAI4AfwLvAu8BtQVfABMAEwVDBUMC1AI8AogCiAAAAAAAAAAAAAAAAA=="
+	}
+
+	49={
+		first_name="Ibrahim"
+		family_name="Pargali"
+		birth_date=72.5.7
+		culture="byzantine"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=6
+		add_finesse=8
+		add_zeal=5
+		no_traits=yes
+		add_trait="tactician"
+		add_gold=100
+		add_popularity=100
+		give_office=office_elder
+		dna="M+Iz4p+Bn4G0+7T7ADAAMAKSApICaAKAAkcCjQKIAogCcgJyApECkQKAAoACZgJmA6oDqgJ/An8BTgFOAoUChQKIAogCbwJvAm0CbQTcBNwCfAJ8AD8APwJvAm8CawJrAoECgQJuAm4CkwKTApECkQJ7AnsCcgJ4ApACkAKVApUCgwKDAn4CfgOaA5oCggKFAoACgAKIAogCfQJ9Ao8CjwJ0AnQCmAKYAnECcQJxAnEBXgFeAoMCgwKUApQCeAJ4Am4CbgKQApACjgKOAosCiwJ2AnYClwKXAm0CbQJxAnECeQJ5AmcCZwKoAuAAHgAeACgAKADmAOYABAAEAvoC+gBhAGEA+AD4AOMA4wAEAAQArwCvAoMCgwAAAAAAIgAiAB0AHQBeAF4AcwBzAXYBdgFBAUEAMgAyAIEAgQAAAAABHwEfATABMAE6AToBfgF+AMEAwQCbAJsCvgK+A0EDQQFOAU4ACwALAWIBYgNxA3EIiQrCAAAAAADBAMEFjAW5AJgAmAWlBcsE/wILAUsCRQAAAAAAAAAAAAAAAA=="
+	}
+}

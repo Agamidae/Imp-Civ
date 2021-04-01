@@ -1,0 +1,6 @@
+﻿color = "nero"
+color2 = "pumkin"
+
+ship_names = {
+	
+}

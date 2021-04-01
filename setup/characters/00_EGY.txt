@@ -1,0 +1,48 @@
+﻿"EGY"={
+	country="EGY"
+	2={
+		first_name="Cleopatra"
+		family= c:EGY.fam:Ptolemaic
+		birth_date=24.3.18
+		female=yes
+		culture="macedonian"
+		religion="default_pantheon"
+		marry_character=char:1
+		no_stats=yes
+		add_martial=3
+		add_charisma=9
+		add_finesse=6
+		add_zeal=7
+		no_traits=yes
+		add_trait="silver_tongued"
+		add_trait="lustful"
+		add_trait="immortal"
+		add_gold=100
+		add_popularity=89
+		c:EGY={
+			set_as_ruler=char:2
+		}
+		dna="AP++nNh7n4jKof3bAU4BTgKDAn0CsgJ2AlkCfwKZApkCbQJtAosCiwJ0AnQCZwJnApcClwFOAU4CnwKfAo4CjgFTAVMCkQJtAnECigKgAn8CkgKSApMCkwJxAnEDrQOtAncCdwJ8AnwCZwJnAV8BXwKaApMCRAKXAtQCeAJ0AnQCZwJnBJ4BUgJsAmwCmQKZAnQCdAJqAmoDnwOfAmoCagJ0AnQATABMAoECgQKKAooChwKHApECkQKWApYChQKFAnUCdQJsAmwCTwJwAnwCfAKJAokBVwFXAVsBWwJ1AnUClwKXAmcCZwKKAooA6QDpANEA0QKAAoAACAAIADEAMQEZARkAlgCWAL4AvgAwADABOgE6AJ0AnQB/AH8BAQEBAXwBfABzAHMAsgCyAXcBdwCuAK4CVQJVAoMCgwB/AH8AJgAmASABIAC6ALoBCAEIAHYAdgFPAU8ANQA1A1ADUAKeAp4BRgFGAXcBdwDHAMcB/QHmAH8AfwX/BbYPtgRgAH8BdwL/AvsITAMMFCkDKQD/AAAAAAAAAAAAAA=="
+	}
+	1={
+		first_name="Gaius"
+		nickname="NICKNAME_CAESAR"
+		family=c:EGY.fam:Julii
+		birth_date=56.7.12
+		culture="roman"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=8
+		add_finesse=7
+		add_zeal=3
+		no_traits=yes
+		add_trait="orator"
+		add_trait="immortal"
+		add_trait="conqueror"
+		add_gold=100
+		add_popularity=80
+		dna="D/8F+rRhtGH/kLKQAoECgQKKAooCmAKYApwCjAJnAmcCgAKAAosCiwK9AngEnwKKAJoCbAKYApgCkAKQAmgCaAJ1ApEBGgOdAm0CbQJ7AnsChAKXApACkAFdAV0ChQKFAoUCgwR+AoYCxAKAApcClwKRApECXwKSArsCjwJ9An0CZwJnAogBZQKNAoECTQKEA5UCkgKHAocCfAJ8AlcCjQJmAmYCQQJ2AoICggFZAVkBWwFbApYClgKHAocCeQJ5AmsCawKFAoECcgJyA5wDnAKNAnYEewKLAnECggKkAm0EZQJnAoMCgwIcAtcAlgCWAXEBcQGtAU0C3gLeAsAAKAJrATgA+QD5ARoBGgDjAOMCUgJSAKUApQAAAAAAsQCxApMBCABcAFwAQwBDAuIA4gAUARQCBgIGAGwAbAAAAAABUQFRAosCiwJdAt4AigA4AV4BXgEnAAgC2gKFATkA+gJUAG8AGQAZAXgBeAIeBPMFawNmAAAAAAFGAUYBEQFlAP0AzglwCXABAAHLAAAAeAAAAAAAAAAAAAAAAA=="
+	}
+	
+}

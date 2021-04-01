@@ -1,0 +1,70 @@
+﻿namespace = gw_not_existing
+
+gw_not_existing.2 = { ### They can't have one event
+    type = country_event
+    title = gw_not_existing.2.t
+    desc = gw_not_existing.2.desc
+    picture = great_work_riot
+    goto_location = scope:interesting_province
+
+
+    trigger = {	
+        any_neighbour_country = {
+            opinion = {
+                target = root
+                value < 0
+            }
+            any_owned_province = {
+                has_great_work = yes
+            }
+        }
+        NOT = { has_variable = gw_not_existing_2_cooldown }
+    }
+
+    immediate = {
+        random_neighbour_country = {
+            limit = {
+                opinion = {
+                    target = root
+                    value < 0
+                }
+                any_owned_province = {
+                    has_great_work = yes
+                }
+            }
+            random_owned_province = {
+                limit = {
+                    has_great_work = yes
+                }
+                save_scope_as = interesting_province
+            }
+        }
+        set_variable = {
+            name = gw_not_existing_2_cooldown
+            days = 5429
+        }
+    }
+
+    option = { #Get mad at the people
+        name = "gw_not_existing.flavor.2.a"
+        current_ruler = {
+            add_popularity = -10
+        }
+        add_tyranny = 5
+    }
+
+    option = { #Do something peaceful
+        name = "gw_not_existing.flavor.2.b"
+        current_ruler = {
+            add_prominence = 15
+        }
+        add_stability = -5
+    }
+    option = { #Give CB
+        name = "gw_not_existing.flavor.2.c"
+        scope:interesting_province = { 
+            add_claim = ROOT 
+        }
+        add_tyranny = 5
+    }
+}

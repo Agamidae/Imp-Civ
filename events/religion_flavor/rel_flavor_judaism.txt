@@ -1,0 +1,459 @@
+﻿namespace = rel_flavor_judaism
+
+# Building a grand temple
+rel_flavor_judaism.1 = {
+	type = country_event
+	title = "rel_flavor_judaism.1.t"
+	desc = "rel_flavor_judaism.1.desc"
+	picture = great_city
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_priest
+
+	goto_location = p:687
+
+	trigger = {
+		religion = judaism
+		NOR = { 
+			has_variable = rel_flavor_judaism_1_cooldown 
+			has_variable = judaism_flavor_temple_built
+		}
+		NOR = { 
+			owns = 687 
+			p:687 = {
+				owner = {
+					religion = judaism
+				}
+			}
+		}
+		capital_scope = {
+			NOT = {
+				has_province_modifier = province_improvement_judaism_grand_temple
+			}
+		}
+		num_of_cities > 150
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_judaism_1_cooldown
+			days = 18250
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.1.a"
+		set_variable = {
+			name = judaism_flavor_temple_built
+		}
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 24
+			max = -300
+		}
+		add_country_modifier = {
+			name = country_improvement_judaism_temple
+			duration = 10950
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = province_improvement_judaism_grand_temple
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.1.b"
+		add_stability_effect_small = yes
+	}
+}
+
+# The missing Sabbath sacrifice
+rel_flavor_judaism.2 = {
+	type = country_event
+	title = "rel_flavor_judaism.2.t"
+	desc = "rel_flavor_judaism.2.desc"
+	picture = war_chest
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_priest
+
+	trigger = {
+		religion = judaism
+		NOT = { has_variable = rel_flavor_2_cooldown }
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_2_cooldown
+			days = 3650
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.2.a"
+		add_stability_effect_small = yes
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priests_helped
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.2.b"
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_ignored_priest
+		}
+	}
+}
+
+# City lacking in prayers
+rel_flavor_judaism.3 = {
+	type = country_event
+	title = "rel_flavor_judaism.3.t"
+	desc = "rel_flavor_judaism.3.desc"
+	picture = hellenic_marketplace
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_priest
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = judaism
+		NOT = { has_variable = rel_flavor_judaism_3_cooldown }
+		any_owned_province = {
+			dominant_province_religion = judaism
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_judaism_3_cooldown
+			days = 5475
+		}
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = judaism
+			}
+			weight = {
+				modifier = {
+					factor = 20
+					any_neighbor_province = {
+						NOT = { dominant_province_religion = judaism }
+					}
+				}
+			}
+			save_scope_as = country_province
+			if = {
+				limit = {
+					any_neighbor_province = {
+						has_owner = yes
+						NOT = { dominant_province_religion = judaism }
+					}
+				}
+				random_neighbor_province = {
+					limit = {
+						has_owner = yes
+						NOT = { dominant_province_religion = judaism }
+					}
+					save_scope_as = neighbor_province
+				}
+			}
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.3.a"
+		add_political_influence = subtract_influence_medium
+		scope:random_priest = {
+			add_loyalty = loyalty_priests_helped
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.3.b"
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_diminishment_judaism_lacking_prayers
+				duration = 1825
+			}
+			if = {
+				limit = {
+					exists = scope:neighbor_province
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_religion = judaism
+					}
+					set_pop_religion = scope:neighbor_province.religion
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_religion = judaism
+					}
+					set_pop_religion = scope:neighbor_province.religion
+				}
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}
+
+# Hellenistic neighbor
+rel_flavor_judaism.4 = {
+	type = country_event
+	title = "rel_flavor_judaism.4.t"
+	desc = "rel_flavor_judaism.4.desc"
+	picture = great_library
+
+	left_portrait = current_ruler
+	right_portrait = scope:neighbor_country.current_ruler
+
+	goto_location = scope:neighbor_country.capital_scope
+	
+	trigger = {
+		religion = judaism
+		NOT = { has_variable = rel_flavor_judaism_4_cooldown }
+		any_neighbour_country = {
+			religion = roman_pantheon
+		}
+		capital_scope = {
+			dominant_province_religion = judaism
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_judaism_4_cooldown 
+			days = 7300
+		}
+		random_neighbour_country = {
+			limit = {
+				religion = roman_pantheon
+			}
+			save_scope_as = neighbor_country
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.4.a"
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = judaism_inspired
+				target = root
+			}
+		}
+		add_country_modifier = {
+			name = country_improvement_judaism_hellenistic_inspiration
+			duration = 1825
+		}
+		capital_scope = {
+			random_pops_in_province = {
+				limit = {
+					pop_religion = judaism
+				}
+				weight = {
+					modifier = {
+						factor = 10
+						pop_type = citizen
+					}
+				}
+				set_pop_religion = roman_pantheon
+			}
+			random_pops_in_province = {
+				limit = {
+					pop_religion = judaism
+				}
+				weight = {
+					modifier = {
+						factor = 10
+						pop_type = citizen
+					}
+				}
+				set_pop_religion = roman_pantheon
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.4.b"
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = judaism_traditions
+				target = root
+			}
+		}
+		add_country_modifier = {
+			name = country_improvement_judaism_traditions
+			duration = 1825
+		}
+	}
+}
+
+# Be a haven for a group of Jewish people in a neighbor country
+rel_flavor_judaism.5 = {
+	type = country_event
+	title = "rel_flavor_judaism.5.t"
+	desc = "rel_flavor_judaism.5.desc"
+	picture = scribe_tools
+
+	left_portrait = current_ruler
+	right_portrait = scope:neighbor_country.current_ruler
+
+	goto_location = scope:neighbor_country_province
+	
+	trigger = {
+		religion = judaism
+		NOT = { has_variable = rel_flavor_judaism_5_cooldown }
+		any_neighbour_country = {
+			NOT = { religion = judaism }
+			any_owned_province = {
+				any_pops_in_province = {
+					pop_religion = judaism
+				}
+			}
+		}
+	}
+
+	immediate = {
+		save_scope_as = original_country
+		set_variable = {
+			name = rel_flavor_judaism_5_cooldown
+			days = 1825
+		}
+		random_neighbour_country = {
+			limit = {
+				NOT = { religion = judaism }
+				any_owned_province = {
+					any_pops_in_province = {
+						pop_religion = judaism
+					}
+				}
+			}
+			save_scope_as = neighbor_country
+			random_owned_province = {
+				limit = {
+					any_pops_in_province = {
+						pop_religion = judaism
+					}
+				}
+				save_scope_as = neighbor_country_province
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.5.a"
+		add_political_influence = subtract_influence_medium
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = judaism_stolen_citizens
+				target = root
+			}
+			trigger_event = {
+				id = rel_flavor_judaism.6
+			}
+		}
+		scope:neighbor_country_province = {
+			random_pops_in_province = {
+				limit = {
+					pop_religion = judaism
+				}
+				weight = {
+					modifier = {
+						factor = 10
+						pop_type = citizen
+					}
+				}
+				move_pop = root.capital_scope
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_religion = judaism
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_religion = judaism
+					}
+					weight = {
+						modifier = {
+							factor = 10
+							pop_type = citizen
+						}
+					}
+					move_pop = root.capital_scope
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_judaism.5.b"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_large
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+	}
+}
+
+# Safe Haven - Part 2
+rel_flavor_judaism.6 = {
+	type = country_event
+	title = "rel_flavor_judaism.6.t"
+	desc = "rel_flavor_judaism.6.desc"
+	picture = scribe_tools
+
+	left_portrait = current_ruler
+	right_portrait = scope:original_country.current_ruler
+
+	goto_location = scope:original_country.capital_scope
+	
+	option = {
+		name = "rel_flavor_judaism.6.a"
+		custom_tooltip = "rel_flavor_judaism.6.a.tt"
+	}
+}

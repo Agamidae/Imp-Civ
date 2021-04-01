@@ -1,0 +1,1146 @@
+﻿namespace = dhe_volcano
+
+# Volcano Eruption - Original
+dhe_volcano.1 = {
+	type = country_event
+	title = "dhe_volcano.1.t"
+	desc = "dhe_volcano.1.desc"
+	picture = volcanic_disaster
+
+	left_portrait = current_ruler
+	
+	goto_location = scope:volcano_city
+
+	trigger = {
+		country_borders_volcano_province_not_erupted_trigger = yes
+		NOR = { 
+			has_variable = dhe_volcano_1_cooldown 
+			has_variable = vesuvius_volcano_eruption
+			has_variable = aetna_volcano_eruption
+			has_variable = ararat_volcano_eruption
+			has_variable = methana_volcano_eruption
+			has_variable = aragats_volcano_eruption
+			has_variable = argaeus_mons_volcano_eruption
+			has_variable = argaios_mons_volcano_eruption
+			has_variable = ausara_volcano_eruption
+			has_variable = bamni_volcano_eruption
+			has_variable = qarqar_volcano_eruption
+			has_variable = caucasus_mons_volcano_eruption
+			has_variable = iberia_mons_volcano_eruption
+		} 
+	}
+
+	immediate = {
+		set_variable = {
+			name = dhe_volcano_1_cooldown
+			days = 32000
+		}
+		random_list = {
+			10 = { # Vesuvius
+				trigger = {
+					any_owned_province = {
+						city_borders_vesuvius_trigger = yes
+					}
+				}
+				set_variable = {
+					name = vesuvius_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_vesuvius_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_vesuvius_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Aetna
+				trigger = {
+					any_owned_province = {
+						city_borders_aetna_trigger = yes
+					}
+				}
+				set_variable = {
+					name = aetna_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_aetna_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_aetna_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Ararat
+				trigger = {
+					any_owned_province = {
+						city_borders_ararat_trigger = yes
+					}
+				}
+				set_variable = {
+					name = ararat_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_ararat_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_ararat_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Aragats
+				trigger = {
+					any_owned_province = {
+						city_borders_aragats_trigger = yes
+					}
+				}
+				set_variable = {
+					name = aragats_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_aragats_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_aragats_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Methana
+				trigger = {
+					any_owned_province = {
+						city_borders_methana_trigger = yes
+					}
+				}
+				set_variable = {
+					name = methana_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_methana_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_methana_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Argaeus Mons
+				trigger = {
+					any_owned_province = {
+						city_borders_argaeus_mons_trigger = yes
+					}
+				}
+				set_variable = {
+					name = argaeus_mons_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_argaeus_mons_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_argaeus_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Argaios Mons
+				trigger = {
+					any_owned_province = {
+						city_borders_argaios_mons_trigger = yes
+					}
+				}
+				set_variable = {
+					name = argaios_mons_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_argaios_mons_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_argaios_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Ausara
+				trigger = {
+					any_owned_province = {
+						city_borders_ausara_trigger = yes
+					}
+				}
+				set_variable = {
+					name = ausara_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_ausara_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_ausara_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Bamni
+				trigger = {
+					any_owned_province = {
+						city_borders_bamni_trigger = yes
+					}
+				}
+				set_variable = {
+					name = bamni_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_bamni_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_bamni_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Qarqar
+				trigger = {
+					any_owned_province = {
+						city_borders_qarqar_trigger = yes
+					}
+				}
+				set_variable = {
+					name = qarqar_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_qarqar_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_qarqar_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Caucasus Mons
+				trigger = {
+					any_owned_province = {
+						city_borders_caucasus_mons_trigger = yes
+					}
+				}
+				set_variable = {
+					name = caucasus_mons_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_caucasus_mons_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_caucasus_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+			10 = { # Iberia Mons
+				trigger = {
+					any_owned_province = {
+						city_borders_iberia_mons_trigger = yes
+					}
+				}
+				set_variable = {
+					name = iberia_mons_volcano_eruption
+				}
+				random_owned_province = {
+					limit = {
+						city_borders_iberia_mons_trigger = yes
+					}
+					save_scope_as = volcano_city
+				}
+				every_owned_province = {
+					limit = {
+						city_borders_iberia_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+				}
+			}
+		}
+		switch = {
+			trigger = has_variable
+			vesuvius_volcano_eruption = { # Vesuvius Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_vesuvius_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_vesuvius_trigger = yes
+						}
+					}
+					set_variable = {
+						name = vesuvius_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			aetna_volcano_eruption = { # Aetna Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_aetna_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_aetna_trigger = yes
+						}
+					}
+					set_variable = {
+						name = aetna_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			ararat_volcano_eruption = { # Ararat Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_ararat_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_ararat_trigger = yes
+						}
+					}
+					set_variable = {
+						name = ararat_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			aragats_volcano_eruption = { # Aragats Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_aragats_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_aragats_trigger = yes
+						}
+					}
+					set_variable = {
+						name = aragats_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			methana_volcano_eruption = { # Methana Eruptionp:5208 = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_methana_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_methana_trigger = yes
+						}
+					}
+					set_variable = {
+						name = methana_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			argaeus_mons_volcano_eruption = { # Argaeus Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_argaeus_mons_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_argaeus_mons_trigger = yes
+						}
+					}
+					set_variable = {
+						name = argaeus_mons_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			argaios_mons_volcano_eruption = { # Argaios Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_argaios_mons_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_argaios_mons_trigger = yes
+						}
+					}
+					set_variable = {
+						name = argaios_mons_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			ausara_volcano_eruption = { # Ausara Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_ausara_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_ausara_trigger = yes
+						}
+					}
+					set_variable = {
+						name = ausara_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			bamni_volcano_eruption = { # Bamni Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_bamni_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_bamni_trigger = yes
+						}
+					}
+					set_variable = {
+						name = bamni_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			qarqar_volcano_eruption = { # Qarqar Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_qarqar_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_qarqar_trigger = yes
+						}
+					}
+					set_variable = {
+						name = qarqar_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			caucasus_mons_volcano_eruption = { # Caucasus Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_caucasus_mons_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_caucasus_mons_trigger = yes
+						}
+					}
+					set_variable = {
+						name = caucasus_mons_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+			iberia_mons_volcano_eruption = { # Iberia Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_iberia_mons_trigger = yes
+					}
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+				every_country = { # Find other nations who hold relevant territory
+					limit = {
+						NOT = { this = root }
+						any_owned_province = {
+							city_borders_iberia_mons_trigger = yes
+						}
+					}
+					set_variable = {
+						name = iberia_mons_volcano_eruption_other
+					}
+					trigger_event = {
+						id = dhe_volcano.2
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_volcano.1.a"
+		scope:volcano_city = { # Destroy volcano-foci
+			custom_tooltip = "volcano_foci_province.tt"
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				hidden_effect = {
+					province_pop_disaster_major = yes
+				}
+			}
+			else = {
+				hidden_effect = {
+					province_pop_disaster_historical = yes
+				}
+			}
+			if = {
+				limit = {
+					NOR = { 
+						has_province_modifier = province_diminishment_destroyed_volcano 
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							has_province_modifier = province_diminishment_ravaged_volcano
+						}
+						remove_province_modifier = province_diminishment_ravaged_volcano
+					}
+				}
+				add_permanent_province_modifier = {
+					name = province_diminishment_destroyed_volcano
+				}
+			}
+		}
+		switch = {
+			trigger = has_variable
+			vesuvius_volcano_eruption = {
+				hidden_effect = {
+					p:7733 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_vesuvius_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = vesuvius_volcano_eruption
+			}
+			aetna_volcano_eruption = {
+				hidden_effect = {
+					p:5000 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_aetna_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = aetna_volcano_eruption
+			}
+			ararat_volcano_eruption = {
+				hidden_effect = {
+					p:5212 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_ararat_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = ararat_volcano_eruption
+			}
+			aragats_volcano_eruption = {
+				hidden_effect = {
+					p:5208 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_aragats_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = aragats_volcano_eruption
+			}
+			methana_volcano_eruption = {
+				hidden_effect = {
+					p:7734 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_methana_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = methana_volcano_eruption
+			}
+			argaeus_mons_volcano_eruption = {
+				hidden_effect = {
+					p:5170 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_argaeus_mons_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = argaeus_mons_volcano_eruption
+			}
+			argaios_mons_volcano_eruption = {
+				hidden_effect = {
+					p:7735 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_argaios_mons_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = argaios_mons_volcano_eruption
+			}
+			ausara_volcano_eruption = {
+				hidden_effect = {
+					p:7736 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_ausara_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = ausara_volcano_eruption
+			}
+			bamni_volcano_eruption = {
+				hidden_effect = {
+					p:5210 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_bamni_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = bamni_volcano_eruption
+			}
+			qarqar_volcano_eruption = {
+				hidden_effect = {
+					p:7737 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_qarqar_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = qarqar_volcano_eruption
+			}
+			caucasus_mons_volcano_eruption = {
+				hidden_effect = {
+					p:5323 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_caucasus_mons_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = caucasus_mons_volcano_eruption
+			}
+			iberia_mons_volcano_eruption = {
+				hidden_effect = {
+					p:5324 = {
+						add_vfx = {
+							name = "volcano_eruption"
+							duration = 0
+						}
+					}
+				}
+				every_owned_province = { # Ravage relevant provinces
+					limit = {
+						city_borders_iberia_mons_trigger = yes
+						NOT = { this = scope:volcano_city }
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = iberia_mons_volcano_eruption
+			}
+		}
+	}
+}
+
+# Volcano Eruption - Other Owners
+dhe_volcano.2 = {
+	type = country_event
+	title = "dhe_volcano.2.t"
+	desc = "dhe_volcano.2.desc"
+	picture = volcanic_disaster
+
+	left_portrait = current_ruler
+	
+	goto_location = scope:volcano_city
+
+	trigger = {
+		country_borders_volcano_province_trigger = yes
+	}
+
+	immediate = {
+		switch = {
+			trigger = has_variable
+			vesuvius_volcano_eruption_other = { # Vesuvius Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_vesuvius_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			aetna_volcano_eruption_other = { # Aetna Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_aetna_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			ararat_volcano_eruption_other = { # Ararat Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_ararat_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			aragats_volcano_eruption_other = { # Ararat Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_aragats_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			methana_volcano_eruption_other = { # Methana Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_methana_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			argaeus_mons_volcano_eruption_other = { # Argaeus Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_argaeus_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			argaios_mons_volcano_eruption_other = { # Argaios Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_argaios_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			ausara_volcano_eruption_other = { # Ausara Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_ausara_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			bamni_volcano_eruption_other = { # Bamni Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_bamni_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			qarqar_volcano_eruption_other = { # Bamni Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_qarqar_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			caucasus_mons_volcano_eruption_other = { # Caucasus Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_caucasus_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+			iberia_mons_volcano_eruption_other = { # Iberia Mons Eruption
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_iberia_mons_trigger = yes
+					}
+					province_volcano_affect_scopes_effect = yes
+					set_variable = {
+						name = recent_volcano_eruption
+						days = 18250
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_volcano.2.a"
+		switch = {
+			trigger = has_variable
+			vesuvius_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_vesuvius_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = vesuvius_volcano_eruption_other
+			}
+			aetna_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_aetna_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = aetna_volcano_eruption_other
+			}
+			ararat_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_ararat_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = ararat_volcano_eruption_other
+			}
+			aragats_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_aragats_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = aragats_volcano_eruption_other
+			}
+			methana_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_methana_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = methana_volcano_eruption_other
+			}
+			argaeus_mons_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_argaeus_mons_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = argaeus_mons_volcano_eruption_other
+			}
+			argaios_mons_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_argaios_mons_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = argaios_mons_volcano_eruption_other
+			}
+			ausara_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_ausara_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = ausara_volcano_eruption_other
+			}
+			bamni_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_bamni_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = bamni_volcano_eruption_other
+			}
+			qarqar_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_qarqar_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = qarqar_volcano_eruption_other
+			}
+			caucasus_mons_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_caucasus_mons_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = caucasus_mons_volcano_eruption_other
+			}
+			iberia_mons_volcano_eruption_other = {
+				every_owned_province = { # Destroy relevant provinces
+					limit = {
+						city_borders_iberia_mons_trigger = yes
+					}
+					province_volcano_affected_effect = yes
+				}
+				remove_variable = caucasus_mons_volcano_eruption_other
+			}
+		}
+	}
+}

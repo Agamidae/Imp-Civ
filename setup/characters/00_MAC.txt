@@ -1,0 +1,28 @@
+﻿"MAC"={
+	country="MAC"
+	6={
+		first_name="Alexander"
+		family= c:MAC.fam:Argead
+		birth_date=68.7.21
+		culture="macedonian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=16
+		add_charisma=16
+		add_finesse=6
+		add_zeal=12
+		no_traits=yes
+		add_trait="argeads"
+		add_trait="immortal"
+		add_trait="brave"
+		add_trait="victorious"
+		add_trait="ambitious"
+		add_gold=100
+		add_popularity=100
+		c:MAC={
+			set_as_ruler=char:6
+		}
+		dna="d6E144N3g3e3AKyGAnAAHQKEAoACcwJzAHYAKwJnAmcAkgKIAosCiwFWAVYDmwObAngCeAKQApACkQKRA68DrwKgAmkCdgJ2AnICcgKVApUCZwJnAocChwKOAo4CaAJoAnUCdQJvAm8ChAKEAo8CjwKEAoQCTAKGApQClAJ3AncCkwKTAoACgAKTApMBYgFiAosCiwJwAnACgQKBApcClwOtA60CewJ7AnoCegFZAVkCaQJpAm8CbwKUApQCggKCApkCmQKLAosCbgKXApECkQKVAoICcAJwApcClwJwAnABWgFaAoICggL0AvQACAAIAJUAlQEdAR0AMwAzAMEAwQLQAtABWQFZANQA1AANAA0A8QDxAqcCpwB/AH8ATQBNAQ0BDQFSAVIAIAAgACMAIwA+AD4DAQMBAPAA8AB/AH8AVQBVAA0ADQAEAAQAJwAnARMBEwShBKEC+QL5AQ8BDwLpAukDEAMQAPEA8QBhAGEA/Qb1AH8AfwBTAFMFtQUfANYAHQUjBRAq/QIpAsYCxgAAAAAADgAAAAAAAA=="
+	}
+}
+	

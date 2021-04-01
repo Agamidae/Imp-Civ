@@ -1,0 +1,53 @@
+﻿italian = {
+	color = hsv { 0 0.91 0.55 }
+	
+	levy_template = levy_italic
+	
+	primary = archers
+	second = heavy_infantry
+	flank = light_cavalry
+
+	primary_navy = tetrere
+	secondary_navy = hexere
+	flank_navy = liburnian
+	
+	male_names = {
+		Alfonso Ambrogio Amedeo Andrea Angelo Antonio 
+		Armando Augusto Benito Camillo Carlo Cesare 
+		Corrado Costanzo Domenico Enrico Fabio Fabrizio 
+		Faustino Felice Ferdinando Fiorenzo Francesco Gaetano 
+		Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo
+		Lorenzo Luigi Mario Marino Matteo Nicola Paolo Pasquale 
+		Leonardo Donatello Raffaele Michelangello
+		Giorno Narancia Guido Fugo Abbacio Nero
+	}
+	female_names = {
+		Abelina Adelaida Adela Adriana Agnese Agostina Albina 
+		Alda Alessandra Alfonsina Alisia Amalia Ambrosia 
+		Anastasia Anna Antonella Augusta Aurelia Ausilia
+		Beatrice Benedetta Berenice Berta Bianca Bona 
+		Brunilde Camilla Candida Carla Carola Cecilia 
+		Chiara Claudia Clorinda Caterina Costanza Cornelia 
+		Delinda Elena Elisabetta Ermenegilda Eudossia Eugenia Elisa
+	}
+	family = {
+		deMedici diSavoia dEste Farnese Visconti Sforza 
+		Gonzaga dIvrea diMonferrato Dandolo Spinola Ventimiglia 
+		deSabran diCrivelli Montferrato dArborea diSaluzzo Contarini 
+		diCremona Scannabecchi diLucca deCandia Gozzadini Ghisi
+		Zen Tocco diBiandrate Ariosti Pepoli Orsini 
+		Colonna Caetani Ruspoli Aldobrandini Borghese
+	}
+	culture = {
+		italian = {}
+		sicilian = {}
+	}
+	
+	barbarian_names = { BRUTTII CAMUNNI CARACENI CENOMANI EUGANEI FRINIATES LIBURNI LIGURES LEPONTII LUCANI MAMERTINI PATAVINI PENTRI VENETI }
+	
+	graphical_culture = western_european_gfx
+
+	ethnicities = {
+		10 = italian
+	}
+}

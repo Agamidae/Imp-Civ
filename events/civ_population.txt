@@ -1,0 +1,27 @@
+﻿namespace = civ_pop
+
+civ_pop.1 = {
+	type = country_event
+	title = "civ_pop.1.t"
+	picture = senator_conversing
+	
+	trigger = {
+		country_population > 1500
+		heritage = civ_heritage
+		NOT = { has_variable = pop_growth_down }
+	}
+	
+	immediate = {
+		set_variable = {
+			name = pop_growth_down
+		}
+	}
+	
+	option = {
+		name = "civ_pop.1.a"
+		add_country_modifier = {
+			name = slower_growth
+			duration = -1
+		}
+	}	
+}

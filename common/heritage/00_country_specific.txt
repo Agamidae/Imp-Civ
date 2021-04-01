@@ -1,0 +1,60 @@
+﻿civ_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+			OR = {
+				tag = ROM
+				tag = VNT
+				tag = CAR
+				tag = EGY
+				tag = MOR
+				tag = NUB
+				tag = AYU
+				tag = ETH
+				tag = ABS
+				tag = ENG
+				tag = SCO
+				tag = ICE
+				tag = SPN
+				tag = POR
+				tag = BYZ
+				tag = MAC
+				tag = ATH
+				tag = SPA
+				tag = OTT
+				tag = ARB
+				tag = BAB
+				tag = ASY
+				tag = SUM
+				tag = PHO
+				tag = PER
+				tag = SCA
+				tag = HNZ
+				tag = GEO
+				tag = KRU
+				tag = MRY
+				tag = HND
+				tag = POL
+				tag = RUS
+				tag = SWE
+				tag = GER
+				tag = DAN
+				tag = NOR
+				tag = AUS
+				tag = HUN
+				tag = HRE
+				tag = NET
+				tag = FRA
+				tag = AQT
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+﻿"HRE"={
+	country="HRE"
+	41={
+		first_name="Frederick_Barbarossa"
+		family= c:HRE.fam:Hohenstaufen
+		birth_date=67.7.13
+		culture="north_german"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=8
+		add_finesse=9
+		add_zeal=10
+		no_traits=yes
+		add_trait="barbarossas"
+		add_trait="immortal"
+		add_trait="arrogant"
+		add_trait="pious"
+		add_trait="tactician"
+		add_gold=100
+		add_popularity=100
+		c:HRE={
+			set_as_ruler=char:41
+		}
+		dna="/zptR3dPd08hdyF3ApACkALFApQCxQKGAncCdwJrAmsCmAKYAeUBZAJ9An0DoAOgAnUCdQKGAoYCfQJ9An8CfwKsApEChgKGApECkQKsAo4CdgJ2AEQARAKOAo4BagFqAWQBZAKBAoECfQJ9AnsCewJ6AnoCeQJ5A5wDnAJvAm8DlQKXAo0CcQC2AEADsAOwA60CZwJJAosCmAKYAokCiQJyAnIChwKHAsECaQJRAnICjAKEApkCmQKKAooClQKVAocChwAhACECagJqA5kDmQKQAoACgwKDApMCkwKNAo0CaAJoAmsCawIAAsABSQFJAGMAYwF6AXoAZgBmACcAJwElASUAIwAjAGEAYQKtAq0EvgS+AT0BPQAAAAAAGgAaAV8BXwA0ADQBDwEPAB8AHwCAALwBqAGoAXQBdAAAAAAChAKEAQ8BDwEPAQ8AuAC4AQEBMQE/AT8C/wF+AGEAYQD2APYAGAAYBAADQQDlAOUDcAO/AAAAAAGfBFQJ/wmsAAEAAQOjBaM2vge+CJEIkQAAAAAAAAAAAAAAAA=="
+	}
+}

@@ -1,0 +1,18 @@
+﻿namespace = new_ruler
+
+new_ruler.1 = { # gives ruler things
+	type = country_event
+	
+	hidden = yes
+	
+	trigger = {
+		
+	}
+	
+	immediate = {
+		current_ruler = {
+			add_popularity = 20
+		}
+	}
+	
+}

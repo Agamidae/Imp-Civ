@@ -1,0 +1,26 @@
+"ATH"={
+	country="ATH"
+	3={
+		first_name="Pericles"
+		family= c:ATH.fam:Periklid
+		birth_date=61.1.11
+		culture="athenian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=7
+		add_finesse=7
+		add_zeal=5
+		no_traits=yes
+		add_trait="periklids"
+		add_trait="immortal"
+		add_trait="tactician"
+		add_trait="wise"
+		add_gold=100
+		add_popularity=100
+		c:ATH={
+			set_as_ruler=char:3
+		}
+		dna="iUkH7MljyYDOy87LAnoCegFVAVUCegJ6AmcCZwJvAm8CbgJuAoACgAKUApQBTAFMAn0CfQJ+An4CdAJ0AoYChgJuApICQQJ+AnYCdgOVA6MCmAKYAoICggJyAnIChQKFAnkCeQTcBNwCgwKDAoACgAKNAo0ClAKUAmoCagKTApMCbwJvAXYClQKXApcCcAJwA54DngJ6AnoCegJ6An0CfQJsAmwClgKWACkAKQOgA6ACmQKZAokCiQJmAmYCgQKBApcClwOxA7ECHAKPAo4CjgSOBMgCggJtAigCfgJ2AnYChQKFAgsCdwKOAq4BDQENALYAtgDcANwAOQA5ALsAuwEZARkBLgEuALkAuQBiAGIDawNrARwBHAB/AH8C6QLpAZEBOQF2AXYAawBrAOEA4QCtAK0DVwNXAVQBVAB/AH8BRQFFAAgACACGAIYBGQEZAEkASQDAAMABbgFuAyYDJgE/AT8DMgMyAUgBSABpAGkCOQfuAJYAfwAVABUFkQWEAP0AcAX/BecCGAJHAjMCMwAAAAAAAQAAAAAAAA=="
+	}
+}

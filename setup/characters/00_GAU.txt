@@ -1,0 +1,24 @@
+﻿"GAU"={
+	country="GAU"
+	52={
+		first_name="Ambiorix"
+		family= c:GAU.fam:Eburones
+		birth_date=75.5.13
+		culture="gallic"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=9
+		add_charisma=8
+		add_finesse=8
+		add_zeal=6
+		no_traits=yes
+		add_trait="eburones"
+		add_trait="immortal"
+		add_trait="just"
+		add_gold=100
+		add_popularity=100
+		c:GAU={
+			set_as_ruler=char:52
+		}
+	}
+}

@@ -1,0 +1,44 @@
+﻿"RUS"={
+	country="RUS"
+	37={
+		first_name="Peter"
+		family= c:RUS.fam:Romanov
+		birth_date=72.6.9
+		culture="russian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=10
+		add_finesse=10
+		add_zeal=9
+		no_traits=yes
+		add_trait="romanovs"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="brave"
+		add_trait="just"
+		add_gold=100
+		add_popularity=100
+		c:RUS={
+			set_as_ruler=char:37
+		}
+		dna="Iv9nPYJapVYljyWPAokCiQJmAmYCagJqAncCdwKEAoQExgTGBLIEsgKDAoMDcgOiAToBXAJ6AnoChwKHAnYCdgKyApECmAKYAooCigOlA6UChQKFApgCmAKAAoADngOeAncCdwKBAoECeQJ5AosCiwJ8AnwCmgKZAosCiwJ+An4CagJqBK0CjAKNAmsCnwJ+AokClwKPAo8CgAKAACcAJwJrAmsCigKKAnACcAJ/An8BVQFVAnoCegKBAoEDOAOeApkCmQKEAoQCcAJwAmcCZwJ2AnYCfQJ9A7IDsgKLAosCeQJ5BLQEtAEAAkYBGAEYATkBOQKFAoUBGQEZAoUChQLmAuYC4ALgAvYC9gFjAWMA0gDSAt4C3gB/AH8BKQEpAv8A7QEJAQkAPgA+ACUAJQBNAE0BaQFpAM8AzwB/AH8C1ALUAvwC/ALXAtcAJgAmANEA0QAXABcAsgCyALgAuABDAEMAvgC+AxYDFgSmBKYC/wXpAH8AfwBGAEYMAgnlAKwArAj/BZkGtQfACWQIsAAAAAAAAAAAAAAAAA=="
+	}
+	
+	48={
+		first_name="Viktor"
+		family_name="Chervov"
+		birth_date=78.11.18
+		culture="ruthenian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=5
+		add_charisma=6
+		add_finesse=6
+		add_zeal=0
+		no_traits=yes
+		add_gold=100
+		add_popularity=40
+		dna="iMyIzP9LrX95/9jYAowCjAKFAoUCcwJzAm4CbgKLAosCdAJ0Ao8CjwJ1AnUChQJqAokCiQKHAnwCkAKRAnMCcwJ8ApEEWgScAmAClAJ3AncBTQFNAokCiQJ2AnYCaAJoAoUChQKSApIClwKXAnMCcwJzAnMCdwJ3ArwCegS1BLUCagJqAXIBTAJzAnMCdQKOAk0CdQKUApQCegJ6AncCkgJgApYCLwKXAoMCgwKEAoQCewJ7AnECcQJ0AnQCmAKYAnACcAJnAmcCawJrAo4CjgJuAm4ChgKGAroCkQJtAm0CbQJtApICkgK0ArQARwBHAJEAkQI0AuUCVAFmAgAAggKFAoUAKQApAK0ArQFLAUsBKwErAJoAmgAAAAAAZgBmAGUAZQIBAqYAiQCJAtoC2gFzAXMCAANrATIBMQAAAAACsQKxAPAA8AE8ATwAjwCPARQBFATxBPEA6QDpANYA1gBRAFEDHwMfBJIEkgCbAJsHHQfuAAAAAATRBOQBBwEHALYAAwkACagHXwGKCIAAgAAAAAAAAAAAAAAAAA=="
+	}
+}

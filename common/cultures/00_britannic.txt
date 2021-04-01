@@ -1,0 +1,122 @@
+﻿britannic = {
+
+	color = hsv { 0.8 0.2 0.2 }
+	
+	levy_template = levy_britannic
+	
+	primary = archers
+	second = chariots
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = hexere
+	flank_navy = liburnian
+
+	male_names = { 
+		William John Adam Geoffrey 
+		Henry Hugh Nicholas Peter 
+		Ralph Richard Robert Roger 
+		Simon Thomas Walter Alan 
+		Albert Alexander Alfred Andrew 
+		Anselm Arnold Arthur Aubrey 
+		Baldrick Christopher David Edmund 
+		Edward Eric Eustace Fulk 
+		George Gerald Gilbert Godfrey 
+		Gregory Guy Humphrey Jocelyn 
+		Jordan Laurence Lionel Mark 
+		Martin Matthew Maurice Michael Paul Philip
+		Randolph Reginald Stephen 
+	}
+	
+	female_names = { 
+		Adela Adelaide Alice Amice 
+		Anne Aveline Beatrice Blanche 
+		Catherine Cecilia Constance Edith 
+		Ela Eleanor Elizabeth Emma Hawise Isabel
+		Isabella Joan Joanna Juliana 
+		Mahaut Margaret Mary Matilda 
+		Maud Philippa Sybilla
+	}
+	family = { 
+		Bohun Vere Gand Myall Turberville 
+		Holland Butler Thornham Camville Breakspear 
+		Itchington Northall Montagu Umfraville 
+		FitzPeter Belles-mains Warwick FitzAlan 
+		Beauchamp Ilchester Raleigh Stratford Becket 
+	}
+	culture = {
+		english = {}
+		scottish = {
+			male_names = { 
+				Adam Alpin Alan Alastair Alexander Andrew
+				Angus Archibald Arthur Arran 
+				Aulay Beathan Brian Brice 
+				Cailean Calum Carbrey Colban
+				Colin Conall Conan Constantine 
+				David Dermid Donald Douglas Duff Dugald
+				Duncan Edgar Edward Edwin 
+				Eric Evander Ewan Farquhar 
+				Fergus Fingal Findlay Frang
+				Gavin Gilbert Gilbride Gilchrist 
+				Gillespie Gilpatrick Gilroy 
+				Giric Glenn Godfrey Gregor
+				Hamish Hector Henry Hugh 
+				Iain Indulf James John Kenneth 
+				Kentigern Lachlan Laurence Lennon
+				Lulach Macbeth Magnus Malcolm 
+				Maldoven Maldred Malise Malmure 
+				Maoilios Marcas Malsnectan
+				Matad Matthew Michael Morgan Muir 
+				Mungo Murdoch Murray Neil Ninian Oscar
+				Patrick Paul Peter Philip Radulf 
+				Ranald Richard Robert Roderick 
+				Ronald Rory Ross Roy
+				Shaw Sholto Simon Somerled Stephan 
+				Sweeny Taig Talore Thomas 
+				Torquil Uhtred Uisdean Walan
+				Waldeve Walter William
+			}
+		
+			female_names = { 
+				Ada Affraic Agnes Aileen 
+				Alice Anna Annabella Aufrica 
+				Barabal Beileag Beitris Beathoc Bride
+				Catriona Cecilia Christina Deirdre 
+				Derilla Dervorgilla Donada Donella
+				Edith Edna Effie Eilionoir 
+				Eimhir Eithne Ela Eleanor 
+				Elspeth Euna Eva Fenella Fingola Flora
+				Forflissa Galiena Glenna 
+				Gormelia Gruoch Helen Innes 
+				Iona Isabel Isla Isobel Jean Julia
+				Kenna Kentigerna Kirstin 
+				Lillias Lorna Malmure Maisie 
+				Malina Margaret Mariota Marjory Mary
+				Martha Marthoc Maud Maura 
+				Mirren Mor Morag Morna Moyna Muriel
+				Murron Nuala Orabilia Peigi 
+				Rhonda Rodina Ronalda Ros 
+				Saundra Sheena Shona 
+				Slaine Sorcha Steacy Una
+			}
+		
+			family = { 
+				Kald lAHaya Lindsay Loudoun 
+				Ramsay Angus Carrick Galloway 
+				Strathearn Tullibardine Abernethy 
+				Arbuthnot Archil Armstrong Ballantyne 
+				Bannock Barclay Blackadder Borthwick 
+				Bradnigh Branain Bruce Buchan 
+				Cameron Campbell Camshron Carrun 
+				Cockburn Cosmungho Craigies Dean Douglas Errol 
+			}
+		}
+		
+	}
+	barbarian_names = { ANCALITES ATTACOTTI BIBROCI HORESTI CASSI GABRANTOVICES GANGANI NOVANTAE LOPOCARES SEGONTIACI SELGOVAE }
+	
+	graphical_culture = western_european_gfx
+	ethnicities = {
+		10 = german
+	}
+}

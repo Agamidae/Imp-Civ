@@ -1,0 +1,594 @@
+﻿namespace = gw_existing
+
+gw_existing.1 = {
+    type = country_event
+    title = gw_existing.1.t
+    desc = gw_existing.1.desc
+    picture = great_work_writing
+    goto_location = scope:province
+
+    trigger = {		
+        any_owned_province = {
+            has_great_work = yes
+            num_of_citizen > 0
+            citizen_happiness <= 0.2
+            num_of_citizen > 2
+        }
+        NOT = { has_variable = gw_existing_1_cooldown }
+    }
+
+    immediate = {
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+                citizen_happiness <= 0.2
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_1_cooldown
+            days = 1825
+        }
+    }
+
+    option = { #Do nothing, pop happiness goes down, unrest goes up
+        name = "gw_existing.flavor.1.a"
+        scope:province ={
+            add_province_modifier = {
+                name = vandalized_work_modifier
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Assign more guards and clean up, costs money and a 100 manpower, gain ruler popularity
+        name = "gw_existing.flavor.1.b"
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 2
+        }
+        add_manpower = -1
+        current_ruler = {
+            add_popularity = popularity_large
+        }
+		scope:province ={
+			add_province_modifier = {
+				name = great_work_more_guards
+				duration = 365
+			}
+		}
+    }
+
+    option = { #Punish the ones who did it, costs money, ruler popularity up, gain tyranny
+        name = "gw_existing.flavor.1.c"
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 1
+        }
+        current_ruler = {
+            add_popularity = popularity_medium
+        }
+        add_tyranny = 5
+    }
+
+    option = { #Use silver tongue, gain or lose nothing
+        name = "gw_existing.flavor.1.d"
+        highlight = yes
+        custom_tooltip = "silver_tongued_tooltip"
+        trigger = {
+            root.current_ruler = {
+                has_trait = silver_tongued
+            }
+        }
+        current_ruler = {
+            add_popularity = popularity_medium
+        }
+    }
+}
+
+gw_existing.2 = {
+    type = country_event
+    title = gw_existing.2.t
+    desc = gw_existing.2.desc
+    picture = great_work_celebration
+    goto_location = scope:province
+    fire_only_once = yes
+
+    trigger = {
+        has_dlc = "Heirs of Alexander"
+    }
+
+    option = { #Support the festivities!
+        name = "gw_existing.flavor.2.a"
+        trigger_event = {
+            id = "gw_existing.3"
+            days = 1825
+        }
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 2
+        }
+        scope:province.state ={
+            add_state_modifier = {
+                name = great_work_celebration
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Don't support the festivities!
+        name = "gw_existing.flavor.2.b"
+        trigger_event = {
+            id = "gw_existing.4"
+            days = 1825
+        }
+        scope:province.state ={
+            add_state_modifier = {
+                name = great_work_no_celebration
+                duration = 365
+            }
+        }
+    }
+}
+
+gw_existing.3 = {
+    type = country_event
+    title = gw_existing.3.t
+    desc = gw_existing.3.desc
+    picture = great_work_celebration
+    goto_location = scope:province
+
+    trigger = {		
+        NOT = { has_variable = gw_existing_3_cooldown }
+    }
+
+    immediate = {
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_3_cooldown
+            days = 1825
+        }
+    }
+
+    option = { #Support the festivities!
+        name = "gw_existing.flavor.2.a"
+        trigger_event = {
+            id = "gw_existing.3"
+            days = 1825
+        }
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 2
+        }
+        scope:province.state ={
+            add_state_modifier = {
+                name = great_work_celebration_2
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Don't support the festivities!
+        name = "gw_existing.flavor.2.b"
+        trigger_event = {
+            id = "gw_existing.4"
+            days = 1825
+        }
+        scope:province.state ={
+            add_state_modifier = {
+                name = great_work_no_celebration
+                duration = 365
+            }
+        }
+    }
+}
+
+gw_existing.4 = {
+    type = country_event
+    title = gw_existing.4.t
+    desc = gw_existing.4.desc
+    picture = great_work_celebration
+    goto_location = scope:province
+
+
+    trigger = {		
+        NOT = { has_variable = gw_existing_4_cooldown }
+    }
+
+    immediate = {
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_4_cooldown
+            days = 1825
+        }
+    }
+
+    option = { #Support the festivities!
+        name = "gw_existing.flavor.2.a"
+        trigger_event = {
+            id = "gw_existing.3"
+            days = 1825
+        }
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 3
+        }
+        scope:province.state ={
+            add_state_modifier = {
+                name = great_work_celebration
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Don't support the festivities!
+        name = "gw_existing.flavor.2.b"
+        trigger_event = {
+            id = "gw_existing.4"
+            days = 1825
+        }
+        scope:province.state ={
+            add_state_modifier = {
+                name = great_work_no_celebration_2
+                duration = 365
+            }
+        }
+    }
+}
+
+gw_existing.5 = { #The GW is taking focus from ruler
+    type = country_event
+    title = gw_existing.5.t
+    desc = gw_existing.5.desc
+    picture = religious_rite
+    goto_location = scope:province
+
+    trigger = {		
+        current_ruler = {
+            popularity <= 40
+        }
+        NOT = { has_variable = gw_existing_5_cooldown }
+    }
+
+    immediate = {
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_5_cooldown
+            days = 1825
+        }
+    }
+
+    option = { #Do nothing, that's OK,
+        name = "gw_existing.flavor.5.a"
+        add_tyranny = -2
+        current_ruler = {
+            add_popularity = subtract_popularity_large         
+        }
+    }
+
+    option = { #Change their mind, nothing should surpass the significance of our ruler
+        name = "gw_existing.flavor.5.b"
+        current_ruler = {
+            add_popularity = popularity_large
+        }
+        add_tyranny = 3
+    }
+
+    option = { #Focus even more on our GW, this is in essence good
+        name = "gw_existing.flavor.5.c"
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 2
+        }
+        add_stability = 5
+    }
+}
+
+gw_existing.6 = { #The GW gets visitors frequently
+    type = country_event
+    title = gw_existing.6.t
+    desc = gw_existing.6.desc
+    picture = great_work_supplies
+    goto_location = scope:province
+
+    trigger = {		
+        NOT = { has_variable = gw_existing_6_cooldown }
+    }
+
+    immediate = {
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_6_cooldown
+            days = 1825
+        }
+    }
+
+    option = { #Disturbing, xenophobe response
+        name = "gw_existing.flavor.6.a"
+        add_stability = 5
+        scope:province ={
+            add_province_modifier = {
+                name = xenophobe_response
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Cool, embrace the tourism
+        name = "gw_existing.flavor.6.b"
+        current_ruler = {
+            add_popularity = popularity_large
+        }
+        add_stability = -5
+        add_treasury = {
+            add = root.has_monthly_income
+            multiply = 2
+        }
+    }
+
+    option = { #If they want to see it, they have to move here ad embrace pur traditions, gain manpower and tyranny
+        name = "gw_existing.flavor.6.c"
+        add_manpower = 1
+        add_tyranny = 5
+    }
+}
+
+gw_existing.7 = { #Maintenance needed!
+    type = country_event
+    title = gw_existing.7.t
+    desc = gw_existing.7.desc
+    picture = great_work_architect
+    goto_location = scope:province
+
+    trigger = {		
+        NOT = { has_variable = gw_existing_7_cooldown }
+    }
+
+    immediate = {
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_7_cooldown
+            days = 3650
+        }
+    }
+
+    option = { #Pay for it, gain modifier
+        name = "gw_existing.flavor.7.a"
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 4
+        }
+        scope:province ={
+            add_province_modifier = {
+                name = great_work_renovation
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Don't pay, loose prestige and other stuff
+        name = "gw_existing.flavor.7.b"
+        scope:province ={
+            add_province_modifier = {
+                name = great_work_dirty
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Do small renovations, gotta think of the costs!
+        name = "gw_existing.flavor.7.c"
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 2
+        }
+        scope:province ={
+            add_province_modifier = {
+                name = great_work_small_renovation
+                duration = 365
+            }
+        }
+    }
+}
+
+gw_existing.8 = { #People are worshipping our GW
+    type = country_event
+    title = gw_existing.8.t
+    desc = gw_existing.8.desc
+    picture = celtic_religious_festival
+    goto_location = scope:province
+    fire_only_once = yes
+    right_portrait = scope:religious_activist
+
+    trigger = {		
+        any_character= {
+            has_trait = righteous
+            is_ruler = no
+            is_adult = yes
+        }
+        NOT = { has_variable = gw_existing_8_cooldown }
+    }
+
+    immediate = {
+        random_character = {
+            limit = {
+                has_trait = righteous
+                is_ruler = no
+                is_adult = yes
+            }
+            save_scope_as = religious_activist
+        }
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_8_cooldown
+            days = 1825
+        }
+    }
+
+    option = { #Redirect them, gain something
+        name = "gw_existing.flavor.8.a"
+        scope:religious_activist = {
+            add_loyalty = great_works_religious_dislike
+        }
+        add_political_influence = 50
+        add_stability = -5
+    }
+
+    option = { #Embrace it, gain omen power
+        name = "gw_existing.flavor.8.b"
+        scope:religious_activist = {
+            add_popularity = 15
+        }
+        add_country_modifier = {
+            name = embrace_great_works_religion
+            duration = 365
+        }
+    }
+
+    option = { #Kill him
+        name = "gw_existing.flavor.8.c"
+        scope:religious_activist = {
+            death = {}
+        }
+        add_stability = -5
+        add_tyranny = 5
+    }
+}
+
+gw_existing.9 = { #People are happy in the region where your GW is standing
+    type = country_event
+    title = gw_existing.9.t
+    desc = gw_existing.9.desc
+    picture = senate_debate
+    goto_location = scope:province
+
+    trigger = {		
+        any_owned_province = {
+            has_great_work = yes
+            num_of_citizen > 0
+            citizen_happiness >= 0.7
+        }
+        NOT = { has_variable = gw_existing_9_cooldown }
+    }
+
+    immediate = {
+        random_owned_province = {
+            limit = {
+                has_great_work = yes
+            } 
+            save_scope_as = province  
+        }
+        set_variable = {
+            name = gw_existing_9_cooldown
+            days = 1825
+        }      
+    }
+
+    option = { #Fantastic, let's tax the area a bit and gain some income of this
+        name = "gw_existing.flavor.9.a"
+        scope:province ={
+            add_province_modifier = {
+                name = happy_gw_province
+                duration = 365
+            }
+        }
+    }
+
+    option = { #Fantastic, let's spin this so it looks good for our ruler
+        name = "gw_existing.flavor.9.b"
+        current_ruler = {
+            add_popularity = 10
+        }
+    }
+
+    option = { #Fantastic, spread the news to the nation that we're prospering
+        name = "gw_existing.flavor.9.c"
+        add_stability = 5
+        add_tyranny = -5
+    }
+}
+
+gw_existing.10 = { #Animals have appeared near the GW
+    type = country_event
+    title = gw_existing.10.t
+    desc = gw_existing.10.desc
+    picture = great_work_animals
+    goto_location = scope:province
+    fire_only_once = yes
+
+    trigger = {		
+        NOT = { has_variable = gw_existing_10_cooldown }
+    }
+
+    immediate = {
+        random_country_state = {
+            limit = {
+                has_any_great_work_state = yes
+            }
+            random_state_province = {
+                limit = {
+                    has_great_work = yes
+                } 
+                save_scope_as = province
+            }
+            save_scope_as = great_work_state
+        }
+        set_variable = {
+            name = gw_existing_10_cooldown
+            days = 1825
+        }
+    }
+
+    option = { #Praise the lord!
+        name = "gw_existing.flavor.10.a"
+        add_country_modifier = {
+            name = praise_the_animals
+            duration = 720
+        }        
+    }
+
+    option = { #Cool! Sell food and let people give it to the animals
+        name = "gw_existing.flavor.10.b"
+        current_ruler = {
+            add_popularity = -10
+        }
+        add_treasury = 100
+    }
+
+    option = { #They look very cuddly, are you sure?
+        name = "gw_existing.flavor.10.c"
+        scope:great_work_state = {
+            add_state_food = 450
+        }
+    }
+}

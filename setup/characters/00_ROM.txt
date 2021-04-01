@@ -1,0 +1,52 @@
+﻿"ROM"={
+	country="ROM"
+	0={
+		first_name="Trajan"
+		family= c:ROM.fam:Nerva_Antonine
+		birth_date=55.10.18
+		culture="roman"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=9
+		add_charisma=7
+		add_finesse=8
+		add_zeal=5
+		no_traits=yes
+		add_trait="antonines"
+		add_trait="immortal"
+		add_trait="honest"
+		add_trait="generous"
+		add_trait="content"
+		add_trait="conqueror"
+		add_gold=100
+		add_popularity=100
+		c:ROM={
+			set_as_ruler=char:0
+		}
+		dna="Q9BD0MVlxWXaitqKAmoCagJmAmYCkQKRAm0CbQKSApICkwKTA6oDqgKZApkCkQKRA6cDpwJtAm0CeAJ4AncCdwKXApcCZwJnAn4CfgTYBNgChAKEAVEBUQJyAnIDnwOfAnsCewKIAogChAKEAmYCZgKNAo0CSwKMApACkAKbApkCfQJ9A6cDpwKFAoUBVgFWARQBYwJxAnECbgJuAmYCZgJwAowCRwJ/ApACkgJqAmoCggKCAngCeAN0A60ClwKSA6gDqAKJAokCewJ7An4CfgJ+An4ClgKWAoACgAJqAmoAIQAhADcANwISAhIA3ADcAGsAawBRAFEAMwAzAIoAigBYAFgASgBKAN8A3wA/AD8DUANQAuQC5AB/AH8AiACIAJUAlQKCAoIBDwEPAPEA8QC7ALsAYgBiAFgAWAB/AH8CwQLBAGsAawCMAIwBUwFTAuwC7ADkAOQBbQFtBG4EpwBWAFYDZANPAT4BeAMWAwwG2gbaAH8AfwHzAfMBHAFwAE8AagkACagBxwHHADIAMgAAAAAAAAAAAAAAAA=="
+	}
+	46={
+		first_name="Octavian_Augustus"
+		family= c:ROM.fam:Caesar
+		birth_date=82.10.23
+		culture="roman"
+		religion="default_pantheon"
+		father="char:1"
+		no_stats=yes
+		add_martial=6
+		add_charisma=9
+		add_finesse=8
+		add_zeal=7
+		no_traits=yes
+		add_trait="caesars"
+		add_trait="just"
+		add_trait="brave"
+		add_trait="ambitious"
+		add_trait="intelligent"
+		add_trait="wise"
+		add_gold=100
+		add_popularity=100
+		dna="xbyCmn99f33j8ePxAWEBYQJjAoEBZgFmAn8CeAJvAm8CbAJsAnUCdQGhAVIArgJ7Ao0CjQJ4AngCaAJoApICkgJ8AnwCaQJpAnwCfAOZA5kCjAKMAnsCewJ9An0CbQJ8AkcCgAJrAmsCdAJ0AoYChgFQAVAClgKWAnYCdgTYBNgBXwFfAn8CfwKZApkCdwJ3AnoCegKhAn4CawJrAl0CcAJdAm4CEQJpAokCiQJ4AngDoQOhAnUCdQNWA5sCQgJpAoUCawKFAoUCSwKCApgCmAJoAmgCbgJuA3oDpQKHAocCZgJmAnoCegICAtABcQFxAOQA5AFLAUsA4gDiAHwAfAENAQ0ClAKUAMAAwADwAPAAJgAmAvUC9QAAAAAA5ADkATEBMQDNAM0A1wDXAlUA+QEAAP0AmQCZAA4ADgAAAAABAAA6AtwC3AABAEoBTQFNAQ8BDwLpAukA0gDSAEwATACxALEBSwFLAywDLANbA1sJXQldAAAAAAF7AXsBAAFoAEsAKAkACdgCWQGIAPAA8AAAAAAAAAAAAO8AAA=="
+	}
+	
+}

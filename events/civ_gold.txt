@@ -1,0 +1,13 @@
+﻿namespace = civ_gold
+
+civ_gold.1 = {
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		add_treasury = 200
+	}	
+}

@@ -1,0 +1,878 @@
+﻿namespace = assassinate
+
+assassinate.1 = {
+	type = country_event
+	title = "assassinate.1.t"
+	desc = "assassinate.1.desc"
+	
+	left_portrait = scope:foreign_agent
+	right_portrait = scope:target
+	
+	picture = senator_conversing
+	
+	goto_location = scope:target
+	
+	trigger = {
+		exists = scope:target
+		scope:target = {
+			is_alive = yes
+		}
+		exists = scope:foreign_agent
+		scope:foreign_agent = {
+			is_alive = yes
+			prisoner = no
+		}
+	}
+	
+	immediate = {
+		set_local_variable = {
+			name = assassinate_first_demand
+			value = {
+				integer_range = { min = 1 max = 4 }
+			}
+		}
+	}
+	
+	option = {
+		name = "assassinate.1.a"
+		if = { #don't put this in a scripted effect
+			limit = {
+				local_var:assassinate_first_demand = 1
+			}
+			add_treasury = {
+				value = root.has_monthly_income
+				multiply = -3
+			}
+		}
+		else_if = {
+			limit = {
+				local_var:assassinate_first_demand = 2
+			}
+			add_manpower = -5
+		}
+		else_if = {
+			limit = {
+				local_var:assassinate_first_demand = 3
+				political_influence >= influence_medium
+			}
+			add_political_influence = subtract_influence_medium
+		}
+		else_if = {
+			limit = {
+				local_var:assassinate_first_demand = 3
+				political_influence >= influence_small
+			}
+			add_political_influence = subtract_influence_small
+		}
+		else = {
+			add_treasury = {
+				value = root.has_monthly_income
+				multiply = -6
+			}
+		}
+	}
+	
+	option = {
+		name = "assassinate.1.b"
+		set_assassinate_malus_effect = yes
+	}
+	
+	option = {
+		name = "assassinate.1.c"
+		trigger = {
+			current_ruler = {
+				has_trait = shrewd
+			}
+		}
+		custom_tooltip = shrewd_tooltip
+		highlight = yes
+	}
+	
+	option = {
+		name = "assassinate.1.d"
+		trigger = {
+			current_ruler = {
+				has_trait = incapable
+			}
+		}
+		custom_tooltip = incapable_bad_tooltip
+		highlight = yes
+		exclusive = yes
+		set_assassinate_malus_effect = yes
+	}
+	
+	after = {
+		trigger_event = {
+			on_action = assassinate_step_two
+			days = { 10 30 }
+		}
+	}
+	
+}
+
+assassinate.2 = { #fallback for target death
+	type = country_event
+	title = "assassinate.2.t"
+	desc = "assassinate.2.desc"
+	
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:target
+	
+	goto_location = scope:target
+	
+	trigger = {
+		exists = scope:target
+		scope:target = {
+			is_alive = no
+		}
+	}
+	
+	option = {
+		name = "assassinate.2.a"
+		add_political_influence = influence_large
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_variable = ongoing_assassination
+			}
+			remove_variable = ongoing_assassination
+		}
+	}
+	
+}
+
+assassinate.3 = { #fallback for friend death
+	type = country_event
+	title = "assassinate.3.t"
+	desc = "assassinate.3.desc"
+	
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:foreign_agent
+	
+	goto_location = scope:foreign_agent
+	
+	trigger = {
+		exists = scope:foreign_agent
+		scope:foreign_agent = {
+			is_alive = no
+		}
+	}
+	
+	option = {
+		name = "assassinate.3.a"
+		add_political_influence = influence_large
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_variable = ongoing_assassination
+			}
+			remove_variable = ongoing_assassination
+		}
+	}
+	
+}
+
+assassinate.4 = { #fallback for friend imprisonment 
+	type = country_event
+	title = "assassinate.4.t"
+	desc = "assassinate.4.desc"
+	
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:foreign_agent
+	
+	goto_location = scope:foreign_agent
+	
+	trigger = {
+		exists = scope:foreign_agent
+		scope:foreign_agent = {
+			is_alive = yes
+			prisoner = yes
+		}
+	}
+	
+	option = {
+		name = "assassinate.4.a"
+		add_political_influence = influence_large
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_variable = ongoing_assassination
+			}
+			remove_variable = ongoing_assassination
+		}
+	}
+	
+}
+
+assassinate.5 = {
+	type = country_event
+	title = "assassinate.5.t"
+	desc = "assassinate.5.desc"
+	
+	left_portrait = current_ruler
+	left_portrait = scope:scapegoat
+	right_portrait = scope:foreign_agent
+	right_portrait = scope:target
+	
+	goto_location = scope:target
+	
+	picture = dagger_behind_back
+	
+	trigger = {
+		exists = scope:target
+		scope:target = {
+			is_alive = yes
+		}
+		exists = scope:foreign_agent
+		scope:foreign_agent = {
+			is_alive = yes
+			prisoner = no
+		}
+		any_character = {
+			is_adult = yes
+			has_any_office = no
+			is_general = no
+			is_admiral = no
+			is_mercenary = no
+			is_governor = no
+			prominence < 20
+			trigger_if = {
+				limit = {
+					employer = {
+						gender_equality = no
+					}
+				}
+				is_male = yes
+			}
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				is_adult = yes
+				has_any_office = no
+				is_general = no
+				is_admiral = no
+				is_mercenary = no
+				is_governor = no
+				prominence < 20
+				trigger_if = {
+					limit = {
+						employer = {
+							gender_equality = no
+						}
+					}
+					is_male = yes
+				}
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = scapegoat
+		}
+	}
+	
+	option = {
+		name = "assassinate.5.a"
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		scope:scapegoat = {
+			hidden_effect = {
+				remove_all_positions = yes
+			}
+			move_country = scope:target.employer
+			hidden_effect = { 
+				remove_character_modifier = foreign_citizen
+			}
+			set_as_minor_character = this
+		}
+	}
+	
+	option = {
+		name = "assassinate.5.b"
+		scope:scapegoat = {
+			add_loyalty = loyalty_spared_scapegoat
+		}
+		set_assassinate_malus_effect = yes
+	}
+	
+	after = {
+		trigger_event = {
+			on_action = assassinate_preparations_being_made
+			days = { 10 30 }
+		}
+	}
+}
+
+assassinate.6 = {
+	type = country_event
+	title = "assassinate.6.t"
+	desc = "assassinate.6.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:foreign_agent
+	
+	goto_location = scope:foreign_agent
+	
+	picture = senator_conversing
+	
+	trigger = {
+		exists = scope:target
+		scope:target = {
+			is_alive = yes
+		}
+		exists = scope:foreign_agent
+		scope:foreign_agent = {
+			is_alive = yes
+			prisoner = no
+		}
+	}
+	
+	option = {
+		name = "assassinate.6.a"
+		custom_tooltip = agent_will_flee_to_us_tt
+		add_stability = -10
+		set_local_variable = {
+			name = asylum_promised
+		}
+	}
+	
+	option = {
+		name = "assassinate.6.b"
+		set_assassinate_malus_effect = yes
+	}
+	
+	after = {
+		trigger_event = {
+			on_action = assassinate_preparations_being_made
+			days = { 10 30 }
+		}
+	}
+	
+}
+
+assassinate.7 = {
+	type = country_event
+	title = "assassinate.7.t"
+	desc = "assassinate.7.desc"
+	
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:foreign_agent
+	
+	goto_location = scope:foreign_agent
+	
+	trigger = {
+		exists = scope:target
+		scope:target = {
+			is_alive = yes
+		}
+		exists = scope:foreign_agent
+		scope:foreign_agent = {
+			is_alive = yes
+			prisoner = no
+		}
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "assassinate.7.a"
+		set_local_variable = {
+			name = death_method
+			value = 1 #poison
+		}
+	}
+	
+	option = {
+		name = "assassinate.7.b"
+		set_local_variable = {
+			name = death_method
+			value = 2 #stabbing
+		}
+	}
+	
+	option = {
+		name = "assassinate.7.c"
+		custom_tooltip = cruel_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = cruel
+			}
+		}
+		highlight = yes
+		set_local_variable = {
+			name = death_method
+			value = 3 #flaying
+		}
+	}
+	
+	option = {
+		name = "assassinate.7.d"
+		custom_tooltip = lunatic_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = lunatic
+			}
+		}
+		exclusive = yes
+		highlight = yes
+		set_local_variable = {
+			name = death_method
+			value = 4 #battering ram
+		}
+		set_assassinate_malus_effect = yes
+	}
+	
+	option = {
+		name = "assassinate.7.e"
+		custom_tooltip = ambitious_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = ambitious
+			}
+		}
+		highlight = yes
+		set_local_variable = {
+			name = death_method
+			value = 5 # crucifixion
+		}
+		set_assassinate_malus_effect = yes
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+	}
+	
+	option = {
+		name = "assassinate.7.f"
+		custom_tooltip = unnoticeable_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = unnoticeable
+			}
+		}
+		highlight = yes
+		set_local_variable = {
+			name = death_method
+			value = 6 # Garrote
+		}
+	}
+	
+	option = {
+		name = "assassinate.7.g"
+		custom_tooltip = crafty_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = crafty
+			}
+		}
+		highlight = yes
+		set_local_variable = {
+			name = death_method
+			value = 7 # bathing accident
+		}
+	}
+	
+	option = {
+		name = "assassinate.7.h"
+		custom_tooltip = blunt_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = blunt
+			}
+		}
+		highlight = yes
+		set_local_variable = {
+			name = death_method
+			value = 8 # batter with club
+		}
+	}
+	
+	option = {
+		name = "assassinate.7.i"
+		custom_tooltip = merciful_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = merciful
+			}
+		}
+		highlight = yes
+		set_local_variable = {
+			name = death_method
+			value = 9 # a quick death
+		}
+	}
+	
+	after = {
+		trigger_event = {
+			on_action = assassinate_result
+			days = { 10 30 }
+		}
+	}
+	
+}
+
+assassinate.8 = {
+	type = country_event
+	title = "assassinate.8.t"
+	desc = "assassinate.8.desc"
+	
+	left_portrait = current_ruler
+	left_portrait = scope:foreign_agent
+	right_portrait = scope:target
+	right_portrait = scope:scapegoat
+	
+	picture = dagger_behind_back
+	
+	goto_location = scope:target
+	
+	trigger = {
+		exists = scope:target
+		scope:target = {
+			is_alive = yes
+		}
+		exists = scope:foreign_agent
+		scope:foreign_agent = {
+			is_alive = yes
+			prisoner = no
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = scope:scapegoat
+					scope:scapegoat = {
+						is_alive = yes
+						employer = scope:target.employer
+					}
+				}
+				set_local_variable = {
+					name = scapegoat_killed
+					value = {
+						integer_range = { min = 1 max = 10 }
+					}
+				}
+			}
+			set_local_variable = {
+				name = implication_discovered
+				value = {
+					integer_range = { min = 1 max = 10 }
+				}
+			}
+			if = {
+				limit = {
+					has_local_variable = scapegoat_killed
+					local_var:scapegoat_killed > 5
+					scope:scapegoat = {
+						is_alive = yes
+					}
+				}
+				scope:scapegoat = {
+					death = {
+						death_reason = death_battering
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:target.employer = {
+						OR = {
+							is_tribal = yes
+							is_monarchy = yes
+						}
+						any_character = {
+							OR = {
+								has_office = office_bodyguard
+								has_office = office_master_of_the_guard
+							}
+						}
+					}
+				}
+				scope:target.employer = {
+					random_character = {
+						limit = {
+							OR = {
+								has_office = office_bodyguard
+								has_office = office_master_of_the_guard
+							}
+						}
+						save_scope_as = bodyguard
+					}
+				}
+				set_local_variable = {
+					name = assassination_result_calc
+					value = {
+						integer_range = { min = 20 max = 100 }
+					}
+				}
+				change_local_variable = {
+					name = assassination_result_calc
+					subtract = {
+						value = scope:bodyguard.martial
+						multiply = 5
+					}
+				}
+			}
+			else = {
+				set_local_variable = {
+					name = assassination_result_calc
+					value = {
+						integer_range = { min = 1 max = 75 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_local_variable = assassinate_malus
+				}
+				change_local_variable = {
+					name = assassination_result_calc
+					add = local_var:assassinate_malus
+				}
+			}
+		}
+		if = {
+			limit = {
+				local_var:assassination_result_calc > 10 
+				scope:target = {
+					is_ruler = yes
+					NOT = {
+						employer = root
+					}
+				}
+			}
+			scope:target = {
+				employer = {
+					trigger_event = {
+						id = assassinate.9 #inform of murder. Check for local_var implication_discovered > 5 to see if they realise who did it.
+					}
+				}
+				appropriate_death_effect_assassination = yes
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = {
+					is_ruler = yes
+					NOT = {
+						employer = root
+					}
+				}
+				local_var:assassination_result_calc <= 10
+			}
+			scope:target.employer = {
+				trigger_event = {
+					id = assassinate.10
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				local_var:assassination_result_calc > 10
+			}
+			scope:target = {
+				appropriate_death_effect_assassination = yes
+			}
+		}
+		if = {
+			limit = {
+				local_var:implication_discovered > 5 
+			}
+			add_aggressive_expansion = 5
+			scope:target.employer = {
+				add_opinion = {
+					target = root
+					modifier = attempted_assassination_on_us
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "assassinate.8.a" #offered asylum and agent got away, grant asylum
+		trigger = {
+			has_local_variable = asylum_promised
+			scope:foreign_agent = {
+				is_alive = yes
+				employer = scope:target.employer
+			}
+		}
+		scope:foreign_agent = {
+			hidden_effect = {
+				remove_all_positions = yes
+			}
+			move_country = root
+			hidden_effect = {
+				remove_character_modifier = foreign_citizen
+			}
+			set_as_minor_character = this
+		}
+	}
+	
+	option = {
+		name = "assassinate.8.b" #offered asylum and agent got away, refused asylum
+		trigger = {
+			has_local_variable = asylum_promised
+			scope:foreign_agent = {
+				is_alive = yes
+				employer = scope:target.employer
+			}
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+			if = {
+				limit = {
+					is_friend = scope:foreign_agent
+				}
+				remove_friend = scope:foreign_agent
+			}
+		}
+	}
+	
+	option = {
+		name = "assassinate.8.c"
+		trigger = {
+			NOT = {
+				has_local_variable = asylum_promised
+			}
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_variable = ongoing_assassination
+			}
+			remove_variable = ongoing_assassination
+		}
+	}
+	
+}
+
+assassinate.9 = {
+	type = country_event
+	title = "assassinate.9.t"
+	desc = "assassinate.9.desc"
+	
+	left_portrait = scope:portrait_why
+	right_portrait = scope:target
+	right_portrait = scope:discovered_ruler
+	right_portrait = scope:culprit
+	
+	goto_location = scope:target
+
+	picture = revolt
+	
+	immediate = {
+		if = {
+			limit = {
+				local_var:implication_discovered > 5
+			}
+			scope:actor.current_ruler = {
+				save_scope_as = discovered_ruler
+			}
+		}
+		if = {
+			limit = {
+				has_local_variable = scapegoat_killed
+				local_var:scapegoat_killed > 5
+			}
+			scope:scapegoat = {
+				save_scope_as = culprit
+			}
+		}
+		current_ruler = {
+			save_scope_as = portrait_why
+		}
+	}
+	
+	option = {
+		name = "assassinate.9.a"
+		if = {
+			limit = {
+				local_var:implication_discovered > 5
+			}
+			show_as_tooltip = {
+				add_opinion = {
+					target = scope:actor
+					modifier = attempted_assassination_on_us
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = -10
+		}
+		else = {
+			current_ruler = {
+				add_popularity = subtract_popularity_medium
+			}
+		}
+	}
+}
+
+assassinate.10 = {
+	type = country_event
+	title = "assassinate.10.t"
+	desc = "assassinate.10.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:target
+	right_portrait = scope:discovered_ruler
+	
+	goto_location = scope:target
+	
+	picture = revolt
+	
+	immediate = {
+		if = {
+			limit = {
+				local_var:implication_discovered > 5
+			}
+			scope:actor.current_ruler = {
+				save_scope_as = discovered_ruler
+			}
+		}
+	}
+	
+	option = {
+		name = "assassinate.10.a"
+		if = {
+			limit = {
+				local_var:implication_discovered > 5
+			}
+			show_as_tooltip = {
+				add_opinion = {
+					target = scope:actor
+					modifier = attempted_assassination_on_us
+				}
+			}
+		}
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+		add_stability_effect = yes
+	}
+	
+}

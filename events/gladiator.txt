@@ -1,0 +1,217 @@
+﻿namespace = gladiator
+
+gladiator.1 = {
+	type = country_event
+	title = "gladiator.1.t"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_local_variable = outcome
+					local_var:outcome = 0
+				}
+				desc = "gladiator.1.draw"
+			}
+			triggered_desc = {
+				trigger = {
+					has_local_variable = outcome
+					OR = {
+						local_var:outcome = 1
+						local_var:outcome = 2
+					}
+				}
+				desc = "gladiator.1.victory"
+			}
+		}
+	}
+	
+	picture = gladiators
+	
+	left_portrait = scope:target
+	right_portrait = scope:recipient
+	
+	
+	immediate = {
+		set_local_variable = {
+			name = combat_ability_target
+			value = {
+				integer_range = { min = 0 max = 10 }
+			}
+		}
+		set_local_variable = {
+			name = combat_ability_recipient
+			value = {
+				integer_range = { min = 0 max = 10 }
+			}
+		}
+		change_local_variable = {
+			name = combat_ability_target
+			add = gladiator_target_svalue
+		}
+		change_local_variable = {
+			name = combat_ability_recipient
+			add = gladiator_recipient_svalue
+		}
+		if = {
+			limit = {
+				local_var:combat_ability_target = gladiator_recipient_var_svalue
+			}
+			set_local_variable = {
+				name = outcome
+				value = 0
+			}
+		}
+		else_if = { #TARGET WINS
+			limit = {
+				local_var:combat_ability_target > gladiator_recipient_var_svalue
+			}
+			scope:target = {
+				save_scope_as = winner
+			}
+			scope:recipient = {
+				save_scope_as = loser
+			}
+			set_local_variable = {
+				name = outcome
+				value = 1
+			}
+			scope:loser = {
+				death = {
+					death_reason = death_gladiatorial_combat
+					killer = scope:winner
+				}
+			}
+		}
+		else_if = { #RECIPIENT WINS
+			limit = {
+				local_var:combat_ability_target < gladiator_recipient_var_svalue
+			}
+			scope:recipient = {
+				save_scope_as = winner
+			}
+			scope:target = {
+				save_scope_as = loser
+			}
+			set_local_variable = {
+				name = outcome
+				value = 2
+			}
+			scope:loser = {
+				death = {
+					death_reason = death_gladiatorial_combat
+					killer = scope:winner
+				}
+			}
+		}
+		set_local_variable = {
+			name = trait_gain
+			value = {
+				integer_range = { min = 1 max = 10 }
+			}
+		}
+	}
+	
+	option = {
+		name = "gladiator.1.a"
+		trigger = {
+			local_var:outcome = 0
+		}
+		if = {
+			limit = {
+				scope:target = {
+					prisoner = yes
+				}
+			}
+			release_prisoner = {
+				target = scope:target
+			}
+		}
+		else = {
+			scope:target = {
+				add_health = -5
+			}
+		}
+		if = {
+			limit = {
+				scope:recipient = {
+					prisoner = yes
+				}
+			}
+			release_prisoner = {
+				target = scope:recipient
+			}
+		}
+		else = {
+			scope:recipient = {
+				add_health = -5
+			}
+		}
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+	}
+	
+	option = {
+		name = "gladiator.1.a"
+		trigger = {
+			local_var:outcome > 0
+		}
+		if = {
+			limit = {
+				scope:winner = {
+					prisoner = yes
+				}
+			}
+			release_prisoner = {
+				target = scope:winner
+			}
+		}
+		else = {
+			scope:winner = {
+				add_popularity = 5
+			}
+		}
+		if = {
+			limit = {
+				local_var:trait_gain >= 8
+				scope:winner = {
+					NOT = {
+						has_trait = victorious
+					}
+				}
+			}
+			scope:winner = {
+				add_trait = victorious
+			}
+		}
+		if = {
+			limit = {
+				local_var:trait_gain < 8
+				scope:winner = {
+					health > 10
+				}
+			}
+			scope:winner = {
+				add_health = -10
+			}
+		}
+		else_if = {
+			limit = {
+				local_var:trait_gain < 8
+				scope:winner = {
+					health <= 10
+				}
+			}
+			scope:winner = {
+				death = {
+					death_reason = death_from_wounds
+				}
+			}
+		}
+		current_ruler = {
+			add_popularity = popularity_large
+		}
+	}
+
+	
+}

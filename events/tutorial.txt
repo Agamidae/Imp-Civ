@@ -1,0 +1,363 @@
+﻿namespace = tutorial
+
+#########
+
+tutorial.1 = {
+	type = country_event 
+	title = "tutorial.1.t"
+	desc = "tutorial.1.desc"
+	picture = romans_marching
+
+	trigger = {
+		tag = ROM
+		is_tutorial_active = yes
+		NOT = {	has_variable = tutorial_started }
+	}
+	
+	immediate = {
+		set_variable = tutorial_started
+		hidden_effect = {
+			add_treasury = 300
+			add_political_influence = 500
+			C:ROM = {
+				add_country_modifier = {
+					name = tutorial_boost
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "tutorial.1.a"
+		custom_tooltip = "starting_setup_tooltip"
+		hidden_effect = {
+			trigger_event = {
+				id = tutorial.2
+			}
+			p:36 = {
+				add_province_modifier = {
+					name = plenty_of_fish_tutorial_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+	
+}
+
+tutorial.2 = {
+	type = country_event 
+	title = "tutorial.2.t"
+	desc = "tutorial.2.desc"
+	picture = senate_debate
+	
+	option = {
+		name = "tutorial.2.a"
+		custom_tooltip = "basics_of_resources_tooltip"
+		hidden_effect = {
+			trigger_event = {
+				id = tutorial.3
+				days = 0
+			}
+		}
+	}
+	
+}
+
+tutorial.3 = {
+	type = country_event
+	title = "tutorial.3.t"
+	desc = "tutorial.3.desc"
+	picture = hellenic_marketplace
+	
+	option = {
+		name = "tutorial.3.a"
+		custom_tooltip = "begin_tutorial_event_tooltip"
+		set_variable = {
+			name = tutorial_enabled	
+		}
+	}
+	
+}
+
+tutorial.4 = {
+	type = country_event 
+	title = "tutorial.4.t"
+	desc = "tutorial.4.desc"
+	picture = hellenic_temple
+	
+	option = {
+		name = "tutorial.4.a"
+		add_stability = 10
+	}
+	
+}
+
+tutorial.5 = {
+	type = country_event 
+	title = "tutorial.5.t"
+	desc = "tutorial.5.desc"
+	picture = army_desert
+	
+	option = {
+		name = "tutorial.5.a"
+		if = {
+			limit = {
+				any_unit = {
+					is_army = yes
+				}
+			}
+			random_army = {
+				weight = {
+					modifier = {
+						factor = 100
+						unit_size >= 20
+					}
+				}
+				add_unit_modifier = {
+					name = tutorial_rome_victorious
+					duration = -1
+				}
+			}
+		}
+	}
+	
+}
+
+tutorial.6 = {
+	type = country_event 
+	title = "tutorial.6.t" 
+	desc = "tutorial.6.desc"
+	picture = naval_battle
+	
+	option = {
+		name = "tutorial.6.a"
+		add_country_modifier = {
+			name = tutorial_build_cost_modifier
+			duration = 3650
+		}
+	}
+	
+}
+
+tutorial.7 = {
+	type = country_event 
+	title = "tutorial.7.t"
+	desc = "tutorial.7.desc"
+	picture = city_construction
+	
+	option = {
+		name = "tutorial.7.a"
+		add_country_modifier = {
+			name = tutorial_capital_route
+			duration = -1
+		}
+	}
+	
+}
+
+tutorial.8 = {
+	type = country_event 
+	title = "tutorial.8.t"
+	desc = "tutorial.8.desc"
+	picture = great_city
+	
+	option = {
+		name = "tutorial.8.a"
+		add_stability = 20
+	}
+	
+}
+
+tutorial.9 = {
+	type = country_event 
+	title = "tutorial.9.t"
+	desc = "tutorial.9.desc"
+	picture = religious_rite
+	
+	option = {
+		name = "tutorial.9.a"
+		add_political_influence = 100
+	}
+	
+}
+
+tutorial.10 = {
+	type = country_event 
+	title = "tutorial.10.t"
+	desc = "tutorial.10.desc"
+	picture = proscription
+	
+	option = {
+		name = "tutorial.10.a"
+		custom_tooltip = tutorial_unrest_modifier_tooltip
+		add_political_influence = 200
+		hidden_effect = {
+			p:23 = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+			p:105 = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+			p:107 = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+	
+}
+
+tutorial.11 = {
+	type = country_event 
+	title = "tutorial.11.t"
+	desc = "tutorial.11.desc"
+	picture = scribe_tools
+	
+	option = {
+		name = "tutorial.11.a"
+		current_ruler = {
+			add_martial = 1
+		}
+	}
+	
+}
+
+tutorial.12 = {
+	type = country_event 
+	title = "tutorial.12.t"
+	desc = "tutorial.12.desc"
+	picture = oration
+	
+	option = {
+		name = "tutorial.12.a"
+		custom_tooltip = tutorial_unrest_modifier_tooltip_2
+		add_political_influence = 200
+		hidden_effect = {
+			area:neapolis_area = {
+				every_area_province = {
+					add_province_modifier = {
+						name = tutorial_unrest_modifier
+						duration = -1
+					}
+				}
+			}
+			p:10  = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+			p:43  = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+			p:46  = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+			p:42  = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+			p:44  = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+			p:45  = {
+				add_province_modifier = {
+					name = tutorial_unrest_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+tutorial.13 = {
+	type = country_event 
+	title = "tutorial.13.t"
+	desc = "tutorial.13.desc"
+	picture = throneroom
+	
+	option = {
+		name = "tutorial.13.a"
+		add_treasury = 400
+	}
+	
+}
+
+tutorial.14 = {
+	type = country_event 
+	title = "tutorial.14.t"
+	desc = "tutorial.14.desc"
+	picture = successors
+	
+	option = {
+		name = "tutorial.14.a"
+		add_manpower = 10
+	}
+	
+}
+
+tutorial.15 = {
+	type = country_event 
+	title = "tutorial.15.t"
+	desc = "tutorial.15.desc"
+	picture = city_siege
+	
+	option = {
+		name = "tutorial.15.a"
+		add_manpower = 10
+		add_treasury = 400
+	}
+	
+}
+
+tutorial.16 = {
+	type = country_event 
+	title = "tutorial.16.t"
+	desc = "tutorial.16.desc"
+	picture = slaves_working
+	
+	option = {
+		name = "tutorial.16.b"
+	}
+	
+}
+
+
+
+tutorial.17 = {
+	type = country_event 
+	title = "tutorial.17.t" 
+	desc = "tutorial.17.desc"
+	picture = naval_battle
+	
+	option = {
+		name = "tutorial.17.a"
+		add_country_modifier = {
+			name = tutorial_port_built
+			duration = -1
+		}
+	}
+	
+}
+

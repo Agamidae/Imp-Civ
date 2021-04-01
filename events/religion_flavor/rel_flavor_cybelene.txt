@@ -1,0 +1,360 @@
+﻿namespace = rel_flavor_cybelene
+
+# Carving the Mother Goddess
+rel_flavor_cybelene.1 = {
+	type = country_event
+	title = "rel_flavor_cybelene.1.t"
+	desc = "rel_flavor_cybelene.1.desc"
+	picture = quarry
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_character
+	
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = anatolian_religion
+		NOT = { has_variable = rel_flavor_cybelene_1_cooldown }
+		any_owned_province = {
+			OR = {
+				terrain = hills
+				terrain = mountain
+			}
+			dominant_province_religion = anatolian_religion
+		}
+		any_character = {
+			has_any_office = yes
+			has_religion = anatolian_religion
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				OR = {
+					terrain = hills
+					terrain = mountain
+				}
+				dominant_province_religion = anatolian_religion
+			}
+			weight = {
+				modifier = {
+					factor = 10
+					terrain = mountain
+				}
+				modifier = {
+					factor = 10
+					terrain = mountain
+					is_capital = yes
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+		random_character = {
+			limit = {
+				has_any_office = yes
+				has_religion = anatolian_religion
+			}
+			weight = {
+				modifier = {
+					factor = 10
+					has_priest_office_trigger = yes
+				}
+			}
+			save_scope_as = randomized_character
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_cybelene_1_cooldown
+				days = 7300
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.1.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 16
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_cybelene_shrine
+				duration = 7300
+			}
+		}
+		scope:randomized_character = {
+			add_loyalty = loyalty_priest_allowed
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.1.b"
+		scope:randomized_character = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}
+
+# A ceremony of grain
+rel_flavor_cybelene.2 = {
+	type = country_event
+	title = "rel_flavor_cybelene.2.t"
+	desc = "rel_flavor_cybelene.2.desc"
+	picture = farming
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = anatolian_religion
+		NOT = { has_variable = rel_flavor_cybelene_2_cooldown }
+		NOR = {
+			any_owned_province = {
+				has_province_modifier = province_diminishment_starvation
+			}
+			has_country_modifier = country_improvement_cybele_blessing
+		}
+		any_owned_province = {
+			trade_goods = grain
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				trade_goods = grain
+			}
+			save_scope_as = randomized_country_province
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_cybelene_2_cooldown
+				days = 7300
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.2.a"
+		add_political_influence = influence_medium
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.2.b"
+		add_political_influence = influence_medium
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		add_country_modifier = {
+			name = country_improvement_cybele_blessing
+			duration = 1825
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_starvation
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.2.c"
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_starvation
+				duration = 3650
+			}
+		}
+	}
+}
+
+# The cult of the Mother Goddess
+rel_flavor_cybelene.3 = {
+	type = country_event
+	title = "rel_flavor_cybelene.3.t"
+	desc = "rel_flavor_cybelene.3.desc"
+	picture = celtic_religious_festival
+	
+	left_portrait = current_ruler
+
+	goto_location = root.capital_scope
+
+	trigger = {
+		religion = anatolian_religion
+		NOT = { has_variable = rel_flavor_cybelene_3_cooldown }
+		current_ruler = {
+			NOT = {
+				has_variable = mystical_cybele_cult
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_cybelene_3_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.3.a"
+		add_political_influence = subtract_influence_small
+		capital_scope = {
+			add_province_modifier = {
+				name = province_improvement_cybele_cult
+				duration = 3650
+			}
+		}
+		hidden_effect = {
+			current_ruler = {
+				set_variable = {
+					name = mystical_cybele_cult
+				} 
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.3.b"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}
+
+# The reborn Attis
+rel_flavor_cybelene.4 = {
+	type = country_event
+	title = "rel_flavor_cybelene.4.t"
+	desc = "rel_flavor_cybelene.4.desc"
+	picture = dagger_behind_back
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = anatolian_religion
+		current_ruler = {
+			is_female = no
+			has_trait = lunatic
+			NOT = { has_trait = castrated }
+			health >= 20
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.4.a"
+		remove_stability_effect = yes
+		current_ruler = {
+			add_trait = castrated
+			add_health = -15
+			add_character_modifier = {
+				name = character_improvement_attis_reborn
+				duration = 3650
+			}
+		}
+	}
+}
+
+# Cult-Event - Spreading cult
+rel_flavor_cybelene.5 = {
+	type = country_event
+	title = "rel_flavor_cybelene.5.t"
+	desc = "rel_flavor_cybelene.5.desc"
+	picture = war_chest
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = anatolian_religion
+		current_ruler = {
+			has_variable = mystical_cybele_cult
+		}
+		NOT = { has_variable = rel_flavor_cybelene_5_cooldown }
+		any_owned_province = {
+			NOT = { has_province_modifier = province_improvement_cybele_cult }
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { has_province_modifier = province_improvement_cybele_cult }
+			}
+			save_scope_as = randomized_country_province
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_cybelene_5_cooldown
+				days = 7300
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.5.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 4
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_cybele_cult
+				duration = 3650
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_type = freemen
+						NOT = {
+							pop_religion = anatolian_religion
+						}
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_type = freemen
+						NOT = {
+							pop_religion = anatolian_religion
+						}
+					}
+					set_pop_religion = anatolian_religion
+				}
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_type = citizen
+						NOT = {
+							pop_religion = anatolian_religion
+						}
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_type = citizen
+						NOT = {
+							pop_religion = anatolian_religion
+						}
+					}
+					set_pop_religion = anatolian_religion
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_cybelene.5.b"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}
+
+

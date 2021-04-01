@@ -1,0 +1,163 @@
+﻿germanic = {
+	color = hsv { 0.05 0.7 0.3 }
+	primary = archers
+	second = chariots
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+	levy_template = levy_germanic
+	
+	male_names = {
+		Abo Adalbero Adalbert Adalbrand 
+		Adaldag Adalgar Adalgod Adolf 
+		Aelle Albrecht Alebrand Altfrid 
+		Ansgar Arnd Arnold Asig 
+		Balduin Balthasar Banzleib Beneke 
+		Benno Bernd Bernhard Bertold 
+		Bertram Boddic Brun Bruno 
+		Burchard Cissa Claus Cobbo 
+		Cord Cyprian Dago Dedo 
+		Dethard Detleff Detmar Diederik 
+		Donar Eggerd Egilmar Ekbert 
+		Engelbert Engelhard Erik Erp 
+		Esiko Everd Ewald Floribert 
+		Freawine Frederik Gehrke Gelder 
+		Gero Gerold Gevert Ghert 
+		Giselher Giselmar Gosschalk Goswin 
+		Gunzelin GOdke GUnther Hans 
+		Harthgate Hartwig Heideke Hengest 
+		Henneke Herberd Hermann Hinrik 
+		Hoger Hulderic Humfried Immed Isidor 
+		Jacob Jaspar Jochim Johann Juries Kersten 
+		KOpke Laurentz Lembert Leuderic 
+		Liawizo Liemar Liudger Luder 
+		Ludolf Ludwig Magnus Marbold 
+		Marquard Mathias Meinwerk Merten 
+		Michael Norbert Odo Ordulf 
+		Peter Philipp Radke Reginbern 
+		Reinbern Reineke Reinmar Rudigar 
+		Rudolf Sigbert Sigfrid Sigward 
+		Simon Steffen Thankmar Theoderic 
+		Theodoric Theodwin Thimo Thomas 
+		Tobe Tymmeke Udu Otto Unwan 
+		Viric Volkwin Volrad Walbert 
+		Waldemar Waldered Waltard Warin 
+		Warinechin Wecta Wenzel Werneke 
+		Weybrecht Wichbert Wichmann Wicho 
+		Widukind Wigebert Wilbrand Willichin 
+		Withgils Witikind Witta 
+		Wlencing Wolter Wulff Thurgot
+	}
+	female_names = {
+		Addila Adelheid Alof Agnes 
+		Anna Athela Beatrix Bertha 
+		Bertrada Bia Bisina Bithild 
+		Brigida Christina Diedke Eilika 
+		Elisabeth Enda Frederuna Geilana 
+		Gerberga Gertrud Gisela Glismod 
+		Hadwig Hasala Heilwig Helene 
+		Hildegard Hrothwina Ida Imma 
+		Irmgard Irminburg Jutta Katharina 
+		Kunigunde Luitgard Margarete 
+		Mathilde Mechthild Oda Othelindis 
+		Radegund Reginlint Richardis Rodelinda 
+		Sophia Suanhilde Theodrada 
+		Thiedburga Wienke Wiltrud Wulfhild
+	}
+	family = {
+		vonBrandenburg vonHolstein vonSlesvig Wettin 
+		vonWettin vonVersfleth vonWinzenburg Witte 
+		vonHagen Steneke Pleskow vonWunstorf 
+		vonGoltern vonWOlpe vonAre vonSteinfurt vonTecklenburg 
+		vonRavensberg vonWeyhe vonHoya vonBuxthoeven 
+		vonSchwerin vonHaseldorf vonFriesack vonBadewide 
+		vonWassel vonDassel vondeRLippe vonSchauenburg vonSegeberg
+	}
+	culture = {
+		north_german = {}
+		south_german = {
+			male_names =  {
+				Albrecht Maximilian Friedrich Ladislav Matthias Ernst 
+				Ferdinand Wenzel Georg Philipp Joseph Rudolf 
+				Gerhard Wolfgang Leopold Florian Alexander 
+				Anton Franz Karl Johann Ludwig Rainer
+				Adolf Alfred Benno Bruno Cristoph Clemens  
+				Günther Heinrich Jakob Joachim Jörg Michael 
+				Oskar Otto Siegfried Stefan Ulrich Viktor
+			}
+			family = {
+				Gabelkofen Von_und_zu_Goldegg_und_Lindenburg Haunsperger Pranckh Rohr Aichen
+				Enenkel Geymann Eggendorf Albrechtsburg Thurheim Thurn_und_Taxis
+				Tippelskirch Falkenberg Polheim Wagrain Tollet Fieger
+				Ennenkel Hayden Dorff Volkenstorfer Tannberg Hatzenberg Moser
+				Felsach Daun Unverzagt
+			}
+		
+		}
+		helvetian = {
+			male_names = {
+				Friedrich Otto Heinrich Werner Ferdinand Karl 
+				Alfred Benedikt Christoph Dietrich Engelbert Florian 
+				Gerhard Immanuel Johan Leonhard Markus Nikolaus 
+				Paul Ruprecht Stefan Thomas Ulrich Vinzenz 
+				Andre Charles Didier Emmanuel Frederic Gerard 
+				Henri Jules Matthieu Nicolas Pascal Vincent 
+				Claudio Edmondo Leonardo Timoteo
+			}
+			female_names = {
+				Angela Marlene Hanna Anastasia Christina 
+				Adelina Adriana Afina Alexandra Alexia 
+				Ana Anna Arina 
+			}
+			family = {
+				Schwarzburg Schonburg Schlotheim Salza Kospoth Knuth 
+				WettinAskanier Hohenzollern Erffa Bodungen Eckersberg Brandenstein 
+				Pappenheim Wiehe Westernhagen Jena Trutzschler Plessen 
+				Haugwitz Kanitz Falkenhayn Thuna Thuringen Nostitz
+				Bieberstein Meerheimb Freiberg Neitschutz Minckwitz Arnswaldt
+				Auerswald ausdemwinckel Beichlingen Bendeleben Beneckendorff Berbisdorf 
+				Bissingen Bock Bomsdorff Bose Breitenbach Breitenbuch
+			}
+		}
+		dutch = {
+			male_names = {
+				Adriaen Albrecht Alwin Ambroos Antoon Arnold 
+				Arnulf Balderik Barend Barnaerd Bartolomeus Bavo
+				Bertold Boudewijn Claes Nicholas Claeuwaert Daevit 
+				Damaes Diederick Thierry Dirk Douwe Eduard 
+				Egmund Ekbert Emmo Engelbrecht Filips Floris 
+				Folbert Frans Frederik Gerard Gerolt Gerulf
+				Gerrit Gijsbrecht Giselbert Gilbert Godfried Godschalk 
+				Gozewijn Guij Gwijde_Hendrik Herman Hubert
+			}
+			female_names = {
+				Ada Adela Adelheid Adelaide_Aechte Agaete
+				Aleid Alijse Alice Aliken Anna Annelies
+				Badeloge Bava Beatrijs Beatrice Benedicta Blanca
+				Blanche Blanceflore Cecily Cille Clara Clementia
+				Ellijnore Emma Ermingarde_Fenne Filippa Frida
+				Gheertrude_Gerda Godila Haduwijn Helena Herlinda
+				Hilligonda Ide_Ida Imagina Irene Isabelle
+			}
+			family = {
+				Oranje Nassau Wassenberg Henegouwen Friesland Haspinga
+				Limburg Lotharingen Der_Mark Leuven Brabant Egmont
+				Reginar Julich-Hengebach Loon Geldern Sulzbach Salm
+				Bergh Heinsberg Veluwe Graeff Brederode_Breda
+				Heemskerk Glymes Grimberghe Renesse Wassenaer Bronckhorst
+				Keppel Voorst_tot_Voorst Wisch Kamerijk Cirksena
+			}
+			
+		}
+	}
+	barbarian_names = { AMBRONES ANGLII ANGRIVARII AUIONES BATAVI BRUCTERI CALUCONES CHATTI CHAUCI CHERUSCI CIMBRI DULGUMNII FRISII HERMUNDURI INGVAEONES LANGOBARDI LUGII MARCOMANNI QUADI SEMNONES SUGAMBRI TENCTERI TEUTONES UBII USIPI VARISTI }
+	
+	graphical_culture = western_european_gfx
+	ethnicities = {
+		10 = german
+	}
+}
+	

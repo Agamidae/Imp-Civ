@@ -1,0 +1,107 @@
+﻿scandinavian = {
+	color = hsv { 0.6339 1 0.4588 }
+	
+	primary = archers
+	second = chariots
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+	levy_template = levy_germanic
+	
+	male_names = { 
+		Christian Christoph Oskar Adolf August Guran 
+		Sigismund Alfred Axel Edvard Gottfrid Jakob 
+		Ludvig Mikael Olof Patrik Rangvald Rettil 
+		Sigvard Simon Sture Svante Tomas Ulrik
+		Albrikt Albert Alf Algot Anders Arne 
+		Arnfast Astrad Bengt Benedict Bertil Birger 
+		Bjorn Bo Borkvard Brage Bror Dag
+	}
+	female_names = { 
+		Christina Ulrika Eleonora Hedwig Anna Asta 
+		Astrid Beata Birgitta Brigid Bothild Cecilia 
+		Elin Elisabet Gunhild Helena Holmfrid Iliana 
+		Inga Ingeborg Ingegerd Ingfrid Ingrid Karin
+		Katarina Kristina Linda Margareta Märta Ragnhild 
+		Sara Sigrid Sofia Thordis Ulvhilde Еsa
+	}
+	family = { 
+		Bonde Vasa Tre_Rosor Oxenstierna Sparre Sture
+		Tott Trolle Bielke Brahe Horn Ribbing
+		Skytte Baner Fleming Gyllenstierna delaGardie Leijonhufvud
+		NattochDag Grip Stenbock Bure Drake Hand
+		Burensköld Bollja Cruus Geete Grubbenhielm Soop
+		Ekeblad Svinhufvud Hird Forstena Kurck Eka
+		Hjort Jagerhorn Lilliehook Porse Palme Gumsehuvud
+	}
+	
+	culture = {
+		swedish = {}
+		norwegian = {
+			male_names = {
+				Ale Alfr Alf Alfgeir Anders Andrew
+				Bagge Baldr Balder Barid Bengt Benedict
+				Bragi Brage Buрli Dag Dan Dyre
+				Eilif Egill Egil Emund Einarr Einar
+				Falki Faste Filip Philip Fredrik Frederick
+				Gandalfr Geirr Georg George Gnupa Gorm
+				Hemming Holmger Hrafn Hrolfr Rolf Hrane
+			}
+			female_names = {
+				Torhild Aleta Alfhildr Alfhild Alfridh Alvor 
+				Anna Asa Lsa Aslaug Asta Astrid 
+				Beata Birgitta Brigid Bjorg Bodil Bothildr 
+				Bothild Cecilia Edla Elin Elisabet Freja 	
+				Grima Gunnhildr Gunhild Gurli Gudrun Gyla 
+				Gytha Hafrid Halla Helena Helen Holmfrid
+				Iliana Inga Ingfrid Ingibjorg
+			}
+			family = { 
+				Hirfagrectta Bielke Bildt Galte Paus Smrr Benkestok Kane Bonde
+				Drake avHafrsfjord Ytra avAskr Koss avRrra avNordland Hylling
+				Alfr Herja Vansö Flod afVendel avAlfheim Vidfamne Bille
+				Iuel Kaas Rosenkrantz Urne Adeler Blixenskiold Gyldenpalm Holberg
+				Rosenheim Schouboe Tordenskiold Wessel Westervick Falsen Knagenhjelm
+				Galtung Heubsch
+			}
+		}
+		danish = {
+			male_names = { 
+				Anders Andrew Anund Asger Balder Benedikt
+				Beorn Bo Christopher Edvard Einar Ernest
+				Fredrik Frej Glum Gorm Gotfred Gregers
+				Gregory Grim Hĺrik Halfdan Halvor Harold
+				Helge Hemming Henry Hjalmar Ingolf Jrrn
+				Jacob Jens Joakim Johann Charles Knut
+				Kristian Leif Lennart Ludvig Louis Malthe Rurik
+				Mads Matthew Mikkel Mogens Olaf Peder Pridbjrrn Ragnar Ragnvald Rolf
+			}
+			female_names = {
+				Sophie Dorothe Margrete Sigrun Agnethe Anna
+				Asta Benedikte Benedicta Birgitta Brigid Bodil
+				Cecilie Cecilia Christina Dagmar Dorothea Dorothy
+				Elisabeth Ellinor Eleanor Emilie Emily Erika
+				Ester Estrid Astrid Frederikke Frederique Freja
+				Grethe Gudrun Gunhild Gyda Gytha Helena
+				Helen Ida Ingeborg Ingegerd Ingrid Johanne
+			}
+			family = { 
+				Hvide Galen Due Saltensee Urup Neb
+				Brahe Grye Trolle Rantzau Friis Gyllenstierna
+				Gyldenstierne Bille Adeler Arenstorff BrockenhuusBeck
+				Brock Grubbe Holck Huitfeldt Juel Kaas
+				Krabbe Lindenov Lykke Marsvin Mule Munk
+				Oxe Reedtz Rodsteen Rosenkrantz Skeel Skram
+				Urne Vind Ahlefeldt Frille Rrnnow Porse
+			}
+		}
+	}
+
+	graphical_culture = western_european_gfx
+	ethnicities = {
+		10 = germanic
+	}
+}

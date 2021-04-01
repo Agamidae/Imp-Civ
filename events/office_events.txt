@@ -1,0 +1,364 @@
+﻿namespace = office
+
+office.1 = {
+	type = character_event
+	title = "office.1.t"
+	desc = "office.1.desc"
+	picture = senate_debate
+	
+	left_portrait = root
+	right_portrait = scope:targeter
+	
+	trigger = { 
+		exists = scope:targeter
+		scope:targeter = {
+			is_alive = yes
+			trigger_if = {
+				limit = {
+					employer = {
+						gender_equality = no
+					}
+				}
+				is_female = no
+			}
+		}
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "office.1.a"
+		if = {
+			limit = {
+				can_get_friends = yes
+				scope:targeter = {
+					can_get_friends = yes
+				}
+			}
+			add_friend = scope:targeter
+		}
+		if = {
+			limit = {
+				is_ruler = yes
+			}
+			scope:targeter = { add_loyalty = loyalty_tolerated_sycophant }
+		}
+	}
+	
+	option = {
+		name = "office.1.b"
+		if = {
+			limit = {
+				is_ruler = yes
+			}
+			scope:targeter = { add_loyalty = loyalty_insulted_sycophant }
+		}
+		if = {
+			limit = {
+				can_get_rivals = yes
+				scope:targeter = {
+					is_alive = yes
+					can_get_rivals = yes
+				}
+			}
+			add_rival = scope:targeter 
+		}
+		else = {
+			add_popularity  = subtract_popularity_small
+		}
+	}
+	
+	option = {
+		name = "office.1.c"
+		custom_tooltip = "lunatic_tooltip"
+		trigger = {
+			has_trait = lunatic
+			is_ruler = yes
+		}
+		employer = {
+			random_list = {
+				19 = { 
+					add_stability_effect = yes
+				}
+				19 = {
+					remove_stability_effect = yes
+				}
+				19 = { 
+					add_treasury  = {
+						value = has_monthly_income
+						multiply = add_monthly_income_small
+					}
+				}
+				19 = { 
+					add_treasury  = {
+						value = has_monthly_income
+						multiply = subtract_monthly_income_small
+					}
+				}
+				19 = {
+					trigger = { 
+						current_ruler = {
+							number_of_status_traits < max_number_of_status_traits_svalue
+							NOT = {
+								has_trait = victorious
+							}
+						}
+					}
+					current_ruler = { add_trait = victorious }
+				}
+				5 = { 
+					current_ruler = {
+						death = {
+							death_reason = death_lunacy
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+office.2 = {
+	type = country_event
+	title = "office.2.t"
+	desc = "office.2.desc"
+	picture = roman_trial
+	
+	left_portrait = root.current_ruler
+	right_portrait = scope:office_2_antagonist
+	
+	trigger = { 
+		NOT = {
+			has_variable = office_2_toggle
+		}
+		exists = current_ruler
+		any_character = {
+			has_any_office = yes
+			is_ruler = no
+		}
+		treasury >= 50
+	}
+	
+	immediate = {
+		add_treasury = -50
+		set_variable = {
+			name = office_2_toggle
+			days = 1825
+		}
+		random_character = {
+			limit = {
+				has_any_office = yes
+				is_ruler = no
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = office_2_antagonist
+		}
+	}
+	
+	option = {
+		name = office.2.a
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+		scope:office_2_antagonist = {
+			if = {
+				limit = {
+					health > 20
+				}
+				add_health = -20
+			}
+			else = {
+				death = {
+					death_reason = death_flogging
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = office.2.b
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+			if = {
+				limit = {
+					is_target_alive = scope:office_2_antagonist
+					can_get_friends = yes
+					scope:office_2_antagonist = {
+						can_get_friends = yes
+					}
+				}
+				add_friend = scope:office_2_antagonist
+			}
+			else = {
+				scope:office_2_antagonist = {
+					add_loyalty = loyalty_embezzler_forgiven
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = office.2.c
+		trigger = {
+			scope:office_2_antagonist = {
+				OR = {
+					has_office = office_pontifex
+					has_office = office_high_priest
+				}
+			}
+		}
+		add_stability_effect_small = yes
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+	}
+}
+
+office.3 = {
+	type = minor_country_event
+	title = "office.3.t"
+	desc = "office.3.desc"
+	picture = war_chest
+	
+	left_portrait = scope:office_3_antagonist
+	
+	interface_lock = no
+	
+	trigger = { 
+		NOT = {
+			has_variable = office_3_toggle
+		}
+		any_character = {
+			OR = {
+				has_office = office_plebeian_aedile
+				has_office = office_magistrate
+				has_office = office_steward
+			}
+			finesse >= 6
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = office_3_toggle
+			value = 1
+			days = 1825
+		}
+		if = {
+			limit = {
+				is_republic = yes
+				NOT = { office_is_empty = office_plebeian_aedile }
+			}
+			random_character = {
+				limit = { has_office = office_plebeian_aedile }
+				save_scope_as = office_3_antagonist
+			}	
+		}
+		else_if = {
+			limit = {
+				is_tribal = yes
+				NOT = { office_is_empty = office_magistrate }
+			}
+			random_character = {
+				limit = { has_office = office_magistrate }
+				save_scope_as = office_3_antagonist
+			}
+		}
+		else_if = {
+			limit = {
+				is_monarchy = yes
+				NOT = { office_is_empty = office_steward }
+			}
+			random_character = {
+				limit = { has_office = office_steward }
+				save_scope_as = office_3_antagonist
+			}
+		}
+		else = {
+			random_character = {
+				limit = {
+					is_adult = yes
+					is_ruler = no
+				}
+				weight = {
+					title_importance_modifier = yes
+				}
+				save_scope_as = office_3_antagonist
+			}
+		}
+	}
+	
+	option = {
+		name = "office.3.a"
+		trigger = {
+			NOT = {
+				current_ruler = {
+					OR = {
+						has_trait = gluttonous
+						has_trait = crafty
+					}
+				}
+			}
+		}
+		add_country_modifier = {
+			name = financial_acumen
+			duration = 730
+		}
+	}
+	
+	option = {
+		name = "office.3.b"
+		trigger = {
+			NOT = {
+				current_ruler = {
+					has_trait = gluttonous
+				}
+			}
+		}
+		scope:office_3_antagonist = {
+			add_loyalty = loyalty_excellence_rewarded
+			add_gold = 100
+		}
+	}
+	
+	option = {
+		name = "office.3.c"
+		custom_tooltip = "crafty_tooltip"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = crafty
+			}
+			NOT = {
+				current_ruler = {
+					has_trait = gluttonous
+				}
+			}
+		}
+		add_country_modifier = {
+			name = financial_acumen
+			duration = 1460
+		}
+	}
+	
+	option = {
+		name = "office.3.d"
+		custom_tooltip = "greedy_bad_tooltip"
+		highlight = yes
+		exclusive = yes
+		trigger = {
+			current_ruler = {
+				has_trait = gluttonous
+			}
+		}
+		current_ruler = {
+			add_gold = 100
+			add_popularity = subtract_popularity_small
+		}
+	}
+	
+}

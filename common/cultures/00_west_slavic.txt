@@ -1,0 +1,65 @@
+﻿west_slavic = {
+	color = hsv { 0 0.29 0.81 }
+	
+	primary = archers
+	second = light_infantry
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+	levy_template = levy_germanic
+	male_names = { 
+		August Wladyslaw Stanislaw Casimir Aleksander Henryk 
+		Albert Michal Stefan Karol Krzysztof Fryderyk 
+		Olbracht Jan Patryk Ferdynand Aleksy Andrzej 
+		Bartlomiej Bogumil Bronislaw Dawid Dominik Emil 
+		Eugeniusz Gustaw Igor Iwan Krystian Lech 
+		Lucjusz Ludwik Lukasz Maksym Mariusz Mieszko 
+		Miroslaw Rafal Sylwester Szymon Zygfryd Oskar
+	}
+	female_names = {
+		Adelajda Adleta Agnieszka Agnes Aldona Anastazja
+		Anna Beata Bozena Danuta Dobrawa Dobronega 
+		Elzbieta Eufemia Euphemia Eufrozyna Gertruda Gertrude 
+		Helena Jadwiga Jolanta Yolanda Judyta Katarzyna 
+		Kazimiera Kenna Konstancja Krystyna Kunegunda Lucja 
+		Ludmila Magdalena Malgorzata Maria Kinga Grzymislawa 
+		Richeza Agafia Matylda Milena Nadzieja Nawoja
+	}
+	family = { 
+		Gryf Piast Jagiellon Wisniowiecki Sobieski Leszczynski 
+		Poniatowski Radziwill Zamoyski Potocki Lubomirski Premyslovci 
+		Podebrad Chodkiewicz Czartoryski Lanckoronski Mielzynski Oginski
+		Ostrogski Ostrorˇg Pac Sapieha Sanguszko Tarnowski 
+		Teczynski Tyszkiewicz Kurnatowski Taczanowski Gosiewski Opalinski
+	}
+	
+	culture = {
+		polish = {}
+		czech = {
+			family = {
+				Jankovsky_z_Vlasimi Chotek Lichnowsky Lobkowicz Nostitz Kutscha 
+				Kounic Vitkovec Zerotin Czernin von_Harrach Kinsky Rosenberg
+				Waldstein Jeszenszky
+			}
+			male_names = {
+				Vaclav Jiri Karel Premysl Zikmund 
+				Frantisek Jindrich Josef Bocek  
+				Vladislav Vladimir Petr Viktorin Jan Matyash Ferdinand 
+				Vratislav Boleslav Vilem Viktor Jaromir Jaroslav Ludvik Otakar
+			}
+			female_names = {
+				Anezka Eliska Katerina Marie Ludmila Alzbeta 
+				Agnieszka Agnes Alzbeta Andela Anna Berta 
+				Bohuslava Bozena Branislava Dagmar Danuta Dobravy
+			}
+		}
+	}
+	barbarian_names = { SCHUKA SOLOVEY ZMEI TUGARIN }
+	graphical_culture = western_european_gfx
+	ethnicities = {
+		10 = german
+	}
+}

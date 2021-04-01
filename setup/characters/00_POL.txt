@@ -1,0 +1,26 @@
+﻿"POL"={
+	country="POL"
+	36={
+		first_name="Casimir"
+		family= c:POL.fam:Piast
+		birth_date=77.4.30
+		culture="polish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=8
+		add_finesse=7
+		add_zeal=6
+		no_traits=yes
+		add_trait="piasts"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="brave"
+		add_gold=100
+		add_popularity=100
+		c:POL={
+			set_as_ruler=char:36
+		}
+		dna="/cSEmXhOeE4JnAmcApUClQKRApECfwJ/BIkE3AJmAmYCfQJ9AokCiQJqAmoCcwJzAm4CbgJ3AncCewJ7AoMCgwJwAnACjAKMAoQChAOrA6sCcAJwAn4CfgKTApMDmQOZAmsCawJ5AnkCiwKLAmsCawKKAooClgKWApUClQKKAooCmQKZAnkCeQKZApkCgQKBAnYCdgFQAVAClQKVApkCmQFTAVMCgwKDAowCjAKIAogCbwJvAocChwKBAoECiAKIAmgCaAJwAnACbwJvApMCkwKHAocCewJ7ApMCkwKAAoACcgJyAnsCewJQAlAA1ADUAVIBUgLhAuEBEAEQAAIAAgEvAS8BJwEnAB0AHQB+AH4EhwSHAJIAkgB/AH8AOgA6AO0A7QDBAMEC0QLRAMIAwgAiACIBwgHCAQEBAQB/AH8C/AL8AsgCyADXANcA8gDyASQBJABZAFkARwBHAUIBQgBqAGoBMgEyAG8AbwBGAEYLxAvEAH8AfwAAAAAR/wnTAI0AjQPgBScHhQe2CJsIPwAAAAAAAAAAAAAAAA=="
+	}
+}

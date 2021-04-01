@@ -1,0 +1,91 @@
+﻿namespace = syr_flavour
+
+syr_flavour.1 = {
+	type = country_event
+	title = "syr_flavour.1.t"
+	desc = "syr_flavour.1.desc"
+	
+	left_portrait = root.current_ruler
+	right_portrait = c:CAR.current_ruler
+	
+	picture = city_siege
+	
+	trigger = {
+		tag = SYR 
+		owns = 84
+		exists = c:CAR
+		c:CAR = { has_land = yes }
+		NOT = {
+			has_variable = king_of_sicily
+		}
+	}
+	 
+	immediate = {
+		set_variable = {
+			name = king_of_sicily
+			value = yes
+		}
+	}
+	
+	option = {
+		name = syr_flavour.1.a
+		every_country = {
+			limit = {
+				NOT = { this = ROOT }
+				any_owned_province = {
+					OR = {
+						is_in_area = east_sicily_area
+						is_in_area = west_sicily_area
+						is_in_area = syracuse_area
+					}
+				} 
+			}
+			add_opinion = {
+				modifier = unfriendly_neighbors
+				target = ROOT
+			}
+			hidden_effect = {
+				reverse_add_opinion = {
+					modifier = unfriendly_neighbors
+					target = ROOT
+				}
+			}
+		}
+		hidden_effect = {
+			area:east_sicily_area = { mission_area_claim_effect = yes }
+			area:west_sicily_area = { mission_area_claim_effect = yes }
+			area:syracuse_area = { mission_area_claim_effect = yes }
+		}
+		custom_tooltip = syr_flavour.1.at
+		ai_chance = { factor = 90 }
+	}
+	
+	option = {
+		name = syr_flavour.1.b
+		ai_chance = { factor = 10 }
+		every_country = {
+			limit = {
+				NOT = { this = ROOT }
+				any_owned_province = {
+					OR = {
+						is_in_area = east_sicily_area
+						is_in_area = west_sicily_area
+						is_in_area = syracuse_area
+					}
+				}
+			}
+			add_opinion = {
+				modifier = border_friends
+				target = ROOT
+			}
+			hidden_effect = {
+				reverse_add_opinion = {
+					modifier = border_friends
+					target = ROOT
+				}
+			}
+		}
+		
+	}
+	
+}

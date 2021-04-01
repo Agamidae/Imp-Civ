@@ -1,0 +1,28 @@
+﻿"ICE"={
+	country="ICE"
+	25={
+		first_name="Boudicca"
+		family= c:ICE.fam:Iceni
+		birth_date=70.2.15
+		female=yes
+		culture="celtic"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=9
+		add_charisma=6
+		add_finesse=9
+		add_zeal=4
+		no_traits=yes
+		add_trait="icenians"
+		add_trait="immortal"
+		add_trait="aggressive"
+		add_trait="tactician"
+		add_trait="brave"
+		add_gold=100
+		add_popularity=100
+		c:ICE={
+			set_as_ruler=char:25
+		}
+		dna="/wJD3IZihmJNZ63EBOIE4gJ2AnYCggKCAVkBWQJuAm4CcgJyAoYChgKEAoQDnwOfAo8CjwKFAoUCkQKRAoUChQJ6AnoCdgJ2A5sDmwJiAn0CfgJnAqwCeQJ4AngCkAKQAoMCgwKGAoYCWgJ6AnsCewLNAoMDJgOcAowCjAKGAoYCiwKLAo4CjgKZApkCigKKAooCigKLAosChQKFAnECcQKMAowCbAJsApMCkwOyA7ICgAKAApYClgJvAm8DmQOZAm8CbwJzAnMChgKGApkCmQKGAoYCfgJ+AnACcAJtAm0CgAKAAqQCeAI3AjcANQA1AKcApwCwALAAMQAxAKEAoQAaABoBZAEoAvYC9gBAAEACNwI3AUIBQgB/AH8CowKjAFAAUAAuAC4AXABcACkAKQCcAJwCTwJPAP8A/wB/AH8BVQFVApUClQBGAEYA8wDzARcBFwMlAyUANgA2AOYA5gA6ADoAEgASAL4AvgBxAHEKWQT+AEwAfwP/AYUJUQcmAQAAXAS8BLwGAAbHDQoeyQAAAAAA6QAAAP8AAA=="
+	}
+}

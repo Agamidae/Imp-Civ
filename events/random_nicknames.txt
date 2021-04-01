@@ -1,0 +1,1331 @@
+﻿namespace = nicknames
+
+nicknames.1 = { #Britannicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = caledonia_region
+				is_in_region = britain_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = caledonia_region
+				is_in_region = britain_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_BRITANNICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_BRITON
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.2 = { #Gallicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = armorica_region
+				is_in_region = aquitaine_region
+				is_in_region = central_gaul_region
+				is_in_region = transalpine_gaul_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = armorica_region
+				is_in_region = aquitaine_region
+				is_in_region = central_gaul_region
+				is_in_region = transalpine_gaul_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_GALLICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_GAUL
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.3 = { #Belgicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = belgica_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = belgica_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_BELGICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_BELGAE
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.4 = { #Germanicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = germania_superior_region
+				is_in_region = germania_region
+				is_in_region = bohemia_area
+				is_in_region = vistulia_region
+				is_in_region = scandinavia_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = germania_superior_region
+				is_in_region = germania_region
+				is_in_region = bohemia_area
+				is_in_region = vistulia_region
+				is_in_region = scandinavia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_GERMANICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_GERMAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.5 = { #Rhaeticus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = rhaetia_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = rhaetia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_RHAETICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_RHAETIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.6 = { #Italicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = cisalpine_gaul_region
+				is_in_region = central_italy_region
+				is_in_region = magna_graecia_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = cisalpine_gaul_region
+				is_in_region = central_italy_region
+				is_in_region = magna_graecia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_ITALICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_ITALIOTE
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.7 = { #Italicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = illyria_region
+				is_in_region = pannonia_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = illyria_region
+				is_in_region = pannonia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_ILLYRICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_ILLYRIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.8 = { #Hispanicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = tarraconensis_region
+				is_in_region = gallaecia_region
+				is_in_region = lusitania_region
+				is_in_region = contestania_region
+				is_in_region = baetica_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = tarraconensis_region
+				is_in_region = gallaecia_region
+				is_in_region = lusitania_region
+				is_in_region = contestania_region
+				is_in_region = baetica_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_HISPANICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_IBERIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.9 = { #Mauretanicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = mauretainia_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = mauretainia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_MAURETANICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_MAURETANIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.10 = { #Numidius
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = numidia_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = numidia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_NUMIDIUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_NUMIDIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.11 = { #Venedicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = venedia_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = venedia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_VENEDICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_VENEDIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.12 = { #Dacius
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {	
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = moesia_region
+				is_in_region = dacia_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = moesia_region
+				is_in_region = dacia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_DACIUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_DACIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.13 = { #Hellenicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = thrace_region
+				is_in_region = macedonia_region
+				is_in_region = greece_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = thrace_region
+				is_in_region = macedonia_region
+				is_in_region = greece_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_HELLENICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_HELLENE
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.14 = { #Hellenicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = cyrenaica_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = cyrenaica_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_CYRENAICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_CYRENE
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.15 = { #Aegyptus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = lower_egypt_region
+				is_in_region = upper_egypt_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = lower_egypt_region
+				is_in_region = upper_egypt_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_AEGYPTUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_EGYPTIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.16 = { #Nubianus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = nubia_region
+				is_in_region = punt_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = nubia_region
+				is_in_region = punt_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_NUBIANUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_NUBIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+	
+}
+
+nicknames.17 = { #Arabicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = palestine_region
+				is_in_region = arabia_region
+				is_in_region = arabia_felix_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = palestine_region
+				is_in_region = arabia_region
+				is_in_region = arabia_felix_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_ARABICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_ARABIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.18 = { #Syrianus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = syria_region
+				is_in_region = assyria_region
+				is_in_region = mesopotamia_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = syria_region
+				is_in_region = assyria_region
+				is_in_region = mesopotamia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_SYRIANUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_SYRIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.28 = { #Asiaticus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = asia_region
+				is_in_region = cilicia_region
+				is_in_region = galatia_region
+				is_in_region = bithynia_region
+				is_in_region = cappadocia_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = asia_region
+				is_in_region = cilicia_region
+				is_in_region = galatia_region
+				is_in_region = bithynia_region
+				is_in_region = cappadocia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_ASIATICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_ASIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.19 = { #Sarmaticus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = sarmatia_europea_region
+				is_in_region = sarmatia_asiatica_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = sarmatia_europea_region
+				is_in_region = sarmatia_asiatica_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_SARMATICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_SARMATIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.20 = { #Bosporanus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = taurica_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = taurica_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_BOSPORANUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_BOSPORAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.21 = { #Caucasianus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = colchis_region
+				is_in_region = albania_region
+				is_in_region = armenia_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = colchis_region
+				is_in_region = albania_region
+				is_in_region = armenia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_CAUCASIANUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_CAUCASIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.22 = { #Scythianus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = scythia_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = scythia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_SCYTHIANUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_SCYTHIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.23 = { #Persicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = persis_region
+				is_in_region = media_region
+				is_in_region = parthia_region
+				is_in_region = ariana_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = persis_region
+				is_in_region = media_region
+				is_in_region = parthia_region
+				is_in_region = ariana_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_PERSICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_PERSIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.24 = { #Bactrianus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = sogdiana_region
+				is_in_region = himalayan_region
+				is_in_region = bactriana_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = sogdiana_region
+				is_in_region = himalayan_region
+				is_in_region = bactriana_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_BACTRIANUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_BACTRIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.25 = { #Gedrosianus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			is_in_region = gedrosia_region
+		}
+		employer.capital_scope = {
+			NOT = {
+				is_in_region = gedrosia_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_GEDROSIANUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_GEDROSIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.26 = { #Indicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = gandhara_region
+				is_in_region = maru_region
+				is_in_region = avanti_region
+				is_in_region = madhyadesa_region
+				is_in_region = pracya_region
+				is_in_region = vindhyaprstha_region
+				is_in_region = aparanta_region
+				is_in_region = tibet_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = gandhara_region
+				is_in_region = maru_region
+				is_in_region = avanti_region
+				is_in_region = madhyadesa_region
+				is_in_region = pracya_region
+				is_in_region = vindhyaprstha_region
+				is_in_region = aparanta_region
+				is_in_region = tibet_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_INDICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_INDIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}
+
+nicknames.27 = { #Dravidicus
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		employer = {
+			num_of_cities >= 1
+			NOT = {
+				tag = MER
+				tag = BAR
+				tag = PIR
+			}
+		}
+		has_nickname = no
+		location = {
+			has_owner = yes
+			OR = {
+				is_in_region = karnata_region
+				is_in_region = dravida_region
+			}
+		}
+		employer.capital_scope = {
+			NOR = {
+				is_in_region = karnata_region
+				is_in_region = dravida_region
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_culture_group = latin
+			}
+			add_nickname = NICKNAME_DRAVIDICUS
+		}
+		else = {
+			add_nickname = NICKNAME_THE_DRAVIDIAN
+		}
+		if = {
+			limit = { is_minor_character = no }
+			family = { add_prestige = prestige_small }
+		}
+	}
+
+}

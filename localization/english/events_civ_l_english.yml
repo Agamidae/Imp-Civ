@@ -1,0 +1,28 @@
+﻿l_english:
+ imp_rel.1_title:0 "Religion Foundation"
+ imp_rel.1_desc:0 "The world is changing, so as we all, and our beliefs must too. Old Pantheon proved itself not very usefull on our current stage. \nWhen the court was approached by some old man in rags, he called himself a "Prophet" of the beliefes that were much more suitable for our people. And this new fath was called...."
+ 
+ imp_rel.2_title:0 "Stone formations"
+ imp_rel.2_desc:0 "While scouting the area around the colony, scouts have found strange stone formations, henges. These formations defenetly could not be built by barbarians, then by who? or by what? \nAfter short period of time, religious people from this settlement started to belive in other things, than we did. So the descision was taken to send priests to make people ours again. \nAfter few days again, priests came back, but they were not wearing their old religious clothes anymore, they were different. What are those strange stone henges? What power they posses, that even priests are changing their beliefs? News about these henges spreaded fast, and our old religion was slowly disappearing from our lives. And when even main families started to use new faith, new religion became official, and our lives were changed forever. This new faith was called..."
+ 
+ imp_rel.1_catholic:0 "Catholicism"
+ imp_rel.1_protestant:0 "Protestantism"
+ imp_rel.1_orthodox:0 "Orthodoxy"
+ imp_rel.1_sunni:0 "Sunnism"
+ imp_rel.1_confucianism:0 "Confucianism"
+ imp_rel.1_taosism:0 "Taosism"
+ imp_rel.1_shinto:0 "Shinto"
+ imp_rel.1_judaism:0 "Judaism"
+ imp_rel.1_zoroaster:0 "Zoroastrianism"
+ imp_rel.1_buddhism:0 "Buddhism"
+ imp_rel.1_hindu:0 "Hinduism"
+ imp_rel.1_sikh:0 "Sikhism"
+ imp_rel.1_tengri:0 "Tengri"
+ imp_rel.1_norse:0 "Norse"
+ imp_rel.1_close:0 "Old ways are much better! We will irradicate this heresy!"
+ 
+ 
+ civ_pop.1_title:0 "Population Stagnation"
+ civ_pop.1_desc:0 "Reports say, that there has been noticed a sudden plummet in population growth in our Kingdom. Some advisors say it's a bad omen, but others say otherwise, that there would not be a need to deal with overpopulation in our country."
+ civ_pop.1.a:0 "If so, I'm willing to take this risk."
+ 

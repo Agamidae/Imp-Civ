@@ -1,0 +1,48 @@
+﻿"SPA"={
+	country="SPA"
+	4={
+		first_name="Leonidas"
+		family= c:SPA.fam:Agiad
+		birth_date=40.3.14
+		culture="peloponnesian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=6
+		add_finesse=6
+		add_zeal=2
+		no_traits=yes
+		add_trait="agiads"
+		add_trait="immortal"
+		add_trait="tactician"
+		add_trait="disciplined"
+		add_gold=100
+		add_popularity=100
+		dna="Av0I7EFUsnvr/7LvAncCdwAaABoCaAJoAlICmQKAAoACjQKNAnQCdAKKAooCfwJ/AoICggJtAm0CsQKOAngCeANtA64CggJwAXYBWwKHAocCbQJtAo8CjwJgAm4CbgKMBEYCdQA+AD4ClwKXAnMCcwJ7AnsCfQJ9A/8CkgKZApkCfQJ9ApYClgJ0AnQCaAJoAWQBZAKUApQCfgJ+AoQChAKNAo0CcAJwAogCiAKAAoACewJ7AnsCewKQApACkAKQAocChwKMAowCZwJ+ArcCiwKHAngCYgJ2ApcClwKKAooCbgJuAnkCeQEAAvAAiwCLAoICggCzALMAZwBnAMEAwQCMAIwBUAFQAVsBWwEyATIAkgCSAGkAaQB/AH8A2wDbAT8BPwBmAGYC/QLMAf0A9QIAAD8BWwFbAsoCygB/AH8BAACkAa8BJAFBAEIAlwDXAXoBegB3AKABSwFLA1MDUwIZAD0EAAAMAjgAYQBKAEoHbAHUAH8AfwKVApUFUAXoAIIACwL/BfYeTAJMAwECYQD/AAAAAAAAAAAAAA=="
+	}
+	
+	5={
+		first_name="Gorgo"
+		family= c:SPA.fam:Agiad
+		birth_date=40.4.25
+		female=yes
+		culture="peloponnesian"
+		religion="default_pantheon"
+		marry_character=char:4
+		no_stats=yes
+		add_martial=7
+		add_charisma=5
+		add_finesse=5
+		add_zeal=6
+		no_traits=yes
+		add_trait="agiads"
+		add_trait="immortal"
+		add_trait="disciplined"
+		add_gold=100
+		add_popularity=89
+		c:SPA={
+			set_as_ruler=char:5
+		}
+		dna="K/8Z7Y9+j37AxcDFAoECgQICAm0CmAJqAmgCjAOhA6EBWQFZAhMCkQKFAmkCbAJsAr8CcAKOAmkCkAKQA70DqgJ2AncCeAJ4A3cCcgKqAoMCZwJnAv8ChQJ0AnQDWgOsAoUChQKNAo0BOAFTApECkQKVAnMCfgJ+ApcCZgKZApkDjQObAoACgAK3ApcEkgJwAQABUwKTApMCbwJvAnkCeQJ1AnUCdQJ1BLIEsgKAAoACbwJvAoQChAJ2AnYCjAKMApICkgKIAogCcAJwApMCkwKLAosCtQKOApYClgJpAmkCjAOkAoICggAAA64CywDHAqoCqgFZAVkA4wDjAPkA+QE0ATQAawBrAIkAiQChAKEAhwCHAPMA8wB/AH8CowKjAbEA7wEmASYAOgA6AVMBUwDxAPEBYwFjAHwAfAB/AH8BGgEaALEAsQE7ATsCkAKQAFUAVQM8AzwAdAB0AzYDNgASABIBSgFKAx8DHwEoASgKAAmQAI4AfwLvAu8BtQVfABMAEwVDBUMC1AI8AogCiAAAAAAAAAAAAAAAAA=="
+	}
+}

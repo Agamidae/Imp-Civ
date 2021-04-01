@@ -1,0 +1,27 @@
+"ETH"={
+	country="ETH"
+	31={
+		first_name="Haile_Selassie"
+		family= c:ABY.fam:Solomonid
+		birth_date=64.7.23
+		culture="amhara"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=8
+		add_finesse=6
+		add_zeal=5
+		no_traits=yes
+		add_trait="solomonids"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="brave"
+		add_trait="tactician"
+		add_gold=100
+		add_popularity=100
+		c:ETH={
+			set_as_ruler=char:31
+		}
+		dna="EPQQ9GCffsjYr9ivAnMCcwJnAmcCiAKIAmcCZwKBAoECeQJ5Ao4CjgFUAVQALwAvAEsASwJ6AnoCcwJzAnwCfAPBA8ECmQKZAooCigJ6AnoCSQJJApkCmQKZApkCfQJ9AokCiQLJAskCiwKLAnUCdQFYAVgCkAKQAnUCdQJ5AnkCdAJ0ApgCmAKRApECawJrAooCigJxAnECfgJ+Ap0CnQJ8AnwBAAJsAjECfwJ8AnwCQQKDAosCiwJ8Ar4CiALIAo8CjwAzADMCigKKAoECgQOaA+8CaAJoAmACjAKLAosEtgS2ApMCkwKVApUAyQDJAEwATABfAF8AGAAYAToBOgE8ATwArQCtAVwBXAFyAXIBAwEDAuMC4wB/AH8AmgCaAQkBCQEcARwA/wD/ANYA1gBCAEIDwAPAAHMAcwB/AH8CnwKfAQsBCwFyAXIBFwEXAv4C/gCBAIEANwA3AVoBWgIcAhwDPgHJAukC6QOhAO4IlAeUAH8AfwAiACIO+Q75ADgAOAfTB9M0/w40EEkKSQAAAAAAAAAAAAAAAA=="
+	}
+}

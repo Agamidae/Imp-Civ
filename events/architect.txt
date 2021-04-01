@@ -1,0 +1,480 @@
+﻿namespace = architect
+
+architect.1 = { #loyalty_an_eye_for_aesthetics
+	type = minor_country_event
+	title = "architect.1.t"
+	desc = "architect.1.desc"
+	
+	left_portrait = scope:architect_1_character
+	picture = city_construction
+	
+	goto_location = scope:architect_1_building_location
+	
+	interface_lock = no
+	
+	trigger = {
+		NOT = {
+			is_tribal = yes
+		}
+		NOT = {
+			has_variable = architect_1_variable
+		}
+		any_owned_province = {
+			OR = {
+				can_build_building = military_building
+				can_build_building = fortress_building
+				can_build_building = commerce_building
+				can_build_building = population_building
+			}
+		}
+		any_character = {
+			OR = {
+				has_office = office_master_of_the_guard
+				has_office = office_plebeian_aedile
+			}
+			character_experience >= high_expertise_threshold
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				OR = {
+					has_office = office_master_of_the_guard
+					has_office = office_plebeian_aedile
+				}
+				character_experience >= high_expertise_threshold
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = architect_1_character
+		}
+		hidden_effect = {
+			set_variable = {
+				name = architect_1_variable
+				value = 1
+				days = 1800
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						can_build_building = military_building
+						can_build_building = fortress_building
+						can_build_building = commerce_building
+						can_build_building = population_building
+					}
+				}
+				save_scope_as = architect_1_building_location
+			}
+			random_list = {
+				25 = { 
+					trigger = {
+						scope:architect_1_building_location = {
+							can_build_building = military_building
+						}
+					}
+					set_variable = {
+						name = architect_building_type
+						value = 1
+					}
+				}
+				25 = {
+					trigger = {
+						scope:architect_1_building_location = {
+							can_build_building = fortress_building
+						}
+					}
+					set_variable = {
+						name = architect_building_type
+						value = 2
+					}
+				}
+				25 = { 
+					trigger = {
+						scope:architect_1_building_location = {
+							can_build_building = commerce_building
+						}
+					}
+					set_variable = {
+						name = architect_building_type
+						value = 3
+					}
+				}
+				25 = { 
+					trigger = {
+						scope:architect_1_building_location = {
+							can_build_building = population_building
+						}
+					}
+					set_variable = {
+						name = architect_building_type
+						value = 4
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "architect.1.b"					# Sell the plans to a patrician
+		scope:architect_1_character = {
+			add_gold = 100
+		}
+		
+		add_treasury  = {
+		   value = root.has_monthly_income
+		   multiply = add_monthly_income_large
+		   max = 80
+		}
+		
+
+		remove_variable = architect_building_type
+		custom_tooltip = high_experience_event
+	}
+	
+	option = {
+		name = "architect.1.a"				# Yes
+		scope:architect_1_character = {
+			add_loyalty = loyalty_an_eye_for_aesthetics
+		}
+		if = {
+			limit = { 
+				var:architect_building_type = 1 
+				scope:architect_1_building_location	= {
+					can_build_building = military_building
+				}
+			}
+			scope:architect_1_building_location = {
+				add_building_level = military_building
+			}
+		}
+		else_if = {
+			limit = { 
+				var:architect_building_type = 2
+				scope:architect_1_building_location	= {
+					can_build_building = fortress_building
+				}
+			}
+			scope:architect_1_building_location = {
+				add_building_level = fortress_building
+			}
+		}
+		else_if = {
+			limit = { 
+				var:architect_building_type = 3
+				scope:architect_1_building_location	= {
+					can_build_building = commerce_building
+				}
+			}
+			scope:architect_1_building_location = {
+				add_building_level = commerce_building
+			}
+		}
+		else_if = {
+			limit = {
+				var:architect_building_type = 4
+					scope:architect_1_building_location	= {
+						can_build_building = population_building
+				}
+			}
+			scope:architect_1_building_location = {
+				add_building_level = population_building
+			}
+		}
+		remove_variable = architect_building_type
+		custom_tooltip = high_experience_event
+	}
+	
+}
+
+architect.2 = {
+	type = minor_country_event
+	title = "architect.2.t"
+	desc = "architect.2.desc"
+	picture = quarry
+	
+	left_portrait = scope:architect_2_character
+
+	interface_lock = no
+	
+	trigger = {
+		NOT = {
+			is_tribal = yes
+		}
+		NOT = {
+			has_variable = architect_bad_variable
+		}
+		any_character = {
+			OR = {
+				has_office = office_steward
+				has_office = office_plebeian_aedile
+			}
+			character_experience <= low_expertise_threshold
+		}
+	}
+	
+	interface_lock = no
+	
+	immediate = {
+		random_character = {
+			limit = {
+				OR = {
+					has_office = office_steward
+					has_office = office_plebeian_aedile
+				}
+				character_experience <= low_expertise_threshold
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = architect_2_character
+		}
+		hidden_effect = {
+			set_variable = {
+				name = architect_bad_variable
+				value = 1
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = "architect.2.b"					# Imprison
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+		if = {
+			limit = {
+				exists = scope:architect_2_character
+			}
+			random_list = {
+				90 = {
+					scope:architect_2_character = {
+						add_health = -5
+					}
+				}
+				5 = {
+					trigger = {
+						scope:architect_2_character = {
+							NOT = {
+								OR = {
+									has_trait = wounded
+									has_trait = maimed
+								}
+							}
+						}
+					}
+					scope:architect_2_character = {
+						add_trait = wounded
+					}
+				}
+				5 = {
+					scope:architect_2_character = {
+						death = {
+							death_reason = death_flogging
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = low_experience_event
+	}
+	
+	option = {
+		name = "architect.2.a"					# Pay off
+		if = {
+			limit = {
+				exists = scope:architect_2_character
+			}
+			scope:architect_2_character = {
+				add_popularity = subtract_popularity_huge
+			}
+		}
+		add_treasury  = {
+		   value = root.has_monthly_income
+		   multiply = subtract_monthly_income_medium
+		}
+		custom_tooltip = low_experience_event
+	}
+	
+}
+
+architect.3 = {
+	type = minor_country_event
+	title = "architect.3.t"
+	desc = "architect.3.desc"
+	picture = hellenic_temple
+	
+	left_portrait = scope:architect_3_character
+	
+	interface_lock = no
+	
+	trigger = {
+		NOT = {
+			is_tribal = yes
+		}
+		NOT = {
+			has_variable = architect_temple_variable
+		}
+		any_character = {
+			OR = {
+				has_office = office_master_of_the_guard
+				has_office = office_plebeian_aedile
+			}
+			character_experience >= high_expertise_threshold
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				OR = {
+					has_office = office_master_of_the_guard
+					has_office = office_plebeian_aedile
+				}
+				character_experience >= high_expertise_threshold
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = architect_3_character
+		}
+		hidden_effect = {
+			set_variable = {
+				name = architect_temple_variable
+				value = 1
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = "architect.3.b"					# We don't have anymore money to invest
+		custom_tooltip = no_effect_tooltip
+		custom_tooltip = high_experience_event
+	}
+	
+	option = {
+		name = "architect.3.a"					# I suppose we could invest some more
+		current_ruler = {
+			add_popularity = popularity_large
+		}
+		random_owned_province = {
+			weight = {
+				modifier = {
+					factor = 100
+					has_city_status = yes
+				}
+				modifier = {
+					factor = 0.1
+					has_province_modifier = temple_renovations
+				}
+			}
+			add_province_modifier = {
+				name = temple_renovations
+				duration = -1
+			}
+		}
+		add_treasury = {
+		   value = root.has_monthly_income
+		   multiply = subtract_monthly_income_medium
+		}
+		custom_tooltip = high_experience_event
+	}
+	
+}
+
+architect.4 = {
+	type = minor_country_event
+	title = "architect.4.t" #An unwelcome Gift
+	desc = "architect.4.desc" #
+	picture = quarry
+	
+	left_portrait = root.current_ruler
+	right_portrait = scope:architect_4_character
+	
+	interface_lock = no
+	
+	weight_multiplier = {
+		modifier = {
+			factor = 4
+			current_ruler = {
+				has_trait = ugly
+			}
+		}
+	}
+	
+	trigger = {
+		exists = current_ruler
+		is_tribal = no
+		NOT = {
+			has_variable = architect_abominable_statue
+		}
+		any_character = {
+			OR = {
+				has_office = office_master_of_the_guard
+				has_office = office_plebeian_aedile
+			}
+			character_experience <= low_expertise_threshold
+		}
+	}
+	
+	immediate = {
+		random_character = {
+			limit = {
+				OR = {
+					has_office = office_master_of_the_guard
+					has_office = office_plebeian_aedile
+				}
+				character_experience <= low_expertise_threshold
+			}
+			weight = {
+				title_importance_modifier = yes
+			}
+			save_scope_as = architect_4_character
+		}
+		hidden_effect = {
+			set_variable = {
+				name = architect_abominable_statue
+				days = 3650
+			}
+		}
+	}
+	
+	option = {
+		name = "architect.4.a"				# Oh dear
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		custom_tooltip = low_experience_event
+	}
+	
+	option = {
+		name = "architect.4.b"				# Oh dear
+		scope:architect_4_character = {
+			add_loyalty = loyalty_an_unwelcome_gift
+		}
+		add_stability = -5
+		custom_tooltip = low_experience_event
+	}
+	
+	option = {
+		name = "architect.4.c"				# Oh dear
+		highlight = yes
+		custom_tooltip = crafty_tooltip
+		trigger = {
+			current_ruler = {
+				has_trait = crafty
+			}
+		}
+		current_ruler = {
+			add_popularity = popularity_large
+		}
+		scope:architect_4_character = {
+			add_charisma = -2
+		}
+	}
+	
+}
+	

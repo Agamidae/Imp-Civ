@@ -1,0 +1,196 @@
+﻿frankish = {
+
+	color = hsv { 0.49 0.45 0.67 }
+	primary = archers
+	second = chariots
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+	levy_template = levy_germanic
+
+	male_names = {
+		Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+		Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+		Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+		Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+		Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+		Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+		Venutius Viridorix Vosenius Vodenos
+		
+	}
+	female_names = {
+		Aife Airmed Ancasta Banna Billica Boudica Bricta Cata Cartimandua Chiomara Damona Diseta Gwendolen Litavis Iamcilla Maeve Verica
+		Cingetessa Conna Catia Carssouna Cunovinna Illica Lovernisca Magunna Lucilia Oconea Ria Rosula Senica Sentica Sulicena
+		Vassura Vinoma Vorvena Urca Veloriga Velibia Totia Titocuna Velbutena Seniciana Senila Vrocata Exuperata Deiana Cunolava Cunsa Aucissa
+		Allauna Alatucca Aessicunia Bodicacia Britivenda Catissena Cantisena 
+	}
+	family = {
+		Ambonus.Ambona.Ambonii.Ambonid
+		Auaroses.Auarosa.Auarosii.Auarosian
+		Audaxus.Audaxa.Audaxii.Audaxian
+		Carosus.Carosa.Carosii.Carosian
+		Culchus.Culcha.Culchi.Culchian
+		Leukus.Leuka.Leuki.Leukian
+		Mandonus.Mandonia.Mandonii.Mandonian
+		Punicus.Punica.Punici.Punician
+		Tautalus.Tautala.Tautalii.Tautalid
+		Correius.Correia.Correid.Correian
+		Divicus.Divica.Divici.Divicid
+		Duratus.Durata.Duratii.Duratian
+		Elitovus.Elitova.Elitovii.Elitovian
+		Galbus.Galba.Galbi.Galbid
+		Iacus.Iaca.Iaci.Iacid
+		Marganus.Margana.Marganii.Marganid
+		Sinatus.Sinata.Sinatii.Sinatid
+		Vodenosus.Vodenosa.Vodenosii.Vodenosian
+		Indutius.Indutia.Indutii.Indutian
+		Dumnus.Dumna.Dumnii.Dumnid
+		Epatticus.Epattica.Epatticii.Epatticid
+		Teutomalus.Teutomala.Teutomalii.Teutomalian
+		Viridorrius.Viridorria.Viridorrii.Viridorrian
+		Magunnus.Magunna.Magunnii.Magunnid
+		Brennus.Brenna.Brennii.Brennid
+		Boius.Boia.Boii.Boian
+		Tannus.Tanna.Tanni.Tannid
+		Iccuius.Iccuia.Iccui.Iccian
+		Galanus.Galana.Galanii.Galanid
+	}
+	culture = {
+		french = {
+			male_names = { 
+				EDouard ERrard ETienne Adalbert 
+				AdEMar Adrien Aimery Alain 
+				Aldebert AldERic Alphonse Amaury 
+				AmEDEE Ancel AndrE Angelbert Antoine 
+				Archambaud Arnaud Arnault Arnoul 
+				Aubry Aymar BarthElEMi Baudouin 
+				BenoIT BERenger Bernard Bertrand 
+				Bohemond Boson Bouchard Centule 
+				Charles Clotaire Ebbon Enguerrand 
+				Eudes Eustache Evrard Foulques 
+				FranCOis FrEdERic GERaud Gargamel 
+				Gaucher Gaucelin Gauthier Geoffroy 
+				GEraud Gelduin Gilbert Gilles Godefroy 
+				Guichard Guiges Guilhem Guillaume 
+				Guy HELie Hamelin Henri Herbert Hildebert 
+				Hugues Humbert Jacques JaufrE Jaspert 
+				Jean Josselin Jourdain Julien LEOn 
+				LEOnard Lothaire Louis Loup ManassES 
+				Mathieu Maurice Nicolas Ogier Onfroy 
+				Orson Othon Payen Philippe Pierre 
+				Raimbaut Raoul Raymond Raynaud 
+				Renaud Richard Robert Robin 
+				Roger Rorgon Rorgues Roubaud 
+				Savary Sigismond Simon Thibault 
+				ThiEBaut Thierry Thomas Valeran Yves
+			}
+			female_names = { 
+				ElEonore ELodie ETiennette AdEle 
+				Adalmode Adelaide Adelinde Agathe 
+				AgnEs AlEarde Alice AliEnorAlix 
+				Almodis Amelie Anne Antoinette 
+				Arsinde Aude Aurengarde BEatrice
+				BEatrix Belleassez BenoIte BErengEreBerthe 
+				Blanche Bonne Bourgogne Bourguigne CEcile 
+				CathErine Charlotte Constance Denise 
+				Douce Echive EglantineElisabeth 
+				Emma Ermengarde Ermessinde Esclarmonde 
+				Euphrosine Eustachie Eve GerbergeGisEle 
+				Guillaumette HEloise Helvis Hodierne 
+				Ide Ida IldEgarde Isabeau Isabelle 
+				Jeanne JudithJulienne Mafalda Mahaut 
+				Margot Marguerite Marie Marthe 
+				Mascarose Mathilde MElisandeMElisende 
+				MElusine PE_ronelle Pernelle Perinne 
+				Pernette Plaisance Raymonde Sarrazine 
+				SolEne SophieStEphanie Sybille 
+				Tiburge Valence Yolande
+			}
+			family = { 
+				Capet Fournier duDros dePiemont 
+				deBage deMontferrat deLuxembourg dAnjou 
+				Chamillart deChAtillion dAvaugour 
+				deDreaux deDreux deClermont deVitry 
+				deDampierre deSully deBourg deGironde 
+				dArtois deValois deGuines Saint-Gilles 
+				dEOlienne deBessa deRamla 
+				dIbelin Luneville deCleriuex deValpergue
+			}
+		}
+		occitan = {
+			male_names= {
+				AdhEmar Acfred Aimeric Alberic Albert 
+				Aldebert Alias AnfOs Amalric 
+				Amaneus Ancelmes AndrE Archambaut 
+				Arnaut Artau Aton AudoIn Aymar 
+				Aymeric Aznar Barral BartoumiEu 
+				BaudoIn Beneset BErard BerenguiE
+				Bermond Bernat Bernat-Aton Bernat-Ezi 
+				Bertrand Blasi Borel Boson Carles 
+				ClamenC Centolh DAvi Dat Dodon 
+				Doumenge Duran Ebles EmmanuEl 
+				Enric Ermengau EstEve Filip 
+				Ferrand FlorEnC Folquet FrancEs 
+				Frederi Garcia Gaston Gausbert 
+				Gautier GilbErt Girard Girvais 
+				Godafres Gui Guichard Guigues 
+				GuilhEm Guiraud Guitart Ives 
+				Jacme Jaufret Joan Jordan Jorge 
+				Josselin Julian LaurEnC Leon LoIs 
+				Loui Lop MarCau Martin Matfre 
+				Matias Milo Miquel Nicholaus 
+				Odon Otton PEire PEire-Arnaut 
+				PEire-Raimond Peranudet Pol Pons 
+				Raimond Raimond-BerenguiE Rainaut 
+				Rainer Raolf Ricard RobErt Rogier 
+				Sancho Savarics Simon TiErri Tibaud 
+				Toumas Ubald Ubert 
+				Uc Ugues VEzian VicenC
+			}
+			female_names = {
+				AdEla AdalaIda Adeltrudis Agata AIna 
+				AinEs AlaIs AlienOr AliC AlmOdis 
+				AlpaIs Ana Arsenda Assalhida 
+				Ava AzalaIs Azelma BOna 
+				Beatritz Berenguela Berta Blanca 
+				Brandimena Bregida Brunissenda 
+				Camila CarlOta Caterina Cecilia 
+				Clara Clarmonda ClemEncia Cloutilda 
+				ConstAncia DolCa EisabEu Elena 
+				Elisa ElisabEta Ermengarda Ermessentz 
+				Esclarmonda Estefania EufEmia Eufrosina 
+				Faidida Filipa Filomena FlOra Francesa 
+				Garcenda Geneviva GerbErga Gersenda
+				Gisla Guigone Guilheumina Heloise 
+				Ioulanda IsabEu IsabEla Joana Juliana 
+				LUcia Laura LoIsa Mabila Madalena
+				Margarida Maria Marquisa Marta 
+				MascarOsa Matilda MelisEnda Navar 
+				Patricia PeironEla Petronilha Puelle 
+				Raisenda Raimonda RichEnda RosEla 
+				Rosa SanCa Sibilla TerEsa 
+				Tiborg Verounica Violent
+			}
+			family = {
+				deRodez deBergerac  deLisleJourdain dePoitiers-Valentinois  Trencval deChAtellerault 
+				deRancon  deGuyenne  deBezieres  deArelat  
+				dePonthieu  deProvence  deToulouse  dAquitaine  
+				dePontevEs  deSabran  deCrussol  deQuatrebarbes
+				de lAPanouse  deLEvezou  de lARochelambert  deCadoine  
+				deKerret  deDonges  deRouvray  dePoissy  
+				deCayeux  deBeaujeu  deGourdon  dAnduze 
+			}
+		}
+		maltese = {}
+	}
+	
+	barbarian_names = { INSUBRES LINGONES SENONES TAURINI ALLOBROGES AMBIANI CADURCI BITURIGES LEUCI LEXOVII MENAPII NAMNETES NITIOBROGES OSISMII RAURACI SALLUVII TREVIRI TRIBOCI VELIOCASSES }
+	
+	graphical_culture = western_european_gfx	
+	ethnicities = {
+		10 = french
+	}
+}

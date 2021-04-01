@@ -1,0 +1,290 @@
+﻿namespace = rel_flavor_kemetic
+
+# A question of Maat
+rel_flavor_kemetic.1 = {
+	type = country_event
+	title = "rel_flavor_kemetic.1.t"
+	desc = "rel_flavor_kemetic.1.desc"
+	picture = persepolis
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = egyptian_pantheon
+		NOT = { primary_culture = egyptian }
+		current_ruler = {
+			char_is_bad_leader_trigger = yes
+		}
+		any_owned_province = {
+			dominant_province_culture = egyptian
+			has_city_status = yes
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				dominant_province_culture = egyptian
+				has_city_status = yes
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.1.a"
+		add_tyranny = tyranny_medium
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.1.b"
+		add_political_influence = subtract_influence_large
+		add_country_modifier = {
+			name = country_improvement_appeased_maat
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.1.c"
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_questionable_maat
+				duration = 3650	
+			} 
+		}
+	}
+}
+
+# Seeking out an oracle in times of instability
+rel_flavor_kemetic.2 = {
+	type = country_event
+	title = "rel_flavor_kemetic.2.t"
+	desc = "rel_flavor_kemetic.2.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	trigger = {
+		religion = egyptian_pantheon
+		stability < 50
+		NOT = { has_country_modifier = country_improvement_found_guidance }
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.2.a"
+		add_stability_effect = yes
+		add_political_influence = subtract_influence_large
+		add_country_modifier = {
+			name = country_improvement_found_guidance
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.2.b"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+}
+
+# Constructing a new temple
+rel_flavor_kemetic.3 = {
+	type = country_event
+	title = "rel_flavor_kemetic.3.t"
+	desc = "rel_flavor_kemetic.3.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	goto_location = scope:capital_province
+	
+	trigger = {
+		religion = egyptian_pantheon
+		NOT = { has_variable = rel_flavor_kemetic_3_cooldown }
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+		capital_scope = {
+			save_scope_as = capital_province
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_kemetic_3_cooldown
+				days = 7300
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.3.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		add_country_modifier = {
+			name = country_improvement_temple_of_isis
+			duration = 3650
+		}
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+		scope:randomized_priest = {
+			add_loyalty = loyalty_temple_funding
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.3.b"
+		scope:randomized_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}
+
+# A religious proceeding, calming the populace
+rel_flavor_kemetic.4 = {
+	type = country_event
+	title = "rel_flavor_kemetic.4.t"
+	desc = "rel_flavor_kemetic.4.desc"
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	trigger = {
+		#religion = egyptian_pantheon
+		NOT = { has_variable = rel_flavor_kemetic_4_cooldown }
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_kemetic_4_cooldown
+				days = 7300
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.4.a"
+		remove_stability_effect = yes
+		add_country_modifier = {
+			name = country_modifier_closed_temples
+			duration = 3650
+		}
+		scope:randomized_priest = {
+			add_loyalty = loyalty_priest_autonomy
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.4.b"
+		add_stability_effect_small = yes
+		scope:randomized_priest = {
+			add_loyalty = loyalty_religious_proceding
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.4.c"
+		add_stability_effect = yes
+		add_country_modifier = {
+			name = country_modifier_opened_temples
+			duration = 3650
+		}
+		scope:randomized_priest = {
+			add_loyalty = loyalty_opened_temples
+		}
+	}
+}
+
+# The disappearance of the sacred beast
+rel_flavor_kemetic.5 = {
+	type = country_event
+	title = "rel_flavor_kemetic.5.t"
+	desc = "rel_flavor_kemetic.5.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	trigger = {
+		religion = egyptian_pantheon
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.5.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 2
+		}
+	}
+
+	option = {
+		name = "rel_flavor_kemetic.5.b"
+		remove_stability_effect = yes
+	}
+}

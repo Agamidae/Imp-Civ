@@ -1,0 +1,45 @@
+﻿epikrateia_heritage = { # Specific for Carthaginian Epikrateia created in mission
+	modifier = {
+		#good
+		happiness_for_wrong_culture_group_modifier = wrong_culture_group_large
+		global_capital_trade_routes = 1
+		
+		#bad
+		loyalty_to_overlord = 30
+		
+	}
+	
+	trigger = {
+		always = no # Only added through missions
+	}
+}
+
+corinthian_heritage = {
+	modifier = {
+		#good
+		fort_maintenance_cost = -0.33
+		manpower_recovery_speed = 0.05
+
+		#bad
+		diplomatic_relations = -1
+	}
+
+	trigger = {
+		always = no # Only added through missions
+	}
+}
+
+decapolian_heritage = {
+	modifier = {
+		#good
+		happiness_for_wrong_culture_group_modifier = wrong_culture_group_large
+		global_pop_assimilation_speed_modifier = 0.1
+
+		#bad
+		loyalty_to_overlord = 10
+	}
+
+	trigger = {
+		always = no # Only added through missions
+	}
+}

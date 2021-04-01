@@ -1,0 +1,27 @@
+﻿"HNZ"={
+	country="HNZ"
+	13={
+		first_name="Attila"
+		family= c:HNZ.fam:of_Huns
+		birth_date=55.7.21
+		culture="hunnic"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=8
+		add_finesse=6
+		add_zeal=4
+		no_traits=yes
+		add_trait="hunnics"
+		add_trait="immortal"
+		add_trait="tactician"
+		add_trait="aggressive"
+		add_trait="ambitious"
+		add_gold=100
+		add_popularity=100
+		c:HNZ={
+			set_as_ruler=char:13
+		}
+		dna="Guwa7P9ws4fi+eL5AmcCZwKJAokCkgKSAm4CbgKVApUCmAKYAm0CbQKXApcCagJqADAAMAKNAo0CmgKaAWMBYwGDAWEEsgSyAoMCgwKYAn8DgwOpAoECgQJzAnMCcgJyAm8CbwJeAn0CGQJ2AV4BXgJ0AowCigKKAoECgQJ1AnUCggKCApACkAJ7AnsBYAFgAmsCawJmAmYBUAFQApkCmQAvAC8CagJqAWMBYwKPAo8CcQJxApECkQKDAoMDqQOpAoMCgwJ3AncCbQJtAmcCZwKmAqYCawJrAVQBVAFgAWAChAKEAocChwOGA4YCaAC3AAEBUwEGAQYBJQElABcAFwFSAVIAugC6AI4AjgBWAFYAygDKAO4A7gB/AH8A1QDVAv8CpAEAAVAAtgC2AUYBRgD7APsAGgAaAEMAQwBgAH8BfQF9AQABSgA9AIMCAAKkAIAAgABaAFoAMAAwBIYEhgCRAK8C3ALxA1kDWQE6AToB/QTuAH8AfwX/BV8HkwuzAfEB8QL9A1gFfAudBOEE4QAAAAAAAAAAAAAAAA=="
+	}
+}

@@ -1,0 +1,3 @@
+﻿NCountry = {
+	MINIMUM_COLONISATION_POP = 6
+}

@@ -1,0 +1,35 @@
+# Colors are mostly used by flags, but are seperated because they can be used by other parts as well. 
+
+colors = {
+	pink = rgb { 229 117 116 }
+	barbarian_red = rgb { 191 0 0 }
+	venice_red	= rgb { 202 20 21 }
+	dark_red = rgb { 120 0 2 }
+	supernova = rgb { 255 178 60 }
+	pumkin = rgb { 255 129 18 }
+	brown = rgb { 120 61 2 }
+	witch_haze = rgb { 234 225 157 }
+	bus_yellow = rgb { 247 216 2 }
+	olive = rgb { 134 114 2 }
+	light_green = rgb { 121 224 119 }
+	green = rgb { 97 191 34 }
+	dark_green = rgb { 21 108 48 }
+	turq_blue = rgb { 125 236 227 }
+	carib_blue = rgb { 0 192 155 }
+	sherpa_blue = rgb { 2 79 81 }
+	cornflower_blue = rgb { 116 163 243 }
+	navy_blue = rgb { 0 79 206 }
+	sapphire = rgb { 2 42 108 }
+	biloba_purple = rgb { 183 128 230 }
+	violet = rgb { 109 0 205 }
+	dark_purple = rgb { 55 0 101 }
+	magenta1 = rgb { 255 153 255 }
+	magenta2 = rgb { 255 0 255 }
+	magenta3 = rgb { 117 0 155 }
+	white = rgb { 249 249 249 }
+	dark_grey = rgb { 83 83 83 }
+	grey = rgb { 174 174 174 }
+	city_state_black = { 31 31 31 }
+	nero = rgb { 24 24 24 }
+	pitch_black = rgb { 0 0 0 }
+}

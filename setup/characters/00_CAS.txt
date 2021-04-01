@@ -1,0 +1,25 @@
+﻿"CAS"={
+	country="CAS"
+	55={ #Isabella
+		first_name="Isabella"
+		family= c:CAS.fam:Trastamara
+		birth_date=77.4.22
+		female=yes
+		culture="spanish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=12
+		add_finesse=9
+		add_zeal=6
+		no_traits=yes
+		add_trait="immortal"
+		add_trait="pious"
+		add_gold=100
+		add_popularity=100
+		c:CAS={
+			set_as_ruler=char:55
+		}
+
+	}
+}

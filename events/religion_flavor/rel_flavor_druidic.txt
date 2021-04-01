@@ -1,0 +1,835 @@
+﻿namespace = rel_flavor_druidic
+
+# Conflict with neighbor country Druids
+rel_flavor_druidic.1 = {
+	type = country_event
+	title = "rel_flavor_druidic.1.t"
+	desc = "rel_flavor_druidic.1.desc"
+	picture = celtic_diplomacy
+	
+	left_portrait = current_ruler
+	right_portrait = scope:neighbor_country.current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = druidism
+		NOT = { has_variable = rel_flavor_druidic_1_cooldown }
+		NOT = { 
+			any_owned_province = {
+				has_province_modifier = province_diminishment_druidic_conflict
+			}
+		}
+		any_owned_province = {
+			dominant_province_religion = druidism
+			any_neighbor_province = {
+				dominant_province_religion = druidism
+				exists = owner
+				NOR = {
+					owner = root
+					owner = {
+						war_with = root
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = druidism
+				any_neighbor_province = {
+					dominant_province_religion = druidism
+					exists = owner
+					NOR = {
+						owner = root
+						owner = {
+							war_with = root
+						}
+					}
+				}
+			}
+			save_scope_as = randomized_country_province
+			random_neighbor_province = {
+				limit = {
+					dominant_province_religion = druidism
+					exists = owner
+					NOR = {
+						owner = root
+						owner = {
+							war_with = root
+						}
+					}
+				}
+				save_scope_as = random_neighbor_province
+				owner = {
+					save_scope_as = neighbor_country
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_druidic_1_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.1.a"
+		add_stability_effect_small = yes
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = opinions_druidic_conflict
+				target = root
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.1.b"
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_druidic_conflict
+				duration = 3650
+			}
+		}
+	}
+}
+
+# Druids supporting the war
+rel_flavor_druidic.2 = {
+	type = country_event
+	title = "rel_flavor_druidic.2.t"
+	desc = "rel_flavor_druidic.2.desc"
+	picture = celtic_diplomacy
+	
+	left_portrait = current_ruler
+	right_portrait = scope:war_country.current_ruler
+
+	goto_location = scope:war_country.capital_scope
+	
+	trigger = {
+		religion = druidism
+		NOT = {	has_variable = rel_flavor_druidic_2_cooldown }
+		war = yes
+		any_countries_at_war_with = {
+			NOT = { religion = druidism }
+		}
+	}
+
+	immediate = {
+		random_countries_at_war_with = {
+			limit = {
+				NOT = { religion = druidism }
+			}
+			save_scope_as = war_country
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_druidic_2_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = { # Raise troop morale
+		name = "rel_flavor_druidic.2.a"
+		add_country_modifier = {
+			name = country_improvement_druids_troop_morale
+			duration = 1850
+		}
+	}
+
+	option = { # Raise manpower
+		name = "rel_flavor_druidic.2.b"
+		add_country_modifier = {
+			name = country_improvement_druids_manpower
+			duration = 1850
+		}
+	}
+
+	option = { # Religious power
+		name = "rel_flavor_druidic.2.c"
+		add_stability_effect_small = yes
+	}
+}
+
+# Ruler not allowed to take part in ceremonies by Druids
+rel_flavor_druidic.3 = {
+	type = country_event
+	title = "rel_flavor_druidic.3.t"
+	desc = "rel_flavor_druidic.3.desc"
+	picture = celtic_chiefs
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = druidism
+		current_ruler = { popularity <= 50 }
+	}
+
+	immediate = {
+
+	}
+
+	option = { # Appease the Druids
+		name = "rel_flavor_druidic.3.a"
+		add_political_influence = subtract_influence_medium
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+	}
+
+	option = { # Force the Druids to accept our ruler
+		name = "rel_flavor_druidic.3.b"
+		if = { 
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_large
+		}
+		add_tyranny = tyranny_medium
+	}
+
+	option = { # Accept the religious banishment
+		name = "rel_flavor_druidic.3.c"
+		if = { 
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		add_country_modifier = {
+			name = country_diminishment_druidic_banishment
+			duration = 3650
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+}
+
+# The prophecised terrible heir
+rel_flavor_druidic.4 = {
+	type = country_event
+	title = "rel_flavor_druidic.4.t"
+	desc = "rel_flavor_druidic.4.desc"
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+	right_portrait = scope:heir_character
+	left_portrait = scope:pretender_character
+
+	trigger = {
+		religion = druidism
+		NOT = { has_variable = rel_flavor_druidic_4_cooldown }
+		is_monarchy = yes
+		any_character = {
+			is_primary_heir = yes
+			age >= 20
+			OR = {
+				popularity < 30
+				prominence < 30
+				char_is_bad_leader_trigger = yes
+				char_is_irreligious_trigger = yes
+			}
+		}
+		any_character = {
+			is_primary_heir = no
+			is_ruler = no
+			OR = {
+				is_pretender = yes
+				is_clan_chief = yes
+			}
+			age >= 20
+			OR = {
+				popularity >= 50
+				prominence >= 50
+				char_is_good_leader_trigger = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				is_primary_heir = yes
+				age >= 20
+				OR = {
+					popularity < 30
+					prominence < 30
+					char_is_bad_leader_trigger = yes
+					char_is_irreligious_trigger = yes
+				}
+			}
+			save_scope_as = heir_character
+		}
+		random_character = {
+			limit = {
+				is_primary_heir = no
+				is_ruler = no
+				OR = {
+					is_pretender = yes
+					is_clan_chief = yes
+				}
+				age >= 20
+				OR = {
+					popularity >= 50
+					prominence >= 50
+					char_is_good_leader_trigger = yes
+				}
+			}
+			weight = {
+				modifier = {
+					factor = 10
+					trigger_if = {
+						limit = {
+							employer.current_ruler = {
+								is_minor_character = no
+							}
+						}
+						from_ruler_family = no
+					}
+					trigger_else = { always = no }
+				}
+			}
+			save_scope_as = pretender_character
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_druidic_4_cooldown
+				days = 7300
+			}
+		}
+	}
+
+	option = { # Stand by our heir
+		name = "rel_flavor_druidic.4.a"
+		scope:heir_character = {
+			add_loyalty = loyalty_heir_supported
+			add_popularity = popularity_small
+			add_prominence = prominence_large
+		}
+	}
+
+	option = { # Start looking for new potential heir
+		name = "rel_flavor_druidic.4.b"
+		scope:pretender_character = {
+			add_popularity = popularity_small
+			add_prominence = prominence_large
+		}
+		scope:heir_character = {
+			add_loyalty = loyalty_heir_doubted
+			add_popularity = subtract_popularity_small
+			add_prominence = subtract_prominence_large
+			add_rival = scope:pretender_character
+		}
+	}
+}
+
+# The Problematic Female Druid
+rel_flavor_druidic.5 = {
+	type = country_event
+	title = "rel_flavor_druidic.5.t"
+	desc = "rel_flavor_druidic.5.desc"
+	picture = celtic_religious_festival
+	
+	left_portrait = current_ruler
+	right_portrait = scope:female_druid
+	right_portrait = scope:randomized_priest
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = druidism
+		gender_equality = yes
+		any_character = {
+			has_priest_office_trigger = yes
+			is_female = no
+		}
+		any_owned_province = {
+			is_capital = no
+		}
+		NOT = {
+			has_variable = druid_5_toggle
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = druid_5_toggle
+			days = 7300
+		}
+		if = {
+			limit = {
+				any_country = {
+					religion = druidism
+				}
+			}
+			random_country = {
+				limit = {
+					religion = druidism
+				}
+				save_scope_as = banishment_country
+			}
+		}
+		else_if = {
+			limit = {
+				any_neighbour_country = {
+					count >= 1
+				}
+			}
+			random_neighbour_country = {
+				save_scope_as = banishment_country
+			}
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+				is_female = no
+			}
+			save_scope_as = randomized_priest
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			save_scope_as = randomized_country_province
+		}
+		hidden_effect = {
+			create_character = {
+				culture = root.current_ruler.culture
+				religion = druidism
+				female = yes
+				age = 25
+				save_scope_as = female_druid
+			}
+			scope:female_druid = {
+				add_zeal = 3
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.5.a"
+		scope:randomized_priest = {
+			if = {
+				limit = {
+					has_office = office_high_priest
+				}
+				scope:female_druid = {
+					give_office = office_high_priest
+				}
+			}
+			else_if = {
+				limit = {
+					has_office = office_high_priest_monarchy
+				}
+				scope:female_druid = {
+					give_office = office_high_priest_monarchy
+				}
+			}
+			else_if = {
+				limit = {
+					has_office = office_augur
+				}
+				scope:female_druid = {
+					give_office = office_augur
+				}
+			}
+			else_if = {
+				limit = {
+					has_office = office_pontifex
+				}
+				scope:female_druid = {
+					give_office = office_pontifex 
+				}
+			}
+			add_loyalty = loyalty_allowed_druidess
+		}
+		hidden_effect = {
+			scope:female_druid = {
+				set_variable = {
+					name = controversial_druid
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.5.b"
+		trigger = {
+			NOT = {
+				exists = scope:banishment_country
+			}
+		}
+		scope:female_druid = {
+			death = {
+				death_reason = death_execution
+			}
+		}
+		scope:randomized_priest = {
+			add_loyalty = loyalty_executed_druidess
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.5.c"
+		trigger = {
+			exists = scope:banishment_country
+		}
+		scope:female_druid = {
+			banish = scope:banishment_country
+		}
+		scope:randomized_priest = {
+			add_loyalty = loyalty_banished_druidess
+		}
+	}
+}
+
+# Controversial female Druid reward
+rel_flavor_druidic.6 = {
+	type = country_event
+	title = "rel_flavor_druidic.6.t"
+	desc = "rel_flavor_druidic.6.desc"
+	picture = celtic_religious_festival
+	
+	left_portrait = current_ruler
+	right_portrait = scope:female_druid
+
+	trigger = {
+		religion = druidism
+		any_character = {
+			has_priest_office_trigger = yes
+			OR = {
+				char_is_good_leader_trigger = yes
+				char_is_religious_trigger = yes
+				zeal >= 10
+			}
+			has_variable = controversial_druid
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+				OR = {
+					char_is_good_leader_trigger = yes
+					char_is_religious_trigger = yes
+					zeal >= 10
+				}
+				has_variable = controversial_druid
+			}
+			save_scope_as = female_druid
+		}
+		scope:female_druid = {
+			remove_variable = controversial_druid
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.6.a"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = popularity_large
+		}
+		scope:female_druid = {
+			add_zeal = 2
+		}
+	}
+}
+
+# Controversial female Druid punishment
+rel_flavor_druidic.7 = {
+	type = country_event
+	title = "rel_flavor_druidic.7.t"
+	desc = "rel_flavor_druidic.7.desc"
+	picture = celtic_chiefs
+	
+	left_portrait = current_ruler
+	right_portrait = scope:female_druid
+
+	trigger = {
+		religion = druidism
+		any_character = {
+			has_priest_office_trigger = yes
+			OR = {
+				char_is_bad_leader_trigger = yes
+				char_is_irreligious_trigger = yes
+				zeal <= 5
+			}
+			has_variable = controversial_druid
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+				OR = {
+					char_is_bad_leader_trigger = yes
+					char_is_irreligious_trigger = yes
+					zeal <= 5
+				}
+				has_variable = controversial_druid
+			}
+			save_scope_as = female_druid
+		}
+		scope:female_druid = {
+			remove_variable = controversial_druid
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.7.a"
+		remove_stability_effect_small = yes
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		scope:female_druid = {
+			add_zeal = -2
+		}
+	}
+}
+
+# Hellenic neighbors
+rel_flavor_druidic.8 = {
+	type = country_event
+	title = "rel_flavor_druidic.8.t"
+	desc = "rel_flavor_druidic.8.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	right_portrait = scope:neighbor_country.current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = druidism
+		any_neighbour_country = {
+			religion = roman_pantheon
+			any_owned_province = {
+				dominant_province_religion = roman_pantheon
+				any_neighbor_province = {
+					dominant_province_religion = druidism
+					owner = root
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_neighbour_country = {
+			limit = {
+				religion = roman_pantheon
+				any_owned_province = {
+					dominant_province_religion = roman_pantheon
+					any_neighbor_province = {
+						dominant_province_religion = druidism
+						owner = root
+					}
+				}
+			}
+			save_scope_as = neighbor_country
+			random_owned_province = {
+				limit = {
+					dominant_province_religion = roman_pantheon
+					any_neighbor_province = {
+						dominant_province_religion = druidism
+						owner = root
+					}
+				}
+				save_scope_as = random_neighbor_province
+			}
+		}
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = druidism
+				any_neighbor_province = {
+					THIS = scope:random_neighbor_province
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = { # Increases opinion at the cost of rel power
+		name = "rel_flavor_druidic.8.a"
+		add_political_influence = subtract_influence_medium
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = opinion_religious_syncretization
+				target = root
+			}
+		}
+	}
+
+	option = { # Increase rel power at the cost of opinion
+		name = "rel_flavor_druidic.8.b"
+		add_political_influence = influence_medium
+		scope:neighbor_country = {
+			add_opinion = {
+				modifier = opinion_religious_differences
+				target = root
+			}
+		}
+	}
+}
+
+# Stars of Wars event 
+rel_flavor_druidic.9 = {
+	type = country_event
+	title = "rel_flavor_druidic.9.t"
+	desc = "rel_flavor_druidic.9.desc"
+	picture = celtic_chiefs
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = druidism
+		is_ai = no
+		war = no
+		NOT = { has_variable = rel_flavor_druidic_9_cooldown }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_druidic_9_cooldown
+				days = 7300
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.9.a"
+		custom_tooltip = "rel_flavor_druidic.9.a.tt"
+		hidden_effect = {
+			set_variable = {
+				name = stars_of_war
+				days = 365
+			}
+		}
+	}
+}
+
+# Stars of War check
+rel_flavor_druidic.10 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		has_variable = stars_of_war
+	}
+
+	immediate = {
+		remove_variable = stars_of_war
+		trigger_event = {
+			id = rel_flavor_druidic.11
+			days = 1
+		}
+	}
+}
+
+# Stars of War payoff
+rel_flavor_druidic.11 = {
+	type = country_event
+	title = "rel_flavor_druidic.11.t"
+	desc = "rel_flavor_druidic.11.desc"
+	picture = revolt
+	
+	left_portrait = current_ruler
+	right_portrait = scope:war_country.current_ruler
+
+	goto_location = scope:war_country.capital_scope
+	
+	trigger = {
+		war = yes
+	}
+
+	immediate = {
+		random_countries_at_war_with = {
+			save_scope_as = war_country
+		} 
+	}
+
+	option = {
+		name = "rel_flavor_druidic.11.a"
+		add_country_modifier = {
+			name = country_improvement_blessed_by_stars
+			duration = 1825
+		}
+	}
+}
+
+# Druid and tax
+rel_flavor_druidic.12 = {
+	type = country_event
+	title = "rel_flavor_druidic.12.t"
+	desc = "rel_flavor_druidic.12.desc"
+	picture = celtic_diplomacy
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	trigger = {
+		religion = druidism
+		NOT = { has_variable = rel_flavor_druidic_12_cooldown }
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_druidic_12_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.12.a"
+		add_political_influence = influence_medium
+		scope:randomized_priest = {
+			add_loyalty = loyalty_religious_tax_stopped
+		}
+	}
+
+	option = {
+		name = "rel_flavor_druidic.12.b"
+		add_country_modifier = {
+			name = country_improvement_taxed_druids
+			duration = 3650
+		}
+		current_ruler = {
+			add_corruption = corruption_medium
+		}
+		scope:randomized_priest = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				add_loyalty = loyalty_religious_tax_approved
+			}
+		}
+	}
+}

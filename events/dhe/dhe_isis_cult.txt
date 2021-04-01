@@ -1,0 +1,947 @@
+﻿namespace = dhe_isis_cult
+
+# The Isis Cult has popped up at a port near you! Buy now!
+dhe_isis_cult.1 = {
+	type = country_event
+	title = "dhe_isis_cult.1.t"
+	desc = "dhe_isis_cult.1.desc"
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+	right_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		OR = {
+			country_culture_group = hellenic
+			country_culture_group = latin
+			religion = roman_pantheon
+		}
+		any_owned_province = {
+			is_port = yes
+			has_city_status = yes
+			any_pops_in_province = {
+				OR = {
+					pop_type = citizen
+					pop_type = freemen
+				}
+				NOT = {
+					pop_religion = egyptian_pantheon
+				}
+			}
+			NOR = {
+				has_province_modifier = province_improvement_shrine_of_fortune
+				has_province_modifier = province_improvement_isis_cult
+				has_province_modifier = province_improvement_isis_cult_center
+			}
+		}
+		OR = {
+			c:EGY = {
+				country_culture_group = hellenic
+			}
+			any_neighbour_country = {
+				has_variable = isis_cult
+			}
+		}
+		NOR = {
+			has_variable = isis_cult
+			has_variable = removed_isis_cult
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				is_port = yes
+				has_city_status = yes
+				any_pops_in_province = {
+					OR = {
+						pop_type = citizen
+						pop_type = freemen
+					}
+					NOT = {
+						pop_religion = egyptian_pantheon
+					}
+				}
+				NOR = {
+					has_province_modifier = province_improvement_shrine_of_fortune
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+			}
+			weight = {
+				modifier = {
+					factor = 20
+					any_pops_in_province = {
+						OR = {
+							pop_type = citizen
+							pop_type = freemen
+						}
+						pop_religion = roman_pantheon
+					}
+				}
+				modifier = {
+					factor = 5
+					OR = {
+						province_dominant_culture_group = hellenic
+						province_dominant_culture_group = latin
+					}
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.1.a"
+		custom_tooltip = "dhe_isis_cult.1.a.tt"
+		remove_stability_effect = yes
+		create_character = {
+			religion = egyptian_pantheon
+			culture = egyptian
+			age = 32
+		}
+		scope:randomized_country_province = {
+			if = {
+				limit = {
+					any_pops_in_province = {
+						OR = {
+							pop_type = citizen
+							pop_type = freemen
+						}
+						NOT = {
+							pop_religion = egyptian_pantheon
+						}
+					}
+				}
+				custom_tooltip = "isis_cult_medium_freemen_citizen.tt"
+				hidden_effect = {
+					ordered_pops_in_province = {
+						limit = {
+							OR = {
+								pop_type = citizen
+								pop_type = freemen
+							}
+							NOT = {
+								pop_religion = egyptian_pantheon
+							}
+						}
+						order_by = pop_hapiness
+						max = {
+							value = num_of_freemen
+							add = num_of_citizen 
+							divide = 4
+						}
+						check_range_bounds = no
+						set_pop_religion = egyptian_pantheon
+					}
+				}
+			}
+			add_province_modifier = {
+				name = province_improvement_isis_cult_center
+				duration = -1
+			}
+		}
+		set_variable = {
+			name = isis_cult
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.1.b"
+		custom_tooltip = "dhe_isis_cult.1.b.tt"
+		trigger = {
+			is_ai = no
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		set_variable = {
+			name = removed_isis_cult
+		}
+	}
+}
+
+# The Isis Cult spreads to a nearby province
+dhe_isis_cult.2 = {
+	type = country_event
+	title = "dhe_isis_cult.2.t"
+	desc = "dhe_isis_cult.2.desc"
+	picture = great_city
+	
+	left_portrait = current_ruler
+	
+	goto_location = scope:randomized_country_province
+
+	trigger = {
+		NOT = { has_variable = dhe_isis_cult_2_cooldown }
+		NOT = { religion = egyptian_pantheon }
+		OR = {
+			any_owned_province = {
+				OR = {
+					has_province_modifier = province_improvement_isis_cult_center
+					has_province_modifier = province_improvement_isis_cult
+				}
+				any_neighbor_province = {
+					NOR = {
+						has_province_modifier = province_improvement_shrine_of_fortune
+						has_province_modifier = province_improvement_isis_cult_center
+						has_province_modifier = province_improvement_isis_cult
+					}
+					owner = root
+				}
+			}
+			AND = {
+				has_variable = isis_cult
+				any_owned_province = {
+					is_port = yes
+					NOR = {
+						has_province_modifier = province_improvement_shrine_of_fortune
+						has_province_modifier = province_improvement_isis_cult
+						has_province_modifier = province_improvement_isis_cult_center
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOR = {
+					has_province_modifier = province_improvement_shrine_of_fortune
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+				OR = {
+					any_neighbor_province = {
+						owner = root
+						OR = {
+							has_province_modifier = province_improvement_isis_cult
+							has_province_modifier = province_improvement_isis_cult_center
+						}
+					}
+					is_port = yes
+				}
+			}
+			weight = {
+				modifier = {
+					factor = 5
+					any_neighbor_province = {
+						OR = {
+							has_province_modifier = province_improvement_isis_cult
+							has_province_modifier = province_improvement_isis_cult_center
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					any_neighbor_province = {
+						count >= 2
+						OR = {
+							has_province_modifier = province_improvement_isis_cult
+							has_province_modifier = province_improvement_isis_cult_center
+						}
+					}
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+		set_variable = {
+			name = "dhe_isis_cult_2_cooldown"
+			days = 1825
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.2.a"
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 4
+			min = 10
+			max = 150
+		}
+		remove_stability_effect = yes
+		scope:randomized_country_province = {
+			if = {
+				limit = {
+					any_pops_in_province = {
+						OR = {
+							pop_type = citizen
+							pop_type = freemen
+						}
+						NOT = {
+							pop_religion = egyptian_pantheon
+						}
+					}
+				}
+				custom_tooltip = "isis_cult_minor_freemen_citizen.tt"
+				hidden_effect = {
+					ordered_pops_in_province = {
+						limit = {
+							OR = {
+								pop_type = citizen
+								pop_type = freemen
+							}
+							NOT = {
+								pop_religion = egyptian_pantheon
+							}
+						}
+						order_by = pop_hapiness
+						max = {
+							value = num_of_freemen
+							add = num_of_citizen 
+							divide = 10
+						}
+						check_range_bounds = no
+						set_pop_religion = egyptian_pantheon
+					}
+				}
+			}
+			add_province_modifier = {
+				name = province_improvement_isis_cult
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.2.b"
+		add_stability = 5
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_religious_unrest
+				duration = 1095
+			}
+		}
+	}
+}
+
+# Problematic Kemetic. Problemetic? An Isis Crisis!
+dhe_isis_cult.3 = {
+	type = country_event
+	title = "dhe_isis_cult.3.t"
+	desc = "dhe_isis_cult.3.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	
+	goto_location = scope:randomized_country_province
+
+	trigger = {
+		NOT = { has_variable = dhe_isis_cult_3_cooldown }
+		NOT = { religion = egyptian_pantheon }
+		NOT = { tag = EGY }
+		any_owned_province = {
+			OR = {
+				has_province_modifier = province_improvement_isis_cult_center
+				has_province_modifier = province_improvement_isis_cult
+			}
+			NOT = { has_province_modifier = province_diminishment_religious_unrest }
+			any_pops_in_province = {
+				NOT = {
+					pop_religion = egyptian_pantheon
+				}
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_modifier = province_improvement_isis_cult
+				}
+			}
+			random_owned_province = {
+				limit = {
+					has_province_modifier = province_improvement_isis_cult
+				}
+				save_scope_as = randomized_country_province
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+				save_scope_as = randomized_country_province
+			}
+		}
+		set_variable = {
+			name = dhe_isis_cult_3_cooldown
+			days = 1095
+		}
+	}
+
+	option = { # Take the side of the Isis Cultists
+		name = "dhe_isis_cult.3.a"
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 10
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_religious_unrest
+				duration = 7300
+			}
+			if = {
+				limit = {
+					has_province_modifier = province_improvement_isis_cult
+				}
+				add_province_modifier = {
+					name = province_improvement_isis_cult_center
+					duration = -1
+				}
+				remove_province_modifier = province_improvement_isis_cult
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						NOT = {
+							pop_religion = egyptian_pantheon
+						}
+					}
+				}
+				custom_tooltip = "isis_cult_non_kemetic_minor_crisis.tt"
+				hidden_effect = {
+					ordered_pops_in_province = {
+						limit = {
+							NOT = {
+								pop_religion = egyptian_pantheon
+							}
+						}
+						order_by = pop_hapiness
+						max = {
+							value = total_population
+							divide = 5
+						}
+						check_range_bounds = no
+						kill_pop = yes
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Calm down the two sides
+		name = "dhe_isis_cult.3.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 8
+		}
+		remove_stability_effect = yes
+	}
+
+	option = { # Remove the problematic Isis Cultists
+		name = "dhe_isis_cult.3.c"
+		add_tyranny = tyranny_medium
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_religious_unrest
+				duration = 1825
+			}
+			if = {
+				limit = {
+					has_province_modifier = province_improvement_isis_cult
+				}
+				remove_province_modifier = province_improvement_isis_cult
+			}
+			else_if = {
+				limit = {
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+				remove_province_modifier = province_improvement_isis_cult_center
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_religion = egyptian_pantheon
+					}
+				}
+				custom_tooltip = "isis_cult_kemetic_minor_crisis.tt"
+				hidden_effect = {
+					ordered_pops_in_province = {
+						limit = {
+							pop_religion = egyptian_pantheon
+						}
+						order_by = pop_hapiness
+						max = {
+							value = num_of_freemen
+							add = num_of_citizen 
+							divide = 2
+						}
+						check_range_bounds = no
+						kill_pop = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+# Isis Crisis P.2
+dhe_isis_cult.4 = {
+	type = country_event
+	title = "dhe_isis_cult.4.t"
+	desc = "dhe_isis_cult.4.desc"
+
+	left_portrait = current_ruler
+	picture = religious_rite
+	
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		NOT = { has_variable = dhe_isis_cult_4_cooldown }
+		NOT = { religion = egyptian_pantheon }
+		any_owned_province = {
+			has_province_modifier = province_diminishment_religious_unrest
+			OR = {
+				has_province_modifier = province_improvement_isis_cult_center
+				has_province_modifier = province_improvement_isis_cult
+			}
+			any_pops_in_province = {
+				NOT = {
+					pop_religion = egyptian_pantheon
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				has_province_modifier = province_diminishment_religious_unrest
+				OR = {
+					has_province_modifier = province_improvement_isis_cult_center
+					has_province_modifier = province_improvement_isis_cult
+				}
+			}
+			weight = {
+				modifier = {
+					factor = 10
+					has_province_modifier = province_improvement_isis_cult
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+		set_variable = {
+			name = dhe_isis_cult_4_cooldown
+			days = 7300
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.4.a"
+		scope:randomized_country_province = {
+			remove_province_modifier = province_diminishment_religious_unrest
+			if = {
+				limit = {
+					has_province_modifier = province_improvement_isis_cult
+				}
+				remove_province_modifier = province_improvement_isis_cult
+			}
+			else_if = {
+				limit = {
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+				remove_province_modifier = province_improvement_isis_cult_center
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_religion = egyptian_pantheon
+					}
+				}
+				custom_tooltip = "isis_cult_major_crisis.tt"
+				hidden_effect = {
+					every_pops_in_province = {
+						limit = {
+							pop_religion = egyptian_pantheon
+						}
+						kill_pop = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+# Incoming Kemetics!
+dhe_isis_cult.5 = {
+	type = country_event
+	title = "dhe_isis_cult.5.t"
+	desc = "dhe_isis_cult.5.desc"
+	picture = celtic_religious_festival
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		NOT = { has_variable = dhe_isis_cult_5_cooldown }
+		NOT = { religion = egyptian_pantheon }
+		c:EGY = {
+			religion = egyptian_pantheon
+			any_owned_province = {
+				count >= 1
+			}
+		}
+		any_owned_province = {
+			OR = {
+				has_province_modifier = province_improvement_isis_cult_center
+				has_province_modifier = province_improvement_isis_cult
+			}
+		}
+	}
+
+	immediate = {
+		c:EGY = {
+			random_owned_province = {
+				save_scope_as = randomized_egyptian_province
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = province_improvement_isis_cult_center
+					has_province_modifier = province_improvement_isis_cult
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+		set_variable = {
+			name = dhe_isis_cult_5_cooldown
+			days = 7300
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.5.a"
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 4
+		}
+		scope:randomized_egyptian_province = {
+			hidden_effect = {
+				create_state_pop = freemen
+			}
+			ordered_pops_in_province = {
+				limit = {
+					pop_religion = egyptian_pantheon
+					pop_type = freemen
+				}
+				order_by = pop_hapiness
+				max = {
+					value = 0
+				}
+				check_range_bounds = no
+				move_pop = scope:randomized_country_province
+			}
+		}
+	}
+}
+
+# A shrine to Isis
+dhe_isis_cult.6 = {
+	type = country_event
+	title = "dhe_isis_cult.6.t"
+	desc = "dhe_isis_cult.6.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		NOT = { religion = egyptian_pantheon }
+		any_owned_province = {
+			NOR = { 
+				has_province_modifier = province_improvement_isis_shrine 
+				has_province_modifier = province_diminishment_religious_unrest
+			}
+			OR = {
+				has_province_modifier = province_improvement_isis_cult
+				has_province_modifier = province_improvement_isis_cult_center
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOR = { 
+					has_province_modifier = province_improvement_isis_shrine 
+					has_province_modifier = province_diminishment_religious_unrest
+				}
+				OR = {
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.6.a"
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 4
+		}
+		remove_stability_effect = yes
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_isis_shrine
+				duration = 7300
+			}
+			if = {
+				limit = {
+					any_pops_in_province = {
+						NOT = {
+							pop_religion = egyptian_pantheon
+						}
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						NOT = {
+							pop_religion = egyptian_pantheon
+						}
+					}
+					weight = {
+						modifier = {
+							factor = 10
+							NOT = {
+								pop_type = slaves
+							}
+						}
+					}
+					set_pop_religion = egyptian_pantheon
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_isis_cult.6.b"
+		add_stability_effect = yes
+		scope:randomized_country_province = {
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_religion = egyptian_pantheon
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_religion = egyptian_pantheon
+					}
+					weight = {
+						modifier = {
+							factor = 10
+							NOT = {
+								pop_type = slaves
+							}
+						}
+					}
+					set_pop_religion = root.religion
+				}
+			}
+		}
+	}
+}
+
+### Room for additional events if necessary ###
+
+### Maintenance Events ###
+# Court characters join Isis Cult
+dhe_isis_cult.10 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		employer = {
+			has_variable = isis_cult
+			NOT = { religion = egyptian_pantheon }
+		}
+		wealth >= 200
+		char_is_good_leader_trigger = yes
+		is_ruler = no
+		is_pretender = no
+		is_primary_heir = no
+		NOR = { 
+			has_character_modifier = char_improvement_cult_fortune 
+			has_character_modifier = char_improvement_cult_isis
+			has_character_modifier = athenian_mission_10_eleusinian_cult_modifier
+		}
+	}
+
+	immediate = {
+		add_gold = -200
+		add_character_modifier = {
+			name = char_improvement_cult_isis
+		}
+	}
+}
+
+# Spreading the Cult to a governed province
+dhe_isis_cult.11 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_governor = yes
+		has_character_modifier = char_improvement_cult_isis
+		wealth >= 200
+		employer = {
+			NOT = { religion = egyptian_pantheon }
+			any_owned_province = {
+				governor = root
+				is_port = yes
+				NOR = {
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+			}
+		}
+	}
+
+	immediate = {
+		add_gold = -200
+		employer = {
+			random_owned_province = {
+				limit = {
+					governor = root
+				}
+				add_province_modifier = {
+					name = province_improvement_isis_cult
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+# Governor don't get along with local Isis Cult
+dhe_isis_cult.12 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_governor = yes
+		NOT = { has_character_modifier = char_improvement_cult_isis }
+		employer = {
+			NOT = { religion = egyptian_pantheon }
+			any_owned_province = {
+				governor = root
+				OR = {
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+			}
+		}
+	}
+
+	immediate = {
+		employer = {
+			random_owned_province = {
+				limit = {
+					governor = root
+					OR = {
+						has_province_modifier = province_improvement_isis_cult
+						has_province_modifier = province_improvement_isis_cult_center
+					}
+				}
+				add_province_modifier = {
+					name = province_diminishment_religious_unrest
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+# Governor remove local Isis cult
+dhe_isis_cult.13 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_governor = yes
+		NOT = { has_character_modifier = char_improvement_cult_isis }
+		employer = {
+			NOT = { religion = egyptian_pantheon }
+			any_owned_province = {
+				governor = root
+				has_province_modifier = province_improvement_isis_cult
+			}
+		}
+	}
+
+	immediate = {
+		employer = {
+			random_owned_province = {
+				limit = {
+					governor = root
+					has_province_modifier = province_improvement_isis_cult
+				}
+				remove_province_modifier = province_improvement_isis_cult
+				if = {
+					limit = {
+						has_province_modifier = province_diminishment_religious_unrest
+					}
+					remove_province_modifier = province_diminishment_religious_unrest
+				}
+			}
+		}
+	}
+}
+
+# Governor builds local shrine to Isis
+dhe_isis_cult.14 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_governor = yes
+		has_character_modifier = char_improvement_cult_isis
+		employer = {
+			NOT = { religion = egyptian_pantheon }
+			any_owned_province = {
+				governor = root
+				OR = {
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+				NOR = { 
+					has_province_modifier = province_improvement_isis_shrine 
+					has_province_modifier = province_improvement_shrine_of_fortune 
+				}
+			}
+		}
+	}
+
+	immediate = {
+		employer = {
+			random_owned_province = {
+				limit = {
+					governor = root
+					OR = {
+						has_province_modifier = province_improvement_isis_cult
+						has_province_modifier = province_improvement_isis_cult_center
+					}
+					NOR = { 
+						has_province_modifier = province_improvement_isis_shrine 
+						has_province_modifier = province_improvement_shrine_of_fortune 
+					}
+				}
+				add_province_modifier = {
+					name = province_improvement_isis_shrine
+					duration = 3650
+				}
+			}
+		}
+	}
+}

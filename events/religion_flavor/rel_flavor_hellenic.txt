@@ -1,0 +1,1123 @@
+﻿namespace = rel_flavor_hellenic
+
+# Asclepian wise-man
+rel_flavor_hellenic.1 = {
+	type = country_event
+	title = "rel_flavor_hellenic.1.t"
+	desc = "rel_flavor_hellenic.1.desc"
+	picture = ascetic
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = roman_pantheon
+		current_ruler = {
+			NOT = { has_character_modifier = character_improvement_asclepian_wiseman }
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = { # Bring him to court
+		name = "rel_flavor_hellenic.1.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		current_ruler = {
+			add_character_modifier = {
+				name = character_improvement_asclepian_wiseman
+				duration = 7300
+			}
+		}
+		hidden_effect = {
+			trigger_event = {
+				id = rel_flavor_hellenic.2 
+				days = { 1000 7300 }
+			}
+		}
+	}	
+
+	option = { # Send him to your provinces
+		name = "rel_flavor_hellenic.1.b"
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_asclepian_wiseman
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				scope:randomized_country_province = {
+					any_neighbor_province = {
+						owner = root
+					}
+				}
+			}
+			scope:randomized_country_province = {
+				random_neighbor_province = {
+					limit = {
+						owner = root
+					}
+					save_scope_as = randomized_country_province_2
+					add_province_modifier = {
+						name = province_improvement_asclepian_wiseman
+						duration = 3650
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						any_neighbor_province = {
+							THIS = scope:randomized_country_province
+						}
+						any_neighbor_province = {
+							THIS = scope:randomized_country_province_2
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						any_neighbor_province = {
+							THIS = scope:randomized_country_province
+						}
+						any_neighbor_province = {
+							THIS = scope:randomized_country_province_2
+						}
+					}
+					add_province_modifier = {
+						name = province_improvement_asclepian_wiseman
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Let him move on
+		name = "rel_flavor_hellenic.1.c"
+		#custom_tooltip = "no_effect_tooltip"
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+	}
+}
+
+# Asclepius wise-man disappears
+rel_flavor_hellenic.2 = {
+	type = country_event
+	title = "rel_flavor_hellenic.2.t"
+	desc = "rel_flavor_hellenic.2.desc"
+	picture = ascetic
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = roman_pantheon
+		current_ruler = {
+			has_character_modifier = character_improvement_asclepian_wiseman
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.2.a"
+		current_ruler = {
+			remove_character_modifier = character_improvement_asclepian_wiseman
+		}
+	}
+}
+
+# The oracle of Delpi prophecises negatively for the nation
+rel_flavor_hellenic.3 = {
+	type = country_event
+	title = "rel_flavor_hellenic.3.t"
+	desc = "rel_flavor_hellenic.3.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = roman_pantheon
+		NOR = {
+			has_variable = rel_flavor_hellenic_3_cooldown
+			has_variable = rel_flavor_hellenic_6_cooldown
+			has_country_modifier = country_diminishment_oracle_of_delphi
+			has_country_modifier = country_improvement_oracle_of_delphi
+		}
+	}
+
+	weight_multiplier = {
+		modifier = {
+			factor = 4
+			current_ruler = {
+				OR = {
+					char_is_irreligious_trigger = yes
+					char_is_bad_leader_trigger = yes
+				}
+			}
+		}
+	}
+
+	immediate = {
+		current_ruler = {
+			save_scope_as = country_ruler
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_hellenic_3_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = { # A religious ceremony to try to appease the Gods
+		name = "rel_flavor_hellenic.3.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		hidden_effect = {
+			random_list = {
+				10 = {
+					trigger_event = {
+						id = rel_flavor_hellenic.4
+						days = { 15 25 }
+					}
+				}
+				5 = {
+					trigger_event = {
+						id = rel_flavor_hellenic.5
+						days = { 15 25 }
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Try to convince your countrymen the Oracle is wrong
+		name = "rel_flavor_hellenic.3.b"
+		add_political_influence = subtract_influence_large
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+
+	option = { # Ignore the prophecies
+		name = "rel_flavor_hellenic.3.c"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_huge
+		}
+		add_country_modifier = {
+			name = country_diminishment_oracle_of_delphi
+			duration = 3650
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+	}
+}
+
+# The Gods have been appeased - Extension of Oracle of Delphi prophecises negatively
+rel_flavor_hellenic.4 = {
+	type = country_event
+	title = "rel_flavor_hellenic.4.t"
+	desc = "rel_flavor_hellenic.4.desc"
+	picture = great_city
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		current_ruler = {
+			THIS = scope:country_ruler
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.4.a"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+	}
+}
+
+# The Gods have not been appeased - Extension of Oracle of Delphi prophecises negatively
+rel_flavor_hellenic.5 = {
+	type = country_event
+	title = "rel_flavor_hellenic.5.t"
+	desc = "rel_flavor_hellenic.5.desc"
+	picture = natural_disaster
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		current_ruler = {
+			THIS = scope:country_ruler
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.5.a"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_large
+		}
+		add_country_modifier = {
+			name = country_diminishment_oracle_of_delphi
+			duration = 3650
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+	}
+}
+
+# The Oracle of Delphi prophecises positively for the nation
+rel_flavor_hellenic.6 = {
+	type = country_event 
+	title = "rel_flavor_hellenic.6.t"
+	desc = "rel_flavor_hellenic.6.desc"
+	picture = great_city
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = roman_pantheon
+		current_ruler = {
+			OR = {
+				char_is_religious_trigger = yes
+				char_is_good_leader_trigger = yes
+			}
+		}
+		NOR = {
+			has_variable = rel_flavor_hellenic_3_cooldown
+			has_variable = rel_flavor_hellenic_6_cooldown
+			has_country_modifier = country_diminishment_oracle_of_delphi
+			has_country_modifier = country_improvement_oracle_of_delphi
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_hellenic_6_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = { # Celebrate the announcement with a huge ceremony to Apollo
+		name = "rel_flavor_hellenic.6.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		add_country_modifier = {
+			name = country_improvement_oracle_of_delphi
+			duration = 5475
+		}
+	}
+
+	option = { # Thank the Oracle
+		name = "rel_flavor_hellenic.6.b"
+		add_country_modifier = {
+			name = country_improvement_oracle_of_delphi
+			duration = 3650
+		}
+	}
+}
+
+# Athena's bountiful olive blessing
+rel_flavor_hellenic.7 = {
+	type = country_event
+	title = "rel_flavor_hellenic.7.t"
+	desc = "rel_flavor_hellenic.7.desc"
+	picture = farming
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = roman_pantheon
+		any_owned_province = { 
+			trade_goods = olive 
+			has_city_status = yes
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+		NOR = {
+			has_country_modifier = country_improvement_athena_blessing
+			any_owned_province = {
+				has_province_modifier = province_improvement_athena_shrine
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				trade_goods = olive
+				has_city_status = yes
+			}
+			save_scope_as = randomized_country_province
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.7.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		add_country_modifier = {
+			name = country_improvement_athena_blessing
+			duration = 3650
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_athena_shrine
+				duration = 1825
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.7.b"
+		add_country_modifier = {
+			name = country_improvement_athena_blessing
+			duration = 1825
+		}
+	}
+}
+
+# Choose a God/Goddess to support the war effort
+rel_flavor_hellenic.8 = {
+	type = country_event
+	title = "rel_flavor_hellenic.8.t"
+	desc = "rel_flavor_hellenic.8.desc"
+	picture = elephant_battle
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_priest
+
+	trigger = {
+		religion = roman_pantheon
+		war = yes
+		NOR = {
+			has_country_modifier = country_improvement_war_ares_blessing
+			has_country_modifier = country_improvement_war_hephaistos_blessing
+			has_country_modifier = country_improvement_war_athena_blessing
+			has_country_modifier = country_improvement_war_poseidon_blessing
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = randomized_priest
+		}
+	}
+
+	option = { # Ares Blessing
+		name = "rel_flavor_hellenic.8.a"
+		add_political_influence = subtract_influence_medium
+		add_country_modifier = {
+			name = country_improvement_war_ares_blessing
+			duration = 1825
+		}
+	}
+
+	option = { # Hephaistos Blessing
+		name = "rel_flavor_hellenic.8.b"
+		add_political_influence = subtract_influence_medium
+		add_country_modifier = {
+			name = country_improvement_war_hephaistos_blessing
+			duration = 1825
+		}
+	}
+
+	option = { # Athena Blessing
+		name = "rel_flavor_hellenic.8.c"
+		trigger = {
+			NOT = { country_culture_group = latin }
+		}
+		add_political_influence = subtract_influence_medium
+		add_country_modifier = {
+			name = country_improvement_war_athena_blessing
+			duration = 1825
+		}
+	}
+
+	option = { # Poseidon Blessing
+		name = "rel_flavor_hellenic.8.d"
+		add_political_influence = subtract_influence_medium
+		add_country_modifier = {
+			name = country_improvement_war_poseidon_blessing
+			duration = 1825
+		}
+	}
+
+	option = { # No blessing
+		name = "rel_flavor_hellenic.8.e"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}
+
+# Raving band of  Maenads / bandits
+rel_flavor_hellenic.9 = {
+	type = country_event
+	title = "rel_flavor_hellenic.9.t"
+	desc = "rel_flavor_hellenic.9.desc"
+	picture = revolt
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = roman_pantheon
+		any_owned_province = { dominant_province_religion = roman_pantheon }
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = roman_pantheon
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = { # Have the soldiers deal with the threat
+		name = "rel_flavor_hellenic.9.a"
+		subtract_manpower_effect_10 = yes
+	}
+
+	option = { # Raise a shrine to Dionysus to ward off the Maenads
+		name = "rel_flavor_hellenic.9.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		add_country_modifier = {
+			name = country_improvement_dionysus_blessing
+			duration = 3650
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_maenads
+				duration = 1095
+			}
+		}
+	}
+
+	option = { # Let them run wild
+		name = "rel_flavor_hellenic.9.c"
+		remove_stability_effect = yes
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		if = {
+			limit = {
+				is_tribal = yes
+			}
+			current_ruler = {
+				add_prominence = subtract_prominence_large
+			}
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_diminishment_maenads
+				duration = 3650
+			}
+		}
+	}
+}
+
+# Heraclean Way event
+rel_flavor_hellenic.10 = {
+	type = country_event
+	title = "rel_flavor_hellenic.10.t"
+	desc = "rel_flavor_hellenic.10.desc"
+	picture = great_city
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		NOT = { has_variable = rel_flavor_hellenic_10_cooldown }
+		religion = roman_pantheon
+		NOT = { has_country_modifier = country_improvement_heracles_blessing }
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = province_improvement_heraclean_path
+			}
+		}
+		any_owned_province = {
+			province_is_heracles_way_trigger = yes
+			has_city_status = yes
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				province_is_heracles_way_trigger = yes
+				has_city_status = yes
+			}
+			save_scope_as = randomized_country_province
+		}
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_hellenic_10_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = { # Push the myths hard
+		name = "rel_flavor_hellenic.10.a"
+		remove_stability_effect_small = yes
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_heraclean_path
+				duration = 3650
+			}
+		}
+	}
+
+	option = { # Hold a small festival in his honor
+		name = "rel_flavor_hellenic.10.b"
+		add_stability_effect_small = yes
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		add_country_modifier = {
+			name = country_improvement_heracles_blessing
+			duration = 3650
+		}
+	}
+}
+
+
+## Argonautica Event Chain ##
+# Support the writing of the Argonautica - Part 1 - The Beginning
+rel_flavor_hellenic.11 = {
+	type = country_event
+	title = "rel_flavor_hellenic.11.t"
+	desc = "rel_flavor_hellenic.11.desc"
+	picture = ascetic
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = roman_pantheon
+		NOT = { has_variable = argonautica_event_fired }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				name = argonautica_event_fired
+			}
+			random_list = {
+				20 = { # Bad writer
+					set_variable = {
+						name = argonautica_writer_points
+						value = 0
+					}
+				}
+				50 = { # Average writer
+					set_variable = {
+						name = argonautica_writer_points
+						value = 1
+					}
+				}
+				20 = { # Great writer
+					set_variable = {
+						name = argonautica_writer_points
+						value = 3
+					}
+				}
+				10 = { # Amazing writer
+					set_variable = {
+						name = argonautica_writer_points
+						value = 5
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Support greatly
+		name = "rel_flavor_hellenic.11.a"
+		custom_tooltip = "rel_flavor_hellenic.11.a.tt"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		hidden_effect = {
+			change_variable = {
+				name = argonautica_writer_points
+				add = 2
+			}
+			if = {
+				limit = {
+					var:argonautica_writer_points >= 5
+				}
+				trigger_event = {
+					id = "rel_flavor_hellenic.13"
+					days = { 180 540 }
+				}
+			}
+			else = {
+				trigger_event = {
+					id = "rel_flavor_hellenic.12"
+					days = { 180 540 }
+				}
+			}
+		}
+	}
+
+	option = { # Make room
+		name = "rel_flavor_hellenic.11.b"
+		custom_tooltip = "rel_flavor_hellenic.11.a.tt"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 2
+		}
+		hidden_effect = {
+			trigger_event = {
+				id = "rel_flavor_hellenic.12"
+				days = { 180 540 }
+			}
+		}
+	}
+
+	option = { # Do not support
+		name = "rel_flavor_hellenic.11.c"
+		custom_tooltip = "rel_flavor_hellenic.11.c.tt"
+	}
+}
+
+# Support the writing of the Argonautica - Part 2 - More funding
+rel_flavor_hellenic.12 = {
+	type = country_event
+	title = "rel_flavor_hellenic.12.t"
+	desc = "rel_flavor_hellenic.12.desc"
+	picture = war_chest
+	
+	left_portrait = current_ruler
+
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+
+	option = { # Large aid
+		name = "rel_flavor_hellenic.12.a"
+		custom_tooltip = "rel_flavor_hellenic.12.a.tt"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		hidden_effect = {
+			change_variable = {
+				name = argonautica_writer_points
+				add = 2
+			}
+			trigger_event = {
+				id = "rel_flavor_hellenic.13"
+				days = { 180 540 }
+			}
+		}
+	}
+
+	option = { # Small aid
+		name = "rel_flavor_hellenic.12.b"
+		custom_tooltip = "rel_flavor_hellenic.12.a.tt"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		hidden_effect = {
+			change_variable = {
+				name = argonautica_writer_points
+				add = 1
+			}
+			trigger_event = {
+				id = "rel_flavor_hellenic.13"
+				days = { 180 540 }
+			}
+		}
+	}
+
+	option = { # Throw out
+		name = "rel_flavor_hellenic.12.c"
+		custom_tooltip = "rel_flavor_hellenic.11.c.tt"
+	}
+}
+
+# Support the writing of the Argonautica - Part 3 - Finished Work
+rel_flavor_hellenic.13 = {
+	type = country_event
+	title = "rel_flavor_hellenic.13.t"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					var:argonautica_writer_points >= 4
+				}
+				desc = "rel_flavor_hellenic.13.desc.a"
+			}
+			triggered_desc = {
+				trigger = {
+					var:argonautica_writer_points < 4
+					var:argonautica_writer_points >= 2
+				}
+				desc = "rel_flavor_hellenic.13.desc.b"
+			}
+			triggered_desc = {
+				trigger = {
+					var:argonautica_writer_points < 2
+				}
+				desc = "rel_flavor_hellenic.13.desc.c"
+			}
+		}
+	}
+	picture = scribe_tools
+
+	left_portrait = current_ruler
+
+	trigger = {
+
+	}
+
+	immediate = {
+		
+	}
+
+	option = { # Fantastic finish
+		name = "rel_flavor_hellenic.13.a"
+		trigger = {
+			var:argonautica_writer_points >= 5
+		}
+		current_ruler = {
+			add_popularity = popularity_large
+		}
+		add_country_modifier = {
+			name = country_improvement_argonautica
+			duration = 7300
+		}
+	}
+
+	option = { # All right finish
+		name = "rel_flavor_hellenic.13.b"
+		trigger = {
+			var:argonautica_writer_points < 5
+			var:argonautica_writer_points >= 3
+		}
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+		add_country_modifier = {
+			name = country_improvement_epic
+			duration = 7300
+		}
+	}
+
+	option = { # Weak finish
+		name = "rel_flavor_hellenic.13.c"
+		trigger = {
+			var:argonautica_writer_points < 3
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+
+	after = {
+		remove_variable = argonautica_writer_points
+	}
+}
+## End Event Chain ##
+
+# Inspired by Ares/Mars
+rel_flavor_hellenic.14 = {
+	type = country_event
+	title = "rel_flavor_hellenic.14.t"
+	desc = "rel_flavor_hellenic.14.desc"
+	picture = elephant_battle
+	
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = roman_pantheon
+		NOT = { has_variable = rel_flavor_hellenic_14_cooldown }
+		NOT = { has_country_modifier = country_improvement_inspiring_soldier }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				name = rel_flavor_hellenic_14_cooldown
+				days = 5475
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.14.a"
+		create_character = {
+			culture = root.current_ruler.culture
+			religion = roman_pantheon
+			female = no
+			age = 25
+			no_traits = yes
+			no_stats = yes
+			hidden_effect = {
+				add_trait = brave
+				amazing_martial_effect = yes
+				good_charisma_effect = yes
+				good_finesse_effect = yes
+				average_zeal_effect = yes
+				positive_martial_trait_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.14.b"
+		add_country_modifier = {
+			name = country_improvement_inspiring_soldier
+			duration = 1825
+		}
+	}
+}
+
+# Explosive commerce
+rel_flavor_hellenic.15 = {
+	type = country_event
+	title = "rel_flavor_hellenic.15.t"
+	desc = "rel_flavor_hellenic.15.desc"
+	picture = trade_port
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = roman_pantheon
+		any_owned_province = { 
+			dominant_province_religion = roman_pantheon 
+			has_city_status = yes
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = roman_pantheon
+				has_city_status = yes
+			}
+			save_scope_as = randomized_country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.15.a"
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 6
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_touched_by_commerce_god
+				duration = 1825
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_hellenic.15.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 4
+		}
+		add_country_modifier = {
+			name = country_improvement_commerce_blessing
+			duration = 3650
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_touched_by_commerce_god
+				duration = 3650
+			}
+		}
+	}
+}
+
+# Asklepian Plague
+rel_flavor_hellenic.16 = {
+    type = country_event # EVENT TYPE - Can be Country/Province/Character, decides ROOT Scope
+    title = rel_flavor_hellenic.16.t # LOCALIZATION KEY - Title of event
+    desc = rel_flavor_hellenic.16.desc # LOCALIZATION KEY - Description of event
+    picture = religious_rite # EVENT PICTURE
+
+    goto_location = scope:plague_city_scope # SPECIAL FIELD - Find important province
+    
+    left_portrait = current_ruler # LEFT PORTRAIT - Ruler shown at the left hand side in event
+
+    trigger = { # TRIGGER FIELD - Checks if the event will fire at all
+    	NOT = { has_variable = "rel_flavor_hellenic_16_cooldown" } # VARIABLE - Cooldown check
+    	religion = roman_pantheon # TRIGGER - Checks if the country has the Hellenic religion
+    	NOT = { has_country_modifier = rel_flavor_hellenic_asklepian_blessing_modifier } # TRIGGER - Check for country modifier
+    	num_of_cities > 3 # TRIGGER - Check that you have more than 3 territories
+    	num_of_cities < 50 # TRIGGER - Check that you have less than 50 territories
+    	any_owned_province = { # TRIGGER SCRIPT LIST - Checks if we any owned province
+    		is_capital = no # TRIGGER - That isn't a capital
+    		NOR = { # BOOLEAN OPERATOR - Nor have
+    			has_province_modifier = asklepion # TRIGGER - the Asklepion province modifier
+    			has_province_modifier = rel_flavor_hellenic_asklepian_plague_modifier # TRIGGER - The Asklepian Plague modifier
+    		}
+    		has_city_status = yes # TRIGGER - That has city status (i.e city/metropolis)
+    		total_population > 15 # TRIGGER - With more than 15 pops
+    	}
+    }
+
+    immediate = { # EFFECT FIELD - Fires after trigger check, but before everything else
+    	set_variable = { # VARIABLE - Set up a variable that will work as a cooldown
+    	    name = "rel_flavor_hellenic_16_cooldown" # Special Field - Variable name
+    	    days = 3650 # Special Field - Variable duration (10 years)
+    	}
+    	random_owned_province = { # EFFECT - Find a random owned province
+    		limit = { # LIMIT - Set Trigger Field
+    			is_capital = no # TRIGGER - That isn't a capital
+	    		NOR = { # BOOLEAN OPERATOR - Nor have
+	    			has_province_modifier = asklepion # TRIGGER - the Asklepion province modifier
+	    			has_province_modifier = rel_flavor_hellenic_asklepian_plague_modifier # TRIGGER - The Asklepian Plague modifier
+	    		}
+    			has_city_status = yes # TRIGGER - With city status
+    			total_population > 15 # TRIGGER - And more than 15 pops
+    		} # End of Trigger Field
+    		save_scope_as = plague_city_scope # EFFECT - Save Scope for later use
+    	}
+    }
+
+    option = { # EFFECT FIELD - FIRST OPTION - Options the player can choose between when receiving the event
+        name = rel_flavor_hellenic.16.a # LOCALIZATION KEY - Option A text
+        current_ruler = { # EVENT TARGET - Find current ruler of your country
+        	add_popularity = subtract_popularity_small # EFFECT - Reduce popularity of ruler
+        }
+        scope:plague_city_scope = { # SAVED SCOPE - Find affected city
+        	add_province_modifier = { # EFFECT - Add a province modifier to the saved scope
+        		name = rel_flavor_hellenic_asklepian_plague_modifier # SPECIAL FIELD - Find the modifier to add
+        		duration = 3650 # SPECIAL FIELD - Duration of the modifier, counted in days (so 10 years for this one)
+        	}
+        	while = { # WHILE Loop 
+        		count = 3 # Special Field - Will run 3 times
+        		limit = { # TRIGGER FIELD - The While loop will end if the following requirements are not true
+        			total_population > 1 # TRIGGER - Population higher than 1
+        		} # END OF TRIGGER FIELD
+        		random_pops_in_province = { # EFFECT - Find a random pops in the saved province scope
+        			kill_pop = yes # EFFECT - Kill the pop we have found
+        		}
+        	}
+        }
+    }
+    option = { # EFFECT FIELD - SECOND OPTION - Options the player can choose between when receiving the event
+        name = rel_flavor_hellenic.16.b # LOCALIZATION KEY - Option B text
+        current_ruler = { # EVENT TARGET - Find current ruler of your country
+        	add_popularity = popularity_small # EFFECT - Increase popularity of your ruler
+        }
+        add_treasury = { # EFFECT - Add or remove gold from your treasury
+        	subtract = scope:plague_city_scope.total_population # INLINE MATH - Subtract gold equal to the population of the city
+        	multiply = 1.5 # INLINE MATH - Multiply that number by 1.5
+        	max = -20 # INLINE MATH - Inverted because it is a negative number, you must pay a minimum of 20 gold
+        	min = -100 # INLINE MATH - Inverted because it is a negative number, you never need to pay more than a max of 100 gold
+        }
+    }
+
+    option = { # EFFECT FIELD - THIRD OPTION - Options the player can choose between when receiving the event
+    	name = rel_flavor_hellenic.16.c # LOCALIZATION KEY - Option C text
+    	trigger = { # TRIGGER FIELD - Checks if the option will show up or not
+    		OR = { # BOOLEAN OPERATOR - Either of the following statements must be true
+    			any_owned_province = { # TRIGGER SCRIPT LIST - Check if you have any owned province with
+    				has_province_modifier = asklepion # TRIGGER - The province modifier Asklepion
+    			}
+    			current_ruler = { # EVENT TARGET - Find current ruler
+    				has_character_modifier = character_improvement_asclepian_wiseman # TRIGGER - And check if they have the character modifier Asklepian Wiseman
+    			}
+    		}
+    	} # END OF TRIGGER FIELD
+    	highlight = yes # Special Field - Highlights option
+    	custom_tooltip = rel_flavor_hellenic.16.c.tt # LOCALIZATION KEY - Adds special loc when hovering the option
+    	current_ruler = { # EVENT TARGET - Find current ruler
+    		add_popularity = popularity_small # EFFECT - Add popularity to the character
+    	}
+    	if = { # If Clause
+    		limit = { # LIMIT - Trigger Field
+    			current_ruler = { # EVENT TARGET - Check if current ruler
+    				has_character_modifier = character_improvement_asclepian_wiseman # TRIGGER - Have the Asklepian Wiseman modifier
+    			}
+    		} # END OF TRIGGER FIELD
+    		current_ruler = { # EVENT TARGET - Find current ruler
+    			remove_character_modifier = character_improvement_asclepian_wiseman # EFFECT - Remove Asklepian Wiseman modifier
+    		}
+    	}
+    	else = { # Else Clause
+    		add_country_modifier = { # EFFECT - Add country modifier
+    			name = rel_flavor_hellenic_asklepian_blessing_modifier # SPECIAL FIELD - Find the modifier to add
+    			duration = 3650 # SPECIAL FIELD - Set duration
+    		}
+    	}
+    }
+}

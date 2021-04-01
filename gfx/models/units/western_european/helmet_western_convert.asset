@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "helmet_western_convert_mesh"
+	file = "helmet_western_convert.mesh"
+
+	meshsettings = {
+		name = "jorodoxShape"
+		index = 0
+		texture_diffuse = "helmet_western_convert_diffuse.dds"
+		texture_normal = "helmet_western_convert_normal.dds"
+		texture_specular = "helmet_western_convert_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "helmet_western_convert_entity"
+	pdxmesh = "helmet_western_convert_mesh"
+}

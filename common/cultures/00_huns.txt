@@ -1,0 +1,39 @@
+﻿hunnic = {
+	color = hsv { 0 0.0574 0.8196 }
+	
+	levy_template = levy_steppes
+	
+	primary = light_infantry
+	second = heavy_cavalry
+	flank = horse_archers
+
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+
+	male_names = {
+		Akatir Attila Balamber Basich Berich Bleda Charaton Dengizich Edeco Ellac Ernakh Hormidac Mundzuk Octar Oebarsius 
+		Onulph Rugila Ruga Tuldila Uldin Ultzin
+	}
+	female_names = { Erekan Kreka }
+	family = { 
+		"Ulagan_Temur" "Bora_Chinua" "Suren_Unegen" "Qara_Erdene" 
+		"Delger_Cheren" Chaganchar Qorchigene Burilgidai Qadantai 
+		Temurcher Tegus_chi Berkegene Yekechar Batu_tu
+	}
+	culture = {
+		hunnic = {}
+	}
+	
+	barbarian_names = { 
+		ACHAEI ALANI AORSI BUDINI CERCETAE DANDARII GELAE GETAE HENIOCHI 
+		NEURI ROXOLANI SOANES URGI TOREATAE SINDI ARRECHI OBIDIACENI DOSCI AGRI
+		SITTACENI ASPURGIANI 
+	}
+	
+	graphical_culture = scythian_gfx
+	ethnicities = {
+		10 = scythian
+	}
+}

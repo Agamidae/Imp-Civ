@@ -1,0 +1,1321 @@
+﻿namespace = roman_conquest_2
+
+# Protect the Adriatic
+roman_conquest_2.1 = {
+    type = country_event
+    title = roman_conquest_2.1.t
+    desc = roman_conquest_2.1.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+    	p:422 = { save_scope_as = province_one }
+    	p:2336 = { save_scope_as = province_two }
+    	p:4088 = { save_scope_as = province_three }
+
+    	if = {
+			limit = {
+				any_owned_province = { is_in_area = illyria_graeca_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = illyria_graeca_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = { is_in_area = dalmatia_orientalis_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = dalmatia_orientalis_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.1.a
+        trigger = { 
+        	scope:province_one = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.1.b
+        trigger = { 
+        	scope:province_two = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest_2.1.c
+    	trigger = { 
+    		scope:province_three = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+    	}
+    	scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest.not_interfere
+    	trigger = {
+    		NOR = {
+    			scope:province_one = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    			scope:province_two = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+				scope:province_three = { 
+					owner = root 
+					NOT = { has_variable = roman_colonia_flag }
+				}
+    		}
+    	}
+    }
+}
+
+# Illyrian Foothold
+roman_conquest_2.2 = {
+    type = country_event
+    title = roman_conquest_2.2.t
+    desc = roman_conquest_2.2.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+    	p:422 = { save_scope_as = province_one }
+    	p:2336 = { save_scope_as = province_two }
+    	p:415 = { save_scope_as = province_three }
+
+    	if = {
+			limit = {
+				any_owned_province = { is_in_area = illyria_graeca_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = illyria_graeca_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.1.a
+        trigger = { 
+        	scope:province_one = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.1.b
+        trigger = { 
+        	scope:province_two = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest_2.2.c
+    	trigger = { 
+    		scope:province_three = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+    	}
+    	scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest.not_interfere
+    	trigger = {
+    		NOR = {
+    			scope:province_one = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    			scope:province_two = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+				scope:province_three = { 
+					owner = root 
+					NOT = { has_variable = roman_colonia_flag }
+				}
+    		}
+    	}
+    }
+}
+
+# Island Foothold
+roman_conquest_2.3 = {
+    type = province_event
+    title = roman_conquest_2.3.t
+    desc = roman_conquest_2.3.desc
+    picture = greek_city_market
+
+    goto_location = ROOT
+
+    trigger = {
+    
+    }
+
+    immediate = {
+		state = {
+			add_state_modifier = {
+				name = new_roman_conquest_foreign_smod
+				duration = 1825 # 5 years
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.3.a
+        trigger = {
+        	free_building_slots > 0
+        }
+        add_building_level = fortress_building
+    }
+    option = {      
+        name = roman_conquest_2.3.b
+        add_province_modifier = {
+			name = roman_mission_island_foothold_naval_boon_modifier
+			duration = 7300
+		}
+    }
+}
+
+# Northern Sweep
+roman_conquest_2.4 = {
+    type = country_event
+    title = roman_conquest_2.4.t
+    desc = roman_conquest_2.4.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+    	p:4098 = { save_scope_as = province_one }
+    	p:4096 = { save_scope_as = province_two }
+
+    	if = {
+			limit = {
+				any_owned_province = { is_in_area = illyria_graeca_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = illyria_graeca_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.4.a
+        trigger = { 
+        	scope:province_one = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.4.b
+        trigger = { 
+        	scope:province_two = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest.not_interfere
+    	trigger = {
+    		NOR = {
+    			scope:province_one = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    			scope:province_two = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    		}
+    	}
+    }
+}
+
+# Ionian Coast
+roman_conquest_2.5 = {
+    type = country_event
+    title = roman_conquest_2.5.t
+    desc = roman_conquest_2.5.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+    	p:465 = { save_scope_as = province_one }
+    	p:476 = { save_scope_as = province_two }
+    	p:456 = { save_scope_as = province_three }
+
+    	if = {
+			limit = {
+				any_owned_province = { is_in_area = aetolia_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = aetolia_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = { is_in_area = epirus_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = epirus_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.5.a
+        trigger = { 
+        	scope:province_one = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.5.b
+        trigger = { 
+        	scope:province_two = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest_2.5.c
+    	trigger = { 
+    		scope:province_three = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+    	}
+    	scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest.not_interfere
+    	trigger = {
+    		NOR = {
+    			scope:province_one = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    			scope:province_two = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+				scope:province_three = { 
+					owner = root 
+					NOT = { has_variable = roman_colonia_flag }
+				}
+    		}
+    	}
+    }
+}
+
+# Annexing Macedon
+roman_conquest_2.6 = {
+    type = country_event
+    title = roman_conquest_2.6.t
+    desc = roman_conquest_2.6.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+    	p:379 = { save_scope_as = province_one }
+    	p:373 = { save_scope_as = province_two }
+
+    	if = {
+			limit = {
+				any_owned_province = { is_in_area = aetolia_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = aetolia_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = { is_in_area = epirus_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = epirus_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.6.a
+        trigger = { 
+        	scope:province_one = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.6.b
+        trigger = { 
+        	scope:province_two = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest.not_interfere
+    	trigger = {
+    		NOR = {
+    			scope:province_one = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    			scope:province_two = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    		}
+    	}
+    }
+}
+
+# Peleponnesian Colony
+roman_conquest_2.7 = {
+    type = country_event
+    title = roman_conquest_2.7.t
+    desc = roman_conquest_2.7.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+    	p:427 = { save_scope_as = province_one }
+    	p:440 = { save_scope_as = province_two }
+    	p:431 = { save_scope_as = province_three }
+    	p:418 = { save_scope_as = province_four }
+
+    	if = {
+			limit = {
+				any_owned_province = { is_in_area = south_peleponnesos_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = south_peleponnesos_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = { is_in_area = achaea_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = achaea_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.7.a
+        trigger = { 
+        	scope:province_one = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.7.b
+        trigger = { 
+        	scope:province_two = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest_2.7.c
+    	trigger = { 
+    		scope:province_three = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+    	}
+    	scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest_2.7.d
+    	trigger = { 
+    		scope:province_four = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+    	}
+    	scope:province_four = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest.not_interfere
+    	trigger = {
+    		NOR = {
+    			scope:province_one = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    			scope:province_two = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+				scope:province_three = { 
+					owner = root 
+					NOT = { has_variable = roman_colonia_flag }
+				}
+				scope:province_four = { 
+					owner = root 
+					NOT = { has_variable = roman_colonia_flag }
+				}
+    		}
+    	}
+    }
+}
+
+# Home of Civilization
+roman_conquest_2.8 = {
+    type = country_event
+    title = roman_conquest_2.8.t
+    desc = roman_conquest_2.8.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+    	p:416 = { save_scope_as = province_one }
+    	p:426 = { save_scope_as = province_two }
+    	p:424 = { save_scope_as = province_three }
+    	p:423 = { save_scope_as = province_four }
+
+    	if = {
+			limit = {
+				any_owned_province = { is_in_area = boeotia_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = boeotia_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = { is_in_area = central_greece_area }
+			}
+			random_owned_province = {
+				limit = { is_in_area = central_greece_area }
+				state = {
+					add_state_modifier = {
+						name = new_roman_conquest_foreign_smod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+    }
+
+    option = {      
+        name = roman_conquest_2.8.a
+        trigger = { 
+        	scope:province_one = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.8.b
+        trigger = { 
+        	scope:province_two = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest_2.8.c
+    	trigger = { 
+    		scope:province_three = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+    	}
+    	scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest_2.8.d
+    	trigger = { 
+    		scope:province_four = { 
+        		owner = root
+        		NOT = {	has_variable = roman_colonia_flag }
+        	}
+    	}
+    	scope:province_four = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+    	name = roman_conquest.not_interfere
+    	trigger = {
+    		NOR = {
+    			scope:province_one = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+    			scope:province_two = { 
+    				owner = root 
+    				NOT = { has_variable = roman_colonia_flag }
+    			}
+				scope:province_three = { 
+					owner = root 
+					NOT = { has_variable = roman_colonia_flag }
+				}
+				scope:province_four = { 
+					owner = root 
+					NOT = { has_variable = roman_colonia_flag }
+				}
+    		}
+    	}
+    }
+}
+
+# Subdue Thrace
+roman_conquest_2.9 = {
+    type = country_event
+    title = roman_conquest_2.9.t
+    desc = roman_conquest_2.9.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:350 = { save_scope_as = province_one }
+        p:1453 = { save_scope_as = province_two }
+        p:481 = { save_scope_as = province_three }
+    }
+
+    option = {      
+        name = roman_conquest_2.9.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.9.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.9.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}
+
+# Entering Bithynia
+roman_conquest_2.10 = {
+    type = country_event
+    title = roman_conquest_2.10.t
+    desc = roman_conquest_2.10.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:240 = { save_scope_as = province_one }
+        p:207 = { save_scope_as = province_two }
+        p:243 = { save_scope_as = province_three }
+        p:236 = { save_scope_as = province_four }
+    }
+
+    option = {      
+        name = roman_conquest_2.10.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.10.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.10.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.10.d
+        trigger = { 
+            scope:province_four = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_four = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}
+
+# The Pontic Threat
+roman_conquest_2.11 = {
+    type = country_event
+    title = roman_conquest_2.11.t
+    desc = roman_conquest_2.11.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:1812 = { save_scope_as = province_one }
+        p:1807 = { save_scope_as = province_two }
+        p:1819 = { save_scope_as = province_three }
+        p:1734 = { save_scope_as = province_four }
+    }
+
+    option = {      
+        name = roman_conquest_2.11.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.11.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.11.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.11.d
+        trigger = { 
+            scope:province_four = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_four = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}
+
+# The Coast of Ionia
+roman_conquest_2.12 = {
+    type = country_event
+    title = roman_conquest_2.12.t
+    desc = roman_conquest_2.12.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:278 = { save_scope_as = province_one }
+        p:290 = { save_scope_as = province_two }
+        p:1981 = { save_scope_as = province_three }
+        p:266 = { save_scope_as = province_four }
+    }
+
+    option = {      
+        name = roman_conquest_2.12.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.12.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.12.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.12.d
+        trigger = { 
+            scope:province_four = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_four = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}
+
+# Ancient Syria
+roman_conquest_2.13 = {
+    type = country_event
+    title = roman_conquest_2.13.t
+    desc = roman_conquest_2.13.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:790 = { save_scope_as = province_one }
+        p:779 = { save_scope_as = province_two }
+        p:766 = { save_scope_as = province_three }
+    }
+
+    option = {      
+        name = roman_conquest_2.13.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.13.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.13.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}
+
+# A Colony in Palestine
+roman_conquest_2.14 = {
+    type = country_event
+    title = roman_conquest_2.14.t
+    desc = roman_conquest_2.14.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:687 = { save_scope_as = province_one }
+        p:674 = { save_scope_as = province_two }
+        p:680 = { save_scope_as = province_three }
+        p:665 = { save_scope_as = province_four }
+    }
+
+    option = {      
+        name = roman_conquest_2.14.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.14.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.14.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.14.d
+        trigger = { 
+            scope:province_four = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_four = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}
+
+# The Pirate Nest
+roman_conquest_2.15 = {
+    type = country_event
+    title = roman_conquest_2.15.t
+    desc = roman_conquest_2.15.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:1881 = { save_scope_as = province_one }
+        p:1892 = { save_scope_as = province_two }
+        p:1904 = { save_scope_as = province_three }
+        p:1911 = { save_scope_as = province_four }
+    }
+
+    option = {      
+        name = roman_conquest_2.15.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.15.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.15.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.15.d
+        trigger = { 
+            scope:province_four = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_four = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}
+
+# Anatolian Riches
+roman_conquest_2.16 = {
+    type = country_event
+    title = roman_conquest_2.16.t
+    desc = roman_conquest_2.16.desc
+    picture = romans_marching
+
+    trigger = {
+    
+    }
+
+    immediate = {
+        p:189 = { save_scope_as = province_one }
+        p:292 = { save_scope_as = province_two }
+        p:185 = { save_scope_as = province_three }
+    }
+
+    option = {      
+        name = roman_conquest_2.16.a
+        trigger = { 
+            scope:province_one = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_one = { roman_mission_colonia_effect = yes }
+    }
+    option = {      
+        name = roman_conquest_2.16.b
+        trigger = { 
+            scope:province_two = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_two = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest_2.16.c
+        trigger = { 
+            scope:province_three = { 
+                owner = root
+                NOT = { has_variable = roman_colonia_flag }
+            }
+        }
+        scope:province_three = { roman_mission_colonia_effect = yes }
+    }
+    option = {
+        name = roman_conquest.not_interfere
+        trigger = {
+            NOR = {
+                scope:province_one = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_two = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_three = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+                scope:province_four = { 
+                    owner = root 
+                    NOT = { has_variable = roman_colonia_flag }
+                }
+            }
+        }
+    }
+}

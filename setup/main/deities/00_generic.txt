@@ -1,0 +1,133 @@
+deity_manager = {
+	deities_database = { ### KEYS 1400-1411 ###
+		1400 = {
+			key = omen_burial_grounds
+			deity = deity_burial_grounds
+		}
+		1401 = {
+			key = omen_church_property
+			deity = deity_church_property
+		}
+		1402 = {
+			key = omen_choral_music
+			deity = deity_choral_music
+		}
+		1403 = {
+			key = omen_cathedral
+			deity = deity_cathedral
+		}
+		1404 = { #Tier2
+			key = omen_crusade
+			deity = deity_crusade
+		}
+		1405 = {
+			key = omen_cross_cult
+			deity = deity_cross_cult
+		}
+		1406 = {
+			key = omen_dare_mehr
+			deity = deity_dare_mehr
+		}
+		1407 = {
+			key = omen_feed_world
+			deity = deity_feed_world
+		}
+		1408 = { #Tier3
+			key = omen_def_o_faith
+			deity = deity_def_o_faith
+		}
+		1409 = {
+			key = omen_papal_primac
+			deity = deity_papal_primac
+		}
+		1410 = {
+			key = omen_gurdwara
+			deity = deity_gurdwara
+		}
+		1411 = {
+			key = omen_jesuit_ed
+			deity = deity_jesuit_ed
+		}
+		1412 = { #Tier4
+			key = omen_holy_order
+			deity = deity_holy_order
+		}
+		1413 = {
+			key = omen_piligrim
+			deity = deity_piligrim
+		}
+		1414 = {
+			key = omen_meeting_house
+			deity = deity_meeting_house
+		}
+		1415 = {
+			key = omen_rel_commune
+			deity = deity_rel_commune
+		}
+		1416 = { #Tier5
+			key = omen_holy_water
+			deity = deity_holy_water
+		}
+		1417 = {
+			key = omen_rel_unity
+			deity = deity_rel_unity
+		}
+		1418 = {
+			key = omen_mosque
+			deity = deity_mosque
+		}
+		1419 = {
+			key = omen_war_monks
+			deity = deity_war_monks
+		}
+		1420 = { #Tier6
+			key = omen_miss_zeal
+			deity = deity_miss_zeal
+		}
+		1421 = {
+			key = omen_sacred_place
+			deity = deity_sacred_place
+		}
+		1422 = {
+			key = omen_pagoda
+			deity = deity_pagoda
+		}
+		1423 = {
+			key = omen_work_ethic
+			deity = deity_work_ethic
+		}
+		1424 = { #Tier7
+			key = omen_monastic_isol
+			deity = deity_monastic_isol
+		}
+		1425 = {
+			key = omen_stewardship
+			deity = deity_stewardship
+		}
+		1426 = {
+			key = omen_stupa
+			deity = deity_stupa
+		}
+		1427 = {
+			key = omen_zen_meditation
+			deity = deity_zen_meditation
+		}
+		1428 = { #Tier8
+			key = omen_rel_colony
+			deity = deity_rel_colony
+		}
+		1429 = {
+			key = omen_world_church
+			deity = deity_world_church
+		}
+		1430 = {
+			key = omen_synagogue
+			deity = deity_synagogue
+		}
+		1431 = { #Tier9
+			key = omen_wat
+			deity = deity_wat
+		}
+	}
+}
+

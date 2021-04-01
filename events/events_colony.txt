@@ -1,0 +1,22 @@
+﻿namespace = colony
+
+colony.1 = {
+  type = province_event
+  hidden = yes
+	trigger = {
+		current_date < 550.1.1
+		owner = {
+			NOT = {
+				government = city_state
+			}
+		}
+	}
+
+
+	immediate = {
+		every_pops_in_province = {
+			set_pop_culture = prev.owner.culture
+			set_pop_religion = prev.owner.religion
+		}
+	}
+}

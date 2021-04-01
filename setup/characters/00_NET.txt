@@ -1,0 +1,27 @@
+﻿"NET"={
+	country="NET"
+	42={
+		first_name="Wilhelmina"
+		family= c:NET.fam:van_Oranje_Nassau
+		birth_date=76.8.31
+		female=yes
+		culture="dutch"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=5
+		add_charisma=9
+		add_finesse=7
+		add_zeal=5
+		no_traits=yes
+		add_trait="oranjes"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="just"
+		add_gold=100
+		add_popularity=100
+		c:NET={
+			set_as_ruler=char:42
+		}
+		dna="yNT/Pxxlj1ACqTlrAmgCaAKVApUCcAJwApACkAKDAoMCiQKTAlkChgJ7AnsBrgFRAUwBTAKAAoAChgKGApMCkwJ5AnkCagJqAokCiQKDAoMClAKUAooCigJ2AnYClQKVAmkCaQKNAo0DowOjAn0CfQLgAn8CkwKTAVsBWwJ2AnYCjwKPAngCeAAgACACdQJ1AmoCagJsAmwCdAJ0Ao0CjQOpA6kCPgKFAmsCawKCAoICiAKIAoACgAKSApICgAKAAV4BXgKGAoYCgwKDAm8CbwJsApUCRgKCAoICggJvAm8CaQJpAokCiQLXAtcAzADMAHgAeAD3APcAfgB+AXkBeQKaApoAjgCOABgAGACpAKkAcQBxAJoAmgAAAAAAgwCDAS0BLQBKAEoBPAE8ADoAOgECAWYCiQKJATgBOAAAAAAAeAB4AKcApwGjAQUAtgC2AtwC3ANtA20AowCjACEAIQA0ABoC5gLmARsBGwNdA10KawnhAAAAAABRAFEJPQk9AE4ATgX8BfwHPweLCE8ITwAAAAAAAAAAAAAAAA=="
+	}
+}

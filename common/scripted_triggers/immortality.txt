@@ -1,0 +1,3 @@
+﻿is_immortal_trigger = {
+	has_trait = immortal
+}

@@ -1,0 +1,426 @@
+﻿namespace = rel_flavor_thracian
+
+# A Blessing of war
+rel_flavor_thracian.1 = {
+	type = country_event
+	title = "rel_flavor_thracian.1.t"
+	desc = "rel_flavor_thracian.1.desc"
+	picture = religious_rite
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_priest
+	
+	trigger = {
+		country_thracian_religion_trigger = yes
+		war = yes
+		NOT = { has_variable = rel_flavor_thracian_1_cooldown }
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_thracian_1_cooldown
+			days = 5475
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_thracian.1.a"
+		add_political_influence = subtract_influence_huge
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 5
+		}
+		add_country_modifier = {
+			name = country_improvement_thracian_war_blessing
+			duration = 1825
+		}
+		scope:random_priest = {
+			add_prominence = prominence_medium
+			add_loyalty = loyalty_priest_allowed
+		}
+	}	
+
+	option = {
+		name = "rel_flavor_thracian.1.b"
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_medium
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}
+
+# Forceful conversion
+rel_flavor_thracian.2 = {
+	type = country_event
+	title = "rel_flavor_thracian.2.t"
+	desc = "rel_flavor_thracian.2.desc"
+	picture = hellenic_marketplace
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_marshal
+	right_portrait = scope:random_priest
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		country_thracian_religion_trigger = yes
+		NOT = { has_variable = rel_flavor_thracian_2_cooldown }
+		any_owned_province = {
+			NOT = { dominant_province_religion = root.religion }
+			NOT = { has_province_modifier = province_diminishment_thracian_religious_unrest }
+			any_pops_in_province = {
+				count > 5
+			}
+		}
+		any_character = {
+			has_martial_office_trigger = yes
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_thracian_2_cooldown 
+			days = 3650
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { dominant_province_religion = root.religion }
+			}
+			save_scope_as = country_province
+		}
+		random_character = {
+			limit = {
+				has_martial_office_trigger = yes
+			}
+			save_scope_as = random_marshal
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_thracian.2.a"
+		add_tyranny = tyranny_large
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_diminishment_thracian_religious_unrest
+				duration = 5475
+			}
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = root.religion }
+				}
+				order_by = pop_hapiness
+				max = {
+					value = total_population
+					divide = 4
+				}
+				kill_pop = yes
+			}
+			every_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = root.religion }
+				}
+				set_pop_religion = root.religion
+			}
+		}
+		scope:random_marshal = {
+			add_loyalty = loyalty_marshal_initiative
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}	
+
+	option = {
+		name = "rel_flavor_thracian.2.b"
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = root.religion }
+				}
+				order_by = pop_hapiness
+				max = {
+					value = total_population
+					divide = 4
+				}
+				set_pop_religion = root.religion
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_allowed
+		}
+		scope:random_marshal = {
+			add_loyalty = loyalty_marshal_ignored
+		}
+	}
+}
+
+# Build a shrine dedicated to the patron god
+rel_flavor_thracian.3 = {
+	type = country_event
+	title = "rel_flavor_thracian.3.t"
+	desc = "rel_flavor_thracian.3.desc"
+	picture = city_construction
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		country_thracian_religion_trigger = yes
+		NOT = { has_variable = rel_flavor_thracian_3_cooldown }
+		any_owned_province = {
+			dominant_province_religion = root.religion
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_thracian_3_cooldown
+			days = 3650
+		}
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = root.religion
+			}
+			save_scope_as = country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_thracian.3.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		scope:country_province = {
+			add_province_modifier = {
+				name = province_improvement_thracian_shrine
+				duration = 3650
+			}
+		}
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+	}	
+
+	option = {
+		name = "rel_flavor_thracian.3.b"
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+}
+
+# The royal cult to Thagimasadas - Heptadic only
+rel_flavor_thracian.4 = {
+	type = country_event
+	title = "rel_flavor_thracian.4.t"
+	desc = "rel_flavor_thracian.4.desc"
+	picture = religious_rite
+
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = indo_iranian_religion
+		NOT = { has_variable = rel_flavor_thracian_4_cooldown }
+		OR = {
+			is_monarchy = yes
+			government = tribal_kingdom
+			government = imperium
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_thracian_4_cooldown
+			days = 3650
+		}
+	}
+
+	option = {
+		name = "rel_flavor_thracian.4.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 12
+		}
+		current_ruler = {
+			add_character_modifier = {
+				name = character_improvement_thagimasadas_champion
+				duration = 3650
+			}
+		}
+		every_character = {
+			limit = {
+				is_ruler = no
+				OR = {
+					has_any_office = yes
+					is_clan_chief = yes
+					is_primary_heir = yes
+				}
+			}
+			add_loyalty = loyalty_large_festival
+		}
+	}	
+
+	option = {
+		name = "rel_flavor_thracian.4.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		current_ruler = {
+			add_character_modifier = {
+				name = character_improvement_thagimasadas_boon
+				duration = 3650
+			}
+		}
+		every_character = {
+			limit = {
+				is_ruler = no
+				OR = {
+					has_any_office = yes
+					is_clan_chief = yes
+					is_primary_heir = yes
+				}
+			}
+			add_loyalty = loyalty_small_festival
+		}
+	}
+
+	option = {
+		name = "rel_flavor_thracian.4.c"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}
+
+# Hellenics/Cybelenes turning to our faith
+rel_flavor_thracian.5 = {
+	type = country_event
+	title = "rel_flavor_thracian.5.t"
+	desc = "rel_flavor_thracian.5.desc"
+	picture = religious_rite
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_priest
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		country_thracian_religion_trigger = yes
+		NOT = { has_variable = rel_flavor_thracian_5_cooldown }
+		any_owned_province = {
+			OR = {
+				dominant_province_religion = roman_pantheon
+				dominant_province_religion = anatolian_religion
+			}
+			any_pops_in_province = {
+				count > 5
+				OR = {
+					pop_religion = roman_pantheon
+					pop_religion = anatolian_religion
+				}
+			}
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_thracian_5_cooldown
+			days = 3650
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					dominant_province_religion = roman_pantheon
+					dominant_province_religion = anatolian_religion
+				}
+				any_pops_in_province = {
+					count > 5
+					OR = {
+						pop_religion = roman_pantheon
+						pop_religion = anatolian_religion
+					}
+				}
+			}
+			save_scope_as = country_province
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_thracian.5.a"
+		add_tyranny = tyranny_medium
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					OR = {
+						pop_religion = roman_pantheon
+						pop_religion = anatolian_religion
+					}
+				}
+				order_by = pop_hapiness
+				max = 6
+				check_range_bounds = no
+				set_pop_religion = root.religion
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_allowed
+		}
+	}	
+
+	option = {
+		name = "rel_flavor_thracian.5.b"
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					OR = {
+						pop_religion = roman_pantheon
+						pop_religion = anatolian_religion
+					}
+				}
+				order_by = pop_hapiness
+				max = 2
+				check_range_bounds = no
+				set_pop_religion = root.religion
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}

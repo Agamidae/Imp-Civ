@@ -1,0 +1,546 @@
+﻿namespace = party_events_rome
+
+party_events_rome.1 = { # Very low party approval from Populares
+    type = country_event
+    title = party_events_rome.1.t
+    desc = party_events_rome.1.desc
+    picture = senator_conversing
+    
+    left_portrait = current_ruler
+    right_portrait = scope:populares_leader
+
+    trigger = {
+        NOT = { has_variable = party_events_rome_1_cooldown }
+		has_party_type = populares_party
+		populares_party_support <= party_approval_check_low
+		any_character = {
+			is_ruler = no
+			is_party_leader = yes
+    		party_type = populares_party
+		}
+    }
+
+    immediate = {
+        set_variable = {
+            name = party_events_rome_1_cooldown
+            days = 7300
+        }
+    	random_character = {
+    		limit = {
+    			is_ruler = no
+    			is_leader_of_party_type = populares_party
+    		}
+    		save_scope_as = populares_leader
+    	}
+    }
+
+    option = {      
+        name = party_events_rome.1.a
+        highlight = yes
+        trigger = {
+        	scope:populares_leader = {
+        		corruption > 20
+        	}
+        }
+        custom_tooltip = party_events_rome.1.a.tt
+        add_treasury = {
+            subtract = root.has_monthly_income
+            max = -20
+            min = -100
+        }
+        add_party_approval = {
+            party_type = populares_party
+            value = party_approval_large
+        }
+        current_ruler = {
+            add_corruption = corruption_medium
+        }
+        scope:populares_leader = {
+            add_gold = {
+                add = root.has_monthly_income
+                min = 20
+                max = 100
+            }
+            add_corruption = corruption_medium
+        }
+    }
+    option = {      
+        name = party_events_rome.1.b
+        add_political_influence = -10
+        add_party_approval = {
+            party_type = populares_party
+            value = party_approval_large
+        }
+        add_country_modifier = {
+            name = party_events_rome_populares_concession
+            duration = 3650
+        }
+    }
+
+    option = {
+        name = party_events_rome.1.c
+        if = {
+            limit = {
+                populares_party_support > 0
+            }
+            add_party_approval = {
+                party_type = populares_party
+                value = party_disapproval_small
+            }
+        }
+        else = {
+            scope:populares_leader = {
+                add_loyalty = disappointed_party_leader
+            }
+        }
+    }
+}
+
+party_events_rome.2 = { # Very low party approval from Optimates
+    type = country_event
+    title = party_events_rome.2.t
+    desc = party_events_rome.2.desc
+    picture = senate_debate
+    
+    left_portrait = current_ruler
+    right_portrait = scope:optimates_leader
+
+    trigger = {
+        NOT = { has_variable = party_events_rome_2_cooldown }
+        has_party_type = optimates_party
+        optimates_party_support <= party_approval_check_low
+        any_character = {
+            is_ruler = no
+            is_party_leader = yes
+            party_type = optimates_party
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = party_events_rome_2_cooldown
+            days = 7300
+        }
+        random_character = {
+            limit = {
+                is_ruler = no
+                is_leader_of_party_type = optimates_party
+            }
+            save_scope_as = optimates_leader
+        }
+    }
+
+    option = {      
+        name = party_events_rome.2.a
+        highlight = yes
+        trigger = {
+            tyranny > 30
+        }
+        custom_tooltip = party_events_rome.2.a.tt
+        add_political_influence = -20
+        add_tyranny = subtract_tyranny_large
+        add_party_approval = {
+            party_type = optimates_party
+            value = party_approval_medium
+        }
+        if = {
+            limit = {
+                has_party_type = populares_party
+                populares_party_support > 0
+            }
+            add_party_approval = {
+                party_type = populares_party
+                value = party_disapproval_small
+            }
+        }
+    }
+    option = {      
+        name = party_events_rome.2.b
+        add_stability = -5
+        add_party_approval = {
+            party_type = optimates_party
+            value = party_approval_large
+        }
+        if = {
+            limit = {
+                has_party_type = boni_party
+                boni_party_support > 0
+            }
+            add_party_approval = {
+                party_type = boni_party
+                value = party_disapproval_small
+            }
+        }
+    }
+    option = {
+        name = party_events_rome.2.c
+        if = {
+            limit = {
+                optimates_party_support > 0
+            }
+            add_party_approval = {
+                party_type = optimates_party
+                value = party_disapproval_small
+            }
+        }
+        else = {
+            scope:optimates_leader = {
+                add_loyalty = disappointed_party_leader
+            }
+        }
+    }
+}
+
+party_events_rome.3 = { # Very low party approval from Boni
+    type = country_event
+    title = party_events_rome.3.t
+    desc = party_events_rome.3.desc
+    picture = senator_conversing
+    
+    left_portrait = current_ruler
+    right_portrait = scope:boni_leader
+
+    trigger = {
+        NOT = { has_variable = party_events_rome_3_cooldown }
+        has_party_type = boni_party
+        optimates_party_support <= party_approval_check_low
+        any_character = {
+            is_ruler = no
+            is_party_leader = yes
+            party_type = boni_party
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = party_events_rome_3_cooldown
+            days = 7300
+        }
+        random_character = {
+            limit = {
+                is_ruler = no
+                is_leader_of_party_type = boni_party
+            }
+            save_scope_as = boni_leader
+        }
+    }
+
+    option = {      
+        name = party_events_rome.3.a
+        highlight = yes
+        trigger = {
+            stability > 60
+        }
+        custom_tooltip = party_events_rome.3.a.tt
+        add_political_influence = -5
+        add_party_approval = {
+            party_type = boni_party
+            value = party_approval_medium
+        }
+    }
+    option = {      
+        name = party_events_rome.3.b
+        add_treasury = {
+            subtract = root.has_monthly_income
+            multiply = 4
+            max = -50
+            min = -500
+        }
+        add_party_approval = {
+            party_type = boni_party
+            value = party_approval_large
+        }
+        current_ruler = {
+            add_popularity = popularity_large
+        }
+    }
+    option = {
+        name = party_events_rome.3.c
+        if = {
+            limit = {
+                boni_party_support > 0
+            }
+            add_party_approval = {
+                party_type = boni_party
+                value = party_disapproval_small
+            }
+        }
+        else = {
+            scope:boni_leader = {
+                add_loyalty = disappointed_party_leader
+            }
+        }
+    }
+}
+
+party_events_rome.4 = { # Very high party approval from Populares
+    type = country_event
+    title = party_events_rome.4.t
+    desc = party_events_rome.4.desc
+    picture = farming
+    
+    left_portrait = current_ruler
+    right_portrait = scope:populares_leader
+
+    trigger = {
+        NOT = { has_variable = party_events_rome_4_cooldown }
+        has_party_type = populares_party
+        populares_party_support >= party_approval_check_high
+        any_character = {
+            is_ruler = no
+            is_party_leader = yes
+            party_type = populares_party
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = party_events_rome_4_cooldown
+            days = 7300
+        }
+        random_character = {
+            limit = {
+                is_ruler = no
+                is_leader_of_party_type = populares_party
+            }
+            save_scope_as = populares_leader
+        }
+    }
+
+    option = {      
+        name = party_events_rome.4.a
+        add_party_approval = {
+            party_type = populares_party
+            value = -20
+        }
+        add_country_modifier = {
+            name = party_events_rome_populares_payoff_1
+            duration = 3650
+        }
+        add_manpower = {
+            value = root.max_manpower
+            divide = 10
+            min = 2
+            max = 20
+        }
+    }
+    option = {      
+        name = party_events_rome.4.b
+        add_party_approval = {
+            party_type = populares_party
+            value = -10
+        }
+        add_country_modifier = {
+            name = party_events_rome_populares_payoff_2
+            duration = 3650
+        }
+    }
+    option = {
+        name = party_events_rome.4.c
+        if = {
+            limit = {
+                populares_party_support < 100
+            }
+            add_party_approval = {
+                party_type = populares_party
+                value = party_approval_small
+            }
+        }
+        else = {
+            current_ruler = {
+                add_popularity = popularity_small
+            }
+        }
+    }
+}
+
+party_events_rome.5 = { # Very high approval from Optimates
+    type = country_event
+    title = party_events_rome.5.t
+    desc = party_events_rome.5.desc
+    picture = aqueducts
+    
+    left_portrait = current_ruler
+    right_portrait = scope:optimates_leader
+
+    trigger = {
+        NOT = { has_variable = party_events_rome_5_cooldown }
+        has_party_type = optimates_party
+        optimates_party_support >= party_approval_check_high
+        any_character = {
+            is_ruler = no
+            is_party_leader = yes
+            party_type = optimates_party
+        }
+        current_ruler = {
+            is_minor_character = no
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = party_events_rome_5_cooldown
+            days = 7300
+        }
+        random_character = {
+            limit = {
+                is_ruler = no
+                is_leader_of_party_type = optimates_party
+            }
+            save_scope_as = optimates_leader
+        }
+    }
+
+    option = {      
+        name = party_events_rome.5.a
+        add_party_approval = {
+            party_type = optimates_party
+            value = -20
+        }
+        add_country_modifier = {
+            name = party_events_rome_optimates_payoff_2
+            duration = 3650
+        }
+        custom_tooltip = party_events_rome.5.a.tt
+        hidden_effect = {
+            every_character = {
+                limit = {
+                    is_head_of_family = yes
+                }
+                add_loyalty = optimates_happy_family_heads
+            }
+        }
+    }
+    option = {      
+        name = party_events_rome.5.b
+        add_party_approval = {
+            party_type = optimates_party
+            value = -10
+        }
+        capital_scope = {
+            define_pop = {
+                type = citizen # TODO JH - Make this a Noble
+                culture = root.culture
+                religion = root.religion
+            }
+            add_province_modifier = {
+                name = party_events_rome_optimates_payoff_1
+                duration = 3650
+            }
+        }
+    }
+    option = {
+        name = party_events_rome.5.c
+        if = {
+            limit = {
+                optimates_party_support < 100
+            }
+            add_party_approval = {
+                party_type = optimates_party
+                value = party_approval_small
+            }
+        }
+        else = {
+            current_ruler = {
+                add_popularity = popularity_small
+            }
+        }
+    }
+}
+
+party_events_rome.6 = { # Very high approval from the Boni
+    type = country_event
+    title = party_events_rome.6.t
+    desc = party_events_rome.6.desc
+    picture = aqueducts
+    
+    left_portrait = current_ruler
+    right_portrait = scope:boni_leader
+
+    trigger = {
+        NOT = { has_variable = party_events_rome_6_cooldown }
+        has_party_type = boni_party
+        boni_party_support >= party_approval_check_high
+        any_character = {
+            is_ruler = no
+            is_party_leader = yes
+            party_type = boni_party
+            NOT = {
+                is_rival = root.current_ruler
+            }
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = party_events_rome_6_cooldown
+            days = 7300
+        }
+        random_character = {
+            limit = {
+                is_ruler = no
+                is_leader_of_party_type = boni_party
+            }
+            save_scope_as = boni_leader
+        }
+    }
+
+    option = {      
+        name = party_events_rome.6.a
+        add_party_approval = {
+            party_type = boni_party
+            value = -20
+        }
+        add_country_modifier = {
+            name = party_events_rome_boni_payoff_1
+            duration = 3650
+        }
+        current_ruler = {
+            if = {
+                limit = {
+                    popularity < 100
+                }
+                add_popularity = popularity_large
+            }
+            else_if = {
+                limit = {
+                    finesse < 12
+                }
+                add_finesse = 1
+            }
+            else = {
+                root = {
+                    add_stability = 5
+                }
+            }
+        }
+    }
+    option = {      
+        name = party_events_rome.6.b
+        add_party_approval = {
+            party_type = boni_party
+            value = -10
+        }
+        add_country_modifier = {
+            name = party_events_rome_boni_payoff_2
+            duration = 3650
+        }
+    }
+    option = {
+        name = party_events_rome.6.c
+        if = {
+            limit = {
+                boni_party_support < 100
+            }
+            add_party_approval = {
+                party_type = boni_party
+                value = party_approval_small
+            }
+        }
+        else = {
+            current_ruler = {
+                add_popularity = popularity_small
+            }
+        }
+    }
+}

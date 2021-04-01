@@ -1,0 +1,25 @@
+﻿"PER"={
+	country="PER"
+	15={
+		first_name="Cyrus"
+		family= c:PER.fam:Achaemenid
+		birth_date=66.6.13
+		culture="persian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=6
+		add_finesse=8
+		add_zeal=6
+		no_traits=yes
+		add_trait="achaemenids"
+		add_trait="immortal"
+		add_trait="conqueror"
+		add_gold=100
+		add_popularity=100
+		c:PER={
+			set_as_ruler=char:15
+		}
+		dna="JPMk87WJt5/GzMbMAloCfwJrAmsCzQKCAk8CigJzAnMCbwJvAmgCaAKVApUCfQJ9AnMCcwKTApMCnwKfApYClgBEAEQBXgFeA00CcQKSApIDqgOqAnACcAFXAVcErQFOAYUCgAKPAo8CawJrACIAIgJ3AncCQwJoAnwCfAKYApgCkQKRAngCeAFkAWQCkgKSAnMCcwKFAoUCfAJ8AnUCdQJ2AnYCgwKDAmcCZwKWApYChgKGAnICcgFyAXIBaQFpAokCiQIyAoYCdgKBArICdAKWApYE3gTeA4UDhQOgA6ACVwKMApACkAKOAo4BOwE7AXABcABFAEUAnACcAAIAAgBEAEQBawFrATEBMQA0ADQAPgA+AFcAUgB/AH8AfgCRAlEAYwCjAKMBXwFXASwBLAIAAJMAkgDoAP4A/gCTAH8CMQFxAo0CjQGEAUQBEwETADkAOQBBAI0CnwF9A2YDZgChAKEEYgRiAzEDMQMcAxwKAgrVAN8AfwL/BUYJ/Qa+AbgB0wL/A+sEwARfAWsBawAAAAAAAAAAAAAAAA=="
+	}
+}

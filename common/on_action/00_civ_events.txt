@@ -1,0 +1,12 @@
+﻿yearly_country_pulse = {
+    events = {
+        imp_rel.1
+		civ_pop.1
+    }
+}
+
+monthly_country_pulse = {
+    events = {
+        imp_rel.2
+    }
+}

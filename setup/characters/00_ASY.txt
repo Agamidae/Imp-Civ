@@ -1,0 +1,25 @@
+﻿"ASY"={
+	country="ASY"
+	19={
+		first_name="Ashurbanipal"
+		family= c:ASY.fam:Sargonid
+		birth_date=70.1.17
+		culture="assyrian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=9
+		add_finesse=7
+		add_zeal=5
+		no_traits=yes
+		add_trait="sargonids"
+		add_trait="immortal"
+		add_trait="aggressive"
+		add_gold=100
+		add_popularity=100
+		c:ASY={
+			set_as_ruler=char:19
+		}
+		dna="Hv9I+ER5qYrn5OfkAnACcAJxAnEChgKGAnkCeQJ5AnkCmAKYApgCmAKFAoUCigKKApECkQJ2AnYDxAPEAm4CbgA8ADwCbwJvAngCeAJrAmsCigKKAnkCeQFcAVwBXQFdAWQBZAJ8AnwCcgJyAAAAAAKBAoECawJrApcClwKJAokCigKKAoMCgwJyAnICawJrA58DnwKFAoUCiQKJA6UDpQJmAmYCkAKQAncCdwJ8AnwBXgFeAnoCegKYApgBeQF5An0CfQAcABwCgAKAA68DrwKbApsCgAKAAWQBZAL/AnUChgKGBNYE1gC1Ap8AkgCSAM4AzgEnAScAvwC/AJ0AnQLNAs0A8ADwAEAAQAC1ALUAiwCLAJQAlAB/AH8BDwEPAQwBDAFhAWECiAKIAogCiACnAKcDAgMCATMBMwB/AH8AOgA6AWoBagBlAGUARQBFAQIBAgBNAE0BegF6ACMAIwC9AL0BCAEIAT4BPgFAAUAKAASfAH8AfwX/BVAJPgQfAG4BbgPPAvwDoQMlBAADQwAAAAAAAAAAAAAAAA=="
+	}
+}

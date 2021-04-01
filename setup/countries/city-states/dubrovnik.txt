@@ -1,0 +1,6 @@
+﻿color = "nero"
+color2 = "cs_maritime"
+
+ship_names = {
+	
+}

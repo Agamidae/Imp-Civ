@@ -1,0 +1,94 @@
+﻿west_slavic = {
+	color = hsv { 0 0.29 0.81 }
+	
+	primary = archers
+	second = light_infantry
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+	levy_template = levy_germanic
+	male_names = { 
+		Iwan Asen Koloman Petar Todor Michael
+		Aleksandar Kalojan Georgi Konstantin Stepan
+		Stracimir Simeon Andon Andrei Angel Atanas 
+		Bogdan Bogomil Branimir Damyan Dimitar Emil 
+		Gavril Hristo Iordan Krasimir Lazar Marko 
+		Mikhail Miroslav Nikola Pavel Radomir Samuil 
+		Vasil Vladimir Zhivko Aleksii Balin Bernardin
+	}
+	female_names = { 
+		Aleksandra Aleksandrina Bilyana Bisera Bogdana Bogna 
+		Borislava Boyana Dana Desislava Donka Elisaveta 
+		Emiliya Evdokiya Filipa Gergana Hristina Iskra 
+		Iva Ivana Ivet Lala Lidiya Lilyana 
+		Lyudmila Maya Nadejda Nevena Penka Rada 
+		Raina Raya Rayna Rosa Nikolina Rositsa 
+		Silva Silviya Snezhana Stoyanka Tereza
+	}
+	family = { Krum Dulo Cometopuli Asen Terter Shishman Teleki }
+	
+	culture = {
+		bulgarian = {}
+		serbian = {
+			male_names = {
+				Stefan Lazar Djuradj Milosh Djordje Alexa 
+				Grgur Petrija Todor Aleksandar Mihailo Milan 
+				Bratislav Darko Dragan Dubravko Dusan Filip 
+				Goran Ivan Josif Konstantin Luka Marko 
+				Mateja Miroslav Nebojsa Nemanja Nenad Nikola 
+				Pedrag Stanko Toma Vinko Vjekoslav Zdravko 
+				Zvonimir Aldimir Asen Berbat Blaz
+			}
+			female_names = {
+				Agata Barbara Branimira Desislava Dubravka Elena 
+				Hicela Jelena Karolina Lovorka Marija Milka 
+				Neda Radica Zdenka Andjela Antonija Bastina 
+				Biljana Bistrina Bojana Casna Chasna Dejana 
+				Dragana Dragoslava Duga Dusica Gordana Grana
+				Grubana Jagoda Jovana Jovanka Karika
+				Ljubica Luka Majka Malina Medeni Meki
+			}
+			family = {
+				Nemanjic Vlastimirovic Obrenovic Obilic Karadjordjevic Kovacevic 
+				Petrovic Dragutinovic Vojislavljevic Sokolovic Ilic Vukanovic 
+				Mrnjavcevic Lazarevic Brakovic Balsic Vukovic Branovic
+			}
+		}
+		croatian = {
+			male_names = {
+				Kresimir Stjepan Almos Dimitrije Zvonimir Trpimir 
+				Goislav Slavic Svetoslav Miroslav Mutimir Ladislav 
+				Karlo Andrej Luj Pero Vladislav Vjenceslav
+				Aleksandar Dragutin Fauszty Franjo Gavrilo Ivan 
+				Juraj Luka Matija Marko Mihajlo Milan 
+				Mirko Nenad Nikola Slavko Toma Vladko 
+				Zvonomir Adam Andrija Bartol Bartolomeus Besar
+			}
+			female_names = {
+				Adriana Anna Borislava Cededa Doroteja Dorothy 
+				Ekaterina Catherine Helena Jadviga Jovana Kera 
+				Ladika Marija Mihaela Nada Petra Viola 
+				Yolanda Jadranka Mare Antonija Capeka Dragana 
+				Dubravka Emilija Gordana Jagoda Jelena Jelka 
+				Lucija Marijana Mirjana Mirna Mojca Natalija
+				Rijeka Silvija Snjezana Sofija Sophia Suzana
+			}
+			family = {
+				Kulinic Trpimirovic Mihaljevic Subic Hrvatinic Kosaca 
+				Vukcic Vukasin Dukasin Babonic Frankopan Kacic 
+				Draskovic Bebek Svetoslavic Kresimirovic Domagojevic Festetic 
+				Gorjanski Svacic Kobilic Lackovic Subic Berislavic
+				Nepilic Jalacic Zrinski Garaj Eltz Kaboga 
+				Crnkovic Cerva Rubido
+			}
+		}
+	}
+	barbarian_names = { SCHUKA SOLOVEY ZMEI TUGARIN }
+	graphical_culture = slavic_gfx
+	ethnicities = {
+		10 = german
+	}
+}

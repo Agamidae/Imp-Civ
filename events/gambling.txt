@@ -1,0 +1,9 @@
+﻿namespace = gambling ##Deprecated
+
+gambling.1 = {
+	type = country_event
+	hidden = yes
+
+	
+}
+

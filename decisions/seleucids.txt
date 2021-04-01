@@ -1,0 +1,99 @@
+﻿# Move Capital Seleukia Pieria
+country_decisions = {
+	found_seleukia_pieria = {
+		potential = {
+			num_of_cities >= 1
+			tag = SEL
+			NOR = { 
+				has_dlc = "Heirs of Alexander"
+				has_variable = founded_seleukia_pieria
+			}
+			has_variable = moved_capital_antioch
+			p:790 = { 
+				is_capital = yes 
+			}
+		}
+		allow = {
+			treasury > 200
+			owns = 789
+			owns = 790
+			p:790 = { 
+				is_capital = yes 
+			}
+		}
+		effect = {
+			set_variable = founded_seleukia_pieria
+			add_treasury = -200
+			p:789 = {
+				add_province_modifier = {
+					name = seleukia_pieria_modifier
+					duration = -1
+				}
+				capital_formable_huge_effect = yes
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	move_capital_antioch = {
+		potential = {
+			num_of_cities >= 1
+			tag = SEL
+			NOR = { 
+				has_dlc = "Heirs of Alexander"
+				has_variable = moved_capital_antioch
+			}
+		}
+		highlight = {
+			scope:province = {
+				OR = {
+					is_in_area = north_phoenicia_area
+					is_in_area = syria_area
+					is_in_area = apamene_area
+				}
+			}
+		}
+		allow = {
+			treasury > 400
+			owns = 790
+			owns_or_subject_owns_area = north_phoenicia_area
+			owns_or_subject_owns_area = syria_area
+			owns_or_subject_owns_area = apamene_area
+		}
+		effect = {
+			set_variable = moved_capital_antioch
+			add_treasury = -400
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							province_id = 790
+						}
+					}
+				}
+				set_capital = 790
+				capital_scope = {
+					establish_city_effect = yes
+				}
+			}
+			capital_scope = {
+				establish_city_effect = yes
+			}
+			p:790 = {
+				add_province_modifier = {
+					name = antioch_orontes_modifier
+					duration = -1
+				}
+				capital_formable_huge_effect = yes
+				state = {
+					set_state_capital = 790
+				}
+			}
+			add_4_free_province_investments = yes
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}

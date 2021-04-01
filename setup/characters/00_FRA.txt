@@ -1,0 +1,44 @@
+﻿"FRA"={
+	country="FRA"
+	32={
+		first_name="Napoleone"
+		family= c:FRA.fam:Bonaparte
+		birth_date=65.8.15
+		culture="french"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=12
+		add_finesse=8
+		add_zeal=6
+		no_traits=yes
+		add_trait="bonaparts"
+		add_trait="immortal"
+		add_trait="just"
+		add_trait="tactician"
+		add_trait="ambitious"
+		add_gold=100
+		add_popularity=100
+		c:FRA={
+			set_as_ruler=char:32
+		}
+		dna="Ff8F/oplimUCbu3oAnACcAKJAokCcwJzAqgCbwJxAnECYgKXAuQChAJ5AnkBYgFiAnYCdgKCAoIDWQOyApYClgJyAnIBWwFbAoUChQPEA6oCbQJtAoECgQKIAogCdQJ1An0CfQJmAmYCkwKTAogCiAKVApUCkgKSAnsCewKZApkChgKGAmsCawJsAmwChQKFApIClAFMAUwCkAKQAm4CbgJnAmcCiQKJAm8CbwJmAmYCbwJvAnwCfAKNAo0CkwKTAoACgAJ0AnQCbQJtApMCkwFWAVYCZgJmAnACcAKCAoICggKCAn0CfQL/AskAkACQAKsAqwDnAOcChAKEAWUBZQARABEAmwCbAo4CjgDIAMgAmQCZAvcC9wB/AH8AowCjASkBKQBrAGsAUABQABkAGQCpAKkAwADAAOYA5gB/AH8AfgB+AMAAwAD/AP8AdAB0AAUABQASABIADAAMAAQABAB/AH8ATQBNAF4AXgB/AH8HWQKDAH8AfwOpA6kJWQlGAKkAqQV9BX0H7QfgA2kIpwAAAAAAAAAAAAAAAA=="
+	}
+
+	47={
+		first_name="Ryan"
+		family_name="Mercier"
+		birth_date=79.8.15
+		culture="french"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=6
+		add_finesse=3
+		add_zeal=0
+		no_traits=yes
+		add_gold=100
+		add_popularity=40
+		dna="sKKwolk9eXgAALzvAocChwJnAmcCiAKIA6sDqwTfBN8CewJ7ArECfAKTApMCjgKOAm4CbgFlAWUCjgKOAn8CfwOwA7AANwA3AnkCeQKYApgChAKEAoECgQKSApICeAJ4AoQChAJ7AnsCZgJmApUClQKYApgBXgFeA6oDqgKCAoICiwKLAIIAQgJwAnACbAJsAjkCggAuAC4CaAJoA54DngJqAmoCaAJoAocChwKWApYChgKGAoECgQKEAoQCdwJ3AnsCewKUApQCcwJzAmgCaAKTApMDqQOpAnQCdAJxAnECiQKJAn4ClQIjAiMAHQAdAqoCqgA4ADgCwwLDAIIAggAIAAgBAAEAACcAJwK1ArUAuwC7ASgBKAAAAAAAxwDHAG8AbwDUANQC0gLSAUMBQwFjAWMCjgKOAqgCqAAAAAAAUwBTAIIAggEYARgAugC6AG0AbQMoAygC2wLbACEAIQCvAK8DHgMeALMAswM1AzUM/wC/AAAAAAIhASEGCgmiAFMAUwP/BUseAgcvAhMI8QAAAAAAAAAAAO8AAA=="
+	}
+}

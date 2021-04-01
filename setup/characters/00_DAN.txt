@@ -1,0 +1,27 @@
+﻿"DAN"={
+	country="DAN"
+	45={
+		first_name="Harald"
+		family= c:DAN.fam:Gorm
+		birth_date=65.2.27
+		culture="danish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=8
+		add_finesse=9
+		add_zeal=9
+		no_traits=yes
+		add_trait="gorms"
+		add_trait="immortal"
+		add_trait="pious"
+		add_trait="tactician"
+		add_trait="brave"
+		add_gold=100
+		add_popularity=100
+		c:DAN={
+			set_as_ruler=char:45
+		}
+		dna="TABtQpJUklRPXSSdAmsCawJ5AnkCaQJpADsAOwJ1AnUBVwFXACAAIAKCAoICaQJpAr0CewKoAEwCaAJoApQClAKYApgCUgKNBJgCfwKyAnYCawJrAo0CjQKSApICfQJ9An4CfgJ6AnoCgQKBAnoCegJ4AngChgKGAmoCagJ6AnoCggKCA58DnwKLAosCkAKQApYClgS8BLwCfgJ+An8CfwKOAo4ChwKHAnsCewJnAmcCagJqAo4CjgKXApcCgQKBAo8CjwKLAosCOgJpApQClAOpA6kCZgJmAoECgQKGAoYCeQJ5AoQChAJgAmAAxADEAtkC2QDbANsCnQKdAFwAXALkAuQAOwA7AVsBWwEMAQwAxQDFAvwC/AAAAAAAegB6Au8C7wLvAu8AHQAdANMA0wCPAI8DcANwAX0BfQAAAAAA7gDuAXQBdAAxADEA0ADQAIAAgABNAE0A5QDlABAAEAA4ADgAWABYAV4BXgNnA2cDLQZWAAAAAAOxA7EHZAdkAD4APgTfBN8FngVADSINIgAAAAAAAAAAAAAAAA=="
+	}
+}

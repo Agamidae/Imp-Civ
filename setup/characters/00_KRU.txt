@@ -1,0 +1,27 @@
+﻿"KRU"={
+	country="KRU"
+	12={
+		first_name="Yaroslav"
+		family= c:KRU.fam:Rurikovich
+		birth_date=62.5.15
+		culture="ruthenian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=16
+		add_charisma=16
+		add_finesse=6
+		add_zeal=12
+		no_traits=yes
+		add_trait="rurikids"
+		add_trait="caesars"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="pious"
+		add_gold=100
+		add_popularity=100
+		c:KRU={
+			set_as_ruler=char:12
+		}
+		dna="fJ98n5V7lXvtoe2hApcClwKLAosCcgJyAocChwObA5sCmAKYAmsCawKJAokCZgJmAnECcQJ6AnoCjQKNAm8CbwJnAmcCjgKOAn4CfgJrAmsCdgJ2AV0BXQKNAo0CdAJ0AoYChgKVApUCiQKJAnkCeQJ9An0BYwFjAWQBZAR3BN0CkgKSAVgBWAKFAoUCjQKNAU0BTQJqAmoCcwJzAn0CfQOxA7EChgKGAowCjAJ+An4CbgJuAokCiQJ1AnUClwKXAo4CjgKTApMCkQKRAooCigJ1AnUCggKCA6YDpgKNAo0CdAJ0AVUBVQJ5AnkADwAPAKsAqwFxAXEAfQB9AMYAxgBHAEcATgBOAEMAQwAKAAoBdwF3ANwA3AB/AH8AggCCADEAMQFcAVwARgBGAsQCxAFuAW4ANgA2AIYAhgB/AH8A3QDdAD4APgKxArEC9wL3ATUBNQFzAXMAIwAjA0UDRQD2APYBGgEaAC0ALQE7ATsMxAxhAH8AfwT9AQIBPQXLABUAFQX/BZYH4AJuAhUCFQAAAAAAAAAAAAAAAA=="
+	}
+}	

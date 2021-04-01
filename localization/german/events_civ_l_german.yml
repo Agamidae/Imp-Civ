@@ -1,0 +1,28 @@
+﻿l_german:
+ imp_rel.1_title:0 "Religion gegründet"
+ imp_rel.1_desc:0 "Die Welt ändert sich, und mit ihr der Glaube. Die alten Pantheons reichen den Menschen nicht mehr. \nEin alter Mann, der sich als Prophet bezeichnet, erreichte den Hof und propagierte seinen Glauben namens...."
+ 
+ imp_rel.2_title:0 "Steinformationen"
+ imp_rel.2_desc:0 "Aufklärer haben ungewöhnliche Stenformationen entdeckt. Aber wer... oder was hat diese gebaut? \nDie bevölkerung der nahen Siedlungen glaubte an komische Dinge. Wir mussten Priester schicken, um sie auf den richtigen Weg zu bringen. \nSie kamen wieder, aber ohne ihre Gewänder. Was waren diese Steine, und wie konnten sie selbst prieser konvertieren? Die Neuigkeiten verbreiteten sich, unsere Religion zerfiel. Und als schließlich die großen Familien sich dem Glauben gaben, wurde dieser offiziell. Sein Name war..."
+ 
+ imp_rel.1_catholic:0 "Katholizismus"
+ imp_rel.1_protestant:0 "Protestantismus"
+ imp_rel.1_orthodox:0 "Orthodoxismus"
+ imp_rel.1_sunni:0 "Sunnismus"
+ imp_rel.1_confucianism:0 "Konfuzianismus"
+ imp_rel.1_taosism:0 "Taosismus"
+ imp_rel.1_shinto:0 "Shintoismus"
+ imp_rel.1_judaism:0 "Judentum"
+ imp_rel.1_zoroaster:0 "Zoroastrianismus"
+ imp_rel.1_buddhism:0 "Buddhismus"
+ imp_rel.1_hindu:0 "Hinduismus"
+ imp_rel.1_sikh:0 "Sikhismus"
+ imp_rel.1_tengri:0 "Tengri"
+ imp_rel.1_norse:0 "Nordischer Glaube"
+ imp_rel.1_close:0 "ALLES BLEIBT BEIM ALTEN!"
+ 
+ 
+ civ_pop.1_title:0 "Bevölkerung stagniert"
+ civ_pop.1_desc:0 "berichte zeigen, dass die Bevölkerung nicht mehr steigt. Einige halten das für ein schlechtes Omen, andere sehen den vorteil, dass keine Überbevölkerung droht."
+ civ_pop.1.a:0 "Ich werde das Risiko eingehen."
+ 

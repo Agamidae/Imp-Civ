@@ -1,0 +1,467 @@
+﻿namespace = treatment
+
+treatment.1 = { 
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_alive = yes
+	}
+	
+	immediate = {
+		set_treatment_variable_effect = yes
+	}
+	
+}
+	
+treatment.2 = {
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_alive = yes
+		has_variable = seeking_treatment
+	}
+	
+	weight_multiplier = {
+		modifier = {
+			factor = 0.5
+			has_trait = plague
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = hemorrhagic_fever
+		}
+		modifier = {
+			factor = 0.25
+			has_trait = leper
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_important_person_medical = yes
+					has_variable = manually_sought_treatment
+				}
+			}
+			save_scope_as = treatment_successful_target
+			employer = {
+				trigger_event = {
+					id = treatment.3
+				}
+			}
+			remove_variable = manually_sought_treatment
+		}
+		else = {
+			treatment_successful_effect = yes
+			remove_scheme_variables_effect = yes
+		}
+	}
+}
+
+treatment.3 = {
+	type = minor_country_event
+	title = "treatment.3.t"
+	desc = "treatment.3.desc"
+	picture = religious_rite
+	left_portrait = scope:treatment_successful_target
+	interface_lock = no
+	
+	trigger = {
+		exists = scope:treatment_successful_target
+		scope:treatment_successful_target = {
+			is_alive = yes
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				trigger_if = {
+					limit = {
+						is_republic = yes
+					}
+					NOT = {
+						office_is_empty = office_republic_physician
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						is_monarchy = yes
+					}
+					NOT = {
+						office_is_empty = office_physician
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						is_tribal = yes
+					}
+					NOT = {
+						office_is_empty = office_apothecary
+					}
+				}
+				NOR = {
+					trigger_if = {
+						limit = {
+							is_republic = yes
+						}
+						scope:treatment_successful_target = { has_office = office_republic_physician }
+					}
+					trigger_else_if = {
+						limit = {
+							is_monarchy = yes
+						}
+						scope:treatment_successful_target = { has_office = office_physician }
+					}
+					trigger_else_if = {
+						limit = {
+							is_tribal = yes
+						}
+						scope:treatment_successful_target = { has_office = office_apothecary }
+					}			
+				}
+			}
+			random_character = {
+				limit = {
+					OR = {
+						trigger_if = {
+							limit = {
+								root = {
+									is_republic = yes
+								}
+							}
+							has_office = office_republic_physician
+						}
+						trigger_else_if = {
+							limit = {
+								root = {
+									is_monarchy = yes
+								}
+							}
+							has_office = office_physician
+						}
+						trigger_else_if = {
+							limit = {
+								root = {
+									is_tribal = yes
+								}
+							}
+							has_office = office_apothecary
+						}
+					}
+				}
+				save_scope_as = court_physician
+			}
+		}
+		else = {
+			random_character = {
+				limit = {
+					is_ruler = no
+					NOT = {
+						this = scope:treatment_successful_target
+					}
+				}
+				save_scope_as = court_physician
+			}
+		}
+	}
+	
+	option = {
+		name = "treatment.3.a"
+		scope:treatment_successful_target = {
+			if = {
+				limit = {
+					has_variable = seeking_treatment
+				}
+				treatment_successful_effect = yes
+			}
+		}
+	}
+
+	after = {
+		scope:treatment_successful_target = {
+			remove_scheme_variables_effect = yes
+		}
+	}
+}
+
+treatment.4 = { #Huzzah
+	type = minor_country_event
+	title = "treatment.4.t"
+	desc = "treatment.4.desc"
+	picture = greek_court	
+	left_portrait = scope:medical_accident_recipient
+	interface_lock = no
+	
+	immediate = {
+		if = {
+			limit = {
+				trigger_if = {
+					limit = {
+						is_republic = yes
+					}
+					NOT = {
+						office_is_empty = office_republic_physician
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						is_monarchy = yes
+					}
+					NOT = {
+						office_is_empty = office_physician
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						is_tribal = yes
+					}
+					NOT = {
+						office_is_empty = office_apothecary
+					}
+				}
+				NOR = {
+					trigger_if = {
+						limit = {
+							is_republic = yes
+						}
+						scope:medical_accident_recipient = { has_office = office_republic_physician }
+					}
+					trigger_else_if = {
+						limit = {
+							is_monarchy = yes
+						}
+						scope:medical_accident_recipient = { has_office = office_physician }
+					}
+					trigger_else_if = {
+						limit = {
+							is_tribal = yes
+						}
+						scope:medical_accident_recipient = { has_office = office_apothecary }
+					}			
+				}
+			}
+			random_character = {
+				limit = {
+					OR = {
+						trigger_if = {
+							limit = {
+								root = {
+									is_republic = yes
+								}
+							}
+							has_office = office_republic_physician
+						}
+						trigger_else_if = {
+							limit = {
+								root = {
+									is_monarchy = yes
+								}
+							}
+							has_office = office_physician
+						}
+						trigger_else_if = {
+							limit = {
+								root = {
+									is_tribal = yes
+								}
+							}
+							has_office = office_apothecary
+						}
+					}
+				}
+				save_scope_as = court_physician
+			}
+		}
+		else = {
+			random_character = {
+				limit = {
+					is_ruler = no
+					NOT = {
+						this = scope:medical_accident_recipient
+					}
+				}
+				save_scope_as = court_physician
+			}
+		}
+	}
+	
+	option = {
+		name = "treatment.4.a"
+		scope:medical_accident_recipient = {
+			randomise_result_from_treatment_trait_effect = yes
+			set_ambition = scheme_seek_treatment
+		}
+	}
+	
+	option = {
+		name = "treatment.4.b"
+		scope:medical_accident_recipient = {
+			save_scope_as = target
+			randomise_result_from_treatment_trait_effect = yes
+			remove_treatment_variables_effect = yes
+			show_as_tooltip = {
+				clear_ambition = yes
+			}
+			clear_ambition_effect_ci = yes
+			remove_scheme_variables_effect = yes
+		}
+
+	}
+	
+	option = {
+		name = "treatment.4.c"
+		scope:medical_accident_recipient = { randomise_result_from_treatment_trait_effect = yes }
+		custom_tooltip = "lunatic_tooltip"
+		highlight = yes
+		trigger = {
+			current_ruler = {
+				has_trait = lunatic
+			}
+		}
+		random_list = {
+			50 = {
+				scope:medical_accident_recipient = {
+					death = {
+						death_reason = death_other_lunacy
+					}
+				}
+			}
+			50 = {
+				scope:medical_accident_recipient = {
+					treatment_successful_effect = yes
+				}
+			}
+		}
+	}
+
+	after = { 
+		scope:medical_accident_recipient = { remove_variable = medical_accident_problem }
+	}
+}
+
+treatment.5 = { #Accidentally castrated
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = {
+			has_variable = medical_accident_cooldown
+		}
+	}
+
+	weight_multiplier = {
+		modifier = {
+			factor = 4
+			employer = {
+				trigger_if = {
+					limit = { is_republic = yes }
+					any_character = {
+						has_office = office_republic_physician
+						is_rival = root
+					}
+				}
+				trigger_else_if = {
+					limit = { is_monarchy = yes }
+					any_character = {
+						has_office = office_republic_physician
+						is_rival = root
+					}
+				}
+				trigger_else_if = {
+					limit = { is_tribal = yes }
+					any_character = {
+						has_office = office_apothecary
+						is_rival = root
+					}
+				}
+			}		
+		}
+		modifier = {
+			factor = 3
+			employer = {
+				trigger_if = {
+					limit = { is_republic = yes }
+					any_character = {
+						has_office = office_republic_physician
+						finesse <= 2
+					}
+				}
+				trigger_else_if = {
+					limit = { is_monarchy = yes }
+					any_character = {
+						has_office = office_physician
+						finesse <= 2
+					}
+				}
+				trigger_else_if = {
+					limit = { is_tribal = yes }
+					any_character = {
+						has_office = office_apothecary
+						finesse <= 2
+					}
+				}
+			}	
+		}
+		modifier = {
+			factor = 2
+			employer = {
+				trigger_if = {
+					limit = { is_republic = yes }
+					any_character = {
+						has_office = office_republic_physician
+						finesse > 2
+						finesse <= 4
+					}
+				}
+				trigger_else_if = {
+					limit = { is_monarchy = yes }
+					any_character = {
+						has_office = office_republic_physician
+						finesse > 2
+						finesse <= 4
+					}
+				}
+				trigger_else_if = {
+					limit = { is_tribal = yes }
+					any_character = {
+						has_office = office_apothecary
+						finesse > 2
+						finesse <= 4
+					}
+				}
+			}		
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = medical_accident_cooldown
+			days = 730
+		}
+		randomise_result_from_treatment_effect = yes
+		if = {
+			limit = {
+				OR = {
+					is_important_person_medical = yes
+					has_variable = manually_sought_treatment
+				}
+			}
+			save_scope_as = medical_accident_recipient
+			employer = {
+				trigger_event = {
+					id = treatment.4
+				}
+			}
+		}
+		else = {
+			randomise_result_from_treatment_trait_effect = yes
+			remove_variable = medical_accident_problem
+			remove_scheme_variables_effect = yes
+		}
+	}
+}

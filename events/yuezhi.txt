@@ -1,0 +1,497 @@
+﻿namespace = yuezhi
+
+##################################################################
+# Yuezhi migration?
+##################################################################
+
+yuezhi.1 = {
+	type = country_event
+	title = "yuezhi.1.t"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = first_yuezhi
+				}
+				desc = "yuezhi.1.desc_2"
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = "yuezhi.1.desc_2"
+			}
+		}
+	}
+	
+	picture = indian_city
+	
+	goto_location = scope:yuezhi_target
+	
+	trigger = {
+		current_date >= 580.1.1
+		current_date <= 650.1.1
+		NOT = {
+			has_variable = yuezhi_migration_toggle
+		}
+		any_owned_province = {
+			count >= 3
+			OR = {
+				is_in_area = north_tarim_area
+				is_in_area = south_tarim_area
+				is_in_area = tarim_area
+				is_in_area = talas_area
+				is_in_area = ferghana_area
+				is_in_area = sirdarya_area
+			}
+			NOT = {
+				has_variable = yuezhi_appeared
+			}
+		} 
+	}
+	
+	immediate = {
+		set_variable = {
+			name = yuezhi_migration_toggle
+			days = 365
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					is_in_area = north_tarim_area
+					is_in_area = south_tarim_area
+					is_in_area = tarim_area
+					is_in_area = talas_area
+					is_in_area = ferghana_area
+					is_in_area = sirdarya_area
+				}
+				NOT = {
+					has_variable = yuezhi_appeared
+				}
+			}
+			save_scope_as = yuezhi_target
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					is_in_area = north_tarim_area
+					is_in_area = south_tarim_area
+					is_in_area = tarim_area
+					is_in_area = talas_area
+					is_in_area = ferghana_area
+					is_in_area = sirdarya_area
+				}
+				NOR = {
+					has_variable = yuezhi_appeared
+					this = scope:yuezhi_target
+				}
+			}
+			save_scope_as = yuezhi_target_2
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					is_in_area = north_tarim_area
+					is_in_area = south_tarim_area
+					is_in_area = tarim_area
+					is_in_area = talas_area
+					is_in_area = ferghana_area
+					is_in_area = sirdarya_area
+				}
+				NOR = {
+					has_variable = yuezhi_appeared
+					this = scope:yuezhi_target
+					this = scope:yuezhi_target_2
+				}
+			}
+			save_scope_as = yuezhi_target_3
+		}
+	}
+
+	option = {
+		name = "yuezhi.1.a"
+		custom_tooltip = yuezhi_tribesmen_tooltip
+		custom_tooltip = yuezhi_tribesmen_tooltip_2
+		custom_tooltip = yuezhi_tribesmen_tooltip_3
+		scope:yuezhi_target = {
+			hidden_effect = {
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				while = {
+					count = 5
+					random_pops_in_province = {
+						limit = {
+							pop_type = tribesmen 
+						}
+						set_pop_culture = yuezhi
+					}
+				}
+				set_variable = {
+					name = yuezhi_appeared
+				}
+			}
+		}
+		scope:yuezhi_target_2 = {
+			hidden_effect = {
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				while = {
+					count = 5
+					random_pops_in_province = {
+						limit = {
+							pop_type = tribesmen 
+						}
+						set_pop_culture = yuezhi
+					}
+				}
+				set_variable = {
+					name = yuezhi_appeared
+				}
+			}
+		}
+		scope:yuezhi_target_3 = {
+			hidden_effect = {
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				while = {
+					count = 5
+					random_pops_in_province = {
+						limit = {
+							pop_type = tribesmen 
+							NOT = {
+								pop_culture = yuezhi
+							}
+						}
+						set_pop_culture = yuezhi
+					}
+				}
+				set_variable = {
+					name = yuezhi_appeared
+				}
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 80
+			}
+		}
+	}
+	
+	option = {
+		name = "yuezhi.1.b"
+		scope:yuezhi_target = {
+			add_province_modifier = {
+				name = yuezhi_declined
+				duration = 1825
+			}
+		}
+		ai_chance = {
+			modifier = {
+				factor = 20
+			}
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				NOT = {
+					has_variable = first_yuezhi
+				}
+			}
+			set_variable = {
+				name = first_yuezhi
+			}
+		}
+	}
+
+}
+
+yuezhi.2 = {
+	type = country_event
+	title = "yuezhi.2.t"
+	desc = "yuezhi.2.desc"
+	
+	picture = revolt
+	
+	trigger = {
+		has_variable = first_yuezhi
+		NOT = {
+			has_variable = yuezhi_2_toggle
+		}
+		NOT = {
+			primary_culture = yuezhi
+		}
+		any_owned_province = {
+			count >= 5
+			OR = {
+				is_in_area = north_tarim_area
+				is_in_area = south_tarim_area
+				is_in_area = tarim_area
+				is_in_area = talas_area
+				is_in_area = ferghana_area
+				is_in_area = sirdarya_area
+			}
+			any_pops_in_province = {
+				pop_culture = yuezhi
+			}
+		}
+		current_date <= 650.1.1
+	}
+	
+	immediate = {
+		set_variable = {
+			name = yuezhi_2_toggle
+			days = 1825
+		}
+	}
+	
+	option = {
+		name = "yuezhi.2.a"
+		custom_tooltip = yuezhi_consolidate_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						is_in_area = north_tarim_area
+						is_in_area = south_tarim_area
+						is_in_area = tarim_area
+						is_in_area = talas_area
+						is_in_area = ferghana_area
+						is_in_area = sirdarya_area
+					}
+					any_pops_in_province = {
+						pop_culture = yuezhi
+					}
+				}
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				create_state_pop = tribesmen
+				while = {
+					count = 4
+					random_pops_in_province = {
+						limit = {
+							pop_type = tribesmen 
+							NOT = {
+								pop_culture = yuezhi
+							}
+						}
+						set_pop_culture = yuezhi
+					}
+				}
+				while = {
+					count = 2
+					limit = {
+						any_pops_in_province = {
+							pop_type = freemen
+						}
+					}
+					random_pops_in_province = {
+						limit = {
+							pop_type = freemen 
+							NOT = {
+								pop_culture = yuezhi
+							}
+						}
+						set_pop_culture = yuezhi
+					}
+				}
+			}
+		}
+		ai_chance = {
+			modifier = {
+				factor = 10
+				always = yes
+			}
+		}
+		
+	}
+	
+	option = {
+		name = "yuezhi.2.b"
+		custom_tooltip = yuezhi_unrest_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						is_in_area = north_tarim_area
+						is_in_area = south_tarim_area
+						is_in_area = tarim_area
+						is_in_area = talas_area
+						is_in_area = ferghana_area
+						is_in_area = sirdarya_area
+					}
+					any_pops_in_province = {
+						pop_culture = yuezhi
+					}
+				}
+				add_province_modifier = {
+					name = yuezhi_unrest
+					duration = 1825
+				}
+			}
+		}
+	}
+}
+
+yuezhi.3 = { 
+	type = country_event
+	title = "yuezhi.3.t"
+	desc = "yuezhi.3.desc"
+	
+	picture = hellenic_marketplace
+	
+	trigger = {
+		has_variable = first_yuezhi
+		stability >= 0
+		NOT = {
+			has_variable = yuezhi_3_toggle
+		}
+		OR = {
+			num_yuezhi_provinces >= num_non_yuezhi_provinces
+			any_character = {
+				count >= 5
+				has_any_office = yes
+				has_culture = yuezhi
+			}
+			current_ruler = {
+				has_culture = yuezhi
+			}
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = yuezhi_3_toggle
+		}
+	}
+	
+	option = {
+		name = "yuezhi.3.a"
+		set_primary_culture_cleanup_effect = {
+			NEW_PRIMARY_CULTURE = yuezhi
+			MAKE_OLD_CULTURE_INTEGRATED = yes
+		}
+		add_stability = -45
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+	}
+	
+	option = {
+		name = "yuezhi.3.b"
+		add_country_modifier = {
+			name = yuezhi_hate_us
+			duration = 7300
+		}
+		if = {
+			limit = {
+				any_character = {
+					has_any_office = yes
+					has_culture = yuezhi
+				}
+			}
+			every_character = {
+				limit = {
+					has_any_office = yes
+					has_culture = yuezhi
+				}
+				custom_tooltip = leaves_our_court_tooltip
+				hidden_effect = {
+					death = {
+						death_reason = death_mysteriously_retired
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+yuezhi.4 = {
+	type = country_event
+	title = "yuezhi.4.t"
+	desc = "yuezhi.4.desc"
+	
+	picture = senator_conversing
+	
+	left_portrait = current_ruler
+	right_portrait = scope:yuezhi_genius
+	
+	trigger = {
+		has_variable = first_yuezhi
+		NOT = {
+			has_variable = yuezhi_4_toggle
+		}
+		NOT = {
+			primary_culture = yuezhi
+		}
+		any_owned_province = {
+			count >= 1
+			dominant_province_culture = yuezhi
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = yuezhi_4_toggle
+			days = 1825
+		}
+		random_character = {
+			weight = {
+				modifier = {
+					factor = 100
+					has_culture = yuezhi
+				}
+			}
+			save_scope_as = family_target
+		}
+		hidden_effect = {
+			create_character = {
+				age = 24
+				culture = yuezhi
+				family = scope:family_target.family
+			}
+			random_character = {
+				limit = {
+					has_culture = yuezhi
+					family = scope:family_target.family
+					age = 24
+				}
+				save_scope_as = yuezhi_genius
+			}
+			scope:yuezhi_genius = {
+				add_martial = 3
+				add_finesse = 3
+				add_zeal = 3
+				add_charisma = 3
+				if = {
+					limit = {
+						NOT = {
+							has_culture = yuezhi
+						}
+					}
+					set_culture = yuezhi
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "yuezhi.4.a"
+		custom_tooltip = yuezhi_for_hire_tooltip
+	}
+}

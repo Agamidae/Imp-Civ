@@ -1,0 +1,27 @@
+﻿"AQT"={
+	country="AQT"
+	33={
+		first_name="Eleanor"
+		family= c:AQT.fam:Poitier
+		birth_date=70.6.20
+		female=yes
+		culture="occitan"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=9
+		add_finesse=7
+		add_zeal=6
+		no_traits=yes
+		add_trait="poitiers"
+		add_trait="immortal"
+		add_trait="silver_tongued"
+		add_trait="scholar"
+		add_gold=100
+		add_popularity=100
+		c:AQT={
+			set_as_ruler=char:33
+		}
+		dna="iQKfiI42imsrANF/AmsCawJ2AnYChAKEAn4CfgKGAoYCZgJmApACkAJ7AnsBYgFiAnUCdQFYAVgClQKVAnQCdAKGAoYCfgJ+Ao8CjwOjA6MChgKGAnMCcwKEAoQCgwKDAm4CbgJ/An8CiAKBAmYCZgKIAmkCMQKAAoICggOmA6YCmQKZAnUCcAI7AnsCfAJ8AlEChgKHAocCagJqApMCkwJ0AnQDnQOdAnoCegJvAm8CawJrAm8CbwJxAnECgAKAAoYChgJsAmwCQgJwAoYChgJqAmoCdgKMA7EDrQJNAowChQKFAmgCaALXAtcAJgAmAq0CrQF9AX0AggCCAB8AHwCiAKIBHAEcAFIAUgD7APsBLAEsApsCmwB/AH8AuAC4AQ0BDQFfAV8BNwE3ApECkQC6ALoAagBqAN4A3gB/AH8A4gDiAD8APwFhAWECsgKyANEA0QDMAMwBUQFRARcBFwB9AH0DRwNHAMEAwQEHAQcHbAxoAH8AfwDrAOsF/wn+APMA8wU/BT8C/QcCCHUIdQD5AAAAAAAAAAAAAA=="
+	}
+}

@@ -1,0 +1,394 @@
+﻿namespace = rel_flavor_minorities
+
+# Jewish Merchant
+rel_flavor_minorities.1 = {
+	type = country_event
+	title = "rel_flavor_minorities.1.t"
+	desc = "rel_flavor_minorities.1.desc"
+	picture = religious_rite
+
+	left_portrait = current_ruler
+	right_portrait = scope:jewish_merchant
+
+	goto_location = scope:jewish_merchant_province
+	
+	trigger = {
+		capital_scope = {
+			OR = {
+				is_in_region = dravida_region
+				is_in_region = karnata_region
+				is_in_region = palestine_region
+				is_in_region = syria_region
+				is_in_region = cappadocia_region
+				is_in_region = assyria_region
+				is_in_region = bithynia_region
+				is_in_region = galatia_region
+				is_in_region = cilicia_region
+				is_in_region = asia_region
+				is_in_region = greece_region
+				is_in_region = cyrenaica_region
+				is_in_region = upper_egypt_region
+				is_in_region = lower_egypt_region
+				is_in_region = mesopotamia_region
+				is_in_region = persis_region
+				is_in_region = media_region
+				is_in_region = ariana_region
+				is_in_region = bactriana_region
+			}
+		}
+	}
+
+	immediate = {
+		if = { #India
+			limit = {
+				capital_scope = {
+					OR = {
+						is_in_region = dravida_region
+						is_in_region = karnata_region
+					}
+				}
+			}
+			ordered_owned_province = {
+				limit = {
+					OR = {
+						is_in_region = dravida_region
+						is_in_region = karnata_region
+					}
+					NOT = { has_province_modifier = powerful_merchant_guild }
+				}
+				order_by = total_population
+				save_scope_as = jewish_merchant_province
+			}
+		}
+		else_if = { #Eastern Mediterrnean
+			limit = {
+				capital_scope = {
+					OR = {
+						is_in_region = palestine_region
+						is_in_region = syria_region
+						is_in_region = cappadocia_region
+						is_in_region = assyria_region
+						is_in_region = bithynia_region
+						is_in_region = galatia_region
+						is_in_region = cilicia_region
+						is_in_region = asia_region
+						is_in_region = greece_region
+						is_in_region = cyrenaica_region
+						is_in_region = upper_egypt_region
+						is_in_region = lower_egypt_region
+					}
+				}
+			}
+			ordered_owned_province = {
+				limit = {
+					OR = {
+						is_in_region = palestine_region
+						is_in_region = syria_region
+						is_in_region = cappadocia_region
+						is_in_region = assyria_region
+						is_in_region = bithynia_region
+						is_in_region = galatia_region
+						is_in_region = cilicia_region
+						is_in_region = asia_region
+						is_in_region = greece_region
+						is_in_region = cyrenaica_region
+						is_in_region = upper_egypt_region
+						is_in_region = lower_egypt_region
+					}
+					NOT = { has_province_modifier = powerful_merchant_guild }
+				}
+				order_by = total_population
+				save_scope_as = jewish_merchant_province
+			}
+		}
+		else_if = { #Mesopotamia & Persia
+			limit = {
+				capital_scope = {
+					OR = {
+						is_in_region = mesopotamia_region
+						is_in_region = persis_region
+						is_in_region = media_region
+						is_in_region = ariana_region
+						is_in_region = bactriana_region
+					}
+				}
+			}
+			ordered_owned_province = {
+				limit = {
+					OR = {
+						is_in_region = mesopotamia_region
+						is_in_region = persis_region
+						is_in_region = media_region
+						is_in_region = ariana_region
+						is_in_region = bactriana_region
+					}
+					NOT = { has_province_modifier = powerful_merchant_guild }
+				}
+				order_by = total_population
+				save_scope_as = jewish_merchant_province
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					scope:jewish_merchant_province = {
+						OR = {
+							is_in_region = palestine_region
+							is_in_region = syria_region
+							is_in_region = cappadocia_region
+							is_in_region = assyria_region
+							is_in_region = bithynia_region
+							is_in_region = galatia_region
+							is_in_region = cilicia_region
+							is_in_region = asia_region
+							is_in_region = greece_region
+							is_in_region = cyrenaica_region
+							is_in_region = upper_egypt_region
+							is_in_region = lower_egypt_region
+						}
+					}
+				}
+				create_character = {
+					religion = judaism
+					culture = hebrew
+					add_trait = intelligent
+					add_finesse = 5
+					save_scope_as = jewish_merchant
+				}
+			}
+			else = {
+				create_character = {
+					religion = judaism
+					culture = hebrew #To get Hebrew name
+					add_finesse = 5
+					add_trait = intelligent
+					save_scope_as = jewish_merchant
+				}
+				scope:jewish_merchant = { #Fixing culture
+					set_culture = scope:jewish_merchant_province.dominant_province_culture
+				}
+			}
+			random_country = {
+				limit = { in_diplomatic_range = ROOT }
+				save_scope_as = banish_destination
+			}
+			if = {
+				limit = {
+					NOT = { exists = scope:banish_destination }
+				}
+				random_country = {
+					save_scope_as = banish_destination
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_minorities.1.a"
+		custom_tooltip = rel_flavor_minorities.1.a.tt
+	}
+
+	option = {
+		name = "rel_flavor_minorities.1.b"
+		scope:jewish_merchant = { banish = scope:banish_destination }
+		hidden_effect = {
+			scope:jewish_merchant = {
+				set_as_minor_character = THIS
+				set_home_country = employer
+			}
+		}
+		scope:jewish_merchant_province = {
+			if = { #Eastern Mediterranean
+				limit = {
+					OR = {
+						is_in_region = palestine_region
+						is_in_region = syria_region
+						is_in_region = cappadocia_region
+						is_in_region = assyria_region
+						is_in_region = bithynia_region
+						is_in_region = galatia_region
+						is_in_region = cilicia_region
+						is_in_region = asia_region
+						is_in_region = greece_region
+						is_in_region = cyrenaica_region
+						is_in_region = upper_egypt_region
+						is_in_region = lower_egypt_region
+					}
+				}
+			}
+			else = { #Older Jewish Communities
+				define_pop = {
+					type = citizen
+					religion = judaism
+					culture = scope:jewish_merchant_province.dominant_province_culture
+				}
+			}
+			add_province_modifier = {
+				name = powerful_merchant_guild
+				duration = 3650
+			}
+		}
+	}
+}
+
+#Persian Noble
+rel_flavor_minorities.2 = {
+	type = country_event
+	hidden = yes
+	#title = "rel_flavor_minorities.2.t"
+	#desc = "rel_flavor_minorities.2.desc"
+	#picture = persepolis
+
+	#left_portrait = current_ruler
+	#right_portrait = scope:random_advisor
+
+	trigger = {
+		capital_scope = {
+			OR = {
+				is_in_region = palestine_region
+				is_in_region = syria_region
+				is_in_region = cappadocia_region
+				is_in_region = assyria_region
+				is_in_region = bithynia_region
+				is_in_region = galatia_region
+				is_in_region = cilicia_region
+				is_in_region = asia_region
+				is_in_region = greece_region
+				is_in_region = cyrenaica_region
+				is_in_region = upper_egypt_region
+				is_in_region = lower_egypt_region
+				is_in_region = mesopotamia_region
+				is_in_region = persis_region
+				is_in_region = media_region
+				is_in_region = ariana_region
+				is_in_region = bactriana_region
+				is_in_region = gedrosia_region
+				is_in_region = gandhara_region
+				is_in_region = parthia_region
+				is_in_region = albania_region
+				is_in_region = armenia_region
+				is_in_region = colchis_region
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = { in_diplomatic_range = ROOT }
+				save_scope_as = banish_destination
+			}
+			if = {
+				limit = {
+					NOT = { exists = scope:banish_destination }
+				}
+				random_country = {
+					save_scope_as = banish_destination
+				}
+			}
+			random_list = {
+				50 = {
+					create_character = {
+						religion = zoroaster
+						culture = pasargadi
+						add_charisma = 3
+						add_finesse = 3
+						age = 50
+						add_trait = prominent
+						add_trait = ambitious
+						save_scope_as = persian_noble
+					}
+				}
+				50 = {
+					create_character = {
+						religion = zoroaster
+						culture = median
+						add_charisma = 3
+						add_finesse = 3
+						age = 50
+						add_trait = prominent
+						add_trait = ambitious
+						save_scope_as = persian_noble
+					}
+				}
+			}
+			random_neighbour_country = {
+				limit = {
+					any_owned_province = {
+						OR = {
+							is_in_region = palestine_region
+							is_in_region = syria_region
+							is_in_region = cappadocia_region
+							is_in_region = assyria_region
+							is_in_region = bithynia_region
+							is_in_region = galatia_region
+							is_in_region = cilicia_region
+							is_in_region = asia_region
+							is_in_region = greece_region
+							is_in_region = cyrenaica_region
+							is_in_region = upper_egypt_region
+							is_in_region = lower_egypt_region
+							is_in_region = mesopotamia_region
+							is_in_region = persis_region
+							is_in_region = media_region
+							is_in_region = ariana_region
+							is_in_region = bactriana_region
+							is_in_region = gedrosia_region
+							is_in_region = gandhara_region
+							is_in_region = parthia_region
+							is_in_region = albania_region
+							is_in_region = armenia_region
+							is_in_region = colchis_region
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							is_in_region = palestine_region
+							is_in_region = syria_region
+							is_in_region = cappadocia_region
+							is_in_region = assyria_region
+							is_in_region = bithynia_region
+							is_in_region = galatia_region
+							is_in_region = cilicia_region
+							is_in_region = asia_region
+							is_in_region = greece_region
+							is_in_region = cyrenaica_region
+							is_in_region = upper_egypt_region
+							is_in_region = lower_egypt_region
+							is_in_region = mesopotamia_region
+							is_in_region = persis_region
+							is_in_region = media_region
+							is_in_region = ariana_region
+							is_in_region = bactriana_region
+							is_in_region = gedrosia_region
+							is_in_region = gandhara_region
+							is_in_region = parthia_region
+							is_in_region = albania_region
+							is_in_region = armenia_region
+							is_in_region = colchis_region
+						}
+					}
+					save_scope_as = home_holdings
+				}
+			}
+		}
+	}
+
+	#option = {
+	#	name = "rel_flavor_minorities.2.a"
+	#	random_area = {
+	#		limit = {
+	#			any_area_province = {
+	#				this = scope:home_holdings
+	#			}
+	#		}
+	#	}
+	#}
+
+	#option = {
+	#	name = "rel_flavor_minorities.2.b"
+	#	
+	#}
+}

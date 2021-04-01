@@ -1,0 +1,26 @@
+"SPN"={
+	country="SPN"
+	26={
+		first_name="Philip"
+		family= c:SPN.fam:Habsburg
+		birth_date=71.5.21
+		culture="spanish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=9
+		add_finesse=6
+		add_zeal=8
+		no_traits=yes
+		add_trait="habsburgs"
+		add_trait="immortal"
+		add_trait="zealous"
+		add_trait="tactician"
+		add_gold=100
+		add_popularity=100
+		c:SPN={
+			set_as_ruler=char:26
+		}
+		dna="KeUp5ZBanW+8//HoAWYBZgJ0AnQCigKKAmcCZwJ5AnkCdAJ0BNkE2QJzAnMCagJqADIAMgKVApUCjQKNAmsCawKOAo4COgKLAo8CjwJ8AnwCeQJ5AoUChQOuA64DrgOuAnoCegOZA5kCjwKPApkCmQJ3AncCbgJuApgCmAKFAn8CRAKKAmkCkQLFApkDsgOyAUYCZwKHAocCgQKBAnQCdAJqAmoCrQKHAmcCZwS8BLwCgwKDAo8CjwKEAoQCjwKPBL8EvwJ/An8CbQJtAn0CfQSzBLMCdAJ0Am4CbgKXApcClgKWAoACgAQwBDABRQFFABcAFwCPAI8BXAFcATIBMgAwADAA6gDqAWEBYQL8AvwClwKXASsBKwB/AH8BXAFcApgAxgEBAQEBEwETAVkBWQEpASkCkwKTAvsC+wB/AH8BeAF4AAEAAQEbARsBaQFpAGUAZQAlACUAWQBZAOkA6QFnAWcDJQMlAWgBaAFtAW0MrwZfAH8AfwK3A4YJbQlTAK8ArwXNBSQHugcCCKQIogAAAAAAAAAAAAAAAA=="
+	}
+}

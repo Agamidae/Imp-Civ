@@ -1,0 +1,480 @@
+﻿namespace = rel_flavor_jainism
+
+# Greed and avarice in a city
+rel_flavor_jainism.1 = {
+	type = country_event
+	title = "rel_flavor_jainism.1.t"
+	desc = "rel_flavor_jainism.1.desc"
+	picture = war_chest
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = jainism
+		NOT = { has_variable = rel_flavor_jainism_1_cooldown }
+		any_owned_province = {
+			is_capital = no
+			OR = {
+				dominant_province_religion = buddhism
+				dominant_province_religion = hindu
+				dominant_province_religion = jainism
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_jainism_1_cooldown
+			days = 7300
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				OR = {
+					dominant_province_religion = buddhism
+					dominant_province_religion = hindu
+					dominant_province_religion = jainism
+				}
+			}
+			save_scope_as = country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.1.a"
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 3
+		}
+		current_ruler = {
+			add_corruption = corruption_large
+			add_gold = {
+				value = root.has_monthly_income
+				multiply = 3
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.1.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		add_country_modifier = {
+			name = country_improvement_jainism_charity
+			duration = 1825
+		}
+	}
+}
+
+# Teaching the non-Jainists how to conduct themselves
+rel_flavor_jainism.2 = {
+	type = country_event
+	title = "rel_flavor_jainism.2.t"
+	desc = "rel_flavor_jainism.2.desc"
+	picture = hellenic_marketplace
+
+	left_portrait = current_ruler
+	right_portrait = scope:random_priest
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = jainism
+		NOT = { has_variable = rel_flavor_jainism_2_cooldown }
+		any_owned_province = {
+			NOT = { dominant_province_religion = jainism }
+			any_pops_in_province = {
+				count > 3
+			}
+		}
+		any_character = {
+			has_priest_office_trigger = yes
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_jainism_2_cooldown
+			days = 3650
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { dominant_province_religion = jainism }
+				any_pops_in_province = {
+					count > 3
+				}
+			}
+			save_scope_as = country_province
+		}
+		random_character = {
+			limit = {
+				has_priest_office_trigger = yes
+			}
+			save_scope_as = random_priest
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.2.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 4
+		}
+		add_country_modifier = {
+			name = country_improvement_jainism_chastity
+			duration = 1825
+		}
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = jainism }
+				}
+				order_by = pop_hapiness
+				max = 1
+				check_range_bounds = no
+				set_pop_religion = jainism
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_allowed
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.2.b"
+		scope:country_province = {
+			if = {
+				limit = {
+					any_pops_in_province = {
+						pop_religion = jainism
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						pop_religion = jainism
+					}
+					set_pop_religion = scope:country_province.religion
+				}
+				if = {
+					limit = {
+						any_pops_in_province = {
+							pop_religion = jainism
+						}
+					}
+					random_pops_in_province = {
+						limit = {
+							pop_religion = jainism
+						}
+						set_pop_religion = scope:country_province.religion
+					}
+				}
+			}
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+			add_corruption = corruption_medium
+			add_character_modifier = {
+				name = character_improvement_jain_misconduct
+				duration = 1825
+			}
+		}
+		scope:random_priest = {
+			add_loyalty = loyalty_priest_refused
+		}
+	}
+}
+
+# Ascetic teaching / converting a city
+rel_flavor_jainism.3 = {
+	type = country_event
+	title = "rel_flavor_jainism.3.t"
+	desc = "rel_flavor_jainism.3.desc"
+	picture = ascetic
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = jainism
+		NOT = { has_variable = rel_flavor_jainism_3_cooldown }
+		any_owned_province = { 
+			any_pops_in_province = {
+				count > 4
+			}
+			NOT = { dominant_province_religion = root.religion }
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_jainism_3_cooldown
+			days = 3650
+		}
+		random_owned_province = {
+			limit = { 
+				any_pops_in_province = {
+					count > 4
+				}
+				NOT = { dominant_province_religion = root.religion }
+			}
+			save_scope_as = country_province
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.3.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = jainism }
+				}
+				order_by = pop_hapiness
+				max = 2
+				check_range_bounds = no
+				set_pop_religion = jainism
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.3.b"
+		trigger = {
+			scope:country_province = {
+				any_neighbor_province = {
+					exists = owner
+					owner = root
+					any_pops_in_province = {
+						count > 2
+						NOT = { pop_religion = jainism}
+					}
+				}
+			}
+		}
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = jainism }
+				}
+				order_by = pop_hapiness
+				max = 3
+				check_range_bounds = no
+				set_pop_religion = jainism
+			}
+			random_neighbor_province = {
+				limit = {
+					exists = owner
+					owner = root
+					any_pops_in_province = {
+						count > 2
+						NOT = { pop_religion = jainism}
+					}
+				}
+				ordered_pops_in_province = {
+					limit = {
+						NOT = { pop_religion = jainism }
+					}
+					order_by = pop_hapiness
+					max = 1
+					check_range_bounds = no
+					set_pop_religion = jainism
+				}
+				if = {
+					limit = {
+						any_neighbor_province = {
+							exists = owner
+							owner = root
+							NOT = { this = scope:country_province }
+							any_pops_in_province = {
+								count > 2
+								NOT = { pop_religion = jainism}
+							}
+						}
+					}
+					random_neighbor_province = {
+						limit = {
+							exists = owner
+							owner = Root
+							NOT = { this = scope:country_province }
+							any_pops_in_province = {
+								count > 2
+								NOT = { pop_religion = jainism}
+							}
+						}
+						ordered_pops_in_province = {
+							limit = {
+								NOT = { pop_religion = jainism }
+							}
+							order_by = pop_hapiness
+							max = 1
+							check_range_bounds = no
+							set_pop_religion = jainism
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.3.c"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}
+
+# Corrupt leader
+rel_flavor_jainism.4 = {
+	type = country_event
+	title = "rel_flavor_jainism.4.t"
+	desc = "rel_flavor_jainism.4.desc"
+	picture = ascetic
+
+	left_portrait = current_ruler
+
+	trigger = {
+		religion = jainism
+		current_ruler = {
+			corruption > 30
+			corruption < 80
+		}
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "rel_flavor_jainism.4.a"
+		current_ruler = {
+			add_corruption = subtract_corruption_large
+			if = {
+				limit = {
+					has_trait = corrupt
+				}
+				remove_trait = corrupt
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.4.b"
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 5
+		}
+		current_ruler = {
+			add_corruption = corruption_large
+			add_gold = {
+				value = root.has_monthly_income
+				multiply = 2
+			}
+		}
+	}
+	
+	option = {
+		name = "rel_flavor_jainism.4.b"
+		trigger = {
+			current_ruler = {
+				has_trait = corrupt
+			}
+		}
+		highlight = yes
+		exclusive = yes
+		add_treasury = {
+			value = root.has_monthly_income
+			multiply = 6
+		}
+		current_ruler = {
+			add_corruption = corruption_large
+			add_gold = {
+				value = root.has_monthly_income
+				multiply = 3
+			}
+		}
+	}
+}
+
+# Jain people traveling to non-Jain city
+rel_flavor_jainism.5 = {
+	type = country_event
+	title = "rel_flavor_jainism.5.t"
+	desc = "rel_flavor_jainism.5.desc"
+	picture = ascetic
+
+	left_portrait = current_ruler
+
+	goto_location = scope:country_province
+	
+	trigger = {
+		religion = jainism
+		NOT = { has_variable = rel_flavor_jainism_5_cooldown }
+		any_owned_province = {
+			dominant_province_religion = jainism
+		}
+		any_owned_province = {
+			NOT = { dominant_province_religion = jainism }
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = rel_flavor_jainism_5_cooldown
+			days = 3650
+		}
+		random_owned_province = {
+			limit = {
+				dominant_province_religion = jainism
+			}
+			save_scope_as = country_province
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { dominant_province_religion = jainism }
+			}
+			save_scope_as = country_province_2
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.5.a"
+		scope:country_province = {
+			ordered_pops_in_province = {
+				limit = {
+					pop_religion = jainism
+				}
+				order_by = pop_hapiness
+				max = 2
+				check_range_bounds = no
+				move_pop = scope:country_province_2
+			}
+		}
+		scope:country_province_2 = {
+			ordered_pops_in_province = {
+				limit = {
+					NOT = { pop_religion = jainism }
+				}
+				order_by = pop_hapiness
+				max = 1
+				check_range_bounds = no
+				set_pop_religion = jainism
+			}
+		}
+	}
+
+	option = {
+		name = "rel_flavor_jainism.5.b"
+		add_tyranny = tyranny_medium
+	}
+}

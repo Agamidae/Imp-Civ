@@ -1,0 +1,890 @@
+﻿namespace = dhe_earthquake
+
+# Province hit by earthquake - Main Owner
+dhe_earthquake.1 = {
+	type = country_event
+	title = "dhe_earthquake.1.t"
+	desc = "dhe_earthquake.1.desc"
+	picture = natural_disaster
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	weight_multiplier = {
+		modifier = {
+			factor = 0.5
+			num_of_cities < 40
+		}
+		modifier = {
+			factor = 0.5
+			num_of_cities < 20
+		}
+		modifier = {
+			factor = 0.5
+			num_of_cities < 10
+		}
+	}
+
+	trigger = {
+		any_owned_province = {
+			total_population > 15
+		}
+		NOR = { 
+			has_variable = dhe_earthquake_1_cooldown 
+		}
+
+		num_of_cities >= 5
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				total_population > 15
+			}
+			save_scope_as = randomized_country_province
+
+			if = {
+				limit = {
+					any_neighbor_province = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+						}
+					}
+				}
+				random_neighbor_province = {
+					limit = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+						}
+					}
+					save_scope_as = randomized_earthquake_province_1
+				}
+			}
+			if = {
+				limit = {
+					any_neighbor_province = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:randomized_earthquake_province_1
+						}
+					}
+				}
+				random_neighbor_province = {
+					limit = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:randomized_earthquake_province_1
+						}
+					}
+					weight = {
+						modifier = {
+							factor = 15
+							any_neighbor_province = {
+								THIS = scope:randomized_earthquake_province_1
+							}
+						}
+					}
+					save_scope_as = randomized_earthquake_province_2
+				}
+			}
+			every_neighbor_province = {
+				limit = {
+					exists = owner
+					NOT = { owner = root }
+					total_population > 10
+				}
+				owner = {
+					trigger_event = {
+						id = dhe_earthquake.2
+					}
+				}
+			}
+		}
+		set_variable = {
+			name = dhe_earthquake_1_cooldown
+			days = 18250
+		}
+	}
+
+	option = {
+		name = "dhe_earthquake.1.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 4
+		}
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+		scope:randomized_country_province = {
+			custom_tooltip = "dhe_earthquake.1.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_ravaged
+				duration = 730
+			}
+			hidden_effect = {
+				province_pop_disaster_medium = yes
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:randomized_earthquake_province_1
+				scope:randomized_earthquake_province_1 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:randomized_earthquake_province_1 = {
+				custom_tooltip = "dhe_earthquake.1.second_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 730
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:randomized_earthquake_province_2
+				scope:randomized_earthquake_province_2 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:randomized_earthquake_province_2 = {
+				custom_tooltip = "dhe_earthquake.1.third_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 730
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+	}	
+
+	option = {
+		name = "dhe_earthquake.1.b"
+		remove_stability_effect = yes
+		current_ruler = { add_popularity = subtract_popularity_small }
+		scope:randomized_country_province = {
+			custom_tooltip = "dhe_earthquake.1.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_ravaged
+				duration = 2555
+			}
+			hidden_effect = {
+				province_pop_disaster_medium = yes
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:randomized_earthquake_province_1
+				scope:randomized_earthquake_province_1 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:randomized_earthquake_province_1 = {
+				custom_tooltip = "dhe_earthquake.1.second_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 2555
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:randomized_earthquake_province_2
+				scope:randomized_earthquake_province_2 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:randomized_earthquake_province_2 = {
+				custom_tooltip = "dhe_earthquake.1.third_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 2555
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+	}
+}
+
+# Neighbor province hit by earthquake - Other Owners
+dhe_earthquake.2 = {
+	type = country_event
+	title = "dhe_earthquake.2.t"
+	desc = "dhe_earthquake.2.desc"
+	picture = natural_disaster
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_country_province.owner.current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		NOT = { has_variable = dhe_earthquake_2_cooldown }
+		any_owned_province = {
+			total_population > 10
+			any_neighbor_province = {
+				this = scope:randomized_country_province
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				total_population > 10
+				any_neighbor_province = {
+					this = scope:randomized_country_province
+				}
+			}
+			save_scope_as = randomized_earthquake_province
+		}
+		set_variable = {
+			name = dhe_earthquake_2_cooldown
+			days = 1825
+		}
+	}
+
+	option = {
+		name = "dhe_earthquake.2.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 2
+		}
+		scope:randomized_earthquake_province = {
+			custom_tooltip = "dhe_earthquake.2.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_affected
+				duration = 730
+			}
+			hidden_effect = {
+				province_pop_disaster_minor = yes		
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_earthquake.2.b"
+		current_ruler = { add_popularity = subtract_popularity_small }
+		scope:randomized_earthquake_province = {
+			custom_tooltip = "dhe_earthquake.2.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_affected
+				duration = 2555
+			}
+			hidden_effect = {
+				province_pop_disaster_minor = yes
+			}
+		}
+	}
+}
+
+# Province hit by major earthquake - Main Owner
+dhe_earthquake.3 = {
+	type = country_event
+	title = "dhe_earthquake.3.t"
+	desc = "dhe_earthquake.3.desc"
+	picture = natural_disaster
+	
+	left_portrait = current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	weight_multiplier = {
+		modifier = {
+			factor = 0.5
+			num_of_cities < 40
+		}
+		modifier = {
+			factor = 0.5
+			num_of_cities < 20
+		}
+	}
+
+	trigger = {
+		any_owned_province = {
+			total_population > 15
+		}
+		NOR = { 
+			has_variable = dhe_earthquake_3_cooldown 
+		}
+
+		any_owned_province = {
+			count >= 10
+			NOT = {
+				city_is_in_earthquake_light_region = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				total_population > 15
+				NOT = {
+					city_is_in_earthquake_light_region = yes
+				}
+			}
+			save_scope_as = randomized_country_province
+
+			if = {
+				limit = {
+					any_neighbor_province = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+						}
+					}
+				}
+				random_neighbor_province = {
+					limit = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+						}
+					}
+					save_scope_as = ravaged_earthquake_province_1
+				}
+			}
+			if = {
+				limit = {
+					any_neighbor_province = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:ravaged_earthquake_province_1
+						}
+					}
+				}
+				random_neighbor_province = {
+					limit = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:ravaged_earthquake_province_1
+						}
+					}
+					weight = {
+						modifier = {
+							factor = 15
+							any_neighbor_province = {
+								THIS = scope:ravaged_earthquake_province_1
+							}
+						}
+					}
+					save_scope_as = ravaged_earthquake_province_2
+				}
+			}
+			if = {
+				limit = {
+					any_neighbor_province = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:ravaged_earthquake_province_1
+							THIS = scope:ravaged_earthquake_province_2
+						}
+					}
+				}
+				random_neighbor_province = {
+					limit = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:ravaged_earthquake_province_1
+							THIS = scope:ravaged_earthquake_province_2
+						}
+					}
+					weight = {
+						modifier = {
+							factor = 15
+							any_neighbor_province = {
+								THIS = scope:ravaged_earthquake_province_1
+							}
+						}
+						modifier = {
+							factor = 15
+							any_neighbor_province = {
+								THIS = scope:ravaged_earthquake_province_2
+							}
+						}
+					}
+					save_scope_as = affected_earthquake_province_1
+				}
+			}
+			if = {
+				limit = {
+					any_neighbor_province = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:ravaged_earthquake_province_1
+							THIS = scope:ravaged_earthquake_province_2
+							THIS = scope:affected_earthquake_province_1
+						}
+					}
+				}
+				random_neighbor_province = {
+					limit = {
+						exists = owner
+						owner = root
+						total_population > 10
+						NOR = {
+							has_province_modifier = province_diminishment_earthquake_destroyed
+							has_province_modifier = province_diminishment_earthquake_ravaged
+							has_province_modifier = province_diminishment_earthquake_affected
+							THIS = scope:ravaged_earthquake_province_1
+							THIS = scope:ravaged_earthquake_province_2
+							THIS = scope:affected_earthquake_province_1
+						}
+					}
+					weight = {
+						modifier = {
+							factor = 15
+							any_neighbor_province = {
+								THIS = scope:ravaged_earthquake_province_1
+							}
+						}
+						modifier = {
+							factor = 15
+							any_neighbor_province = {
+								THIS = scope:ravaged_earthquake_province_2
+							}
+						}
+						modifier = {
+							factor = 5
+							any_neighbor_province = {
+								THIS = scope:affected_earthquake_province_1
+							}
+						}
+					}
+					save_scope_as = affected_earthquake_province_2
+				}
+			}
+			every_neighbor_province = {
+				limit = {
+					exists = owner
+					NOT = { owner = root }
+					total_population > 10
+				}
+				owner = {
+					trigger_event = {
+						id = dhe_earthquake.4
+					}
+				}
+			}
+		}
+
+		trigger_event = {
+			id = dhe_earthquake.5
+			days = { 7300 10950 }
+		}
+
+		set_variable = {
+			name = dhe_earthquake_3_cooldown
+			days = 32000
+		}
+	}
+
+	option = {
+		name = "dhe_earthquake.3.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+		scope:randomized_country_province = {
+			custom_tooltip = "dhe_earthquake.3.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_destroyed
+				duration = 3650
+			}
+			hidden_effect = {
+				province_pop_disaster_major = yes
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:ravaged_earthquake_province_1
+				scope:ravaged_earthquake_province_1 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:ravaged_earthquake_province_1 = {
+				custom_tooltip = "dhe_earthquake.3.second_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_ravaged
+					duration = 3650
+				}
+				hidden_effect = {
+					province_pop_disaster_medium = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:ravaged_earthquake_province_2
+				scope:ravaged_earthquake_province_2 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:ravaged_earthquake_province_2 = {
+				custom_tooltip = "dhe_earthquake.3.third_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_ravaged
+					duration = 3650
+				}
+				hidden_effect = {
+					province_pop_disaster_medium = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:affected_earthquake_province_1
+				scope:affected_earthquake_province_1 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:affected_earthquake_province_1 = {
+				custom_tooltip = "dhe_earthquake.3.fourth_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 3650
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:affected_earthquake_province_2
+				scope:affected_earthquake_province_2 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:affected_earthquake_province_2 = {
+				custom_tooltip = "dhe_earthquake.3.fifth_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 3650
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_earthquake.3.b"
+		remove_stability_effect = yes
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		scope:randomized_country_province = {
+			custom_tooltip = "dhe_earthquake.3.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_destroyed
+				duration = 5475
+			}
+			hidden_effect = {
+				province_pop_disaster_major = yes
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:ravaged_earthquake_province_1
+				scope:ravaged_earthquake_province_1 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:ravaged_earthquake_province_1 = {
+				custom_tooltip = "dhe_earthquake.3.second_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_ravaged
+					duration = 5475
+				}
+				hidden_effect = {
+					province_pop_disaster_medium = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:ravaged_earthquake_province_2
+				scope:ravaged_earthquake_province_2 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:ravaged_earthquake_province_2 = {
+				custom_tooltip = "dhe_earthquake.3.third_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_ravaged
+					duration = 5475
+				}
+				hidden_effect = {
+					province_pop_disaster_medium = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:affected_earthquake_province_1
+				scope:affected_earthquake_province_1 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:affected_earthquake_province_1 = {
+				custom_tooltip = "dhe_earthquake.3.fourth_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 5475
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:affected_earthquake_province_2
+				scope:affected_earthquake_province_2 = {
+					exists = owner
+					owner = root
+				}
+			}
+			scope:affected_earthquake_province_2 = {
+				custom_tooltip = "dhe_earthquake.3.fifth_province.tt"
+				add_province_modifier = {
+					name = province_diminishment_earthquake_affected
+					duration = 5475
+				}
+				hidden_effect = {
+					province_pop_disaster_minor = yes
+				}
+			}
+		}
+	}
+}
+
+# Neighbor province hit by major earthquake - Other Owners
+dhe_earthquake.4 = {
+	type = country_event
+	title = "dhe_earthquake.4.t"
+	desc = "dhe_earthquake.4.desc"
+	picture = natural_disaster
+	
+	left_portrait = current_ruler
+	right_portrait = scope:randomized_country_province.owner.current_ruler
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		NOT = { has_variable = dhe_earthquake_4_cooldown }
+		any_owned_province = {
+			total_population > 10
+			any_neighbor_province = {
+				this = scope:randomized_country_province
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				total_population > 10
+				any_neighbor_province = {
+					this = scope:randomized_country_province
+				}
+			}
+			save_scope_as = randomized_earthquake_province
+		}
+
+		set_variable = {
+			name = dhe_earthquake_4_cooldown
+			days = 9125
+		}
+	}
+
+	option = {
+		name = "dhe_earthquake.4.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 3
+		}
+		scope:randomized_earthquake_province = {
+			custom_tooltip = "dhe_earthquake.4.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_ravaged
+				duration = 730
+			}
+			hidden_effect = {
+				province_pop_disaster_medium = yes		
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_earthquake.4.b"
+		current_ruler = { add_popularity = subtract_popularity_medium }
+		scope:randomized_earthquake_province = {
+			custom_tooltip = "dhe_earthquake.4.first_province.tt"
+			add_province_modifier = {
+				name = province_diminishment_earthquake_ravaged
+				duration = 2555
+			}
+			hidden_effect = {
+				province_pop_disaster_medium = yes
+			}
+		}
+	}
+}
+
+# Memories of Earthquake - Event tombola
+dhe_earthquake.5 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+
+	}
+
+	immediate = {
+		random_list = {
+			5 = {} # Nothing happens
+			10 = { # Good Leadership during catastrophe
+				trigger_event = {
+					id = dhe_earthquake.6
+				}
+			}
+			10 = { # Trauma remains
+				trigger_event = {
+					id = dhe_earthquake.7
+				}
+			}
+		}
+	}
+}
+
+# Memories of Earthquake - Good leadership during catastrophe
+dhe_earthquake.6 = {
+	type = country_event
+	title = "dhe_earthquake.6.t"
+	desc = "dhe_earthquake.6.desc"
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "dhe_earthquake.6.a"
+		add_stability_effect = yes
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+	}
+}
+
+
+# Memories of Earthquake - Trauma remains
+dhe_earthquake.7 = {
+	type = country_event
+	title = "dhe_earthquake.7.t"
+	desc = "dhe_earthquake.7.desc"
+	picture = natural_disaster
+	
+	left_portrait = current_ruler
+
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "dhe_earthquake.7.a"
+		add_political_influence = subtract_influence_medium
+	}
+}

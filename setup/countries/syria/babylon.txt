@@ -1,0 +1,13 @@
+﻿color1 = rgb { 50 94 114 }
+color2 = rgb { 204 248 255 }
+
+ship_names = {
+	Adonis Anath Asherah Astarte
+	Baal "Baal-Hammon" "Baalat Asclepius"
+	Kathirat Kothar
+	Melqarth Mot
+	Resheph
+	Shahar Shalim Shapash
+	Tanit
+	Yamm Yarikh
+}

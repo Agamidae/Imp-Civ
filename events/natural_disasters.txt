@@ -1,0 +1,48 @@
+﻿namespace = natural_disaster_events
+
+
+natural_disaster_events.1 = {
+	type = country_event
+	picture = natural_disaster
+	
+	fire_only_once = yes
+	
+	title = natural_disaster_events.1.t
+	desc = natural_disaster_events.1.d
+	
+	goto_location = p:82
+	
+	trigger = {
+		current_date > 632.1.1
+		owns = 82
+	}
+	
+	option = {
+		name = "natural_disaster_events.1.a"
+		p:82 = {
+			add_province_modifier = {
+				name = "volcanic_tax_exemption"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "natural_disaster_events.1.b"
+		p:82 = {
+			add_province_modifier = {
+				name = "volcanic_eruption_effects"
+				duration = 1825
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			p:5000 = {
+				add_vfx = {
+					name = "volcano_eruption"
+					duration = 0
+				}
+			}
+		}
+	}
+}

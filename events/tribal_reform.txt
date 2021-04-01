@@ -1,0 +1,228 @@
+﻿namespace = tribal_reform
+
+tribal_reform.1 = {
+	type = country_event
+	title = "tribal_reform.1.t"
+	desc = "tribal_reform.1.desc" 
+	
+	left_portrait = current_ruler
+	right_portrait = scope:republic_family.head_of_family
+	right_portrait = scope:monarchy_family.head_of_family
+	
+	picture = council_country 
+	
+	trigger = {
+		exists = scope:republic_family
+		exists = scope:monarchy_family 
+	}
+	
+	option = {
+		name = "tribal_reform.1.a" 
+		custom_tooltip = family_mission_blurb 
+	}
+	
+}
+
+tribal_reform.2 = {
+	type = country_event
+	title = "tribal_reform.2.t"
+	desc = "tribal_reform.2.desc"
+	
+	picture = revolt
+	
+	left_portrait = current_ruler
+	right_portrait = scope:purge_target
+	
+	trigger = {
+		NOT = { has_variable = tribal_reform_2_cooldown }
+		trigger_if = {
+			limit = {
+				has_country_modifier = administrative_purge
+			}
+			exists = scope:monarchy_family
+			scope:monarchy_family = {
+				any_family_member = {
+					employer = root
+					is_ruler = no
+					is_clan_chief = no
+					OR = {
+						has_any_office = yes
+						is_governor = yes
+						has_tech_office = yes
+						is_general = yes
+						is_admiral = yes
+					}
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				has_country_modifier = administrative_purge_rep
+			}
+			exists = scope:republic_family
+			scope:republic_family = {
+				any_family_member = {
+					employer = root
+					is_ruler = no
+					is_clan_chief = no
+					OR = {
+						has_any_office = yes
+						is_governor = yes
+						has_tech_office = yes
+						is_general = yes
+						is_admiral = yes
+					}
+				}
+			}
+		}
+		trigger_else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = tribal_reform_2_cooldown
+			days = 45
+		}
+		if = {
+			limit = {
+				has_country_modifier = administrative_purge
+			}
+			scope:monarchy_family = {
+				random_family_member = {
+					limit = {
+						employer = root
+						is_ruler = no
+						is_clan_chief = no
+						OR = {
+							has_any_office = yes
+							is_governor = yes
+							has_tech_office = yes
+							is_general = yes
+							is_admiral = yes
+						}
+					}
+					save_scope_as = purge_target
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = administrative_purge_rep
+			}
+			scope:republic_family = {
+				random_family_member = {
+					limit = {
+						employer = root
+						is_ruler = no
+						is_clan_chief = no
+						OR = {
+							has_any_office = yes
+							is_governor = yes
+							has_tech_office = yes
+							is_general = yes
+							is_admiral = yes
+						}
+					}
+					save_scope_as = purge_target
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "tribal_reform.2.a"
+		scope:purge_target = {
+			remove_all_positions = yes
+			if = {
+				limit = {
+					is_minor_character = no
+				}
+				family = {
+					add_prestige = -100
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:purge_target.family
+				exists = scope:monarchy_family
+				scope:purge_target.family = scope:monarchy_family
+			}
+			scope:purge_target.family = {
+				every_family_member = {
+					limit = {
+						employer = root
+					}
+					custom = all_monarchy_family_members
+					add_loyalty = loyalty_purged_family
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = scope:purge_target.family
+				exists = scope:republic_family
+				scope:purge_target.family = scope:republic_family
+			}
+			scope:purge_target.family = {
+				every_family_member = {
+					limit = {
+						employer = root
+					}
+					custom = all_republic_family_members
+					add_loyalty = loyalty_purged_family
+				}
+			}
+		}
+		add_stability = 2
+	}
+	
+	option = {
+		name = "tribal_reform.2.b"
+		add_stability = -5
+	}
+	
+	option = {
+		name = "tribal_reform.2.c"
+		add_tyranny = 10
+		add_stability = 5
+		imprison = {
+			target = scope:purge_target
+		}
+		if = {
+			limit = {
+				exists = scope:purge_target.family
+				exists = scope:monarchy_family
+				scope:purge_target.family = scope:monarchy_family
+			}
+			scope:purge_target.family = {
+				every_family_member = {
+					limit = {
+						employer = root
+					}
+					custom = all_monarchy_family_members
+					add_loyalty = loyalty_purged_family_example
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = scope:purge_target.family
+				exists = scope:republic_family
+				scope:purge_target.family = scope:republic_family
+			}
+			scope:purge_target.family = {
+				every_family_member = {
+					limit = {
+						employer = root
+					}
+					custom = all_republic_family_members
+					add_loyalty = loyalty_purged_family_example
+				}
+			}
+		}
+	}
+	
+}

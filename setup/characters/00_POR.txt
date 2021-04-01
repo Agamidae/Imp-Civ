@@ -1,0 +1,27 @@
+﻿"POR"={
+	country="POR"
+	27={
+		first_name="Maria"
+		family= c:POR.fam:Braganza
+		birth_date=71.12.17
+		female=yes
+		culture="portugese"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=8
+		add_finesse=6
+		add_zeal=6
+		no_traits=yes
+		add_trait="braganza"
+		add_trait="immortal"
+		add_trait="wise"
+		add_trait="depressed"
+		add_gold=100
+		add_popularity=100
+		c:POR={
+			set_as_ruler=char:27
+		}
+		dna="H/8p/zR3gI3C+sL6AnMCcwKIAogClAKUAncCdwJpAmkCdgJ2ApMCkwKNAo0CegJ6ABsAGwKRApEAXABcAmwCbAFYAVgCmAKWBHkCZgKVApUCgQKBAUwBTAJ0AnQCcwJzAo0CjQKLAosCcAJwAEYARgKHAocClgKWA6QDpAKXApcDsAOwAWQBZAOMA4wCdAJ0ApECkQKCAoICkwKTAoQChAJxAnECdgJ2AmkCaQKKAooChAKEA6QDpAKKAooCiAKIAoICggFWAVYCbgJuAukClgKsAqwCaQJpABYATAJ+An4CvAJ8AmYCZgIsAiwAeAB4ABIAEgCAAIABdQF1AR8BHwFMAUwBbAFsAOIA4gBLAEsDRgNGASwBLAB/AH8AJgAmAPcA9wB+AH4BagFqAOMA4wCEAIQATQBNAr8CvwB/AH8BJwEnAU4BTgFNAU0AAQABAPcA9wKkAqQBbwFvBIIEggKbApsC0gLSBMwEzABMAEwM2AzYAH8AfwXlBRQKPwTdAf8B3waYApgFWQNnEgADNgAAAAAAAAAAAAAAAA=="
+	}
+}

@@ -1,0 +1,27 @@
+﻿"NOR"={
+	country="NOR"
+	40={
+		first_name="Harald"
+		family= c:NOR.fam:Hardrada
+		birth_date=68.12.30
+		culture="norwegian"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=8
+		add_finesse=9
+		add_zeal=9
+		no_traits=yes
+		add_trait="hardradas"
+		add_trait="immortal"
+		add_trait="aggressive"
+		add_trait="tactician"
+		add_trait="brave"
+		add_gold=100
+		add_popularity=100
+		c:NOR={
+			set_as_ruler=char:40
+		}
+		dna="LNNXTDJih2P5ipCKAoUChQOgA6ACfQJ9AoECgQOZA5kCawJrAmgCaAJpAmkDmQOZAosCiwJuAm4CfwJ/AmcCZwJzAnMClAKUAmkCaQS2AoABjQFMA4wDoAJuAm4CfQJ9AmsCawKIAogChAKEAnMCcwKCAoICiQKJAmYCZgKZApkCegJ6Aj4CZwJmAmYE0wTTApYCgwKUApQCZgJmAo8CjwJuAm4E4ATgAnUCdQJ/An8CaAJoAoMCgwJ/An8CmQKZAoQChAKHAocCbwJvAmoCagDWAoACiAKIAmgCaAFZAVkCkQKRApYClgI9AoEC2QLZAEsASwDmAOYBZwFnAFsAWwBsAGwA5QDlAQ8BDwDqAOoBVQFVADYANgAAAAAAQwBDAL8AvwEUARQAnwCfAo0CjQDXANcAVgBWADMAMwAAAAAARgBGAPsA+wBdAF0CXgEfAOYAZwATABMBMwEzAK4ArgLcAs0BZgFmAf8AtQGTAGUElweGAAAAAADJAMkHVgfMAA8ADwTXBOIyZQX4DWANiwAAAAAAAAAAAAAAAA=="
+	}
+}

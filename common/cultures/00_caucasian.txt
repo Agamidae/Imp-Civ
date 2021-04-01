@@ -1,0 +1,117 @@
+﻿caucasian = {
+	color = hsv { 0.6 0.3 0.8 }
+	
+	levy_template = levy_anatolian
+	
+	primary = light_infantry
+	second = heavy_cavalry
+	flank = horse_archers
+
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+	
+	male_names = { 
+		Adarnase Aghsartan Aleksandre Andronik 
+		Anzori Archili Ashot Bagrat 
+		Bakur Davit Demetre Demna 
+		Djavakhi Erekle Gabrieli Gagiki 
+		Giorgi Grigoli Guaram Gubaz 
+		Gurgen Iese Ioane Ishkhanik 
+		Iveri Jarji Kaikhosro Kakhi 
+		Koba Konstantine Kvarkvare 
+		Kvirike Levan Luarsab Malkhazi 
+		Mamia Merab Mikheil Mukhran 
+		Nerse Nikoloz Okhropir 
+		Orbeli Padla Samoeli 
+		Shanshe Shota Simon 
+		Stepanoz Sumbat Teimuraz 
+		Tornike Ushisha Vache
+		Vakhtang Zurab Zviad Givi
+	}
+	female_names = { 
+		Ana Baia Bedisa Borena 
+		Chiora Chito Dali Dedika 
+		Duda Dzabuli Elene Eliso 
+		Endzela Gogutsa Gulchara Guliko 
+		Gulisa Gulvardi Guranduht Gvantsa 
+		Ia Judjuna Kekela Ketevan 
+		Lamara Lamzira Lela Mariami 
+		Mathiko Mthvarisa Mzekhar Natia 
+		Nino Rusudan Sanatha Shorena 
+		Shukhia Suliko Tamari 
+		Taplo Tinatini Tsiala Vardo
+	}
+	family = { 
+		Jaqeli Sologashvili Tavdgiridze Vakhvakhishvili 
+		Baghvashi Apokapes Andronikashvili Gurieli 
+		Abuserisdze Surameli Zevdginidze Amirejibi 
+		Abazasdze Abuladze Chkhetidze Gelovani 
+		Panaskerteli Agiashvili Kachibadze Chavchavadze 
+		Cholokashvili Diasamidze Khursidze Shildisani 
+		Shavliani Donauri Orbeliani Japaridze Javakhishvili Jorjadze
+	}
+	
+	culture = {
+		georgian = {}
+		armenian = {
+			male_names = {
+				Abas Abirad Aboughamr Aboulgharib 
+				Aleksandr Artashes Artashir Artavazd 
+				Arsen Arshak Ashot Athom 
+				Atrnerseh Avag Avedis Bagour 
+				Bagrat Bedros Boghos Davit 
+				Eshkhan Gagik Gevorg Gosdantin 
+				Grigor Gurgen Hagop Hamazasp 
+				Hethum Hovhannes Hovsep Ishkhan 
+				Ivane Kapriel Khachik Khosrov 
+				Levon Malkhas Mamigon Manuel 
+				Margos Melek Mihrdat Mikayel 
+				Mleh Mushegh Mushel Mzhezh Nerseh 
+				Oshin Roupen Sahag Sarkis Sevag 
+				Shahanshah Smbat Stepanos Tachat 
+				Taniel Tatoul Tigran Tornik 
+				Tovmas Thoros Trdat Vache 
+				Vachagan Vagharshak Vahag Vahan 
+				Vahram Vakhtank Varazdat Vartan 
+				Vassak Vesd Vrtanes Zakare Zarmihr
+			}
+			female_names = {
+				Aghavni Alitz Almasd Anahid 
+				Anna Anoush Arda Arevig 
+				Arin Baydzar Berjanoush Berjouhi 
+				Datevig Dalita Eliz Gadar 
+				Gorandoukht Hasmig Houri Hranoush 
+				Katranide Hripsimeh Keghanoush Keran 
+				Khorishah Kohar Latavri Leyli 
+				Lousin Mara Margarid Maria 
+				Mariyam Meghranoush Nane Nazani 
+				Ovsanna Pounig Razmouhi Rita 
+				Satenik Seta Siran Sirvart 
+				Srpouhi Shoushanig Takouhi Tamar 
+				Vartanoush Vartouhi Vosgi 
+				Yeva Zabel Zmroukhd 
+			}
+			family = { 
+				Bagratuni Kuchka Beskond Mangaphas 
+				Arzrouni Hetoumi Makisdros Pakradouni 
+				Sarkis Shnorhali Vanantezi Bakunc 
+				Arakelian Baboian Bagdazarian Barsamian 
+				Haladjian Kaprielian Kezerian Aharonian 
+				Sahakyan Keshishian Baljian Petrosian 
+				Ghougasian Mickaelian Maoukian Zohrabian 
+				Altoonian Gardman-Aghbania 
+				Andzewatsi Hasan-Jalalyan Melik-Avanyan Mush 
+			}
+		}
+	}
+	barbarian_names = { 
+		SARAKENOI ITOURAIOI SCENITAE HEMESENOI ZABADAIOI AOUIDENOI CHALUTAIOI AGRAIOI EPIMARANITAE
+	}
+	
+	graphical_culture = persian_gfx
+	ethnicities = {
+		10 = levantine
+	}
+}	
+	

@@ -1,0 +1,80 @@
+﻿carpathian = {
+	color = hsv { 0 0.24 0.86 }
+	
+	primary = archers
+	second = chariots
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+	levy_template = levy_germanic
+	
+	male_names = { 
+		Ulaszlo Matyas Anasztaz Barnabas David Edvard
+		Kazmer Patrik Simon Abel Adarn Agoston
+		Almos Arpad Odon Otto Alajos Ambrus
+		Andras Andrew Antal Attila Balint Albert
+		Balazs Benedek Benedict Bernat Bernard Bertok
+		Bertalan Boldizsar Bonuslo Borisz Boris Csak
+		Csaba Csongor Denes Domotor Dezso Domoszlo
+	}
+	female_names = { 
+		Agnes Eva Adelaida Agata Amalia Angyalka
+		Aniko Aranka Bertha Borbala Csilla Csillag
+		Czenzi Dorottya Edit Emoke Emese Erika
+		Erzsebet Eszter Berta Anna Etel Euphemia
+		Gizella Gyorgyi Hajnal Hedwig Ibolya
+		Ildiko Iren Jacinta Jozsa Julia Jolan
+		Judith Kamilla Katalin Kinga Klara Catherine
+	}
+	family = { 
+		Bathory Hunyadi Szapolyai Rakoczy Bocskai Bethlen
+		Almasy Andrassy Batthyany Csaky Dessewffy Erdody
+		Eszterhazy Festetics Hajdu Karolyi Kun Magyary
+		Perenyi Ronai Szechenyi Szepessy Thokoly Tisza
+		Zrinyi Teleki Majlath Doczy Dobo Kohary
+		Orczy Frankopan Garay Mikes Szecsi Imreffy
+		Nadasdy Rhedey Zrinski Hadik Both Rakoczi
+		Forgach Cseszneky Derencsenyi Decsey Revay Esterhazy
+		Kallay Kemeny Thurzo Zichy
+	}
+	
+	culture = {
+		hungarian = {}
+		romanian = {
+			family = {
+				Basarab Danesti Draculesti Callimachi Ghica Cantacuzino
+				Cantemiresti Racovita Caradja Sturdza Conachi Soutzos
+				Golescu Vacarescu Mavrocordatos Craiovesti Hâjdau Kogalniceanu
+				Movilesti
+			}
+			male_names = {
+				Vlad Constantin Mihail Mircea Grigore Nicolae
+				Vladislav Mattia Scarlat Stefan Dan Alexandru
+				Ilias Gabriel Ioan George Leon Moise
+				Neagoie Besarab Mihnea Serban Simeon Teodosiu
+				Vintila Vladut Milos Corneliu Flaviu Iuliu
+				Octavian Sergiu Valeriu Petru Petrascu Radu
+				Adrian Alexander Anghel Angel Aron Bajan
+			}
+			female_names = {
+				Adelina Adriana Afina Alexandra Alexia Ana
+				Anastasia Angela Arina Christina Clara Dana
+				Ecatarina Elena Elisabeta Emilia Eufroysina Felicia
+				Floarea Ioana Ionela Irina Iulia Juliana
+				Maria Monica Iacoba Natalia Olimpia Paraschiva
+				Petra Roxana Ruxandra Smaranda Sophia Stana
+				Stefana Stefania Teodora Rahela Flavia Cosmina
+				Tereza Vasilica Violeta Yolanda Voica Zina
+			}
+		}
+	}
+	barbarian_names = { SCHUKA SOLOVEY ZMEI TUGARIN }
+	
+	graphical_culture = western_european_gfx
+	ethnicities = {
+		10 = german
+	}
+}

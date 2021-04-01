@@ -1,0 +1,92 @@
+﻿east_slavic = {
+	color = hsv { 0.3774 0.3985 0.5216 }
+	
+	primary = archers
+	second = light_infantry
+	flank = light_cavalry
+	
+	primary_navy = tetrere
+	secondary_navy = octere
+	flank_navy = liburnian
+
+	levy_template = levy_germanic
+	
+	male_names = { 
+		Afanasiy Alexandr Alexei Andrei 
+		Boris Briachislav Daniil Davyd
+		Demid Dmitriy Dobrynia Fedot Feodor
+		Gavriil Gleb Grigoriy
+		Iakov Igor Iliya Ingvar 
+		Ivan Iziaslav Kirill Konstantin 
+		Kozma Lev Matfei Mikhail Mitrofan Mstislav
+		Nikita Oleg Pavel Putiata Radoslav Rodislav 
+		Rogvolod Roman Rostislav Rurik 
+		Ruslan Simeon Stanislav Stepan Sudislav
+		Svetozar Sviatopolk Sviatoslav Terentiy 
+		Trifon Vasiliy Vasilko Viacheslav Vladimir 
+		Vladislav Voislav Volodar Vseslav
+		Vsevolod Vyshata Vysheslav Yaropolk 
+		Yaroslav Yefimiy Yelisey Yemelyan 
+		Yeremey Yevstafiy Yuriy Aristarkh
+	}
+	female_names = { 
+		Agafya Agrafena Alexandra Anastasia Anna 
+		Boleslava Darya Dobrava Dobronega Dobroslava 
+		Yefimia Yefrosinia Yekaterina Yelizaveta 
+		Yevdokia Yevpraxia Feodora Feodosia 
+		Fevronia Gorislava Gradislava Gremislava 
+		Irina Xenia Liubava Liudmila Malfrida Malusha 
+		Maria Marina Olena Olga Pereyaslava 
+		Praskovya Praxida Prebrana Predslava Premyslava
+		Pribislava Rogneda Rostislava Sbyslava Sofia 
+		Sviatoslava Tatyana Ulita Ulyana 
+		Varvara Vasilisa Veleslava Verkhoslava
+		Vseslava Viacheslava Yaroslava Zabava Zvenislava
+	}
+	family = { 
+		Mikhailovich.Mikhailovna.Mikhailovich.Mikhailovich
+		Fyodyorov.Fyodyorovna.Fyodyorov.Fyodyorov
+		Lukinich.Lukinova.Lukinich.Lukinich
+		Andreievich.Andreievna.Andreievich.Andreievich
+		Dobrynich.Dobrynich.Dobrynich.Dobrynich
+		Petrilov.Petrilova.Petrilov.Petrilov
+		Borisov.Borisova.Borisov.Borisov
+		Kievskiy.Kievskaya.Kievskiy.Kievskiy
+		Kholmsky.Kholmskaya.Kholmsky.Kholmsky
+		Izyaslavich.Izyaslavovna.Izyaslavich.Izyaslavich
+		Ivannikov.Ivannikova.Ivannikov.Ivannikov
+		Mikulinich.Mikulinova.Mikulinich.Mikulinich
+		Miroslavich.Miroslavovna.Miroslavich.Miroslavich
+		Ivankovich.Ivankova.Ivankovich.Ivankovich
+		Tverdiatich.Tverdiatovna.Tverdiatich.Tverdiatich
+		Zakharyinich.Zakharyinovna.Zakharyinich.Zakharyinich
+		Nerevinich.Nerevinovna.Nerevinich.Nerevinich
+		Stepanovich.Stepanovna.Stepanovich.Stepanovich
+		Nezdinich.Nezdinovna.Nezdinich.Nezdinich
+		Feofilaktovich.Feofilaktovna.Feofilaktovich.Feofilaktovich
+		Klimovich.Klimovna.Klimovich.Klimovich
+		Konstantinov.Konstantinovna.Konstantinov.Konstantinov
+		Tolstoy.Tolstoy.Tolstoy.Tolstoy
+		Oksakov.Oksakovna.Oksakov.Oksakov
+		Ovinov.Ovinovna.Ovinov.Ovinov
+		Romanov.Romanovna.Romanov.Romanov
+		Okolnichy.Okolnichna.Okolnichy.Okolnichy
+		Yenikeyev.Yenikeyevna.Yenikeyev.Yenikeyev
+		Bakunin.Bakunina.Bakunin.Bakunin
+		Balashov.Balashova.Balashov.Balashov
+		Matveev.Matveevna.Matveev.Matveev
+		Artamonovich.Artamonovna.Artamonovich.Artamonovich
+		Osipovich.Osipovna.Osipovich.Osipovich
+		Ignatiev.Ignatievna.Ignatiev.Ignatiev
+	}
+	
+	culture = {
+		russian = {}
+		ruthenian = {}
+	}
+	barbarian_names = { SCHUKA SOLOVEY ZMEI TUGARIN }
+	graphical_culture = slavic_gfx
+	ethnicities = {
+		10 = german
+	}
+}

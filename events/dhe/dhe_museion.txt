@@ -1,0 +1,846 @@
+﻿namespace = dhe_museion
+
+# Museion maintenance event
+dhe_museion.1 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		owns = 516
+	}
+
+	immediate = {
+		if = {
+			limit = { # Check Progress Tracker
+				owns = 516
+				var:museion_progress < 3
+			}
+			random_list = {
+				1 = { # Progress - No Event
+				}
+				10 = { # Progress Event - Academics
+					trigger = {
+						any_country = {
+							count > 2
+							NOT = {
+								THIS = root
+							}
+							any_character = {
+								is_ruler = no
+								is_pretender = no
+								age >= 15
+								has_trait = scholar
+								char_is_hellenic_sphere_trigger = yes
+							}
+						}
+					}
+					trigger_event = {
+						id = dhe_museion.2
+					}
+				}
+				10 = { # Progress Event - Books
+					trigger = {
+						NOT = {
+							has_country_modifier = country_improvement_enormous_library
+						}
+					}
+					trigger_event = {
+						id = dhe_museion.3
+					}
+				}
+				10 = { # Progress Event - Poets
+					trigger = {
+						any_country = {
+							count > 1
+							NOT = {
+								THIS = root
+							}
+							any_character = {
+								is_ruler = no
+								is_pretender = no
+								age >= 15
+								has_trait = poet
+								char_is_hellenic_sphere_trigger = yes
+							}
+						}
+					}
+				}
+				5 = { # Progress Event - Obscurities
+					trigger = {
+						NOT = {
+							has_country_modifier = country_improvement_rare_text
+						}
+					}
+					trigger_event = {
+						id = dhe_museion.5
+					}
+				}
+			}
+			change_variable = { # Bump Progress Tracker
+				name = museion_progress
+				add = 1
+			}
+			trigger_event = { # Launch the event again
+				id = dhe_museion.1
+				days = { 200 400 }
+			}
+		}
+		else_if = { # Building Complete
+			limit = {
+				owns = 516
+				var:museion_progress >= 3
+			}
+			trigger_event = {
+				id = dhe_museion.11
+			}
+		}
+	}
+}
+
+# Progress Event - Need academics
+dhe_museion.2 = {
+	type = country_event
+	title = "dhe_museion.2.t"
+	desc = "dhe_museion.2.desc"
+	picture = scribe_tools
+
+	left_portrait = current_ruler
+	left_portrait = scope:random_advisor
+	right_portrait = scope:scholar_character
+	right_portrait = scope:scholar_character_2
+	right_portrait = scope:scholar_character_3
+	
+	goto_location = p:516
+
+	trigger = {	
+		owns = 516
+		any_character = {
+			has_any_office = yes
+			is_ruler = no
+		}
+		any_country = {
+			count > 2
+			NOT = {
+				THIS = root
+			}
+			any_character = {
+				is_ruler = no
+				is_pretender = no
+				age >= 15
+				has_trait = scholar
+				char_is_hellenic_sphere_trigger = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_any_office = yes
+				is_ruler = no
+			}
+			save_scope_as = random_advisor
+		}
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+				}
+				save_scope_as = scholar_character
+			}
+		}
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOT = {
+						THIS = scope:scholar_character
+					}
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOT = {
+						THIS = scope:scholar_character
+					}
+				}
+				save_scope_as = scholar_character_2
+			}
+		}
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOR = {
+						THIS = scope:scholar_character
+						THIS = scope:scholar_character_2
+					}
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOR = {
+						THIS = scope:scholar_character
+						THIS = scope:scholar_character_2
+					}
+				}
+				save_scope_as = scholar_character_3
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_museion.2.a"
+		add_treasury = {
+			subtract = scope:scholar_character.charisma
+			subtract = scope:scholar_character.finesse
+			subtract = scope:scholar_character.martial
+			subtract = scope:scholar_character.zeal
+			multiply = root.has_monthly_income
+			divide = 4
+		}
+		scope:scholar_character = {
+			remove_all_positions = yes
+			move_country = root
+			remove_character_modifier = foreign_citizen
+			set_as_minor_character = this
+		}
+	}
+
+	option = {
+		name = "dhe_museion.2.b"
+		add_treasury = {
+			subtract = scope:scholar_character_2.charisma
+			subtract = scope:scholar_character_2.finesse
+			subtract = scope:scholar_character_2.martial
+			subtract = scope:scholar_character_2.zeal
+			multiply = root.has_monthly_income
+			divide = 4		}
+		scope:scholar_character_2 = {
+			remove_all_positions = yes
+			move_country = root
+			remove_character_modifier = foreign_citizen
+			set_as_minor_character = this
+		}
+	}
+
+	option = {
+		name = "dhe_museion.2.c"
+		add_treasury = {
+			subtract = scope:scholar_character_3.charisma
+			subtract = scope:scholar_character_3.finesse
+			subtract = scope:scholar_character_3.martial
+			subtract = scope:scholar_character_3.zeal
+			multiply = root.has_monthly_income
+			divide = 4
+		}
+		scope:scholar_character_3 = {
+			remove_all_positions = yes
+			move_country = root
+			remove_character_modifier = foreign_citizen
+			set_as_minor_character = this
+		}
+	}
+}
+
+# Progress Event - Need books
+dhe_museion.3 = {
+	type = country_event
+	title = "dhe_museion.3.t"
+	desc = "dhe_museion.3.desc"
+	picture = great_library
+
+	left_portrait = current_ruler
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+		any_country = {
+			NOT = {
+				this = root
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			save_scope_as = randomized_country
+		}
+	}
+
+	option = { # Don't invest a lot in books
+		name = "dhe_museion.3.a"
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+
+	option = { # Invest a lot in books
+		name = "dhe_museion.3.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 8
+			min = -1000
+			max = -150
+		}
+		add_country_modifier = {
+			name = country_improvement_enormous_library
+			duration = 7300
+		}
+	}
+}
+
+# Progress Event - Need poets
+dhe_museion.4 = {
+	type = country_event
+	title = "dhe_museion.4.t"
+	desc = "dhe_museion.4.desc"
+	picture = scribe_tools
+
+	left_portrait = current_ruler
+	right_portrait = scope:poet_character
+	right_portrait = scope:poet_character_2
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+		any_country = {
+			count > 2
+			NOT = {
+				THIS = root
+			}
+			any_character = {
+				is_ruler = no
+				is_pretender = no
+				age >= 15
+				has_trait = poet
+				char_is_hellenic_sphere_trigger = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = poet
+					char_is_hellenic_sphere_trigger = yes
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = poet
+					char_is_hellenic_sphere_trigger = yes
+				}
+				save_scope_as = poet_character
+			}
+		}
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = poet
+					char_is_hellenic_sphere_trigger = yes
+					NOT = {
+						THIS = scope:poet_character
+					}
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = poet
+					char_is_hellenic_sphere_trigger = yes
+					NOT = {
+						THIS = scope:poet_character
+					}
+				}
+				save_scope_as = poet_character_2
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_museion.4.a"
+		add_treasury = {
+			subtract = scope:poet_character.charisma
+			multiply = root.has_monthly_income
+		}
+	}
+
+	option = {
+		name = "dhe_museion.4.b"
+		add_treasury = {
+			subtract = scope:poet_character_2.charisma
+			multiply = root.has_monthly_income
+		}
+	}
+}
+
+# Progress Event - Obscure sources
+dhe_museion.5 = {
+	type = country_event
+	title = "dhe_museion.5.t"
+	desc = "dhe_museion.5.desc"
+	picture = great_library
+
+	left_portrait = current_ruler
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "dhe_museion.5.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 8
+			min = -800
+			max = -100
+		}
+		add_country_modifier = {
+			name = country_improvement_rare_text
+			duration = 1825
+		}
+	}
+}
+
+### Room for additional events if necessary ###
+
+### Story Events ###
+
+# Construction Begins
+dhe_museion.10 = {
+	type = country_event
+	title = "dhe_museion.10.t"
+	desc = "dhe_museion.10.desc"
+	picture = great_library
+
+	left_portrait = current_ruler
+
+	trigger = {
+		owns = 516
+	}
+
+	option = {
+		name = "dhe_museion.10.a"
+		custom_tooltip = "dhe_museion_tooltip"
+	}
+}
+
+# Construction Finished
+dhe_museion.11 = {
+	type = country_event
+	title = "dhe_museion.11.t"
+	desc = "dhe_museion.11.desc"
+	picture = great_library
+
+	left_portrait = current_ruler
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+	}
+
+	option = {
+		name = "dhe_museion.11.a"
+		p:516 = {
+			add_province_modifier = {
+				name = museion_of_alexandria
+			}
+			show_model = "wonder_library_of_alexandria"
+		}
+		hidden_effect = {
+			remove_variable = museion_progress
+		}
+	}
+}
+
+# Museion Destroyed
+dhe_museion.12 = {
+	type = country_event
+	title = "dhe_museion.12.t"
+	desc = "dhe_museion.12.desc"
+	picture = city_siege
+	left_portrait = current_ruler
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+		p:516 = {
+			has_province_modifier = museion_of_alexandria
+		}
+	}
+
+	option = {
+		name = "dhe_museion.12.a"
+		p:516 = {
+			remove_province_modifier = museion_of_alexandria
+			add_province_modifier = {
+				name = country_modifier_broken_museion
+			}
+			add_city_fire_effect = yes
+			hide_model = "wonder_library_of_alexandria"
+		}
+	}
+}
+
+### Room for additional events if necessary ###
+
+### Recurring Events ###
+# Potential new texts
+dhe_museion.20 = {
+	type = country_event
+	title = "dhe_museion.20.t"
+	desc = "dhe_museion.20.desc"
+	picture = scribe_tools
+	left_portrait = current_ruler
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+		p:516 = {
+			has_province_modifier = museion_of_alexandria
+		}
+		NOR = {
+			has_country_modifier = country_improvement_enormous_library
+			has_country_modifier = country_improvement_rare_text
+		}
+	}
+
+	option = {
+		name = "dhe_museion.20.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 9
+			min = -800
+			max = -100
+		}
+		add_country_modifier = {
+			name = country_improvement_enormous_library
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = "dhe_museion.20.b"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 24
+			min = -2000
+			max = -300
+		}
+		add_country_modifier = {
+			name = country_improvement_rare_text
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = "dhe_museion.20.c"
+		custom_tooltip = "no_effect_tooltip"
+	}
+}
+
+# New Scholar for the Museion
+dhe_museion.21 = {
+	type = country_event
+	title = "dhe_museion.21.t"
+	desc = "dhe_museion.21.desc"
+	picture = scribe_tools
+	left_portrait = current_ruler
+	right_portrait = scope:random_character
+	right_portrait = scope:random_character_2
+	right_portrait = scope:random_character_3
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+		p:516 = {
+			has_province_modifier = museion_of_alexandria
+		}
+		NOT = {
+			has_variable = dhe_museion_21_cooldown
+		}
+		any_country = {
+			count > 2
+			NOT = {
+				THIS = root
+			}
+			any_character = {
+				is_ruler = no
+				is_pretender = no
+				age >= 15
+				OR = {
+					has_trait = scholar
+					has_trait = poet
+				}
+				char_is_hellenic_sphere_trigger = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+				}
+				save_scope_as = random_character
+			}
+		}
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOT = {
+						THIS = scope:random_character
+					}
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOT = {
+						THIS = scope:random_character
+					}
+				}
+				save_scope_as = random_character_2
+			}
+		}
+		random_country = {
+			limit = {
+				NOT = {
+					THIS = root
+				}
+				any_character = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOR = {
+						THIS = scope:random_character
+						THIS = scope:random_character_2
+					}
+				}
+			}
+			random_character = {
+				limit = {
+					is_ruler = no
+					is_pretender = no
+					age >= 15
+					has_trait = scholar
+					char_is_hellenic_sphere_trigger = yes
+					NOR = {
+						THIS = scope:random_character
+						THIS = scope:random_character_2
+					}
+				}
+				save_scope_as = random_character_3
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				name = dhe_museion_21_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_museion.21.a"
+		add_treasury = {
+			subtract = scope:random_character.charisma
+			subtract = scope:random_character.finesse
+			subtract = scope:random_character.martial
+			subtract = scope:random_character.zeal
+			multiply = root.has_monthly_income
+			divide = 4
+		}
+		scope:random_character = {
+			remove_all_positions = yes
+			move_country = root
+			remove_character_modifier = foreign_citizen
+			set_as_minor_character = this
+		}
+	}
+
+	option = {
+		name = "dhe_museion.21.b"
+		add_treasury = {
+			subtract = scope:random_character_2.charisma
+			subtract = scope:random_character_2.finesse
+			subtract = scope:random_character_2.martial
+			subtract = scope:random_character_2.zeal
+			multiply = root.has_monthly_income
+			divide = 4
+		}
+		scope:random_character_2 = {
+			remove_all_positions = yes
+			move_country = root
+			remove_character_modifier = foreign_citizen
+			set_as_minor_character = this
+		}
+	}
+
+	option = {
+		name = "dhe_museion.21.c"
+		add_treasury = {
+			subtract = scope:random_character_3.charisma
+			subtract = scope:random_character_3.finesse
+			subtract = scope:random_character_3.martial
+			subtract = scope:random_character_3.zeal
+			multiply = root.has_monthly_income
+			divide = 4
+		}
+		scope:random_character_3 = {
+			remove_all_positions = yes
+			move_country = root
+			remove_character_modifier = foreign_citizen
+			set_as_minor_character = this
+		}
+	}
+
+	option = {
+		name = "dhe_museion.21.d"
+	}
+}
+
+# Maintenance event for Museion
+dhe_museion.22 = {
+	type = country_event
+	title = "dhe_museion.22.t"
+	desc = "dhe_museion.22.desc"
+	picture = great_library
+	left_portrait = current_ruler
+	
+	goto_location = p:516
+
+	trigger = {
+		owns = 516
+		p:516 = {
+			has_province_modifier = museion_of_alexandria
+		}
+		NOT = {
+			has_variable = dhe_museion_22_cooldown
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				name = dhe_museion_22_cooldown
+				days = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_museion.22.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 6
+		}
+	}
+}

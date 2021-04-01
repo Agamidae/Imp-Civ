@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "eastern_unit_convert_helmet_mesh"
+	file = "eastern_unit_convert_helmet.mesh"
+
+	meshsettings = {
+		name = "jorodoxShape"
+		index = 0
+		texture_diffuse = "eastern_unit_convert_helmet_diffuse.dds"
+		texture_normal = "eastern_unit_convert_helmet_normal.dds"
+		texture_specular = "eastern_unit_convert_helmet_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "eastern_unit_convert_helmet_entity"
+	pdxmesh = "eastern_unit_convert_helmet_mesh"
+}

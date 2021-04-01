@@ -1,0 +1,27 @@
+﻿"ENG"={
+	country="ENG"
+	23={
+		first_name="Victoria"
+		family= c:ENG.fam:Hanover
+		birth_date=82.6.20
+		female=yes
+		culture="english"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=9
+		add_finesse=7
+		add_zeal=6
+		no_traits=yes
+		add_trait="hanovers"
+		add_trait="immortal"
+		add_trait="conqueror"
+		add_trait="just"
+		add_gold=100
+		add_popularity=100
+		c:ENG={
+			set_as_ruler=char:23
+		}
+		dna="Pt1LTZBjkGPjpeOlApMCkwJ1AnUCbQJtAmcCZwFYAVgCkwKTAoECgQKDAoMBTgFOAoQChAJvAm8CgwKDA6MDowJmAmYClQKVApECgwK6AncCfQJ9ApYClgCSAnQCkgKCAkcCdAKEAoQChgKGAmYCZgJZAnsCcgJyAsYCjwJ2AnYANgA2An0CfQJqAmoCMAKEApkCmQJsAmwCegJ6ApECkQJvAm8APQA9AosCiwTYBNgCcAJwAo0CZwAAAo8CAgKUAqkCagOuA64CQQJqAooCigKZApkCjwKPAoECgQEnAo0ARABEAmcCZwIbAhsAZwBnATMBMwKOAo4CzQLNAKwArAKIAogA9AD0ArECsQFxAXEAUQBRAUcBRwB/AH8C8wLzApgCmAEZARkARwBHAD0APQEGAQYAggCCALMAswB/AH8BIAEgAOgA6ACGAIYBHwEfAJwAnADMAMwABgAGAyIDIgAzADMDCwMLAWwBbAAXABcJAgmLAP8AfwAmBAkB/wcUAPoA+gTsBOwPAgY3HqgeqAAAAAAAAAAAAI4AAA=="
+	}
+}

@@ -1,0 +1,4 @@
+﻿NMapColors = {
+	# Colors are HSV with the Hue expressed as degree value / 360
+	DEFAULT_COLOR = 					{ 0.1171 0.5000 0.2902 }
+}

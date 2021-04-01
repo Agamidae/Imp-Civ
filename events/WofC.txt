@@ -1,0 +1,17 @@
+﻿namespace = wc
+
+wc.1 = {
+	type = country_event
+	title = wc.1.t
+	desc = wc.1.d
+	picture = scribe_tools
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = "wc.1.0"
+	}
+
+}

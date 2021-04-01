@@ -1,0 +1,60 @@
+﻿# Receives data from /genes
+# Ethnicities are used in /cultures 
+
+
+greek = {
+	template = "ethnities_template"
+
+	skin_color = {
+	 	10 = { 0.0 0.1 0.5 0.15 }
+	}
+	eye_color = {
+		#Blue
+		30 = { 0.0 0.0 0.33 0.7 }
+		#Green
+		20 = { 0.33 0.0 0.67 0.7 }
+		#Brown
+		50 = { 0.67 0.4 1.0 1.0 }
+	}
+	hair_color = {
+		#Blonde
+		10 = { 0.25 0.2 0.75 0.25 }
+		#Brown
+		40 = { 0.65 0.45 0.9 1.0 }
+		#Red
+		10 = { 0.85 0.0 1.0 0.5 }
+		#Black
+		30 = { 0.0 0.9 0.5 1.0 }
+	}
+	
+hairstyles = {
+    10 = { name = greek_hairstyles          range = { 0.0 1.0 } }
+}
+
+eyebrows = {
+    10 = { name = caucasian_eyebrows        range = { 0.0 1.0 } }
+}
+
+beards = {
+    10 = { name = greek_beards          range = { 0.0 1.0 } }
+}
+
+clothes = {
+    10 = { name = greek_clothes            range = { 0.0 1.0 } }
+    #2 = { name = no_clothes            range = { 0.0 1.0 } }
+}
+
+clothes_layer2 = {
+    10 = { name = greek_top_layer            range = { 0.0 1.0 } }
+}
+
+complexion = {
+    10 = { name = roman_1            range = { 0.0 1.0 } }
+    10 = { name = roman_2            range = { 0.0 1.0 } }
+    10 = { name = roman_3            range = { 0.0 1.0 } }
+    10 = { name = roman_4            range = { 0.0 1.0 } }
+    10 = { name = roman_5            range = { 0.0 1.0 } }
+}
+
+}
+

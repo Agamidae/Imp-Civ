@@ -1,0 +1,966 @@
+﻿namespace = party_events_default
+
+party_events_default.1 = { # Party disapproves
+    type = country_event
+    title = {
+    	first_valid = {
+			triggered_desc = { # Olig
+				trigger = { 
+					scope:second_party = { is_leader_of_party_type = oligarchic_party }
+				}
+				desc = "party_events_default.1.t_1"
+			}
+			triggered_desc = { # Demo
+				trigger = { 
+					scope:second_party = { is_leader_of_party_type = democratic_party }
+				}
+				desc = "party_events_default.1.t_2"
+			}
+			triggered_desc = { # Trad
+				trigger = { 
+					scope:second_party = { is_leader_of_party_type = traditionalist_party }
+				}
+				desc = "party_events_default.1.t_3"
+			}
+		}
+    }
+    desc = {
+		first_valid = {
+			triggered_desc = { # Olig
+				trigger = { 
+					scope:second_party = { is_leader_of_party_type = oligarchic_party }
+				}
+				desc = "party_events_default.1.desc_1"
+			}
+			triggered_desc = { # Demo
+				trigger = { 
+					scope:second_party = { is_leader_of_party_type = democratic_party }
+				}
+				desc = "party_events_default.1.desc_2"
+			}
+			triggered_desc = { # Trad
+				trigger = { 
+					scope:second_party = { is_leader_of_party_type = traditionalist_party }
+				}
+				desc = "party_events_default.1.desc_3"
+			}
+		}
+	}
+    picture = council_country
+    left_portrait = current_ruler
+    right_portrait = scope:second_party
+    right_portrait = scope:third_party
+
+    trigger = {
+    	is_republic = yes
+		has_party_type = oligarchic_party # precludes Rome
+		OR = {
+			AND = {
+				any_character = {
+					is_ruler = no
+					is_leader_of_party_type = oligarchic_party
+				}
+				oligarchic_party_support <= 20
+			}
+			AND = {
+				any_character = {
+					is_ruler = no
+					is_leader_of_party_type = democratic_party
+				}
+				democratic_party_support <= 20
+			}
+			AND = {
+				any_character = {
+					is_ruler = no
+					is_leader_of_party_type = traditionalist_party
+				}
+				traditionalist_party_support <= 20
+			}
+		}
+		NOT = { has_variable = par_eve_def_1_cooldown }
+    }
+
+    immediate = {
+    	set_variable = {
+    		name = par_eve_def_1_cooldown
+    		days = 3650
+    	}
+    	if = {
+    		limit = {
+    			any_character = {
+					is_ruler = no
+					is_leader_of_party_type = oligarchic_party
+				}
+				oligarchic_party_support <= 20
+    		}
+    		random_character = {
+    			limit = { is_leader_of_party_type = oligarchic_party }
+    			save_scope_as = second_party
+    		}
+    	}
+    	else_if = {
+    		limit = {
+    			any_character = {
+					is_ruler = no
+					is_leader_of_party_type = democratic_party
+				}
+				democratic_party_support <= 20
+    		}
+    		random_character = {
+    			limit = { is_leader_of_party_type = democratic_party }
+    			save_scope_as = second_party
+    		}
+    	}
+    	else = {
+    		random_character = {
+    			limit = { is_leader_of_party_type = traditionalist_party }
+    			save_scope_as = second_party
+    		}
+    	}
+    }
+
+    option = {
+        name = party_events_default.1.a
+        highlight = yes
+        trigger = {
+        	scope:second_party = { corruption > 20 }
+        }
+        custom_tooltip = party_events_default.1.tt
+        add_treasury = {
+            subtract = root.has_monthly_income
+            max = -20
+            min = -100
+        }
+        add_party_approval = {
+            party = scope:second_party.character_party
+            value = 10
+        }
+        current_ruler = { add_corruption = corruption_medium }
+        scope:second_party = {
+            add_gold = {
+                add = root.has_monthly_income
+                min = 20
+                max = 100
+            }
+            add_corruption = corruption_medium
+        }
+    }
+
+    option = {
+        name = party_events_default.1.b
+        add_political_influence = -10
+        add_party_approval = {
+            party = scope:second_party.character_party
+            value = 10
+        }
+        scope:second_party = {
+        	switch = {
+        		trigger = is_leader_of_party_type
+        		oligarchic_party = {
+                    root = {
+                        add_country_modifier = {
+                            name = party_events_default_oligarchic_concession
+                            duration = 3650
+                        }
+                    }
+        		}
+        		democratic_party = {
+        			root = {
+                        add_country_modifier = {
+                            name = party_events_default_democratic_concession
+                            duration = 3650
+                        }
+                    }
+        		}
+        		traditionalist_party = {
+                    root = {
+                        add_country_modifier = {
+                            name = party_events_default_traditionalist_concession
+                            duration = 3650
+                        }
+                    }
+        		}
+        	}
+        }
+    }
+
+    option = {
+        name = party_events_default.1.c
+        if = {
+            limit = { 
+            	OR = {
+            		AND = {
+            			scope:second_party = { is_leader_of_party_type = oligarchic_party }
+            			oligarchic_party_support > 0 
+            		}
+            		AND = {
+            			scope:second_party = { is_leader_of_party_type = democratic_party }
+            			democratic_party_support > 0 
+            		}
+            		AND = {
+            			scope:second_party = { is_leader_of_party_type = traditionalist_party }
+            			traditionalist_party_support > 0 
+            		}
+            	}
+            }
+            add_party_approval = {
+                party = scope:second_party.character_party
+                value = -2
+            }
+        }
+        else = {
+            scope:second_party = { add_loyalty = disappointed_party_leader }
+        }
+    }
+}
+
+party_events_default.4 = { # Co-Consuls disagree
+    type = country_event
+    title = party_events_default.4.t
+    desc = party_events_default.4.desc
+    picture = senator_conversing
+    left_portrait = scope:dominant_co_consul
+    right_portrait = scope:sidelined_co_consul
+
+    trigger = {
+    	is_republic = yes
+    	has_co_ruler_government = yes
+    	has_party_type = oligarchic_party # precludes Rome
+        exists = root.current_ruler.character_party
+        exists = root.current_co_ruler.character_party
+    	NOT = { root.current_ruler.character_party = root.current_co_ruler.character_party } # rulers are from different parties
+    }
+
+    immediate = {
+    	if = {
+    		limit = { current_ruler.character_party.party_approval >= current_co_ruler.character_party.party_approval }
+    		current_ruler = { save_scope_as = sidelined_co_consul }
+			current_co_ruler = { save_scope_as = dominant_co_consul }
+    	}
+    	else = {
+    		current_ruler = { save_scope_as = dominant_co_consul }
+			current_co_ruler = { save_scope_as = sidelined_co_consul }
+    	}
+    }
+
+    option = { # Bribe
+        name = party_events_default.4.a
+        highlight = yes
+        trigger = {
+        	scope:sidelined_co_consul = { corruption > 20 }
+        }
+        custom_tooltip = party_events_default.4.at
+        add_treasury = {
+            subtract = root.has_monthly_income
+            max = -20
+            min = -100
+        }
+        add_party_approval = {
+            party = scope:sidelined_co_consul.character_party
+            value = 10
+        }
+        scope:dominant_co_consul = { add_corruption = corruption_medium }
+        scope:sidelined_co_consul = {
+            add_gold = {
+                add = root.has_monthly_income
+                min = 20
+                max = 100
+            }
+            add_corruption = corruption_medium
+        }
+    }
+
+    option = { # Compromise  
+        name = party_events_default.4.b
+        add_political_influence = -10
+        add_party_approval = {
+            party = scope:sidelined_co_consul.character_party
+            value = 10
+        }
+    }
+
+    option = { # Ignore
+        name = party_events_default.4.c
+        if = {
+            limit = { scope:sidelined_co_consul.character_party.party_approval > 0 }
+            add_party_approval = {
+	            party = scope:sidelined_co_consul.character_party
+	            value = -5
+	        }
+        }
+        else = {
+            scope:sidelined_co_consul = { add_loyalty = disappointed_party_leader }
+        }
+    }
+
+    option = { # Double down
+        name = party_events_default.4.d
+        if = {
+            limit = { scope:dominant_co_consul.character_party.party_approval < 100 }
+            add_party_approval = {
+	            party = scope:dominant_co_consul.character_party
+	            value = 5
+	        }
+        }
+        if = {
+            limit = { scope:sidelined_co_consul.character_party.party_approval > 0 }
+            add_party_approval = {
+	            party = scope:sidelined_co_consul.character_party
+	            value = -10
+	        }
+	    }
+        if = {
+        	limit = {
+        		NOR = {
+        			scope:dominant_co_consul = { is_friend = scope:sidelined_co_consul }
+        			scope:dominant_co_consul = { is_rival = scope:sidelined_co_consul }
+        		}
+				scope:dominant_co_consul = { can_get_rivals = yes }
+        		scope:sidelined_co_consul = { can_get_rivals = yes }
+        	}
+        	scope:sidelined_co_consul = { add_rival = scope:dominant_co_consul }
+        }
+        else_if = {
+        	limit = {
+        		scope:dominant_co_consul = { is_friend = scope:sidelined_co_consul }
+        	}
+        	scope:dominant_co_consul = { remove_friend = scope:sidelined_co_consul }
+        }
+        else = {
+            scope:sidelined_co_consul = { add_loyalty = disappointed_party_leader }
+        }
+    }
+}
+
+party_events_default.5 = { # Party Leader jealous
+    type = country_event
+    title = party_events_default.5.t
+    desc = party_events_default.5.desc
+    picture = council_country
+    left_portrait = current_ruler
+    right_portrait = scope:rulers_party_leader
+
+    trigger = {
+    	is_republic = yes
+    	has_party_type = oligarchic_party # precludes Rome
+        exists = current_ruler
+    	current_ruler = { is_party_leader = no } # Not own party leader
+        exists = current_ruler.character_party.party_leader
+    	any_character = { # Another party can be scoped to
+            exists = character_party
+    		OR = {
+    			party_type = oligarchic_party
+    			party_type = democratic_party
+    			party_type = traditionalist_party
+    		}
+    		NOT = { is_same_party_as = root.current_ruler }
+    	}
+    }
+
+    immediate = {
+    	current_ruler.character_party.party_leader = { save_scope_as = rulers_party_leader } # Ruler party leader
+    	random_character = {
+    		limit = {
+    			OR = {
+	    			party_type = oligarchic_party
+	    			party_type = democratic_party
+	    			party_type = traditionalist_party
+	    		}
+    			NOT = { is_same_party_as = root.current_ruler }
+    		}
+    		save_scope_as = opposition_party # scope to random other party
+    	}
+    	if = {
+    		limit = {
+    			any_character = {
+    				OR = {
+		    			party_type = oligarchic_party
+		    			party_type = democratic_party
+		    			party_type = traditionalist_party
+		    		}
+    				NOR = {
+		    			is_same_party_as = root.current_ruler
+		    			is_same_party_as = scope:opposition_party
+		    		}
+    			}
+    		}
+    		random_character = {
+	    		limit = {
+	    			OR = {
+		    			party_type = oligarchic_party
+		    			party_type = democratic_party
+		    			party_type = traditionalist_party
+		    		}
+		    		NOR = {
+		    			is_same_party_as = root.current_ruler
+		    			is_same_party_as = scope:opposition_party
+		    		}
+		    	}
+		    	save_scope_as = third_party
+		    }
+    	}
+    }
+
+    option = { # Placate
+        name = party_events_default.5.a
+        add_political_influence = -10
+        add_party_approval = {
+            party = scope:rulers_party_leader.character_party
+            value = 5
+      	}
+    }
+
+    option = { # Ignore
+        name = party_events_default.5.b
+        current_ruler = { add_popularity = subtract_popularity_medium }
+        scope:rulers_party_leader = {
+        	add_party_conviction = {
+        		party = scope:rulers_party_leader.character_party
+        		value = -10
+        	}
+        }
+        add_party_approval = {
+            party = scope:opposition_party.character_party
+            value = 10
+      	}
+    }
+
+    option = { # Corrupt
+        name = party_events_default.5.c
+        highlight = yes
+        trigger = {
+        	scope:rulers_party_leader = { corruption > 20 }
+        }
+        custom_tooltip = party_events_default.5.ct
+        add_treasury = {
+            subtract = root.has_monthly_income
+            max = -20
+            min = -100
+        }
+        scope:rulers_party_leader = { add_corruption = corruption_medium }
+        scope:rulers_party_leader = {
+            add_gold = {
+                add = root.has_monthly_income
+                min = 20
+                max = 100
+            }
+            add_corruption = corruption_medium
+        }
+    }
+
+    option = { # Divert
+        name = party_events_default.5.d
+        trigger = { exists = scope:third_party }
+        add_political_influence = -20
+       	add_party_approval = {
+            party = scope:third_party.character_party
+            value = -10
+      	}
+    }
+}
+
+party_events_default.6 = { # Family disagreement
+    type = country_event
+    title = party_events_default.6.t
+    desc = party_events_default.6.desc
+    picture = council_country
+    left_portrait = current_ruler
+    right_portrait = scope:family_member_compare
+
+    trigger = {
+    	is_republic = yes
+    	has_party_type = oligarchic_party # precludes Rome
+    	any_character = { # ruler has family member from another party
+    		is_ruler = yes
+    		is_minor_character = no
+    		family = {
+	    		any_family_member = {
+	    			OR = {
+		    			party_type = oligarchic_party
+		    			party_type = democratic_party
+		    			party_type = traditionalist_party
+		    		}
+	    			is_ruler = no
+	    			employer = root
+	    			is_adult = yes
+	    			prisoner = no
+	    			NOT = { is_same_party_as = root.current_ruler }
+	    		}
+	    	}
+    	}
+    }
+
+    immediate = {
+    	current_ruler = { 
+    		save_scope_as = target_character_compare
+	    	family = {
+		    	ordered_family_member = {
+		    		limit = {
+		    			OR = {
+			    			party_type = oligarchic_party
+			    			party_type = democratic_party
+			    			party_type = traditionalist_party
+			    		}
+		    			is_ruler = no
+		    			employer = root
+		    			is_adult = yes
+		    			prisoner = no
+		    			NOT = { is_same_party_as = root.current_ruler }
+		    		}
+		    		order_by = prominence #TODO senate weight
+		    		save_scope_as = family_member_compare
+		    	}
+		    }
+	    }
+		if = {
+			limit = {
+				any_character = {
+		    		OR = {
+		    			party_type = oligarchic_party
+		    			party_type = democratic_party
+		    			party_type = traditionalist_party
+		    		}
+		    		NOR = { 
+		    			is_same_party_as = root.current_ruler
+		    			is_same_party_as = scope:family_member_compare
+		    		}
+		    	}
+    		}
+			random_character = {
+				limit = {
+					OR = {
+		    			party_type = oligarchic_party
+		    			party_type = democratic_party
+		    			party_type = traditionalist_party
+		    		}
+		    		NOR = { 
+		    			is_same_party_as = root.current_ruler
+		    			is_same_party_as = scope:family_member_compare
+		    		}
+				}
+				save_scope_as = third_party
+			}
+		}
+    }
+
+    option = { # Family first
+        name = party_events_default.6.a
+        scope:family_member_compare = { add_popularity = subtract_popularity_medium }	
+        add_party_approval = {
+            party = scope:family_member_compare.character_party
+            value = -10
+        }
+    }
+
+    option = { # Country first
+        name = party_events_default.6.b
+        current_ruler = { add_popularity = subtract_popularity_medium }
+        add_political_influence = -5
+        add_party_approval = {
+            party = scope:target_character_compare.character_party
+            value = -10
+        }
+    }
+
+    option = { # Deflect
+        name = party_events_default.6.c
+        trigger = { exists = scope:third_party }
+        scope:family_member_compare = { add_loyalty = loyalty_political_mutual_enemy }
+        add_political_influence = -10
+        add_party_approval = {
+            party = scope:third_party.character_party
+            value = -10
+        }
+    }
+
+    option = { # Exacerbate
+        name = party_events_default.6.d
+        trigger = { 
+        	NOT = {
+        		current_ruler = { is_rival = scope:family_member_compare }
+        	}
+        }
+        add_political_influence = 10
+        current_ruler = { add_rival = scope:family_member_compare }
+        add_party_approval = {
+            party = scope:family_member_compare.character_party
+            value = -5
+        }
+        add_party_approval = {
+            party = scope:target_character_compare.character_party
+            value = -5
+        }
+    }
+}
+
+party_events_default.7 = { # Party approves
+    type = country_event
+    title = {
+    	first_valid = {
+			triggered_desc = { # Olig
+				trigger = { 
+					current_ruler = { party_type = oligarchic_party }
+				}
+				desc = "party_events_default.7.t_1"
+			}
+			triggered_desc = { # Demo
+				trigger = { 
+					current_ruler = { party_type = democratic_party }
+				}
+				desc = "party_events_default.7.t_2"
+			}
+			triggered_desc = { # Trad
+				trigger = { 
+					current_ruler = { party_type = traditionalist_party }
+				}
+				desc = "party_events_default.7.t_3"
+			}
+		}
+    }
+    desc = {
+		first_valid = {
+			triggered_desc = { # Olig
+				trigger = { 
+					current_ruler = { party_type = oligarchic_party }
+				}
+				desc = "party_events_default.7.desc_1"
+			}
+			triggered_desc = { # Demo
+				trigger = { 
+					current_ruler = { party_type = democratic_party }
+				}
+				desc = "party_events_default.7.desc_2"
+			}
+			triggered_desc = { # Trad
+				trigger = { 
+					current_ruler = { party_type = traditionalist_party }
+				}
+				desc = "party_events_default.7.desc_3"
+			}
+		}
+	}
+    picture = council_country
+    left_portrait = current_ruler
+    left_portrait = scope:first_party
+    right_portrait = scope:second_party
+    right_portrait = scope:third_party
+
+    trigger = {
+    	is_republic = yes
+    	has_party_type = oligarchic_party # precludes Rome
+    	OR = {
+			AND = {
+				current_ruler = { party_type = oligarchic_party }
+				oligarchic_party_support >= 60
+			}
+			AND = {
+				current_ruler = { party_type = democratic_party }
+				democratic_party_support >= 60
+			}
+			AND = {
+				current_ruler = { party_type = traditionalist_party }
+				traditionalist_party_support >= 60
+			}
+		}
+		any_character = {
+			is_ruler = no
+            is_adult = yes
+            prisoner = no
+            NOT = { has_character_modifier = foreign_citizen }
+            trigger_if = {
+                limit = {
+                    root = {
+                        gender_equality = no
+                    }
+                }
+                is_male = yes
+            }
+			NOT = { is_same_party_as = root.current_ruler }
+            exists = character_party
+			save_temporary_scope_as = second_party_temp
+		}
+		any_character = {
+			is_ruler = no
+            is_adult = yes
+            prisoner = no
+            NOT = { has_character_modifier = foreign_citizen }
+            trigger_if = {
+                limit = {
+                    root = {
+                        gender_equality = no
+                    }
+                }
+                is_male = yes
+            }
+			NOR = { 
+				is_same_party_as = root.current_ruler
+				is_same_party_as = scope:second_party_temp
+			}
+            exists = character_party
+		}
+		NOT = { has_variable = par_eve_def_7_cooldown }
+    }
+
+    immediate = {
+    	set_variable = {
+    		name = par_eve_def_7_cooldown
+    		days = 3650
+    	}
+    	if = {
+    		limit = {
+    			current_ruler = { is_party_leader = no }
+    		}
+    		random_character = {
+	    		limit = {
+                    exists = character_party
+	    			is_party_leader = yes
+					is_same_party_as = root.current_ruler
+                    is_adult = yes
+                    prisoner = no
+                    NOT = { has_character_modifier = foreign_citizen }
+                    trigger_if = {
+                        limit = {
+                            root = {
+                                gender_equality = no
+                            }
+                        }
+                        is_male = yes
+                    }
+	    		}
+	    		save_scope_as = first_party
+	    	}
+    	}
+    	ordered_character = {
+    		limit = {
+    			is_ruler = no
+                exists = character_party
+				NOT = { is_same_party_as = root.current_ruler }
+                is_adult = yes
+                prisoner = no
+                NOT = { has_character_modifier = foreign_citizen }
+                trigger_if = {
+                    limit = {
+                        root = {
+                            gender_equality = no
+                        }
+                    }
+                    is_male = yes
+                }
+    		}
+    		order_by = prominence #TODO senate weight
+    		save_scope_as = second_party
+    	}
+    	ordered_character = {
+    		limit = {
+    			is_ruler = no
+                is_adult = yes
+                prisoner = no
+                NOT = { has_character_modifier = foreign_citizen }
+                trigger_if = {
+                    limit = {
+                        root = {
+                            gender_equality = no
+                        }
+                    }
+                    is_male = yes
+                }
+                exists = character_party
+				NOR = { 
+					is_same_party_as = root.current_ruler
+					is_same_party_as = scope:second_party
+				}
+    		}
+    		order_by = prominence #TODO senate weight
+    		save_scope_as = third_party
+    	}
+    }
+
+    option = { # Take bonus
+        name = party_events_default.7.a
+        current_ruler = { 
+        	switch = {
+        		trigger = party_type 
+	        	oligarchic_party = {
+	        		ROOT = {
+		        		add_country_modifier = {
+		        			name = party_events_default_oligarchic_boon
+		        			duration = 3650
+		        		}
+		        	}
+	        	}
+	        	democratic_party = {
+	        		ROOT = {
+		        		add_country_modifier = {
+		        			name = party_events_default_democratic_boon
+		        			duration = 3650
+		        		}
+		        	}
+	        	}
+	        	traditionalist_party = {
+	        		ROOT = {
+		        		add_country_modifier = {
+		        			name = party_events_default_traditionalist_boon
+		        			duration = 3650
+		        		}
+		        	}
+	        	}
+	        }
+	    }
+    	add_party_approval = {
+            party = scope:second_party.character_party
+            value = -5
+        }
+        add_party_approval = {
+            party = scope:third_party.character_party
+            value = -5
+        }
+    }
+
+    option = { # Take donation
+        name = party_events_default.7.b
+        trigger = {
+        	current_ruler = { corruption > 20 }
+        }
+        custom_tooltip = party_events_default.7.tt
+        current_ruler = { add_popularity = subtract_popularity_medium }
+        add_political_influence = -10
+        add_party_approval = {
+            party = scope:second_party.character_party
+            value = -10
+        }
+        add_party_approval = {
+            party = scope:third_party.character_party
+            value = -10
+        }
+    }
+
+    option = { # Bury hatchets
+        name = party_events_default.7.c
+    	add_political_influence = -10
+    	add_party_approval = {
+            party = scope:second_party.character_party
+            value = 10
+        }
+        add_party_approval = {
+           party = scope:third_party.character_party
+            value = 10
+        }
+    }
+}
+
+party_events_default.10 = { # Ruler puts family first
+    type = country_event
+    title = party_events_default.10.t
+    desc = party_events_default.10.desc
+    picture = senator_conversing
+    left_portrait = current_ruler
+    right_portrait = scope:party_hof_opposition
+
+    trigger = {
+    	is_republic = yes
+    	has_party_type = oligarchic_party # precludes Rome
+    	current_ruler = { is_head_of_family = yes } # ruler is an oligarch and head of their family
+    	any_character = { # a party leader of another family exists
+    		is_party_leader = yes
+    		OR = {
+    			is_minor_character = yes
+    			NOT = { family = root.current_ruler.family }
+    		}
+			NOR = { 
+				this = root.current_ruler
+                AND = {
+                    exists = character_party
+                    exists = root.current_ruler.character_party
+    				character_party = root.current_ruler.character_party
+                }
+			}
+			employer = root
+			is_adult = yes
+			prisoner = no
+    	}
+    }
+
+    weight_multiplier = {
+    	modifier = {
+    		factor = 2
+    		current_ruler = { party_type = oligarchic_party }
+    	}
+    }
+
+    immediate = {
+    	ordered_character = {
+    		limit = {
+    			is_party_leader = yes
+	    		OR = {
+	    			is_minor_character = yes
+	    			NOT = { family = root.current_ruler.family }
+	    		}
+				NOR = { 
+					this = root.current_ruler
+					character_party = root.current_ruler.character_party
+				}
+				employer = root
+				is_adult = yes
+				prisoner = no
+    		}
+    		order_by = character_party.party_approval
+    		save_scope_as = party_hof_opposition
+    	}
+    }
+
+    option = { # Family first
+        name = party_events_default.10.a
+        add_political_influence = -10
+        add_party_approval = {
+            party = scope:party_hof_opposition.character_party
+            value = -10
+        }
+    }
+
+    option = { # Country first
+        name = party_events_default.10.b
+        hidden_effect = {
+	        current_ruler.family = {
+	    		every_family_member = {
+	    			limit = {
+	    				employer = root
+	    				is_adult = yes
+	    			}
+	    			add_loyalty = family_republic_intervention
+	    		}
+	        }
+	    }
+	    custom_tooltip = party_events_default.10.bt
+    	add_party_approval = {
+            party = root.current_ruler.character_party
+            value = -10
+        }
+    	add_party_approval = {
+            party = scope:party_hof_opposition.character_party
+            value = 10
+        }
+    }
+
+    option = { # Corrupt
+        name = party_events_default.10.c
+        highlight = yes
+        trigger = {
+        	scope:party_hof_opposition = { corruption > 20 }
+        }
+        custom_tooltip = party_events_default.10.ct
+        add_treasury = {
+            subtract = root.has_monthly_income
+            max = -20
+            min = -100
+        }
+        scope:party_hof_opposition = { add_corruption = corruption_medium }
+        scope:party_hof_opposition = {
+            add_gold = {
+                add = root.has_monthly_income
+                min = 20
+                max = 100
+            }
+            add_corruption = corruption_medium
+        }
+    }
+}

@@ -1,0 +1,1936 @@
+﻿namespace = dip_friends_rivals
+
+dip_friends_rivals.1 = { # Foreign Ruler Becomes Friend - Ally
+	type = country_event
+	
+	hidden = yes
+	
+	trigger = {
+		has_land = yes
+		is_subject = no
+		NOT = { has_variable = diplomacy_fr_toggle_1 }
+		is_ai = yes
+		exists = current_ruler
+		current_ruler = { can_get_friends = yes }
+		any_allied_country = { # Is there an allied ruler to befriend?
+			current_ruler = {
+				can_get_friends = yes
+				NOR = {
+					is_rival = root.current_ruler
+					is_friend = root.current_ruler
+					THIS = root.current_ruler
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = diplomacy_fr_toggle_1
+			days = 3650 # 10 years
+		}
+		save_scope_as = friend_asking_country
+		random_allied_country = { # Find allied ruler to befriend
+			limit = {
+				current_ruler = { 
+					can_get_friends = yes
+					NOR = { 
+						is_rival = root.current_ruler
+						is_friend = root.current_ruler
+						THIS = root.current_ruler
+					}
+				}
+			}
+			save_scope_as = friend_receiving_country
+		}
+		scope:friend_receiving_country = { # Send offer of friendship
+			trigger_event = { id = dip_friends_rivals.2 }
+		}
+	}
+}
+
+dip_friends_rivals.2 = { # Foreign Ruler Becomes Friend - Ally Choice
+	type = country_event
+	title = dip_friends_rivals.2.t
+	desc = dip_friends_rivals.2.desc
+	picture = greek_court
+
+	left_portrait = current_ruler
+	right_portrait = scope:friend_asking_country.current_ruler
+	
+	goto_location = scope:friend_asking_country.capital_scope
+	
+	option = { # Befriend
+		name = dip_friends_rivals.2.a
+		current_ruler = { add_friend = scope:friend_asking_country.current_ruler }
+		ai_chance = {
+			modifier = {
+				factor = 5
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_group_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 10
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 50
+				}
+		    }
+		}
+	}
+	
+	option = { # We need no friends
+		name = dip_friends_rivals.2.b
+		current_ruler = {
+			add_prominence = prominence_small
+			add_popularity = popularity_small
+		}
+		ai_chance = { 
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 50
+				}
+		    }
+		}
+	}
+}
+
+dip_friends_rivals.3 = { # Foreign Ruler Becomes Friend - Subject Befriends Overlord
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		is_subject = yes
+		NOT = { has_variable = diplomacy_fr_toggle_3 }
+		is_ai = yes
+		current_ruler = { can_get_friends = yes }
+		root.overlord = { # Is there a subject ruler to befriend?
+			current_ruler = { 
+				can_get_friends = yes
+				NOT = { has_variable = recent_friendliness }
+				NOR = { 
+					is_rival = root.current_ruler
+					is_friend = root.current_ruler
+					THIS = root.current_ruler
+				}				
+			}
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = diplomacy_fr_toggle_3
+			days = 3650 # 10 years
+		}
+		save_scope_as = friend_asking_country
+		root.overlord = { # Find overlord ruler to befriend
+			save_scope_as = friend_receiving_country
+			current_ruler = {
+				set_variable = {
+					name = recent_friendliness
+					days = 3650 # 10 years
+				}
+			}
+		}
+		scope:friend_receiving_country = { # Send offer of friendship
+			trigger_event = { id = dip_friends_rivals.4 }
+		}
+	}
+}
+
+dip_friends_rivals.4 = { # Foreign Ruler Becomes Friend - Subject Choice
+	type = country_event
+	title = "dip_friends_rivals.4.t"
+	desc = "dip_friends_rivals.4.desc"
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:friend_asking_country.current_ruler
+	
+	goto_location = scope:friend_asking_country.capital_scope
+	
+	option = { # Befriend
+		name = "dip_friends_rivals.4.a"
+		current_ruler = { add_friend = scope:friend_asking_country.current_ruler }
+		hidden_effect = {
+			add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country } # +50 opinion
+		}
+		reverse_add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country } # +50 opinion
+		ai_chance = {
+			modifier = {
+				factor = 5
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_group_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 10
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 50
+				}
+		    }
+		}
+	}
+	
+	option = { # We need no friend
+		name = "dip_friends_rivals.4.b"
+		current_ruler = {
+			if = {
+				limit = { popularity < 100 }
+				add_popularity = popularity_small
+			}
+		}
+		ai_chance = {
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 50
+				}
+		    }
+		}
+	}
+}
+
+dip_friends_rivals.5 = { # Foreign Ruler Becomes Friend - Neighbor
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		is_subject = no
+		NOT = { has_variable = diplomacy_fr_toggle_5 }
+		is_ai = yes
+		current_ruler = { 
+			can_get_friends = yes
+		}
+		any_neighbour_country = { # Is there a neighboring country's ruler to befriend?
+			current_ruler = { 
+				can_get_friends = yes 
+				NOR = { 
+					is_rival = root.current_ruler
+					is_friend = root.current_ruler
+					THIS = root.current_ruler
+				}
+			}
+			NOT = { war_with = ROOT }
+			opinion = { 
+				target = ROOT
+				value >= 50
+			}
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = diplomacy_fr_toggle_5
+			days = 3650 # 10 years
+		}
+		save_scope_as = friend_asking_country
+		random_neighbour_country = { # Find neighboring country's ruler to befriend
+			limit = {
+				current_ruler = { 
+					can_get_friends = yes
+					NOR = { 
+						is_rival = root.current_ruler
+						is_friend = root.current_ruler
+						THIS = root.current_ruler
+					}
+				}
+				NOT = { war_with = root }
+				opinion = { 
+					target = root
+					value >= 50
+				}
+			}
+			weight = {
+				base = 1
+				modifier = {
+					factor = 2
+					primary_culture = root.culture
+				}
+				modifier = {
+					factor = 2
+					primary_culture = root.culture
+				}
+			}
+			save_scope_as = friend_receiving_country
+		}
+		scope:friend_receiving_country = { # Send offer of friendship
+			trigger_event = { id = dip_friends_rivals.6 }
+		}
+	}
+}
+
+dip_friends_rivals.6 = { # Foreign Ruler Becomes Friend - Neighbor Choice
+	type = country_event
+	title = dip_friends_rivals.6.t
+	desc = dip_friends_rivals.6.desc
+	picture = greek_court
+		
+	left_portrait = current_ruler
+	right_portrait = scope:friend_asking_country.current_ruler	
+
+	goto_location = scope:friend_asking_country.capital_scope
+	
+	option = { # Befriend
+		name = dip_friends_rivals.6.a
+		current_ruler = { add_friend = scope:friend_asking_country.current_ruler }
+		hidden_effect = {
+			add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country } # +50 opinion
+		}
+		reverse_add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country } # +50 opinion
+		ai_chance = {
+			modifier = {
+				factor = 5
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_group_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 10
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 50
+				}
+		    }
+		}
+	}
+	
+	option = { # We don't need a friend
+		name = dip_friends_rivals.6.b
+		current_ruler = {
+			add_prominence = prominence_small
+			add_popularity = popularity_small
+		}
+		ai_chance = { 
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 50
+				}
+		    }
+		}
+	}
+}
+
+dip_friends_rivals.7 = { # Foreign Ruler Becomes Friend - Country of Interest
+	type = country_event
+	hidden = yes
+	
+	trigger = { # Is there an interesting country's ruler who can be befriended?
+		is_subject = no
+		NOT = { has_variable = diplomacy_fr_toggle_7 }
+		is_ai = yes
+		current_ruler = { can_get_friends = yes }
+		any_country = {
+			NOR = {
+				tag = REB
+				tag = PIR
+				tag = BAR
+				tag = MER
+				THIS = ROOT
+				war_with = root
+			}
+			has_land = yes
+			opinion = { 
+				target = root
+				value >= 100
+			}
+			in_diplomatic_range = root
+			exists = this.current_ruler
+			current_ruler = {
+				NOT = { THIS = ROOT.current_ruler }
+				can_get_friends = yes
+				NOR = { 
+					is_rival = root.current_ruler
+					is_friend = root.current_ruler
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		set_variable = {
+			name = diplomacy_fr_toggle_7
+			days = 3650 # 10 years
+		}
+		save_scope_as = friend_asking_country
+		random_country = { # Find interesting country's ruler to befriend
+			limit = {
+				NOR = {
+					tag = REB
+					tag = PIR
+					tag = BAR
+					tag = MER
+					THIS = ROOT
+					war_with = root
+				}
+				has_land = yes
+				opinion = { 
+					target = root
+					value >= 100
+				}
+				in_diplomatic_range = root
+				exists = this.current_ruler
+				current_ruler = {
+					NOT = { THIS = ROOT.current_ruler }
+					can_get_friends = yes
+					NOR = { 
+						is_rival = root.current_ruler
+						is_friend = root.current_ruler
+					}
+				}
+			}
+			weight = {
+				base = 1
+				modifier = {
+					factor = 2
+					primary_culture = root.culture
+				}
+				modifier = {
+					factor = 2
+					is_diadochus_trigger = yes
+				}
+			}
+			save_scope_as = friend_receiving_country
+		}
+		scope:friend_receiving_country = { # Send offer of friendship
+			trigger_event = { id = dip_friends_rivals.8 }
+		}
+	}
+}
+
+dip_friends_rivals.8 = { # Foreign Ruler Becomes Friend - Country of Interest Choice
+	type = country_event
+	title = dip_friends_rivals.8.t
+	desc = dip_friends_rivals.8.desc
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:friend_asking_country.current_ruler
+	
+	goto_location = scope:friend_asking_country.capital_scope
+	
+	option = { # Befriend
+		name = dip_friends_rivals.8.a
+		current_ruler = { add_friend = scope:friend_asking_country.current_ruler }
+		hidden_effect = {
+			add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country } # +50 opinion
+		}
+		reverse_add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country } # +50 opinion
+		ai_chance = {
+			modifier = {
+				factor = 5
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_group_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 10
+			     scope:friend_asking_country.current_ruler = { 
+					has_same_culture_as = root.current_ruler
+				}
+		    }
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value >= 50
+				}
+		    }
+		}
+	}
+	
+	option = { # We need no friend
+		name = dip_friends_rivals.8.b
+		current_ruler = {
+			add_prominence = prominence_small
+			add_popularity = popularity_small
+		}
+		ai_chance = { 
+			modifier = {
+				factor = 20
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 100
+				}
+		    }
+			modifier = {
+				factor = 10
+			    opinion = { 
+					target = scope:friend_asking_country
+					value <= 50
+				}
+		    }
+		}
+	}
+}
+
+dip_friends_rivals.9 = { # Diplomatic Breakdown
+	type = country_event 
+	title = dip_friends_rivals.9.t
+	desc = dip_friends_rivals.9.desc
+	picture = looting  
+	
+	left_portrait = current_ruler
+	right_portrait = scope:rival_ruler_country_scope.current_ruler
+	
+	goto_location = scope:rival_ruler_country_scope.capital_scope
+	
+	trigger = {
+		NOR = {  
+			has_variable = diplomacy_fr_toggle_9
+			is_subject = yes
+		}  
+		current_ruler = {
+			num_of_rivals >= 1  
+			any_rival = { # Is there a Rival ruler's country in diplo range?
+				is_ruler = yes
+				employer = { 
+					NOT = { is_subject = yes }
+					in_diplomatic_range = root
+				} 
+			}
+		}
+	}
+	
+	immediate = {
+		save_scope_as = from_rival_ruler_country
+		set_variable = {
+			name = diplomacy_fr_toggle_9
+			days = 3650 # 10 years
+		}
+		current_ruler = {
+			random_rival = { # Find Rival ruler's country
+				limit = {
+					is_ruler = yes
+					NOT = { employer = root }
+					employer = {
+						in_diplomatic_range = root
+					}
+				}
+				employer = {
+					save_scope_as = rival_ruler_country_scope
+				}
+			}
+		}
+	}
+		
+	option = { # Remove opinion
+		name = dip_friends_rivals.9.a
+		add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # -50 opinion
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # -50 opinion
+		scope:rival_ruler_country_scope = { # Information for other country
+			trigger_event = { id = dip_friends_rivals.21 }
+		}
+		ai_chance = { factor = 60 }
+	}
+	
+	option = { # Lose ruler popularity and oratory power
+		name = dip_friends_rivals.9.b
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+		add_political_influence = subtract_influence_small
+		ai_chance = { factor = 40 }
+	}
+}
+
+dip_friends_rivals.10 = { # Border Friction
+	type = country_event
+	title = dip_friends_rivals.10.t
+	desc = dip_friends_rivals.10.desc
+	picture = looting
+	
+	left_portrait = current_ruler
+	right_portrait = scope:rival_ruler_country_scope.current_ruler
+	 
+	goto_location = scope:rival_ruler_country_scope.capital_scope
+	 
+	trigger = {
+		NOR = { 
+			has_variable = diplomacy_fr_toggle_10
+			is_subject = yes
+		}
+		current_ruler = {
+			num_of_rivals >= 1  
+			any_rival = { # Is there a Rival ruler's country in diplo range?
+				is_ruler = yes
+				employer = { 
+					NOT = { is_subject = yes }
+					any_neighbour_country = { this = root }
+				} 
+			}
+		}
+	}
+	
+	immediate = {
+		save_scope_as = from_rival_ruler_country
+		current_ruler = {
+			save_scope_as = from_rival_ruler_ruler
+		}
+		set_variable = {
+			name = diplomacy_fr_toggle_10
+			days = 3650 # 10 years
+		}
+		random_neighbour_country = { # FInd neighboring Rival ruler's country
+			limit = {
+				NOT = { is_subject = yes }
+				current_ruler = {  
+					is_rival = scope:from_rival_ruler_ruler
+				}
+				any_owned_province = {
+					any_neighbor_province = {
+						owner = scope:from_rival_ruler_country
+					}
+				}
+			}
+			save_scope_as = rival_ruler_country_scope
+		}
+		random_owned_province = { # Find province bordering neighbouring rival ruler
+			limit = {
+				any_neighbor_province = {
+					owner = scope:rival_ruler_country_scope
+				}
+			}
+			save_scope_as = border_friction_friendly_province
+		}
+		scope:rival_ruler_country_scope = { # Find Rival ruler's province adjacent to previous
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						owner = scope:from_rival_ruler_country
+					}
+					is_neighbor = scope:border_friction_friendly_province
+				}
+				save_scope_as = border_friction_enemy_province
+			}
+		}	
+	} 
+		
+	option = { # Add claims on rival's bordering state
+		name = dip_friends_rivals.10.a
+		hidden_effect = {
+			scope:border_friction_enemy_province = {    
+				state = {
+					every_state_province = {
+						add_claim = scope:from_rival_ruler_country
+					}  
+				}
+			}
+		}
+		scope:rival_ruler_country_scope = {
+			custom_tooltip = dip_friends_rivals.10.at
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove opinion 50
+		scope:rival_ruler_country_scope = { # Information for other country if player
+			trigger_event = { id = dip_friends_rivals.22 }
+		}
+		ai_chance = { factor = 80 }
+	}
+	
+	option = { # Remove ruler popularity and add military power
+		name = dip_friends_rivals.10.b
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		add_military_experience = 5
+		ai_chance = { factor = 20 }
+	}
+}
+
+dip_friends_rivals.11 = { # Subject Interference
+	type = country_event
+	title = dip_friends_rivals.11.t
+	desc = dip_friends_rivals.11.desc
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:rival_ruler_country_scope.current_ruler
+	right_portrait = scope:rival_subject_country_scope.current_ruler
+	
+	goto_location = scope:rival_subject_country_scope.capital_scope
+	
+	trigger = {
+		NOR = { 
+			has_variable = diplomacy_fr_toggle_11
+			is_subject = yes
+		}
+		current_ruler = {
+			num_of_rivals >= 1
+			any_rival = { # Is there a Rival ruler's country in diplo range?
+				is_ruler = yes
+				employer = {
+					in_diplomatic_range = root
+					is_overlord = yes
+					any_subject = {
+						current_ruler = {
+							NOT = { is_rival = root.current_ruler }
+						}
+						any_neighbour_country = {
+							this = root
+						}
+						NOT = { has_variable = interfered_with }
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		save_scope_as = from_rival_ruler_country
+		set_variable = {
+			name = diplomacy_fr_toggle_11
+			days = 3650 # 10 years
+		}
+		current_ruler = {
+			random_rival = { # Find Rival ruler's country
+				limit = {
+					is_ruler = yes
+					employer = {
+						in_diplomatic_range = root
+						is_overlord = yes
+						any_subject = {
+							current_ruler = {
+								NOT = { is_rival = root.current_ruler }
+							}
+							any_neighbour_country = {
+								this = root
+							}
+							NOT = { has_variable = interfered_with }
+						}
+					}
+				}
+				save_scope_as = rival_ruler_ruler_scope
+				employer = {
+					save_scope_as = rival_ruler_country_scope
+				}
+			}
+		}
+		random_neighbour_country = { # Find rival ruler's subject country bordering root
+			limit = {
+				is_subject_of = scope:rival_ruler_country_scope
+				current_ruler = {
+					NOT = { 
+						is_rival = root.current_ruler
+					}
+				}
+				NOT = { has_variable = interfered_with }
+			}
+			set_variable = {
+				name = interfered_with
+				days = 3650 # 10 years
+			}
+			save_scope_as = rival_subject_country_scope
+		}
+	}
+		
+	option = { # Destabilise
+		name = dip_friends_rivals.11.a
+		trigger = {
+			NOT = {
+				scope:rival_subject_country_scope = {
+					current_ruler = {
+						is_friend = root.current_ruler
+					}
+				}
+			}
+		}
+		set_variable = subject_interference_destabilise
+		scope:rival_subject_country_scope = {
+			current_ruler = { add_popularity = subtract_popularity_huge }
+			add_stability = -10
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_subject_country_scope } # Remove subject opinion of root
+		dip_friends_rivals_11_effect = yes
+	}
+	
+	option = { # Incite Unrest
+		name = dip_friends_rivals.11.b
+		trigger = {
+			NOT = {
+				scope:rival_subject_country_scope = {
+					current_ruler = {
+						is_friend = root.current_ruler
+					}
+				}
+			}
+		}
+		set_variable = subject_interference_incite
+		scope:rival_subject_country_scope = { # Information for other country
+			current_ruler = {
+				add_popularity = subtract_popularity_medium
+			}
+			add_country_modifier = {
+				name = subject_loyalty_undermined
+				duration = 1825
+			}
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_subject_country_scope } # Remove subject opinion of root
+		dip_friends_rivals_11_effect = yes
+	} 
+	
+	option = { # Attempt to turn subject against overlord
+		name = dip_friends_rivals.11.c
+		trigger = {
+			NOT = {
+				scope:rival_subject_country_scope = {
+					current_ruler = {
+						is_friend = root.current_ruler
+					}
+				}
+			}
+		}
+		set_variable = subject_interference_dissent
+		scope:rival_subject_country_scope.current_ruler = {
+			add_corruption = corruption_large
+			add_gold = {
+				value = scope:from_rival_ruler_country.has_monthly_income
+				multiply = 2
+			}
+		}
+		add_treasury = {
+			value = has_monthly_income
+			multiply = -2
+		} 
+		reverse_add_opinion = { modifier = friend_ruler_country_opinion target = scope:rival_subject_country_scope } # Add subject opinion of root
+		scope:rival_subject_country_scope = {
+			add_opinion = { modifier = intervention_subject_country_opinion target = scope:rival_ruler_country_scope } # Remove subject opinion of overlord
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+		dip_friends_rivals_11_effect = yes
+	}
+	
+	option = { # Attempt to turn subject against overlord friend
+		name = dip_friends_rivals.11.d
+		exclusive = yes
+		trigger = {
+			scope:rival_subject_country_scope = {
+				current_ruler = {
+					is_friend = root.current_ruler
+				}
+			}
+		}
+		set_variable = subject_interference_friend
+		reverse_add_opinion = { modifier = friend_ruler_country_opinion target = scope:rival_ruler_country_scope } # Add subject opinion of root
+		scope:rival_ruler_country_scope = {
+			add_opinion = { modifier = intervention_subject_country_opinion target = scope:rival_ruler_country_scope } # Remove subject opinion of overlord
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+		dip_friends_rivals_11_effect = yes
+	}
+
+	option = { # Subtract Ruler popularity and oratory
+		name = dip_friends_rivals.11.e
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+}
+
+dip_friends_rivals.12 = { # Subject Border Friction
+	type = country_event
+	title = dip_friends_rivals.12.t
+	desc = dip_friends_rivals.12.desc
+	picture = looting
+	
+	left_portrait = current_ruler
+	right_portrait = scope:rival_ruler_country_scope.current_ruler
+	right_portrait = scope:rival_subject_country_scope.current_ruler
+	
+	goto_location = scope:rival_subject_country_scope.capital_scope
+	
+	trigger = {
+		NOR = { 
+			has_variable = diplomacy_fr_toggle_12
+			is_subject = yes
+		}
+		current_ruler = { # Is there a Rival ruler's country in diplo range?
+			num_of_rivals >= 1
+			any_rival = { 
+				is_ruler = yes
+				employer = {
+					in_diplomatic_range = root
+					is_overlord = yes
+					any_subject = {
+						any_neighbour_country = { this = root }
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		save_scope_as = from_rival_ruler_country
+		set_variable = {
+			name = diplomacy_fr_toggle_12
+			days = 3650 # 10 years
+		}
+		current_ruler = {
+			random_rival = { # Find Rival ruler's country
+				limit = {
+					is_ruler = yes
+					employer = {
+						in_diplomatic_range = root
+						is_overlord = yes
+						any_subject = {
+							any_neighbour_country = { this = root }
+						}
+					}
+				}
+				save_scope_as = rival_ruler_ruler_scope
+				employer = {
+					save_scope_as = rival_ruler_country_scope
+				}
+			}
+		}
+		random_neighbour_country = { # Find Rival ruler's neighboring subject
+			limit = {
+				is_subject_of = scope:rival_ruler_country_scope
+			}
+			save_scope_as = rival_subject_country_scope
+		}
+		random_owned_province = { # Find province bordering Rival ruler's subject
+			limit = {
+				any_neighbor_province = {
+					owner = scope:rival_subject_country_scope
+				}
+			}
+			save_scope_as = border_friction_friendly_province
+		}
+		scope:rival_subject_country_scope = { # Find Rival ruler's subject's adjacent province
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = { 
+						owner = root
+					}
+					is_neighbor = scope:border_friction_friendly_province
+				}
+				save_scope_as = border_friction_enemy_province
+			}
+		}
+	}
+		
+	option = { # Add claims to rival's bordering subject's state
+		name = dip_friends_rivals.12.a
+		hidden_effect = {
+			scope:border_friction_enemy_province = {  
+				state = {
+					every_state_province = {
+						add_claim = root
+					} 
+				}
+			}
+		}
+		scope:rival_subject_country_scope = { # Tooltip
+			custom_tooltip = dip_friends_rivals.12.at 
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion 50
+		reverse_add_opinion = { modifier = rival_subject_country_opinion target = scope:rival_subject_country_scope } # Remove subject opinion 50
+		scope:rival_ruler_country_scope = { # Information for other country if player
+			trigger_event = { id = dip_friends_rivals.24 }
+		}
+		scope:rival_subject_country_scope = { # Information for other country's subject if player
+			trigger_event = { id = dip_friends_rivals.24 }
+		}
+		ai_chance = { factor = 80 }
+	}
+
+	option = { # Remove ruler popularity and add military power
+		name = dip_friends_rivals.12.b
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		add_military_experience = 5
+		ai_chance = { factor = 20 }
+	}
+}
+
+dip_friends_rivals.13 = { # Pop Across Border
+	type = country_event
+	title = dip_friends_rivals.13.t 
+	desc = dip_friends_rivals.13.desc
+	picture = looting
+	
+	left_portrait = current_ruler
+	right_portrait = scope:rival_ruler_country_scope.current_ruler
+	
+	goto_location = scope:pop_friction_friendly_province
+	
+	trigger = {
+		NOR = { 
+			has_variable = diplomacy_fr_toggle_13
+			is_subject = yes
+		}
+		any_neighbour_country = { # Does a neighbouring Rival ruler's country of different culture group have root cultured pops in adjacent province?
+			current_ruler = { is_rival = root.current_ruler }
+			NOT = { is_subject = yes }
+			NOT = { primary_culture = root.culture }
+			any_owned_province = {
+				total_population > 3
+				any_neighbor_province = { owner = root }
+				any_pops_in_province = { pop_culture = root.culture }
+			}
+		}
+	}
+	
+	immediate = {
+		save_scope_as = from_rival_ruler_country
+		current_ruler = {
+			save_scope_as = from_rival_ruler_ruler
+		}
+		set_variable = {
+			name = diplomacy_fr_toggle_13
+			days = 3650 # 10 years
+		}
+		random_neighbour_country = { # Find neighbouring Rival ruler's country of different culture group with root cultured pops in adjacent province
+			limit = {
+				current_ruler = { is_rival = root.current_ruler }
+				NOT = { is_subject = yes }
+				any_owned_province = {
+					total_population > 3
+					any_neighbor_province = { owner = root }
+					any_pops_in_province = { pop_culture = root.culture }
+				}
+			}
+			save_scope_as = rival_ruler_country_scope
+			random_owned_province = {
+				limit = {
+					total_population > 3
+					any_neighbor_province = { owner = root }
+					any_pops_in_province = { pop_culture = root.culture }
+				}
+				save_scope_as = pop_friction_enemy_province
+			} 
+		}
+		random_owned_province = { # Save scope of adjacent root province to move pop to
+			limit = { is_neighbor = scope:pop_friction_enemy_province }
+			save_scope_as = pop_friction_friendly_province
+		}
+	} 
+		
+	option = { # Move pop for cash and remove opinion from Rival country
+		name = dip_friends_rivals.13.a
+		add_treasury = {
+			value = has_monthly_income   
+			multiply = -2
+		}  
+		remove_stability_effect_small = yes
+		custom_tooltip = dip_friends_rivals.13.at
+		hidden_effect = {
+			scope:pop_friction_enemy_province = {
+				ordered_pops_in_province = { 
+					limit = {
+						pop_culture = root.culture 
+					}
+					order_by = pop_hapiness
+					max = { 
+						value = province_pop_friction_size_svalue
+					}
+					check_range_bounds = no
+					move_pop = scope:pop_friction_friendly_province
+				}
+			}
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope }
+		scope:rival_ruler_country_scope = { # Information for targeted country
+			trigger_event = { id = dip_friends_rivals.25 }
+		}
+		ai_chance = { factor = 80 }
+	} 
+
+	option = { # Remove ruler popuality and civic power
+		name = dip_friends_rivals.13.b
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+dip_friends_rivals.14 = { # Subject Pop Across Border
+	type = country_event
+	title = dip_friends_rivals.14.t
+	desc = dip_friends_rivals.14.desc
+	picture = looting
+	
+	left_portrait = current_ruler
+	right_portrait = scope:rival_ruler_country_scope.current_ruler
+	right_portrait = scope:rival_subject_country_scope.current_ruler
+	
+	goto_location = scope:pop_friction_friendly_province
+	
+	trigger = {
+		NOR = { 
+			has_variable = diplomacy_fr_toggle_14
+			is_subject = yes
+		}
+		current_ruler = {
+			num_of_rivals >= 1
+			any_rival = { # Is there a Rival ruler's country in diplo range?
+				is_ruler = yes
+				employer = {
+					NOT = { is_subject = yes }
+					in_diplomatic_range = root
+					any_subject = {
+						any_neighbour_country = { this = root }
+						NOT = { primary_culture = root.culture }
+						any_owned_province = {
+							total_population > 3
+							any_neighbor_province = { owner = root }
+							any_pops_in_province = { pop_culture = root.culture }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		save_scope_as = from_rival_ruler_country
+		set_variable = { # Toggle
+			name = diplomacy_fr_toggle_14
+			days = 3650 # 10 years
+		} 
+		current_ruler = {
+			random_rival = { # Find Rival's country
+				limit = {
+					is_ruler = yes
+					employer = {
+						NOT = { is_subject = yes }
+						in_diplomatic_range = root
+						any_subject = {
+							any_neighbour_country = { this = root }
+							any_owned_province = {
+								total_population > 3
+								any_neighbor_province = { owner = root }
+								any_pops_in_province = { pop_culture = root.culture }
+							}
+						}
+					}
+				}
+				employer = { save_scope_as = rival_ruler_country_scope }
+			}
+		}
+		random_neighbour_country = { # Find Rival's subject country
+			limit = {
+				is_subject_of = scope:rival_ruler_country_scope
+				any_owned_province = {
+					total_population > 3
+					any_neighbor_province = { owner = root }
+					any_pops_in_province = { pop_culture = root.culture }
+				}
+			}
+			save_scope_as = rival_subject_country_scope
+			random_owned_province = {
+				limit = {
+					total_population > 3
+					any_neighbor_province = { owner = root }
+					any_pops_in_province = { pop_culture = root.culture }
+				}
+				save_scope_as = pop_friction_enemy_province
+			}
+		}
+		random_owned_province = { # Find adjacent friendly province to move pop to
+			limit = {
+				is_neighbor = scope:pop_friction_enemy_province
+			}
+			save_scope_as = pop_friction_friendly_province
+		}
+	}
+		
+	option = { # Move pop for cash and remove opinion from subject
+		name = dip_friends_rivals.14.a
+		add_treasury = {
+			value = has_monthly_income
+			multiply = -3
+		}
+		remove_stability_effect_small = yes
+		custom_tooltip = dip_friends_rivals.14.at
+		hidden_effect = {
+			scope:pop_friction_enemy_province = {
+				ordered_pops_in_province = { 
+					limit = {
+						pop_culture = root.culture 
+					}
+					order_by = pop_hapiness
+					max = { 
+						value = province_pop_friction_size_svalue
+					}
+					check_range_bounds = no
+					move_pop = scope:pop_friction_friendly_province
+				}
+			}
+		}
+		reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope }
+		reverse_add_opinion = { modifier = rival_subject_country_opinion target = scope:rival_subject_country_scope }
+		scope:rival_ruler_country_scope = { # Information for other country if player
+			trigger_event = { id = dip_friends_rivals.26 }
+		}
+		scope:rival_subject_country_scope = { # Information for other country's subject if player
+			trigger_event = { id = dip_friends_rivals.26 }
+		}
+		ai_chance = { factor = 80 }
+	}
+
+	option = { # Lose ruler popularity and civic power
+		name = dip_friends_rivals.14.b
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+dip_friends_rivals.15 = { # Foreign Ruler Friend - Ally Help
+	type = country_event
+
+	hidden = yes
+	
+	trigger = {
+		NOR = { 
+			has_variable = diplomacy_fr_toggle_15
+			is_subject = yes
+		}
+		is_ai = yes
+		any_allied_country = { # Is there an allied ruler friends with current ruler?
+			current_ruler = {
+				is_friend = root.current_ruler
+			}
+			opinion = {
+				target = root
+				value >= 50
+			}
+		}
+		manpower_percentage >= 0.5
+		treasury >= 10.0
+	}
+	
+	immediate = {
+		save_scope_as = friend_asking_country
+		set_variable = {
+			name = diplomacy_fr_toggle_15
+			days = 3650 # 10 years
+		}
+		random_allied_country = { # Find allied ruler friend of current ruler
+			limit = {
+				current_ruler = { 
+					is_friend = root.current_ruler
+				}
+				opinion = {
+					target = root
+					value >= 50
+				}	
+			}
+			save_scope_as = friend_receiving_country
+		}
+		scope:friend_receiving_country = {
+			trigger_event = { id = dip_friends_rivals.16 }
+		}
+	}
+}
+
+dip_friends_rivals.16 = { # Foreign Ruler Friend - Ally Help Choice
+	type = country_event
+	title = dip_friends_rivals.16.t
+	desc = dip_friends_rivals.16.desc
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:friend_asking_country.current_ruler
+	
+	goto_location = scope:friend_asking_country.capital_scope
+	
+	option = { # We need manpower
+		name = dip_friends_rivals.16.a
+		hidden_effect = {
+			scope:friend_asking_country = {
+				add_manpower = -5.0
+			}
+		}
+		root = {
+			add_manpower = 5.0
+		}
+		add_opinion = { modifier = friend_ruler_country_opinion target = scope:friend_asking_country }
+	}
+	
+	option = { # Any advice?
+		name = dip_friends_rivals.16.b
+		add_opinion = { modifier = friend_ruler_country_opinion target = scope:friend_asking_country }
+		add_political_influence = influence_small
+		#custom_tooltip = dip_friends_rivals.advice_tooltip
+	}
+	
+	option = { # We need cash
+		name = dip_friends_rivals.16.c
+		hidden_effect = {
+			scope:friend_asking_country = {
+				add_treasury = {
+					value = has_monthly_income
+					multiply = -2
+				}	
+			}
+		}
+		add_treasury = {
+			value = scope:friend_asking_country.has_monthly_income
+			multiply = 2
+		}	
+		add_opinion = { modifier = friend_ruler_country_opinion target = scope:friend_asking_country }
+	}
+	
+	option = { # We need nothing
+		name = dip_friends_rivals.16.d
+		current_ruler = {
+			add_popularity = popularity_medium
+		}
+	}
+}
+
+dip_friends_rivals.17 = { # Foreign Ruler Friend - Subject Help
+	type = country_event
+
+	hidden = yes
+	
+	trigger = {
+		NOT = { has_variable = diplomacy_fr_toggle_17 }
+		is_subject = yes
+		is_ai = yes
+		current_ruler = { # Is ruler friends with overlord ruler?
+			num_of_friends >= 1
+			any_friend = {
+				is_ruler = yes
+				employer = {
+					is_overlord = yes
+					any_subject = { this = root }
+					opinion = {
+						target = root
+						value >= 50
+					}
+				}
+			}
+		}
+		manpower_percentage >= 50.0
+		treasury >= 10.0
+	}
+	
+	immediate = {
+		save_scope_as = friend_asking_country
+		set_variable = {
+			name = diplomacy_fr_toggle_17
+			days = 3650 # 10 years
+		}
+		current_ruler = {
+			random_friend = { # Find overlord ruler friend of current ruler
+				limit = {
+					is_ruler = yes
+					employer = {
+						is_overlord = yes
+						any_subject = { this = root }
+						opinion = {
+							target = root
+							value >= 50
+						}
+					}
+				}
+				employer = {
+					save_scope_as = friend_receiving_country
+				}
+			}
+		}
+		scope:friend_receiving_country = {
+			trigger_event = { id = dip_friends_rivals.18 }
+		}
+	}
+}
+
+dip_friends_rivals.18 = { # Foreign Ruler Friend - Subject Help Choice
+	type = country_event 
+	title = dip_friends_rivals.18.t 
+	desc = dip_friends_rivals.18.desc 
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:friend_asking_country.current_ruler
+	
+	goto_location = scope:friend_asking_country.capital_scope
+	
+	option = { # We need manpower
+		name = dip_friends_rivals.18.a
+		hidden_effect = {
+			scope:friend_asking_country = {
+				add_manpower = -5.0
+			}
+		}
+		root = {
+			add_manpower = 5.0
+		}
+		add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country }
+	}
+	
+	option = { # Any advice?
+		name = dip_friends_rivals.18.b
+		add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country }
+		add_political_influence = influence_small	
+		#custom_tooltip = dip_friends_rivals.advice_tooltip
+	}
+	
+	option = { # We need cash
+		name = dip_friends_rivals.18.c
+		hidden_effect = {
+			scope:friend_asking_country = {
+				add_treasury = {
+					value = has_monthly_income
+					multiply = -2
+				}	
+			}
+		}
+		add_treasury = {
+			value = scope:friend_asking_country.has_monthly_income
+			multiply = 2
+		}	
+		add_opinion = { modifier = friend_subject_country_opinion target = scope:friend_asking_country }
+	}
+	
+	option = { # We need nothing
+		name = dip_friends_rivals.18.d
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+	}
+}
+
+dip_friends_rivals.19 = { # Foreign Ruler Friend - War Help
+	type = country_event
+	
+	hidden = yes
+	
+	trigger = {
+		NOR = { 
+			has_variable = diplomacy_fr_toggle_19
+			is_subject = yes
+		}
+		is_ai = yes
+		current_ruler = {
+			num_of_friends >= 1
+			any_friend = { # Is there an allied ruler friends with current ruler?
+				is_ruler = yes
+				employer = {
+					NOT = { is_subject = yes }
+					alliance_with = root 
+					opinion = {
+						target = root
+						value >= 50
+					}
+					OR = {
+						any_countries_at_war_with = { num_of_cohorts >= root.num_of_cohorts }
+						has_civil_war = yes
+					}
+				}
+			}
+		}
+		manpower_percentage >= 50.0
+		treasury >= 10.0
+	}
+	
+	immediate = {
+		save_scope_as = friend_asking_country
+		set_variable = {
+			name = diplomacy_fr_toggle_19
+			days = 3650 # 10 years
+		}
+		current_ruler = {
+			random_friend = { # Find allied ruler friend of current ruler at war or in civil war
+				limit = {
+					is_ruler = yes
+					employer = {
+						NOT = { is_subject = yes }
+						alliance_with = root 
+						opinion = {
+							target = root
+							value >= 50
+						}
+						OR = {
+							any_countries_at_war_with = { num_of_cohorts >= root.num_of_cohorts }
+							has_civil_war = yes
+						}
+					}
+				}
+				employer = {
+					save_scope_as = friend_receiving_country
+				}
+			}
+		}
+		scope:friend_receiving_country = {
+			trigger_event = { id = dip_friends_rivals.20 }
+		}
+	}
+}
+
+dip_friends_rivals.20 = { # Foreign Ruler Friend - At War Help Choice
+	type = country_event
+	title = "dip_friends_rivals.20.t"
+	desc = "dip_friends_rivals.20.desc"
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:friend_asking_country.current_ruler
+		
+	goto_location = scope:friend_asking_country.capital_scope	
+		
+	option = { # We need manpower
+		name = "dip_friends_rivals.20.a"
+		hidden_effect = {
+			scope:friend_asking_country = {
+				add_manpower = -5.0
+			}
+		}
+		root = {
+			add_manpower = 5.0
+		}
+		add_opinion = { modifier = friend_ruler_country_opinion target = scope:friend_asking_country }
+		
+	}
+	
+	option = { # Any advice?
+		name = "dip_friends_rivals.20.b"
+		#custom_tooltip = dip_friends_rivals.advice_tooltip
+		add_opinion = { modifier = friend_ruler_country_opinion target = scope:friend_asking_country }
+		add_political_influence = influence_small
+		
+	}
+	
+	option = { # We need cash
+		name = "dip_friends_rivals.20.c"
+		hidden_effect = {
+			scope:friend_asking_country = {
+				add_treasury = {
+					value = has_monthly_income
+					multiply = -2
+				}	
+			}
+		}
+		add_treasury = {
+			value = scope:friend_asking_country.has_monthly_income
+			multiply = 2
+		}	
+		add_opinion = { modifier = friend_ruler_country_opinion target = scope:friend_asking_country }
+	}
+	
+	option = { # We need nothing
+		name = "dip_friends_rivals.20.d"
+		current_ruler = {
+			add_popularity = popularity_small
+		}
+	}
+}
+
+dip_friends_rivals.21 = { # Diplomatic Breakdown Information
+	type = country_event
+	title = "dip_friends_rivals.21.t"
+	desc = "dip_friends_rivals.21.desc"
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:from_rival_ruler_country.current_ruler
+	
+	goto_location = scope:from_rival_ruler_country.current_ruler
+	
+	option = { # Darn
+		name = "dip_friends_rivals.21.a"
+		custom_tooltip = dip_friends_rivals.21.at # Rivals lose 50 opinion of each other
+	}
+} 
+
+dip_friends_rivals.22 = { # Border Friction Information
+	type = country_event
+	title = "dip_friends_rivals.22.t"
+	desc = "dip_friends_rivals.22.desc"
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:from_rival_ruler_country.current_ruler
+	
+	goto_location = scope:from_rival_ruler_country.current_ruler
+	
+	option = { # Darn
+		name = "dip_friends_rivals.22.a"
+		scope:from_rival_ruler_country = {
+			custom_tooltip = dip_friends_rivals.22.at # Rival has claims on us and we lose opinion
+		}
+	}
+}
+
+dip_friends_rivals.23 = { # Subject Interference Information
+	type = country_event
+	title = "dip_friends_rivals.23.t"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					is_subject = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_destabilise }
+				}
+				desc = "dip_friends_rivals.23.desc_1"
+			}
+			triggered_desc = {
+				trigger = {
+					is_overlord = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_destabilise }
+				}
+				desc = "dip_friends_rivals.23.desc_2"
+			}
+			triggered_desc = {
+				trigger = {
+					is_subject = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_incite }
+				}
+				desc = "dip_friends_rivals.23.desc_3" 
+			}
+			triggered_desc = {
+				trigger = {
+					is_overlord = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_incite }
+				}
+				desc = "dip_friends_rivals.23.desc_4"
+			}
+			triggered_desc = {
+				trigger = {
+					is_subject = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_dissent }
+				}
+				desc = "dip_friends_rivals.23.desc_5"
+			}
+			triggered_desc = {
+				trigger = {
+					is_overlord = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_dissent }
+				}
+				desc = "dip_friends_rivals.23.desc_6"
+			}
+			triggered_desc = {
+				trigger = {
+					is_subject = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_friend }
+				}
+				desc = "dip_friends_rivals.23.desc_7"
+			}
+			triggered_desc = {
+				trigger = {
+					is_overlord = yes
+					scope:from_rival_ruler_country = { has_variable = subject_interference_friend }
+				}
+				desc = "dip_friends_rivals.23.desc_8"
+			}
+		}
+	}
+	picture = greek_court
+	
+	left_portrait = scope:rival_ruler_country_scope.current_ruler
+	left_portrait = scope:rival_subject_country_scope.current_ruler
+	right_portrait = scope:from_rival_ruler_country.current_ruler
+	
+	goto_location = scope:from_rival_ruler_country.capital_scope
+	
+	option = { # Darn
+		name = "dip_friends_rivals.23.a"
+		scope:from_rival_ruler_country = {
+			if = {
+				limit = { has_variable = subject_interference_destabilise }
+				show_as_tooltip = {
+					scope:rival_subject_country_scope = {
+						current_ruler = { add_popularity = subtract_popularity_huge }
+						add_stability = -10
+					}
+					scope:from_rival_ruler_country = {
+						reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+						reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_subject_country_scope } # Remove subject opinion of root
+					}
+				}
+			}
+			else_if = {
+				limit = { has_variable = subject_interference_incite }
+				show_as_tooltip = {
+					scope:rival_subject_country_scope = {
+						current_ruler = { add_popularity = subtract_popularity_medium }
+						add_country_modifier = {
+							name = subject_loyalty_undermined
+							duration = 1825
+						}
+					}
+					scope:from_rival_ruler_country = {
+						reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+						reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_subject_country_scope } # Remove subject opinion of root
+					}
+				}
+			}
+			else_if = {
+				limit = { has_variable = subject_interference_dissent }
+				show_as_tooltip = {
+					scope:rival_subject_country_scope = {
+						current_ruler = {
+							add_corruption = corruption_large
+							add_gold = {
+								value = scope:from_rival_ruler_country.has_monthly_income
+								multiply = 2
+							} 
+						}
+						add_opinion = { modifier = intervention_subject_country_opinion target = scope:rival_ruler_country_scope } # Remove subject opinion of overlord
+					}
+					scope:from_rival_ruler_country = {
+						add_treasury = {
+							value = has_monthly_income
+							multiply = -2
+						} 
+						reverse_add_opinion = { modifier = friend_ruler_country_opinion target = scope:rival_subject_country_scope } # Add subject opinion of root
+						reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+					}
+				}
+			}
+			else_if = {
+				limit = { has_variable = subject_interference_friend }
+				show_as_tooltip = {
+					scope:rival_ruler_country_scope = {
+						add_opinion = { modifier = intervention_subject_country_opinion target = scope:rival_ruler_country_scope } # Remove subject opinion of overlord
+					}
+					scope:from_rival_ruler_country = {
+						reverse_add_opinion = { modifier = friend_ruler_country_opinion target = scope:rival_subject_country_scope } # Add subject opinion of root
+						reverse_add_opinion = { modifier = rival_ruler_country_opinion target = scope:rival_ruler_country_scope } # Remove overlord opinion of root
+					}
+				}
+			}
+		}
+		
+	}
+
+	after = {
+		scope:from_rival_ruler_country = {
+			if = {
+				limit = { has_variable = subject_interference_destabilise }
+				remove_variable = subject_interference_destabilise
+			}
+			else_if = {
+				limit = { has_variable = subject_interference_incite }
+				remove_variable = subject_interference_incite
+			}
+			else_if = {
+				limit = { has_variable = subject_interference_dissent }
+				remove_variable = subject_interference_dissent
+			}
+			else_if = {
+				limit = { has_variable = subject_interference_friend }
+				remove_variable = subject_interference_friend
+			}
+		}
+	}
+}
+ 
+dip_friends_rivals.24 = { # Subject Border Friction Information
+	type = country_event
+	title = "dip_friends_rivals.24.t"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {   
+					is_subject = yes
+				} 
+				desc = "dip_friends_rivals.24.desc_1"
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = "dip_friends_rivals.24.desc_2"
+			}
+		}
+	}
+	picture = greek_court
+	
+	left_portrait = scope:rival_ruler_country_scope.current_ruler
+	left_portrait = scope:rival_subject_country_scope.current_ruler
+	right_portrait = scope:from_rival_ruler_country.current_ruler
+	
+	goto_location = scope:from_rival_ruler_country.capital_scope
+	
+	trigger = { is_ai = no }
+
+	option = { # Darn
+		name = "dip_friends_rivals.24.a"
+		trigger = {
+			is_subject = yes
+		}
+		scope:from_rival_ruler_country = {
+			custom_tooltip = dip_friends_rivals.24.at # Overlords rival has claimed our state we lose opinion
+		}
+	}
+	
+	option = { # Darn
+		name = "dip_friends_rivals.24.b"
+		trigger = {
+			is_overlord = yes
+		}
+		scope:from_rival_ruler_country = {
+			custom_tooltip = dip_friends_rivals.24.bt # Rival has claimed our subjects state we lose opinion
+		}
+	}
+}
+
+dip_friends_rivals.25 = { # Pop Across Border Information
+	type = country_event
+	title = "dip_friends_rivals.25.t"
+	desc = "dip_friends_rivals.25.desc"
+	picture = greek_court
+	
+	left_portrait = current_ruler
+	right_portrait = scope:from_rival_ruler_country.current_ruler
+	right_portrait = scope:rival_subject_country_scope.current_ruler
+	
+	goto_location = scope:pop_friction_friendly_province
+
+	trigger = { is_ai = no }
+	
+	option = { # Darn
+		name = "dip_friends_rivals.25.a"
+		scope:from_rival_ruler_country = {
+			custom_tooltip = dip_friends_rivals.25.at # Rival has stolen our pops we lose opinion
+		}
+	}
+}
+
+dip_friends_rivals.26 = { # Subject Pop Across Border Information
+	type = country_event
+	title = "dip_friends_rivals.26.t"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					is_subject = yes
+				}
+				desc = "dip_friends_rivals.26.desc_1"
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = "dip_friends_rivals.26.desc_2"
+			}
+		}
+	}
+	picture = greek_court
+	
+	left_portrait = scope:rival_ruler_country_scope.current_ruler
+	left_portrait = scope:rival_subject_country_scope.current_ruler
+	right_portrait = scope:from_rival_ruler_country.current_ruler
+	
+	goto_location = scope:pop_friction_friendly_province
+	
+	option = { # Darn
+		name = "dip_friends_rivals.26.a"
+		trigger = {
+			is_subject = yes
+		}
+		scope:from_rival_ruler_country = {
+			custom_tooltip = dip_friends_rivals.26.at # Overlord's rival has stolen our pops we lose opinion
+		}
+	}
+	
+	option = { # Darn
+		name = "dip_friends_rivals.26.b"
+		trigger = {
+			is_overlord = yes
+		}
+		scope:from_rival_ruler_country = {
+			custom_tooltip = dip_friends_rivals.26.bt # Rival has stolen our subject's pops we lose opinion
+		}
+	}
+}
+
+dip_friends_rivals.27 = {
+	type = country_event
+	
+	hidden = yes
+	
+	immediate = {
+		random_neighbour_country = {
+			current_ruler = {
+				save_scope_as = rival_ruler
+			}
+		}
+		current_ruler = {
+			add_rival = scope:rival_ruler
+		}
+	}
+}

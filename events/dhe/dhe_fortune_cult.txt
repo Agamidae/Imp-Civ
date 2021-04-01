@@ -1,0 +1,382 @@
+﻿namespace = dhe_fortune_cult
+
+# Giving a home to the Cult of Fortune
+dhe_fortune_cult.1 = {
+	type = country_event
+	title = "dhe_fortune_cult.1.t"
+	desc = "dhe_fortune_cult.1.desc"
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+	right_portrait = scope:fortuna_character
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		religion = roman_pantheon
+		NOR = { 
+			has_variable = dismissed_cult_of_fortune 
+			has_variable = cult_of_fortune
+		}
+		any_owned_province = {
+			has_city_status = yes
+			any_pops_in_province = {
+				pop_religion = roman_pantheon
+			}
+			NOR = {
+				has_province_modifier = province_improvement_isis_cult
+				has_province_modifier = province_improvement_isis_cult_center
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				has_city_status = yes
+				any_pops_in_province = {
+					pop_religion = roman_pantheon
+				}
+				NOR = {
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+
+		hidden_effect = {
+			create_character = {
+				culture = root.current_ruler.culture
+				religion = roman_pantheon
+				age = 23
+				save_scope_as = fortuna_character
+			}
+			scope:fortuna_character = {
+				add_prominence = prominence_huge
+				add_character_modifier = {
+					name = char_improvement_cult_fortune
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.1.a"
+		custom_tooltip = "cult_of_fortune_tooltip"
+		scope:randomized_country_province = {
+			create_state_pop = freemen
+			if = {
+				limit = {
+					any_pops_in_province = {
+						NOT = { pop_religion = roman_pantheon }
+					}
+				}
+				random_pops_in_province = {
+					limit = {
+						NOT = { pop_religion = roman_pantheon }
+					}
+					set_pop_religion = roman_pantheon
+				}
+				if = {
+					limit = {
+						any_pops_in_province = {
+							NOT = { pop_religion = roman_pantheon }
+						}
+					}
+					random_pops_in_province = {
+						limit = {
+							NOT = { pop_religion = roman_pantheon }
+						}
+						set_pop_religion = roman_pantheon
+					}
+				}
+			}
+		}
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 4
+		}
+		remove_stability_effect = yes
+		set_variable = {
+			name = cult_of_fortune
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.1.b"
+		custom_tooltip = "dhe_fortune_cult.1.b.tt"
+		hidden_effect = {
+			scope:fortuna_character = {
+				char_banishment_effect = yes
+			}
+		}
+		if = {
+			limit = {
+				is_monarchy = yes
+			}
+			add_legitimacy = subtract_legitimacy_large
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+		set_variable = {
+			name = dismissed_cult_of_fortune
+		}
+	}
+}
+
+### Recurring Fortuna events ###
+# Becoming a member (positive character modifier for current ruler)
+dhe_fortune_cult.2 = {
+	type = country_event
+	title = "dhe_fortune_cult.2.t"
+	desc = "dhe_fortune_cult.2.desc"
+	picture = religious_rite
+	
+	left_portrait = current_ruler
+	right_portrait = scope:fortuna_character
+
+	trigger = {
+		religion = roman_pantheon
+		has_variable = cult_of_fortune
+		current_ruler = {
+			NOR = { 
+				has_variable = uninterested_in_cult_of_fortune 
+				has_character_modifier = char_improvement_cult_fortune 
+				has_character_modifier = char_improvement_cult_isis
+				has_character_modifier = athenian_mission_10_eleusinian_cult_modifier
+			}
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_character_modifier = char_improvement_cult_fortune
+				NOT = { this = root.current_ruler }
+			}
+			save_scope_as = fortuna_character
+		}
+		current_ruler = {
+			set_variable = {
+				name = uninterested_in_cult_of_fortune
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.2.a"
+		remove_stability_effect = yes
+		current_ruler = {
+			add_popularity = popularity_small
+			add_character_modifier = {
+				name = char_improvement_cult_fortune
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.2.b"
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+}
+
+# Setting up a shrine in a random province
+dhe_fortune_cult.3 = {
+	type = country_event
+	title = "dhe_fortune_cult.3.t"
+	desc = "dhe_fortune_cult.3.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+	right_portrait = scope:fortuna_character
+
+	goto_location = scope:randomized_country_province
+	
+	trigger = {
+		NOT = { has_variable = dhe_fortune_cult_3_cooldown }
+		religion = roman_pantheon
+		has_variable = cult_of_fortune
+		any_owned_province = {
+			is_capital = no
+			NOR = { 
+				has_province_modifier = province_improvement_shrine_of_fortune 
+				has_province_modifier = province_improvement_isis_cult
+				has_province_modifier = province_improvement_isis_cult_center
+			}
+		}
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				has_character_modifier = char_improvement_cult_fortune
+				NOT = { this = root.current_ruler }
+			}
+			save_scope_as = fortuna_character
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				NOR = { 
+					has_province_modifier = province_improvement_shrine_of_fortune 
+					has_province_modifier = province_improvement_isis_cult
+					has_province_modifier = province_improvement_isis_cult_center
+				}
+			}
+			save_scope_as = randomized_country_province
+		}
+		set_variable = {
+			name = dhe_fortune_cult_3_cooldown
+			days = 7300
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.3.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 8
+		}
+		scope:randomized_country_province = {
+			add_province_modifier = {
+				name = province_improvement_shrine_of_fortune
+				duration = 7300
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.3.b"
+		current_ruler = {
+			add_popularity = subtract_popularity_small
+		}
+	}
+}
+
+# Building a proper temple to the cult of fortune
+dhe_fortune_cult.4 = {
+	type = country_event
+	title = "dhe_fortune_cult.4.t"
+	desc = "dhe_fortune_cult.4.desc"
+	picture = hellenic_temple
+	
+	left_portrait = current_ruler
+
+	goto_location = capital_scope
+	
+	trigger = {
+		religion = roman_pantheon
+		has_variable = cult_of_fortune
+		NOT = {
+			any_owned_province = { has_province_modifier = province_improvement_temple_of_fortune }
+		}
+	}
+
+	immediate = {
+		current_ruler = {
+			save_scope_as = test
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.4.a"
+		add_treasury = {
+			subtract = root.has_monthly_income
+			multiply = 24
+		}
+		remove_stability_effect = yes
+		capital_scope = {
+			add_province_modifier = {
+				name = province_improvement_temple_of_fortune
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_fortune_cult.4.b"
+		if = {
+			limit = {
+				current_ruler = {
+					has_character_modifier = char_improvement_cult_fortune
+				}
+			}
+			current_ruler = {
+				remove_character_modifier = char_improvement_cult_fortune
+			}
+		}
+		current_ruler = {
+			add_popularity = subtract_popularity_medium
+		}
+	}
+}
+
+### Room for additional events if necessary ###
+
+### Maintenance Events ###
+# Court characters join the Cult of Fortune
+dhe_fortune_cult.10 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		employer = {
+			has_variable = cult_of_fortune
+		}
+		wealth >= 200
+		char_is_good_leader_trigger = yes
+		is_ruler = no
+		is_pretender = no
+		is_primary_heir = no
+		NOR = { 
+			has_character_modifier = char_improvement_cult_fortune 
+			has_character_modifier = char_improvement_cult_isis
+			has_character_modifier = athenian_mission_10_eleusinian_cult_modifier
+		}
+	}
+
+	immediate = {
+		add_gold = -200
+		add_character_modifier = {
+			name = char_improvement_cult_fortune
+		}
+	}
+}
+
+# Governor builds a shrine to the Cult of Fortune
+dhe_fortune_cult.11 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_governor = yes
+		has_character_modifier = char_improvement_cult_fortune
+		wealth >= 200
+		employer = {
+			any_owned_province = {
+				governor = root
+			}
+		}
+	}
+
+	immediate = {
+		add_gold = -200
+		employer = {
+			random_owned_province = {
+				limit = {
+					governor = root
+				}
+				save_scope_as = randomized_governed_province
+			}
+		}
+		scope:randomized_governed_province = {
+			add_province_modifier = {
+				name = province_improvement_shrine_of_fortune
+				duration = 7300	
+			} 
+		}
+	}
+}
