@@ -15,7 +15,6 @@ senate_objective_change_law_oli_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = oligarchic_cooldown
 						trigger_event = { id = senate_objectives.1 }
 					}
 				}
@@ -40,7 +39,6 @@ senate_objective_change_law_dem_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = traditionalist_cooldown
 						trigger_event = { id = senate_objectives.2 }
 					}
 				}
@@ -65,7 +63,6 @@ senate_objective_change_law_tra_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = traditionalist_cooldown
 						trigger_event = { id = senate_objectives.3 }
 					}
 				}
@@ -92,7 +89,6 @@ senate_objective_declare_war_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = oligarchic_cooldown
 						trigger_event = { id = senate_objectives.4 }
 					}
 				}
@@ -116,7 +112,6 @@ senate_objective_grant_holdings_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = oligarchic_cooldown
 						trigger_event = { id = senate_objectives.5 }
 					}
 				}
@@ -140,7 +135,6 @@ senate_objective_revoke_holdings_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = democratic_cooldown
 						trigger_event = { id = senate_objectives.6 }
 					}
 				}
@@ -163,8 +157,7 @@ senate_objective_lengthen_terms_gen_pulse = {
 			hidden_effect = {
 				random = {
 					chance = base_objective_push_chance_svalue
-					party_country = {
-						set_variable = oligarchic_cooldown
+					party_country = {						
 						trigger_event = { id = senate_objectives.7 }
 					}
 				}
@@ -188,7 +181,6 @@ senate_objective_shorten_terms_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = democratic_cooldown
 						trigger_event = { id = senate_objectives.8 }
 					}
 				}
@@ -212,7 +204,6 @@ senate_objective_build_temple_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = democratic_cooldown
 						trigger_event = { id = senate_objectives.9 }
 					}
 				}
@@ -236,7 +227,6 @@ senate_objective_imprison_head_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = democratic_cooldown
 						trigger_event = { id = senate_objectives.10 }
 					}
 				}
@@ -260,7 +250,6 @@ senate_objective_integrate_culture_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = democratic_cooldown
 						trigger_event = { id = senate_objectives.11 }
 					}
 				}
@@ -284,7 +273,6 @@ senate_objective_invest_gen_pulse = {
 				random = { 
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = traditionalist_cooldown
 						trigger_event = { id = senate_objectives.14 }
 					}
 				}
@@ -311,7 +299,6 @@ senate_objective_acquire_subject_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = oligarchic_cooldown
 						trigger_event = { id = senate_objectives.15 }
 					}
 				}
@@ -335,7 +322,6 @@ senate_objective_revoke_rights_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = traditionalist_cooldown
 						trigger_event = { id = senate_objectives.13 }
 					}
 				}
@@ -359,7 +345,6 @@ senate_objective_appoint_member_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = oligarchic_cooldown
 						trigger_event = { id = senate_objectives.16 }
 					}
 				}
@@ -383,7 +368,6 @@ senate_objective_destroy_shrine_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = traditionalist_cooldown
 						trigger_event = { id = senate_objectives.19 }
 					}
 				}
@@ -410,7 +394,6 @@ senate_objective_enemy_shrine_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = traditionalist_cooldown
 						trigger_event = { id = senate_objectives.20 }
 					}
 				}
@@ -434,7 +417,6 @@ senate_objective_province_city_gen_pulse = {
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = {
-						set_variable = democratic_cooldown
 						trigger_event = { id = senate_objectives.21 }
 					}
 				}

@@ -1108,7 +1108,7 @@ country = {
 			}
 
 			own_control_core = 	{
-				416 413 417
+				416 7898 413
 
 			}
 
@@ -1130,7 +1130,7 @@ country = {
 			}
 
 			own_control_core = 	{
-				427 450 429
+				427 430 429
 			}
 
 		}
@@ -1449,6 +1449,29 @@ country = {
 				6274 6271 6272
 			}
 		}
+		
+		PLC = { #Poland-Lithuania
+			government = tribal_kingdom
+			primary_culture = polish
+			religion = default_pantheon
+			tribal_authority_laws = absolute_authority
+			diplomatic_stance=appeasement_stance
+			capital = 6274
+			technology={
+				military_tech={ level=1 progress=0 }
+				civic_tech={ level=1 progress=0 }
+				oratory_tech={ level=1 progress=0 }
+				religious_tech= { level=1 progress=0  }
+			}
+
+			historical_regnal_numbers = {
+				Casimir = 2
+			}
+
+			own_control_core = {
+				6274 6271 6272
+			}
+		}
 
 		RUS = { #Russia
 			family = 33
@@ -1495,7 +1518,7 @@ country = {
 		}
 
 
-		GER = { #Germany?
+		GER = { #Germany
 			family = 34
 			government = tribal_kingdom
 			primary_culture = north_german

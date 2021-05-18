@@ -17,7 +17,6 @@
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = optimates_agenda_cooldown
 						trigger_event =  senate_objective_roman.1 
 					}
 				}
@@ -42,7 +41,6 @@ senate_objective_roman_2_pulse = { #Grant Holdings
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = optimates_agenda_cooldown
 						trigger_event =  senate_objective_roman.2 
 					}
 				}
@@ -67,7 +65,6 @@ senate_objective_roman_3_pulse = { #Change Law Optimates
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = optimates_agenda_cooldown
 						trigger_event =  senate_objective_roman.3 
 					}
 				}
@@ -92,7 +89,6 @@ senate_objective_roman_4_pulse = { #Change Law Populares
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = populares_agenda_cooldown
 						trigger_event =  senate_objective_roman.4 
 					}
 				}
@@ -117,7 +113,6 @@ senate_objective_roman_5_pulse = { #Revoke Holdings Populares
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = populares_agenda_cooldown
 						trigger_event =  senate_objective_roman.5 
 					}
 				}
@@ -142,7 +137,6 @@ senate_objective_roman_6_pulse = { #OBSOLETE
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = populares_agenda_cooldown
 						trigger_event =  senate_objective_roman.6 
 					}
 				}
@@ -167,7 +161,6 @@ senate_objective_roman_7_pulse = { #Imprison Head of Family
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = populares_agenda_cooldown
 						trigger_event =  senate_objective_roman.7 
 					}
 				}
@@ -195,7 +188,6 @@ senate_objective_roman_8_pulse = { #Declare War - Populares
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = populares_agenda_cooldown
 						trigger_event =  senate_objective_roman.8 
 					}
 				}
@@ -220,7 +212,6 @@ senate_objective_roman_9_pulse = { #Build Buildings
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = boni_agenda_cooldown
 						trigger_event =  senate_objective_roman.9 
 					}
 				}
@@ -245,7 +236,6 @@ senate_objective_roman_10_pulse = { #State Investments
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = boni_agenda_cooldown
 						trigger_event =  senate_objective_roman.10 
 					}
 				}
@@ -270,7 +260,6 @@ senate_objective_roman_11_pulse = { #Stability
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = boni_agenda_cooldown
 						trigger_event =  senate_objective_roman.11 
 					}
 				}
@@ -295,7 +284,6 @@ senate_objective_roman_12_pulse = { #Reduce Tyranny
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = boni_agenda_cooldown
 						trigger_event =  senate_objective_roman.12 
 					}
 				}
@@ -320,7 +308,6 @@ senate_objective_roman_13_pulse = { #Law Change - Boni
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = boni_agenda_cooldown
 						trigger_event =  senate_objective_roman.13 
 					}
 				}
@@ -345,7 +332,6 @@ senate_objective_roman_14_pulse = { #Revoke Office - Optimates
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = optimates_agenda_cooldown
 						trigger_event =  senate_objective_roman.14 
 					}
 				}
@@ -370,7 +356,6 @@ senate_objective_roman_15_pulse = { #Appoint Members to office - Optimates
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = optimates_agenda_cooldown
 						trigger_event =  senate_objective_roman.15 
 					}
 				}
@@ -395,7 +380,6 @@ senate_objective_roman_16_pulse = { #Revoke Office - Populares
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = populares_agenda_cooldown
 						trigger_event =  senate_objective_roman.16 
 					}
 				}
@@ -420,7 +404,6 @@ senate_objective_roman_17_pulse = { #Appoint to office - Populares
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = populares_agenda_cooldown
 						trigger_event =  senate_objective_roman.17 
 					}
 				}
@@ -445,7 +428,6 @@ senate_objective_roman_18_pulse = { #Reduce Civic Rights
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = optimates_agenda_cooldown
 						trigger_event =  senate_objective_roman.18 
 					}
 				}
@@ -470,7 +452,6 @@ senate_objective_roman_19_pulse = { #Integrate Culture
 				random = {
 					chance = base_objective_push_chance_svalue
 					party_country = { 
-						set_variable = boni_agenda_cooldown
 						trigger_event =  senate_objective_roman.19 
 					}
 				}

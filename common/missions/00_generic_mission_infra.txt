@@ -3,7 +3,7 @@
 	icon = general_3
 
 	repeatable = yes #[Boolean] (Default no) Whether this mission is repeatable
-
+	
 	potential = {
 		any_owned_province = {
 			governorship = {
@@ -24,9 +24,9 @@
 		}
 		has_civil_war = no
 	}
-
+	
 	ai_chance = { factor = 0 }
-
+	
 	#Saved Scopes:
 	#infra_governorship = Main mission affected Governorship
 	#governorship_capital = The Starting Location of the Governor in the Governorship
@@ -39,7 +39,7 @@
 	#ship_building_center - Territory picked for ship building in Port Province.
 	#urbanize_area_province - Province for the Urban improvement Branch
 	#urbanize_area_city - Territory for the Urban Improvement Branch
-
+	
 	#Variables:
 	#capital_trade_mission_ongoing = Should be cleared
 	#shrine_mission_ongoing = Should be cleared
@@ -51,7 +51,7 @@
 	#infra_mission_branches = Absolutely must be set to 0 in on potential.
 	#
 	#mission_happened_here = Should NOT be cleared
-
+	
 	on_potential = {
 		ROOT = { set_variable = capital_trade_mission_ongoing } #Must be cleared in both abort and complete!
 		ROOT = {
@@ -111,14 +111,14 @@
 				}
 			}
 		}
-
+		
 		scope:governorship_capital = {
 			if = {
 				limit = { dominant_province_culture = owner.culture }
 				set_variable = was_dominant_culture
 			}
 		}
-
+		
 		#Setup for specific Branches:
 		#Religion Branch:
 		scope:infra_governorship = {
@@ -142,8 +142,8 @@
 				}
 			}
 		}
-
-
+		
+		
 		#Port Branch:
 		if = {
 			limit = {
@@ -214,7 +214,7 @@
 						save_scope_as = valid_sea_or_river_place
 					}
 					random_state_province = {
-						limit = { is_port = yes }
+						limit = { is_port = yes } 
 						random_sea_and_river_zone = {
 							limit = { is_neighbor = PREV }
 							save_scope_as = trade_sea
@@ -223,7 +223,7 @@
 				}
 			}
 		}
-
+		
 		#Mining Branch:
 		if = {
 			limit = {
@@ -421,7 +421,7 @@
 				}
 			}
 		}
-
+		
 		#Urbanization Branch: #Last resort
 		if = {
 			limit = { #Should not coexist with two wide branches
@@ -540,7 +540,7 @@
 			ai_mission_back_out_trigger = yes
 		}
 	}
-
+	
 	on_abort = {
 		scope:infra_governorship = {
 			set_variable = {
@@ -632,10 +632,10 @@
 			}
 		}
 	}
-
+	
 	chance = { }
-
-
+	
+	
 	on_start = {
 		start_mission_ai_effect = yes
 		scope:infra_governorship = { set_variable = mission_happened_here }
@@ -660,7 +660,7 @@
 			}
 		}
 	}
-
+	
 	shrine_branch_1 = { #Make sure the Shrine is in a City, build temples there.
 		requires = {
 			trader_colony
@@ -689,7 +689,7 @@
 				}
 			}
 		}
-
+ 
 		highlight = {
 			scope:province = {
 				exists = scope:shrine_territory
@@ -707,13 +707,13 @@
 				}
 			}
 			add_country_modifier = {
-				name = temples_built
+				name = temples_built 
 				duration = 3650
 			}
 		}
 
 	}
-
+	
 	shrine_branch_2 = { #Build the Shrine
 		requires = { shrine_branch_1 }
 		icon = task_economical
@@ -721,8 +721,8 @@
 			exists = scope:shrine_province
 		}
 		allow = {
-			treasury >= shrine_cost_afford_svalue
-
+			treasury >= shrine_cost_afford_svalue 
+			
 			trigger_if = {
 				limit = { scope:shrine_territory = { NOT = { owner = ROOT } } }
 				scope:shrine_territory = {
@@ -730,18 +730,18 @@
 				}
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:shrine_territory
 				THIS = scope:shrine_territory
 			}
 		}
-
+		
 		monthly_on_action = generic_infra_temple_pulse
 
 		duration = 365
-
+		
 		on_start = {
 			add_treasury = shrine_cost_svalue
 			trigger_event = { id = generic_infra_mission.5 }
@@ -758,10 +758,10 @@
 		on_completion = {
 			custom_tooltip = shrine_branch_2_effect_tooltip
 			trigger_event = { id = generic_infra_mission.6 }
-		}
+		} 
 
 	}
-
+	
 	shrine_branch_3 = { #Make religious endowments in state - This is the AI option and the AI gets handholding
 		icon = task_economical
 		prevented_by = { shrine_branch_4 shrine_branch_5 }
@@ -796,7 +796,7 @@
 				always = yes
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:shrine_territory
@@ -855,10 +855,10 @@
 					}
 				}
 			}
-
+			
 		}
 	}
-
+	
 	shrine_branch_4 = { #Create Religious Subject
 		icon = task_diplomatic
 		requires = { shrine_branch_2 }
@@ -878,7 +878,7 @@
 				owner = ROOT
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:shrine_territory
@@ -922,7 +922,7 @@
 			trigger_event = { id = generic_infra_mission.29 }
 		}
 	}
-
+	
 	shrine_branch_5 = { #Lump Sum
 		icon = task_political
 		requires = { shrine_branch_2 }
@@ -942,7 +942,7 @@
 				owner = ROOT
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:shrine_territory
@@ -972,12 +972,12 @@
 		}
 	}
 
-
+	
 	capital_branch_1_a = { #If the region is not the capital region.
 		#Upgrade Province Capital to City
 		icon = task_political
-		requires = {  }
-
+		requires = {  } 
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1022,7 +1022,7 @@
 			}
 		}
 
-		#monthly_on_action = generic_1_pulse
+		#monthly_on_action = generic_1_pulse 
 
 		on_completion = {
 			if = {
@@ -1049,11 +1049,11 @@
 			}
 		}
 	}
-
+	
 	capital_branch_1_b = { #If the region IS the capital region.
-		requires = {  }
+		requires = {  } 
 		icon = task_political
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1071,7 +1071,7 @@
 		allow = {
 			trigger_if = {
 				limit = { is_ai = no }
-				scope:governorship_capital = { has_city_status = yes }
+				scope:governorship_capital = { has_city_status = yes } 
 			}
 			trigger_else = { can_pay_price = price_found_city }
 		}
@@ -1099,15 +1099,15 @@
 				create_state_pop = citizen
 				create_state_pop = freemen
 			}
-		}
+		} 
 	}
-
+	
 	capital_branch_1_c = { #If the region IS the capital region.
 		requires = {
 			capital_branch_2
 		}
 		icon = task_political
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1154,9 +1154,9 @@
 					duration = 1825
 				}
 			}
-		}
+		} 
 	}
-
+	
 	capital_branch_2 = { #A task with unmet Potential is not required.
 		icon = task_economical
 		requires = {
@@ -1172,7 +1172,7 @@
 			build_barracks
 			slave_city_task
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1248,15 +1248,15 @@
 					duration = -1
 				}
 			}
-		}
+		} 
 	}
-
+	
 	found_colonia = {
 		icon = task_expansion
 		requires = {
 			capital_branch_1_c
-		}
-
+		} 
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1299,7 +1299,7 @@
 
 		on_completion = {
 			show_as_tooltip = {
-				scope:governorship_capital = {
+				scope:governorship_capital = { 
 					create_state_pop = freemen
 					create_state_pop = citizen
 					add_province_modifier = {
@@ -1320,15 +1320,15 @@
 			}
 		}
 
-		on_bypass  = {}
+		on_bypass  = {} 
 	}
-
+	
 	strengthen_governorship_capital = {
 		icon = task_conquest
 		requires = {
 			capital_branch_1_c
-		}
-
+		} 
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1344,7 +1344,7 @@
 			}
 		}
 		allow = {
-			trigger_if = {
+			trigger_if = {	
 				limit = { is_ai = no }
 				scope:governorship_capital = {
 					trigger_if = {
@@ -1363,7 +1363,7 @@
 		monthly_on_action = generic_infra_governor_residence_pulse
 
 		duration = 365
-
+		
 		bypass = { #Save Game Compatability
 			has_completed_mission_task = found_colonia
 		}
@@ -1375,7 +1375,7 @@
 					remove_variable = capital_fort_needed
 				}
 			}
-
+			
 			if = {
 				limit = {
 					is_ai = yes
@@ -1387,7 +1387,7 @@
 					add_building_level = fortress_building
 				}
 			}
-
+			
 			if = {
 				limit = {
 					scope:governorship_capital = {
@@ -1412,9 +1412,9 @@
 			}
 		}
 
-		on_bypass  = {}
+		on_bypass  = {} 
 	}
-
+	
 	military_colonia = {
 		icon = task_conquest
 		prevented_by = { trader_colony }
@@ -1427,7 +1427,7 @@
 			has_completed_mission_task = trader_colony
 			has_variable = specialized_colonia
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1460,9 +1460,9 @@
 				}
 			}
 		}
-
+		
 		on_completion = {
-
+		
 			if = {
 				limit = {
 					is_ai = yes
@@ -1473,7 +1473,7 @@
 					add_building_level = commerce_building
 				}
 			}
-
+			
 			scope:governorship_capital = {
 				add_province_modifier = {
 					name = military_colony_mission_modifier
@@ -1483,9 +1483,9 @@
 			set_variable = specialized_colonia
 		}
 
-		on_bypass  = {}
+		on_bypass  = {} 
 	}
-
+	
 	trader_colony = {
 		icon = task_economical
 		prevented_by = { military_colonia }
@@ -1493,12 +1493,12 @@
 			found_colonia
 			strengthen_governorship_capital
 		}
-
+		
 		bypass = {
 			has_variable = specialized_colonia
 			has_completed_mission_task = military_colonia
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1554,10 +1554,10 @@
 		}
 
 	}
-
+	
 	colonia_finish = { #Actually Finish for all
 		icon = task_diplomatic
-		requires = {
+		requires = { 
 			trader_colony
 			military_colonia
 			granary_of_x
@@ -1571,14 +1571,14 @@
 			slave_city_task
 		}
 		final = yes
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
 				THIS = scope:governorship_capital
 			}
 		}
-
+		
 		potential = {
 			exists = scope:governorship_capital
 			scope:governorship_capital = {
@@ -1605,7 +1605,7 @@
 		}
 
 		on_completion = {
-
+		
 			if = {
 				limit = {
 					is_ai = yes
@@ -1638,7 +1638,7 @@
 				}
 			}
 			scope:governorship_capital_area = {
-
+				
 				add_state_modifier = {
 					name = "well_cared_for_governorship_center"
 					duration = -1
@@ -1649,19 +1649,19 @@
 				create_state_pop = nobles
 			}
 			trigger_event = { id = generic_infra_mission.28 }
-
+			
 		}
 
 	}
-
-
-
+	
+	
+	
 	fortify_capital = { #Optional and skipped by AI
 		icon = task_conquest
 		requires = {
 			capital_branch_2
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1692,17 +1692,17 @@
 			add_political_influence = 15
 		}
 
-		on_bypass  = {}
+		on_bypass  = {} 
 	}
-
-
+	
+	
 	monumental_architecture = {
 		icon = task_political
 		requires = {
 			capital_branch_2
 		}
 		final = yes
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:governorship_capital
@@ -1773,11 +1773,11 @@
 				always = yes
 			}
 		}
-
+		
 		duration = 365
-
+		
 		monthly_on_action = generic_infra_monument_pulse
-
+		
 		on_start = {
 			trigger_event = { id = generic_infra_mission.10 }
 		}
@@ -1821,7 +1821,7 @@
 			}
 		}
 	}
-
+	
 	food_branch_1 = {
 		icon = task_economical
 		potential = {
@@ -1841,7 +1841,7 @@
 				treasury > 300
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:food_province
@@ -1857,7 +1857,7 @@
 				potential_farms_in_province_svalue < 2
 			}
 		}
-
+		
 		on_completion = {
 			if = {
 				limit = { is_ai = yes }
@@ -1884,27 +1884,27 @@
 		on_bypass = { trigger_event = generic_infra_mission.34 }
 
 	}
-
+	
 	granary_of_x = {
 		icon = task_economical
 		requires = { food_branch_1 }
 		prevented_by = { food_market_of_x }
-		bypass = {
+		bypass = { 
 			OR = {
-				has_variable = food_done
+				has_variable = food_done 
 				scope:food_province = {
 					potential_farms_in_province_svalue < 2
 				}
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:food_province_capital
 				THIS = scope:food_province_capital
 			}
 		}
-
+		
 		potential = {
 			exists = scope:food_province
 			exists = scope:food_province_capital
@@ -1921,7 +1921,7 @@
 			}
 			trigger_else = { always = no } #AI does the other task.
 		}
-
+		
 		on_completion = {
 			set_variable = food_done
 			add_treasury = food_depot_price_pay
@@ -1942,20 +1942,20 @@
 			}
 		}
 	}
-
+	
 	food_market_of_x = { #AI will use this task
 		icon = task_diplomatic
 		requires = { food_branch_1 }
 		prevented_by = { granary_of_x }
-		bypass = {
+		bypass = { 
 			OR = {
-				has_variable = food_done
+				has_variable = food_done 
 				scope:food_province = {
 					potential_farms_in_province_svalue < 2
 				}
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:food_province
@@ -1963,8 +1963,8 @@
 				state = scope:food_province
 			}
 		}
-
-
+		
+		
 		potential = {
 			exists = scope:food_province
 			exists = scope:food_province_capital
@@ -1992,7 +1992,7 @@
 			}
 		}
 	}
-
+	
 	breeding_program = { #Optional, AI won't do.
 		icon = task_economical
 		requires = { granary_of_x }
@@ -2041,7 +2041,7 @@
 				potential_farms_in_province_svalue < 2
 			}
 		}
-
+		
 		on_completion = {
 			add_treasury = -800
 			if = {
@@ -2086,7 +2086,7 @@
 				treasury > 300
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:mining_province
@@ -2141,12 +2141,12 @@
 					}
 				}
 			}
-		}
+		}	
 
 		on_bypass = { trigger_event = generic_infra_mission.38 }
 	}
-
-
+	
+	
 	expand_work_force = {
 		icon = task_expansion
 		requires = { mining_branch_1 }
@@ -2154,7 +2154,7 @@
 			exists = scope:mining_province
 			exists = scope:mining_capital
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:mining_province
@@ -2162,7 +2162,7 @@
 				state = scope:mining_province
 			}
 		}
-
+		
 		allow = {
 			treasury >= slave_cost_svalue
 			trigger_if = {
@@ -2265,7 +2265,7 @@
 
 		on_bypass = { trigger_event = generic_infra_mission.39 }
 	}
-
+	
 	prospecting_mission = {
 		icon = task_expansion
 		requires = { expand_work_force }
@@ -2286,7 +2286,7 @@
 		allow = {
 			treasury >= prospecting_cost_svalue #AI does not need help with this.
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:mining_province
@@ -2306,12 +2306,12 @@
 			scope:mining_province = {
 				potential_mines_in_province_svalue < 2
 			}
-		}
-
+		} 
+		
 		duration = 365
 
 
-		monthly_on_action = prospecting_pulse
+		monthly_on_action = prospecting_pulse 
 
 		on_start = {
 			add_treasury = prospecting_cost_pay_svalue
@@ -2323,8 +2323,8 @@
 
 		on_bypass = { trigger_event = generic_infra_mission.40 }
 	}
-
-
+	
+	
 	port_branch_1 = {
 		icon = task_expansion
 		potential = {
@@ -2362,7 +2362,7 @@
 				treasury > 400
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:port_province
@@ -2404,7 +2404,7 @@
 		}
 
 	}
-
+	
 	port_branch_2 = {
 		icon = task_expansion
 		requires = { port_branch_1 } #Skips to port_branch_1
@@ -2439,7 +2439,7 @@
 				treasury > 120
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:port_province
@@ -2463,7 +2463,7 @@
 		}
 
 	}
-
+	
 	expanded_shipyards = { #This is where it ends for AI
 		icon = task_conquest
 		requires = { port_branch_2 }
@@ -2505,7 +2505,7 @@
 			}
 		}
 	}
-
+	
 	flag_ship_mission = {
 		icon = task_conquest
 		requires = { expanded_shipyards }
@@ -2517,16 +2517,16 @@
 		allow = {
 			treasury >= 300
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:ship_building_center
 				THIS = scope:ship_building_center
 			}
 		}
-
+		
 		duration = 185
-
+		
 		on_start = { add_treasury = -300 }
 
 		on_completion = {
@@ -2566,7 +2566,7 @@
 		}
 
 	}
-
+	
 	urbanize_city = {
 		icon = task_economical
 		potential = {
@@ -2585,7 +2585,7 @@
 				can_pay_price = price_found_city
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:urbanize_area_city
@@ -2639,7 +2639,7 @@
 		}
 
 	}
-
+	
 	cultural_imperialism = {
 		icon = task_political
 		requires = { urbanize_city }
@@ -2658,7 +2658,7 @@
 			}
 			trigger_else = { treasury >= 100 }
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:urbanize_area_city
@@ -2689,7 +2689,7 @@
 			add_1_free_province_investments = yes
 		}
 	}
-
+	
 	fortify_province = {
 		icon = task_conquest
 		requires = { urbanize_city }
@@ -2710,7 +2710,7 @@
 				treasury >= 100
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:urbanize_area_city
@@ -2739,10 +2739,10 @@
 				}
 			}
 			add_1_free_province_investments = yes
-		}
+		}	
 
 	}
-
+	
 	expand_harbor = {
 		icon = task_expansion
 		requires = { urbanize_city }
@@ -2763,14 +2763,14 @@
 				treasury > 100
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:urbanize_area_city
 				THIS = scope:urbanize_area_city
 			}
 		}
-
+		
 		on_completion = {
 			if = {
 				limit = { is_ai = yes }
@@ -2792,10 +2792,10 @@
 				}
 			}
 			add_1_free_province_investments = yes
-		}
+		}	
 
 	}
-
+	
 	build_barracks = {
 		icon = task_conquest
 		requires = { urbanize_city }
@@ -2816,7 +2816,7 @@
 				treasury > 100
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:urbanize_area_city
@@ -2845,10 +2845,10 @@
 				}
 			}
 			add_1_free_province_investments = yes
-		}
+		}	
 
 	}
-
+	
 	slave_city_task = {
 		icon = task_conquest
 		requires = { urbanize_city }
@@ -2869,7 +2869,7 @@
 				treasury > 100
 			}
 		}
-
+		
 		highlight = {
 			scope:province = {
 				exists = scope:urbanize_area_city
@@ -2900,7 +2900,7 @@
 			add_1_free_province_investments = yes
 		}
 	}
-
+	
 	on_completion = {
 		complete_mission_effect = yes
 		if = {
@@ -2956,5 +2956,5 @@
 			}
 		}
 	}
-
+	
 }

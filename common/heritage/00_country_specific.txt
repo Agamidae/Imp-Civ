@@ -1,60 +1,829 @@
-﻿civ_heritage = {
+﻿rome_heritage = {
 	modifier = {
 		#good
 		global_tax_modifier = 0.05
 		global_population_growth = 0.3
 		global_monthly_civilization = 0.3
+		land_morale = 0.2
+		manpower_recovery_speed = 0.3
+		
+		#bad
+		monthly_corruption = 0.2
+	}
+	
+	trigger = {
+		tag = ROM
+	}
+}
+
+venice_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		commerce_value = 0.1
+		global_capital_trade_routes = 2
 		
 		#bad
 		monthly_corruption = 0.1
 	}
 	
 	trigger = {
-			OR = {
-				tag = ROM
-				tag = VNT
-				tag = CAR
-				tag = EGY
-				tag = MOR
-				tag = NUB
-				tag = AYU
-				tag = ETH
-				tag = ABS
-				tag = ENG
-				tag = SCO
-				tag = ICE
-				tag = SPN
-				tag = POR
-				tag = BYZ
-				tag = MAC
-				tag = ATH
-				tag = SPA
-				tag = OTT
-				tag = ARB
-				tag = BAB
-				tag = ASY
-				tag = SUM
-				tag = PHO
-				tag = PER
-				tag = SCA
-				tag = HNZ
-				tag = GEO
-				tag = KRU
-				tag = MRY
-				tag = HND
-				tag = POL
-				tag = RUS
-				tag = SWE
-				tag = GER
-				tag = DAN
-				tag = NOR
-				tag = AUS
-				tag = HUN
-				tag = HRE
-				tag = NET
-				tag = FRA
-				tag = AQT
-			}
-		}
+		tag = VNT
+	}
+}
+
+carthage_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		navy_maintenance_cost = -0.3
+		naval_morale = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = CAR
+	}
+}
+
+egypt_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		build_time = -0.3
+		great_work_total_workrate_character_modifier = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = EGY
+	}
+}
+
+morocco_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		global_commerce_modifier = 0.3
+		commerce_value = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = MOR
+	}
+}
+
+nubia_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		archers_maintenance_cost = -0.3
+		archers_offensive = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = NUB
+	}
+}
+
+ayyubid_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		religious_tech_investment = 0.3 #Later replace with normal Tech bonus
+		light_cavalry_discipline = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = AYU
+	}
+}
+
+ethiopia_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		land_morale = 0.3
+		light_infantry_offensive = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = ETH
+	}
+}
+
+abyssinia_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		global_capital_trade_routes = 2
+		culture_happiness_modifier = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = ABY
+	}
+}
+
+england_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		global_capital_trade_routes = 2
+		build_cost = -0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = ENG
+	}
+}
+
+scotland_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		light_infantry_morale = 0.3
+		light_infantry_defensive = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = SCO
+	}
+}
+
+celt_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		omen_power = 0.3
+		light_infantry_offensive = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = ICE
+	}
+}
+
+spain_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		global_export_commerce_modifier = 0.2
+		build_cost = -0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = SPN
+	}
+}
+
+castille_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		call_omen_cost_modifier = -0.4
+		culture_happiness_modifier = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = CAS
+	}
+}
+
+portugal_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		global_capital_trade_routes = 4
+		global_commerce_modifier = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = POR
+	}
+}
+
+byzantium_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		global_pop_assimilation_speed = 0.5
+		happiness_for_same_religion_modifier = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = BYZ
+	}
+}
+
+macedon_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		research_points_modifier = 0.08
+		agressive_expansion_impact = 0.5
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = BYZ
+	}
+}
+
+athens_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		global_pop_conversion_speed = 0.3
+		buy_idea_cost_modifier = 0.3 
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = ATH
+	}
+}
+
+sparta_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		land_morale = 0.5
+		light_infantry_defensive = 0.4 
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = SPA
+	}
+}
+
+ottoman_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		siege_ability = 0.4
+		agressive_expansion_impact = 0.2
+		governor_loyalty = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = OTT
+	}
+}
+
+abbasid_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		commerce_value = 0.2
+		diplomatic_range_modifier = 0.7
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = ARB
+	}
+}
+
+babylon_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		max_research_efficiency = 0.6
+		research_points_modifier = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = BAB
+	}
+}
+
+assyria_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		siege_ability = 0.6
+		research_points_modifier = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = ASY
+	}
+}
+
+sumeria_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		chariots_offensive = 0.4
+		research_points_modifier = 0.1
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = SUM
+	}
+}
+
+phoenicia_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		governor_loyalty = 0.5
+		trireme_movement_speed = 0.7 #Later replace with bireme
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = PHO
+	}
+}
+
+persia_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.08
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		army_movement_speed = 0.3
+		build_roads_cost_modifier = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = PER
+	}
+}
+
+scythia_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		horse_archers_maintenance_cost = 0.4
+		manpower_recovery_speed = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = SCA
+	}
+}
+
+hunnic_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		siege_ability = 0.4
+		horse_archers_discipline = 0.5
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = HNZ
+	}
+}
+
+georgian_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		fortress_building_cost = 0.5
+		fort_maintenance_cost = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = GEO
+	}
+}
+
+kievan_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		diplomatic_reputation = 0.5
+		diplomatic_range_modifier = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = KRU
+	}
+}
+
+maurya_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		army_movement_speed = 0.4
+		warelephant_offensive = 0.5
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = MRY
+	}
+}
+
+india_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		diplomatic_reputation = 0.7
+		hostile_attrition = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = HND
+	}
+}
+
+poland_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		civic_tech_investment = 0.2
+		plains_combat_bonus = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = POL
+	}
+}
+
+jadwiga_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.3
+		global_monthly_civilization = 0.3
+		buy_idea_cost_modifier = 0.4
+		happiness_for_wrong_culture_modifier = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = PLC
+	}
+}
+
+russia_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		civic_tech_investment = 0.4 
+		religious_tech_investment = 0.4 #Replace with normal tech later on
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = RUS
+	}
+}
+
+sweden_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		diplomatic_reputation = 0.4 
+		max_friends = 2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = SWE
+	}
+}
+
+germany_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		army_maintenance_cost = 0.5 
+		desecrate_cost_modifier = 0.3
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = GER
+	}
+}
+
+denmark_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		army_maintenance_cost = 0.5 
+		navy_movement_speed = 0.6
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = DAN
+	}
+}
+
+norway_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		naval_morale_recovery = 0.4
+		navy_movement_speed = 0.5
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = NOR
+	}
+}
+
+austria_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		price_propose_marriage_cost_modifier = 0.6
+		subject_loyalty = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = AUS
+	}
+}
+
+hungary_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		build_time = -0.2
+		recruit_mercenary_cost_modifier = -0.4
+		mercenary_land_maintenance_cost = -0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = HUN
+	}
+}
+
+hre_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		price_propose_marriage_cost_modifier = 0.6
+		subject_opinions = 0.5
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = HRE
+	}
+}
+
+netherlands_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		port_building_cost = -0.4
+		global_monthly_state_loyalty = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = NET
+	}
+}
+
+france_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		cultural_integration_speed_modifier = 0.3
+		loyalty_to_overlord = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = FRA
+	}
+}
+
+gaul_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		cultural_integration_speed_modifier = 0.2
+		light_infantry_offensive = 0.4
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = GAU
+	}
+}
+
+aquitaine_heritage = {
+	modifier = {
+		#good
+		global_tax_modifier = 0.05
+		global_population_growth = 0.4
+		global_monthly_civilization = 0.3
+		governor_loyalty = 0.3
+		loyalty_to_overlord = 0.2
+		
+		#bad
+		monthly_corruption = 0.1
+	}
+	
+	trigger = {
+		tag = AQT
 	}
 }
