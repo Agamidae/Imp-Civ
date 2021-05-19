@@ -73,6 +73,7 @@ HND = "setup/countries/india/india.txt"
 
 #Germanic
 POL = "setup/countries/germania/poland.txt"
+PLC = "setup/countries/germania/plc.txt"
 RUS = "setup/countries/germania/russia.txt"
 GER = "setup/countries/germania/germany.txt"
 SWE = "setup/countries/germania/sweden.txt"

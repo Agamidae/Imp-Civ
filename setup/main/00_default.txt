@@ -1456,7 +1456,7 @@ country = {
 			religion = default_pantheon
 			tribal_authority_laws = absolute_authority
 			diplomatic_stance=appeasement_stance
-			capital = 6274
+			capital = 4890
 			technology={
 				military_tech={ level=1 progress=0 }
 				civic_tech={ level=1 progress=0 }
@@ -1469,7 +1469,7 @@ country = {
 			}
 
 			own_control_core = {
-				6274 6271 6272
+				4890 4893 4896
 			}
 		}
 
