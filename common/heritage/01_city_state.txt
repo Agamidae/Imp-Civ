@@ -1,0 +1,134 @@
+﻿culture_cs_heritage = {
+	modifier = {
+		global_population_growth = -0.5
+		price_found_city_cost_modifier = 3
+		culture_happiness_modifier = 0.2
+		global_pop_assimilation_speed = 0.2
+	}
+	
+	trigger = {
+		OR = {
+			tag = BLN
+			tag = FLR
+			tag = HAT
+			tag = MHJ
+			tag = GOA
+			tag = HMP
+			tag = BUC
+			tag = MLN
+			tag = MNC
+			tag = PRG
+			tag = PMP
+		}
+	}
+}
+
+industry_cs_heritage = {
+	modifier = {
+		global_population_growth = -0.5
+		price_found_city_cost_modifier = 3
+		global_goods_from_slaves = 0.2
+		workshop_building_cost = 0.3
+	}
+	
+	trigger = {
+		tag = CDF
+	}
+}
+
+naval_cs_heritage = {
+	modifier = {
+		global_population_growth = -0.5
+		price_found_city_cost_modifier = 3
+		naval_morale = 0.3
+		ship_cost = -0.3
+	}
+	
+	trigger = {
+		OR = {
+			tag = RGS
+			tag = DBR
+			tag = HMB
+		}
+	}
+}
+
+military_cs_heritage = {
+	modifier = {
+		global_population_growth = -0.5
+		price_found_city_cost_modifier = 3
+		land_morale = 0.2
+		light_infantry_discipline = 0.2
+	}
+	
+	trigger = {
+		OR = {
+			tag = GRA
+			tag = KAB
+			tag = LHR
+			tag = PSL
+			tag = VLT
+			tag = BGR
+			tag = SOF
+		}
+	}
+}
+
+religion_cs_heritage = {
+	modifier = {
+		global_population_growth = -0.5
+		price_found_city_cost_modifier = 3
+		happiness_for_same_religion_modifier = 0.2
+		global_pop_conversion_speed = 0.2
+	}
+	
+	trigger = {
+		OR = {
+			tag = JER
+			tag = KAN
+			tag = KAT
+			tag = LHS
+			tag = SMT
+			tag = YER
+			tag = CLM
+		}
+	}
+}
+
+science_cs_heritage = {
+	modifier = {
+		global_population_growth = -0.5
+		price_found_city_cost_modifier = 3
+		technology_investment = 0.2
+		research_points_modifier = 0.04
+	}
+	
+	trigger = {
+		OR = {
+			tag = FEZ
+			tag = GEN
+		}
+	}
+}
+
+trade_cs_heritage = {
+	modifier = {
+		global_population_growth = -0.5
+		price_found_city_cost_modifier = 3
+		commerce_value = 0.2
+		global_commerce_modifier = 0.2
+	}
+	
+	trigger = {
+		OR = {
+			tag = ANT
+			tag = MUS
+			tag = BBL
+			tag = SMK
+			tag = GNO
+			tag = OMZ
+			tag = ZUR
+		}
+	}
+}
+

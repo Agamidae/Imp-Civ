@@ -22,7 +22,7 @@ venice_heritage = {
 		global_tax_modifier = 0.05
 		global_population_growth = 0.3
 		global_monthly_civilization = 0.3
-		commerce_value = 0.1
+		commerce_value = 0.4
 		global_capital_trade_routes = 2
 		
 		#bad
@@ -365,7 +365,7 @@ abbasid_heritage = {
 		global_tax_modifier = 0.05
 		global_population_growth = 0.3
 		global_monthly_civilization = 0.3
-		commerce_value = 0.2
+		commerce_value = 0.3
 		diplomatic_range_modifier = 0.7
 		
 		#bad
@@ -402,7 +402,7 @@ assyria_heritage = {
 		global_population_growth = 0.3
 		global_monthly_civilization = 0.3
 		siege_ability = 0.6
-		research_points_modifier = 0.2
+		research_points_modifier = 0.06
 		
 		#bad
 		monthly_corruption = 0.1
@@ -781,7 +781,7 @@ france_heritage = {
 		global_population_growth = 0.4
 		global_monthly_civilization = 0.3
 		cultural_integration_speed_modifier = 0.3
-		loyalty_to_overlord = 0.2
+		agressive_expansion_impact = 0.3
 		
 		#bad
 		monthly_corruption = 0.1

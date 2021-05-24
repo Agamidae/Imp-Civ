@@ -1,16 +1,4 @@
 ﻿#
-cs_heritage = {
-	modifier = {
-		global_export_commerce_modifier = 0.2
-		global_tax_modifier = 0.06
-		global_population_growth = -0.5
-		price_found_city_cost_modifier = 3
-	}
-	
-	trigger = {
-		government = city_state
-	}
-}
 
 pirate_heritage = {
 	modifier = {
