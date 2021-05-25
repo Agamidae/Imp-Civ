@@ -18,7 +18,5 @@
 		2 = character_events.39
 		#Bastards
 		10 = lovers.1
-		80 = health.8
-		80 = health.9
 	}
 }

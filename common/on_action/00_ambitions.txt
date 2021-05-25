@@ -207,7 +207,7 @@ ambition_grow_up = {
 					add_finesse = 1
 				}
 				
-				94 = {
+				100 = {
 				}
 			}
 		}
@@ -1403,19 +1403,16 @@ scheme_hold_games_start = {
 				}
 			}
 		}
-		if = {
-			limit = { exists = scope:games_province }
-			scope:games_province = {
-				if = {
-					limit = {
-						NOT = {
-							has_province_modifier = games_being_held_scheme
-						}
+		scope:games_province = {
+			if = {
+				limit = {
+					NOT = {
+						has_province_modifier = games_being_held_scheme
 					}
-					add_province_modifier = {
-						name = games_being_held_scheme
-						duration = 365
-					}
+				}
+				add_province_modifier = {
+					name = games_being_held_scheme
+					duration = 365
 				}
 			}
 		}
@@ -1859,6 +1856,7 @@ scheme_seek_treatment_finish = {
 				}
 			}
 		}
+		remove_scheme_variables_effect = yes
 	}
 }
 
@@ -2320,18 +2318,14 @@ scheme_buy_troop_loyalty_finish = {
 					root = {
 						wealth >= 800
 					}
-					any_character_unit = {
+					exists = unit
+					unit = {
 						any_sub_unit = {
 							has_personal_loyalty = no
 						}
 					}
 				}
-				random_character_unit = {
-					limit = {
-						any_sub_unit = {
-							has_personal_loyalty = no
-						}
-					}
+				unit = {
 					random_sub_unit = {
 						limit = {
 							has_personal_loyalty = no
@@ -2804,30 +2798,30 @@ scheme_seek_a_spouse_finish = {
 				}
 				random_list = {
 					50 = {
-						save_scope_as = spouse_seeker
-						if = {
-							limit = {
-								is_male = yes
-							}
-							employer = {
-								create_character = {
-									age = seek_spouse_age_window
-									female = yes
-									culture = scope:ongoing_scheme_target.culture
-									religion = scope:ongoing_scheme_target.religion
-									family = scope:ongoing_scheme_target.family
-									save_scope_as = new_wife
+						switch = {
+							trigger = is_male
+							yes = {
+								employer = {
+									create_character = {
+										age = 18 #TODO replace with scriptvalue after Emil's merge
+										female = yes
+										culture = scope:ongoing_scheme_target.culture
+										religion = scope:ongoing_scheme_target.religion
+										family = scope:ongoing_scheme_target.family
+										save_scope_as = new_wife
+									}
 								}
 							}
-						}
-						else = {
-							employer = {
-								create_character = {
-									age = seek_spouse_age_window
-									culture = scope:ongoing_scheme_target.culture
-									religion = scope:ongoing_scheme_target.religion
-									family = scope:ongoing_scheme_target.family
-									save_scope_as = new_wife
+							no = {
+								employer = {
+									create_character = {
+										age = 18 #TODO replace with scriptvalue after Emil's merge
+										female = no
+										culture = scope:ongoing_scheme_target.culture
+										religion = scope:ongoing_scheme_target.religion
+										family = scope:ongoing_scheme_target.family
+										save_scope_as = new_wife
+									}
 								}
 							}
 						}
@@ -2847,21 +2841,7 @@ scheme_seek_a_spouse_finish = {
 							}
 							divorce_character = spouse
 						}
-						if = {
-							limit = {
-								is_alive = yes
-								is_adult = yes
-								prisoner = no
-								is_married = no
-								scope:new_wife = {
-									is_alive = yes
-									is_adult = yes
-									prisoner = no
-									is_married = no
-								}
-							}							
-							marry_character = scope:new_wife
-						}
+						marry_character = scope:new_wife
 					}
 					50 = {
 						trigger_event = { id = scheme.20 } #Refusal, Character is sad.

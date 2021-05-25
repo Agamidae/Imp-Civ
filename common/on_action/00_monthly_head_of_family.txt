@@ -1,7 +1,8 @@
-﻿disloyal_family_pulse = { #War
-	trigger = {
-
+﻿monthly_head_of_family_pulse = {
+	on_actions = {
+		content_clear_holdings
 	}
+	
 	effect = {
 		if = {
 			limit = {
@@ -17,13 +18,6 @@
 				}
 			}
 		}
-	}
-}
-
-monthly_head_of_family_pulse = {
-	on_actions = {
-		content_clear_holdings
-		disloyal_family_pulse
 	}
 	random_events =
 	{

@@ -608,51 +608,51 @@ imp_rel.1 = {
     }
     set_global_variable = tengri_exists
   }
-  
-  option = {
-    name = imp_rel.1_norse
-    trigger = {
-        NOT = {
-            has_global_variable = norse_exists
-        }
-    }
-   set_country_religion = norse
-		current_ruler = {
-			if = {
-				limit = {
-					NOT = { has_religion = norse }
-				}
-				set_character_religion = norse
-			}
-		}
-
-		ordered_character = {
-			limit = {
-				loyalty >= 60
-				NOT = { has_religion = norse }
-				is_ruler = no
-				from_ruler_family = no
-			}
-			max = 15
-			order_by = prominence
-			set_character_religion = norse
-		}
-    every_owned_province = {
-      ordered_pops_in_province = {
-  			limit = {
-  				NOT = { pop_religion = norse }
-  			}
-  			order_by = pop_hapiness
-  			max = {
-  				value = total_population
-  				divide = 2
-  			}
-  			check_range_bounds = no
-  			set_pop_religion = norse
-  		}
-    }
-    set_global_variable = norse_exists
-  }
+  # 
+  # option = {
+  #   name = imp_rel.1_norse
+  #   trigger = {
+  #       NOT = {
+  #           has_global_variable = norse_exists
+  #       }
+  #   }
+  #  set_country_religion = norse
+	# 	current_ruler = {
+	# 		if = {
+	# 			limit = {
+	# 				NOT = { has_religion = norse }
+	# 			}
+	# 			set_character_religion = norse
+	# 		}
+	# 	}
+  #
+	# 	ordered_character = {
+	# 		limit = {
+	# 			loyalty >= 60
+	# 			NOT = { has_religion = norse }
+	# 			is_ruler = no
+	# 			from_ruler_family = no
+	# 		}
+	# 		max = 15
+	# 		order_by = prominence
+	# 		set_character_religion = norse
+	# 	}
+  #   every_owned_province = {
+  #     ordered_pops_in_province = {
+  # 			limit = {
+  # 				NOT = { pop_religion = norse }
+  # 			}
+  # 			order_by = pop_hapiness
+  # 			max = {
+  # 				value = total_population
+  # 				divide = 2
+  # 			}
+  # 			check_range_bounds = no
+  # 			set_pop_religion = norse
+  # 		}
+  #   }
+  #   set_global_variable = norse_exists
+  # }
 
 	option = {
     name = imp_rel.1_close
@@ -1272,7 +1272,7 @@ imp_rel.2 = {
     }
     set_global_variable = tengri_exists
   }
-  
+
   option = {
     name = imp_rel.1_norse
     trigger = {

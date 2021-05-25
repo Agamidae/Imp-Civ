@@ -76,7 +76,6 @@
 				NOR = { 
 					has_province_modifier = museion_of_alexandria 
 					has_province_modifier = country_modifier_broken_museion
-					has_variable = museion_of_alexandria_var
 				}
 			}
 			NOT = {
@@ -153,15 +152,7 @@
 			}
 		}
 		allow = {
-			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
-				treasury >= 50
-			}
-			trigger_else = {
-				treasury >= 200
-			}
+			treasury >= 200
 			trigger_if = {
 				limit = { is_ai = no }
 				stability > 50
@@ -174,15 +165,7 @@
 			}
 		}
 		effect = {
-			if = {	
-				limit = {
-					is_ai = no
-				}
-				add_treasury = -200
-			}
-			else = {
-				add_treasury = -50
-			}
+			add_treasury = -200
 			custom_tooltip = "dhe_colossus_tooltip"
 			hidden_effect = {
 				set_variable = {
@@ -210,7 +193,7 @@
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 2
 			modifier = {
 				factor = 0
 				war = yes
