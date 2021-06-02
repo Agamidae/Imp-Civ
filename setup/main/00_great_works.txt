@@ -1,0 +1,32 @@
+provinces = {
+	2012= {
+		great_work=1
+	}
+}
+
+great_work_manager= {
+	great_works_database= {
+		1= {
+			ancient_wonder = yes
+			key="stonehenge"
+			great_work_state=great_work_state_completed
+			finished_date=01.1.1
+			great_work_category="building"
+
+			great_work_name= {
+				name="wonder_stonehenge"
+			}
+			great_work_components= {
+				{
+					great_work_module="wonder_stonehenge"
+				}
+			}
+			great_work_effect_selections= {
+				{
+					great_work_effect="gw_effect_omen_doctrine"
+					great_work_effect_tier = "gw_effect_tier_4"
+				}
+			}
+		}
+	}
+}

@@ -3594,63 +3594,6 @@ character_events.48 = {
 	}
 }
 
-# Baldness
-character_events.49 = {
-	type = character_event
-	hidden = yes
-
-	trigger = {
-		NOT = { has_variable = bald }
-		age >= 30
-	}
-
-	immediate = {
-		random_list = {
-			50 = {
-				# Do nothing
-			}
-			1 = {
-				set_variable = bald
-			}
-			5 = {
-				modifier = {
-					factor = 0
-					age <= 30
-				}
-				set_variable = bald
-			}
-			5 = {
-				modifier = {
-					factor = 0
-					age <= 40
-				}
-				set_variable = bald
-			}
-			5 = {
-				modifier = {
-					factor = 0
-					age <= 50
-				}
-				set_variable = bald
-			}
-			5 = {
-				modifier = {
-					factor = 0
-					age <= 55
-				}
-				set_variable = bald
-			}
-			5 = {
-				modifier = {
-					factor = 0
-					age <= 60
-				}
-				set_variable = bald
-			}
-		}
-	}
-}
-
 character_events.50 = {
 	type = country_event
 	title = "character_events.50.t"

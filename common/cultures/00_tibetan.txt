@@ -86,6 +86,7 @@
 		yarlung = {}
 		tsang = {}
 		nepali = {}
+		tibetian = {}
 	}
 	
 	barbarian_names = {

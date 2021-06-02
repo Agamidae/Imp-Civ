@@ -1,4 +1,4 @@
-﻿aryan = {
+﻿western_aryan = {
 	#aryan (northern)
 	color = hsv { 0.05 1 0.9 }
 	
@@ -51,7 +51,7 @@
 	}
 	
 	culture = {
-		kanauji = {
+		gujarati = {
 			male_names = { 
 				Shambaji Sahuji Baji Rao Madhu Narayan 
 				Ragunath Pratap Singh Firangoji Kanhoji Netaji
@@ -78,17 +78,15 @@
 				Abbasi Janda Jhuti Kahlon Banu_Sama Ladakhi
 			}
 		}
-		gujarati = {}
-		punjabi = {}
 	}
 	
 	barbarian_names = { 
 		SALOBRIASAI ASANGAI BOLINGAI DIMOUROI VARETATAI HORATAI GALLIATALOUTAI RARAOUNGAI ORATOURAI CHARMAI SETAI KAISOI MEGALLAI OUBERAI ABALOI 
 	}
 	
-	graphical_culture = north_indian_gfx
+	graphical_culture = south_indian_gfx
 	ethnicities = {
-		10 = mauryan
+		10 = dravidian
 	}
 }
 

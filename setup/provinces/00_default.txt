@@ -4,7 +4,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -209,7 +208,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -342,7 +340,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -355,7 +352,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_baal_hammon"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -368,7 +364,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -489,7 +484,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -499,31 +493,28 @@
 #Carthage
 3256=
 {
-	aqueduct_building=2
 	barbarian_power=0
-	civilization_value=0
-	commerce_building=2
-	culture="barbarian"
-	holy_site="omen_tanit"
-	library_building=2
-	port_building=3
-	province_rank="settlement"
+	civilization_value=10
+	culture="carthaginian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
-	town_hall_building=1
 	trade_goods="dye"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Atiq
 3257=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="carthaginian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="base_metals"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Ubon
@@ -532,7 +523,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -567,12 +557,13 @@
 3261=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="carthaginian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="wood"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Kinna Thabracania
@@ -665,7 +656,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_tannit"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -750,7 +740,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -775,7 +764,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -800,7 +788,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -861,7 +848,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -934,7 +920,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -971,7 +956,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -996,7 +980,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -1103,25 +1086,28 @@
 1611=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="georgian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="iron"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Tbilisi
 1612=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="georgian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="cloth"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Sigan
 1614=
@@ -1237,7 +1223,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ga"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -1706,7 +1691,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_adgilis_deda"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -1815,7 +1799,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_argimpasa"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -2056,8 +2039,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_bhrigu"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -2082,7 +2063,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -2167,7 +2147,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -2240,7 +2219,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -2301,7 +2279,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -2320,17 +2297,18 @@
 	trade_goods="wild_game"
 	tribesmen={ amount=5 }
 }
-#Tyrannosboas
+#Goa
 6881=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="gujarati"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="salt"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Toparon
 6882=
@@ -3188,12 +3166,13 @@
 2234=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="occitan"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Akroterion
@@ -3212,14 +3191,15 @@
 2236=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="occitan"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="wine"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Losa
 2237=
@@ -3227,7 +3207,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -3610,12 +3589,13 @@
 2289=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="occitan"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wine"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Iculisma
@@ -4068,7 +4048,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_lugus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4153,7 +4132,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4178,7 +4156,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4227,7 +4204,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4276,7 +4252,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4325,7 +4300,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4554,7 +4528,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4651,7 +4624,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_talab"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -4904,7 +4876,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -5057,7 +5028,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -5190,7 +5160,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_orotalt"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -5227,7 +5196,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -5286,12 +5254,13 @@
 4616=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="bedouin"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="incense"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Mochoura
@@ -5408,7 +5377,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -5445,7 +5413,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_manat"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -5470,7 +5437,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -5495,7 +5461,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -5520,7 +5485,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -5651,12 +5615,13 @@
 4716=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="bedouin"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="cloth"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Gaiopolis
@@ -5699,13 +5664,15 @@
 4720=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="bedouin"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="desert"
 	trade_goods="camel"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Durnatha
 4721=
@@ -5824,7 +5791,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ailiah"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -5837,7 +5803,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_al_uzza"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -6398,7 +6363,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_atar"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -7047,7 +7011,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_vahagn"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -7696,7 +7659,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_khaldi"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -7709,7 +7671,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_tir"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -7744,14 +7705,14 @@
 1575=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_theispas"
-	province_rank="settlement"
+	civilization_value=5
+	culture="armenian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Kainepolis Syracene
 1576=
@@ -7891,7 +7852,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_tsovinar"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -8096,7 +8056,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_mihr"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -8145,7 +8104,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_anahit"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -8170,7 +8128,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -8339,7 +8296,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -8376,7 +8332,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -8401,7 +8356,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -8462,7 +8416,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -8535,7 +8488,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -9172,7 +9124,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -9293,8 +9244,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_helios"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -9427,7 +9376,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -9440,7 +9388,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -9477,7 +9424,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -9514,7 +9460,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -9527,7 +9472,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -9564,8 +9508,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_artemis"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -9602,7 +9544,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_agdistis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -10011,7 +9952,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -10024,7 +9964,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -10037,7 +9976,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -10074,7 +10012,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -10111,7 +10048,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -10124,7 +10060,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -10137,7 +10072,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -10306,7 +10240,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_sin"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -10665,37 +10598,40 @@
 861=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="assyrian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
 	trade_goods="horses"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
-#Nineue
+#Nineveh
 862=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_ninurta"
-	province_rank="settlement"
+	civilization_value=10
+	culture="assyrian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="base_metals"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Balad
 863=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="assyrian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Dur-Sharrukin
@@ -13420,7 +13356,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_vishnu"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -13517,7 +13452,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_shiva"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -13614,7 +13548,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_brahma"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -14501,13 +14434,14 @@
 6608=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="afghani"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="mountain"
 	trade_goods="iron"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Ortespane
 6609=
@@ -14563,7 +14497,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_bamyan"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -15080,7 +15013,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_trapusa_and_bahalika"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -15489,7 +15421,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -15502,7 +15433,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -15527,7 +15457,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -15576,7 +15505,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_semnocosus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -15601,7 +15529,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -15626,7 +15553,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -15711,7 +15637,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -15724,7 +15649,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -15749,7 +15673,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -15786,7 +15709,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -15799,7 +15721,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -15968,7 +15889,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -16239,17 +16159,18 @@
 	trade_goods="leather"
 	tribesmen={ amount=5 }
 }
-#Elvira
+#Granada
 1385=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="andalusian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="olive"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Claritas Iulia
 1386=
@@ -17238,7 +17159,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -17407,7 +17327,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -17492,7 +17411,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -17791,13 +17709,15 @@
 3681=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="gallic"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="leather"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Amanium
 3682=
@@ -17947,12 +17867,13 @@
 3706=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="gallic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="wood"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Andellium
@@ -17971,12 +17892,13 @@
 3708=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="gallic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="wood"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Traiectus
@@ -18045,7 +17967,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -18080,12 +18001,13 @@
 3717=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="north_german"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="hemp"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Aquae Granni
@@ -18116,12 +18038,13 @@
 3720=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="north_german"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Confluentes
@@ -18176,13 +18099,15 @@
 3727=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="north_german"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="woad"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Icorigium
 3728=
@@ -18310,7 +18235,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -18323,7 +18247,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -18528,7 +18451,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -18589,7 +18511,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -18602,7 +18523,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -18627,7 +18547,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -18652,7 +18571,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -18821,7 +18739,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -18858,7 +18775,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -18883,7 +18799,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -19289,12 +19204,13 @@
 3652=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="south_german"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Vindelicia
@@ -19733,12 +19649,13 @@
 3921=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="south_german"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="cattle"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Medioslanium
@@ -19937,13 +19854,14 @@
 3943=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="czech"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wood"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Extremadura
 3944=
@@ -20335,7 +20253,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -20384,7 +20301,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -20397,7 +20313,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -20506,7 +20421,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -20517,12 +20431,13 @@
 2018=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="english"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Novus Portus
@@ -20555,7 +20470,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -20566,14 +20480,15 @@
 2022=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="english"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="wild_game"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Vagniacis
 2023=
@@ -20677,7 +20592,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -20760,12 +20674,13 @@
 2038=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="english"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Corinium
@@ -20786,7 +20701,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -20871,7 +20785,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -21184,7 +21097,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -21209,7 +21121,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -21222,7 +21133,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -21307,7 +21217,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -21366,13 +21275,14 @@
 2092=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="welsh"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="base_metals"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Bornium
 2093=
@@ -21404,7 +21314,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -21525,7 +21434,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_toutatis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -21562,7 +21470,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -21693,7 +21600,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_brigantia"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -21730,7 +21636,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -21753,12 +21658,13 @@
 2111=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="scottish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="leather"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Damnonii
@@ -21789,26 +21695,28 @@
 2114=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="scottish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="cattle"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Venicones
 2115=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="scottish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wood"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Taexali
 2116=
@@ -21840,7 +21748,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -22045,7 +21952,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -22080,12 +21986,13 @@
 2165=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="celtic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="fish"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Gangania
@@ -22334,7 +22241,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -22381,14 +22287,15 @@
 2190=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="celtic"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="fur"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Manapia Occidentalis
 2191=
@@ -22406,12 +22313,13 @@
 2192=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="celtic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Caucia Orientalis
@@ -22660,7 +22568,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -22709,8 +22616,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_mithra"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -22939,7 +22844,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_nane"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -22964,7 +22868,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -23409,7 +23312,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ma"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -24730,7 +24632,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_sucellus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -24765,12 +24666,13 @@
 2444=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="french"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Agedincum
@@ -24837,13 +24739,15 @@
 2475=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="french"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="earthware"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Dortenco
 2476=
@@ -24933,12 +24837,13 @@
 2484=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="french"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fur"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Riobe
@@ -25093,12 +24998,13 @@
 3=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="roman"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="salt"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Circeii
@@ -25131,7 +25037,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_apulu"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -25144,7 +25049,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=2
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -25229,8 +25133,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_turan"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -25351,7 +25253,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -25436,7 +25337,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -25569,7 +25469,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -25702,7 +25601,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -25739,7 +25637,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_tinia"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -25788,7 +25685,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -25837,7 +25733,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -25994,7 +25889,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26115,7 +26009,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -26164,7 +26057,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26201,7 +26093,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26250,7 +26141,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -26308,7 +26198,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26369,7 +26258,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26466,7 +26354,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -26479,7 +26366,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -26504,8 +26390,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_aphrodite"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26518,7 +26402,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26555,7 +26438,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -26687,7 +26569,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -26700,7 +26581,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -26725,7 +26605,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -26786,7 +26665,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26847,7 +26725,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -26896,7 +26773,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -27089,8 +26965,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_kakasbos"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -27139,7 +27013,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -27152,7 +27025,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -27376,13 +27248,14 @@
 134=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="italian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="grain"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Valvata
 135=
@@ -27402,7 +27275,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -27451,7 +27323,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -27464,7 +27335,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -27477,7 +27347,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -27500,13 +27369,14 @@
 146=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="italian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="fur"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Mutina
 149=
@@ -27608,13 +27478,14 @@
 3544=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="french"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="hemp"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Album Intemelium
 3545=
@@ -27634,7 +27505,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -27669,14 +27539,14 @@
 3549=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=5
+	culture="italian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="cloth"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Coeba
 3550=
@@ -27934,13 +27804,14 @@
 3571=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="italian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="vegetables"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Ticinum
 3572=
@@ -28068,7 +27939,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -28201,7 +28071,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -28212,12 +28081,13 @@
 3594=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="italian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="olive"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Ateste
@@ -28256,28 +28126,31 @@
 	trade_goods="fish"
 	tribesmen={ amount=5 }
 }
-#Altinum
+#Venice
 3598=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="italian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="salt"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Tarvisium
 3599=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="italian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="olive"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Acelum
@@ -28298,7 +28171,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -28359,7 +28231,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -28430,12 +28301,13 @@
 1610=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="georgian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="cattle"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Iberian Gates
@@ -28456,7 +28328,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_armazi"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -28505,7 +28376,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_kopala"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -28626,7 +28496,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ghmerti"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -28807,7 +28676,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -28856,7 +28724,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -28929,7 +28796,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -28990,7 +28856,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -29027,7 +28892,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_dali"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -29171,12 +29035,14 @@
 {
 	barbarian_power=0
 	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	culture="spanish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wine"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Toletum
 1024=
@@ -29244,7 +29110,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -29269,7 +29134,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -29282,7 +29146,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -29295,7 +29158,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -29332,7 +29194,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -29415,12 +29276,13 @@
 1204=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="spanish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="cloth"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Carpetana Luga
@@ -29439,12 +29301,13 @@
 1206=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="spanish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wine"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Caracca
@@ -29597,7 +29460,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_dercetius"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -29946,7 +29808,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30103,7 +29964,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -30152,7 +30012,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30165,7 +30024,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_nanna_tala"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30190,7 +30048,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30251,8 +30108,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_gurzil"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -30457,7 +30312,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -30554,7 +30408,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30579,7 +30432,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30628,7 +30480,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30701,7 +30552,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -30774,7 +30624,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -30847,7 +30696,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -31772,7 +31620,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_zalmoxis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -41488,7 +41335,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -41525,8 +41371,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_rama"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -41707,7 +41551,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -41756,7 +41599,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -41913,7 +41755,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -41950,7 +41791,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -41999,7 +41839,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -42012,7 +41851,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -42085,7 +41923,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_sigiriya"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -42108,13 +41945,14 @@
 6980=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="tamil"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="jungle"
 	trade_goods="gems"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Litta
 6981=
@@ -42132,13 +41970,14 @@
 6982=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="tamil"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="jungle"
 	trade_goods="cloth"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Arkatapura
 6983=
@@ -42170,7 +42009,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -42303,7 +42141,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -42724,7 +42561,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_cybele"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -42795,13 +42631,15 @@
 194=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="turkish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="earthware"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Malos
 195=
@@ -42867,24 +42705,26 @@
 222=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="turkish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Mnezos
 226=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="turkish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="horses"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Trokna
@@ -42953,7 +42793,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_attis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -43176,17 +43015,18 @@
 	trade_goods="leather"
 	tribesmen={ amount=5 }
 }
-#Posdala
+#Hattusa
 1841=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="hittite"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="cloth"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Perta
 1914=
@@ -43314,7 +43154,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_men"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -43625,12 +43464,13 @@
 1044=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="spanish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fur"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Asturicia
@@ -43699,7 +43539,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -43734,12 +43573,13 @@
 1111=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="spanish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="stone"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Caiellum
@@ -43772,7 +43612,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -43831,13 +43670,15 @@
 1119=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="spanish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="stone"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Vallata
 1120=
@@ -43977,7 +43818,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -44062,7 +43902,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -44183,7 +44022,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_berobreo"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -44196,7 +44034,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -45098,7 +44935,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_samba"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -45507,7 +45343,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_saraswati"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -45550,17 +45385,18 @@
 	trade_goods="cattle"
 	tribesmen={ amount=5 }
 }
-#Sodal
+#Lahore
 7485=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="punjabi"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="dates"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Aspakora
 7492=
@@ -45590,14 +45426,14 @@
 4791=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=5
+	culture="persian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="incense"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Valashgerd
 4958=
@@ -45993,7 +45829,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -46318,7 +46153,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -46331,7 +46165,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -46368,7 +46201,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -46429,7 +46261,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -46466,7 +46297,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -46515,7 +46345,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -46552,7 +46381,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -46577,25 +46405,24 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
 	trade_goods="fish"
 	tribesmen={ amount=5 }
 }
-#Kryptos Limen
+#Muscat
 7212=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=5
+	culture="bedouin"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="cattle"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Dirma Omana
 7213=
@@ -46639,7 +46466,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -46806,7 +46632,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_vagdavercustis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -46999,7 +46824,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_tuisto"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -47024,7 +46848,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_tamfana"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -47061,7 +46884,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -47098,7 +46920,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_baduhenna"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -47135,7 +46956,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -47184,7 +47004,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -47197,7 +47016,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_nehalennia"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -47220,38 +47038,41 @@
 3846=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="dutch"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fish"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Baduhenna
 3847=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="dutch"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="fish"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Traiectum
 3848=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="dutch"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="salt"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Manaritum
 3849=
@@ -47319,7 +47140,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -47332,7 +47152,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -47343,13 +47162,14 @@
 3888=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="north_german"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="leather"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Treva
 3889=
@@ -47465,7 +47285,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -47836,24 +47655,26 @@
 3982=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="north_german"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="leather"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Astuia
 3983=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="north_german"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="wood"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Burgia
@@ -47880,17 +47701,19 @@
 	trade_goods="wood"
 	tribesmen={ amount=5 }
 }
-#Uarinia
+#Berlin
 3986=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="north_german"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="vegetables"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Caluconiana
 3987=
@@ -48073,7 +47896,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_rosmerta"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -48470,7 +48292,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -48843,7 +48664,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -48856,7 +48676,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -48893,8 +48712,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_diktean_zeus"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -48907,8 +48724,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ariadne"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -48933,7 +48748,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -48946,7 +48760,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -48959,7 +48772,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -48972,7 +48784,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_karmanor"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49021,7 +48832,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -49058,7 +48868,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49071,7 +48880,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49084,7 +48892,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -49120,26 +48927,27 @@
 {
 	barbarian_power=0
 	civilization_value=0
-	culture="barbarian"
+	culture="athenian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="fish"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Athenai
 416=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_athena"
-	port_building=2
-	province_rank="settlement"
+	civilization_value=10
+	culture="athenian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="precious_metals"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Megara
 417=
@@ -49147,7 +48955,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49160,7 +48967,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49209,7 +49015,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_apollo"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -49234,7 +49039,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_dionysus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -49245,38 +49049,40 @@
 427=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="spartan"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="olive"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Epidauros Limera
 429=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="spartan"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="iron"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Gytheion
 430=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="spartan"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Messene
@@ -49285,7 +49091,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -49382,7 +49187,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_zeus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -49395,8 +49199,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_hera"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -49409,8 +49211,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_asclepius"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49423,7 +49223,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -49544,7 +49343,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49569,7 +49367,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49594,7 +49391,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49655,7 +49451,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -49668,7 +49463,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -49729,7 +49523,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -49814,8 +49607,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_poseidon"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -50008,7 +49799,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_demeter"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -50019,12 +49809,13 @@
 7898=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="athenian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="iron"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Kerinthos
@@ -50045,7 +49836,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -50381,7 +50171,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_rishabhanatha_moksha"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -50734,7 +50523,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_wealth_earth"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -50975,7 +50763,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_guidance_of_the_wind"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -51216,7 +51003,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -51301,7 +51087,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -51338,7 +51123,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -51651,7 +51435,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -51724,7 +51507,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -52001,7 +51783,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -52012,14 +51793,14 @@
 4085=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=5
+	culture="croatian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="salt"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Daorson
 4086=
@@ -52075,7 +51856,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -52220,7 +52000,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -52233,7 +52012,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -54711,7 +54489,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -54724,7 +54501,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -54773,7 +54549,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -54810,7 +54585,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -54847,7 +54621,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -54932,8 +54705,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_kanya_devi"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -55318,7 +55089,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_bhadrabahu"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -55545,26 +55315,26 @@
 500=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_ptah"
+	civilization_value=5
+	culture="egyptian_arabic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="papyrus"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Helioupolis
 501=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_ra"
+	civilization_value=5
+	culture="egyptian_arabic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="cloth"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Heroopolis
@@ -55597,7 +55367,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_sekhmet"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -55610,7 +55379,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -55635,7 +55403,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -55660,7 +55427,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -55744,12 +55510,7 @@
 {
 	barbarian_power=0
 	civilization_value=0
-	commerce_building=2
-	court_building=1
 	culture="barbarian"
-	holy_site="omen_alexander"
-	library_building=3
-	port_building=3
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -55762,7 +55523,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -55787,7 +55547,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -55812,7 +55571,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -55825,7 +55583,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -55910,7 +55667,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -55993,14 +55749,15 @@
 536=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="egyptian_arabic"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="stone"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Panarachthis
 537=
@@ -56032,7 +55789,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_sobek"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -56273,7 +56029,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_moses"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -56706,7 +56461,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_endouellicus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -56911,7 +56665,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -56960,7 +56713,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -57259,38 +57011,40 @@
 1318=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="portugese"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="salt"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Olisipo
 1319=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="portugese"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fish"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Malateca
 1320=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="portugese"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="wood"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Caetobriga
@@ -57407,7 +57161,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ataecina"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -57840,7 +57593,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -57889,7 +57641,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=2
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -57948,14 +57699,15 @@
 379=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=2
-	province_rank="settlement"
+	civilization_value=10
+	culture="macedonian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="wine"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Dion
 380=
@@ -58009,24 +57761,26 @@
 384=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="macedonian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wood"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Tauriana
 385=
 {
 	barbarian_power=0
-	civilization_value=0
+	civilization_value=5
 	culture="barbarian"
-	province_rank="settlement"
+	province_rank="macedonian"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="horses"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Asseros
@@ -58083,7 +57837,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -58312,7 +58065,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_zibelthiurdos"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -58745,7 +58497,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -58825,12 +58576,13 @@
 4404=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="kanauji"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="silk"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Indraprastha
@@ -58897,25 +58649,28 @@
 4412=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="kanauji"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="cloth"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
-#Sonprastha
+#Delhi
 4413=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="kanauji"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="cattle"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Tohana
 4417=
@@ -59149,12 +58904,13 @@
 4441=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="magadhi"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="silk"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Kusinagara
@@ -59163,7 +58919,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_kusinagara"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -59908,7 +59663,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_diana"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -59921,7 +59675,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -59944,14 +59697,14 @@
 9=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=5
+	culture="roman"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wine"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Irna
 10=
@@ -59983,7 +59736,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -60068,7 +59820,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -60213,7 +59964,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -60238,7 +59988,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -60263,7 +60012,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -60276,7 +60024,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -60361,7 +60108,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -60398,7 +60144,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -60459,7 +60204,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -60472,8 +60216,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_persephone"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -60498,7 +60240,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -60535,7 +60276,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -60560,7 +60300,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -60585,7 +60324,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -60608,15 +60346,14 @@
 84=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_arethousa"
-	port_building=3
-	province_rank="settlement"
+	civilization_value=5
+	culture="sicilian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wine"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Gelas
 85=
@@ -60636,8 +60373,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_heracles"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -60734,7 +60469,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -60759,7 +60493,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -60830,13 +60563,14 @@
 1471=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="maltese"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="desert"
 	trade_goods="fish"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Lipara
 1472=
@@ -60988,7 +60722,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -61143,13 +60876,14 @@
 4365=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="punjabi"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="dates"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Kokondai
 4366=
@@ -61193,7 +60927,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -61338,8 +61071,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_krishna"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -61364,8 +61095,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_soma"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -61390,7 +61119,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_neminatha"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -61523,8 +61251,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_rishabhanatha"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -61633,7 +61359,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -61838,7 +61563,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -61923,7 +61647,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -61970,13 +61693,14 @@
 3072=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="moroccan"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="spices"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Gilda
 3073=
@@ -62068,7 +61792,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -62081,7 +61804,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_shaheded"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -62142,7 +61864,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -62215,7 +61936,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -62252,7 +61972,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -62409,7 +62128,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -62422,7 +62140,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -62471,7 +62188,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -62590,12 +62306,13 @@
 6478=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="moroccan"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fish"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Bouzerrara
@@ -62698,13 +62415,13 @@
 6490=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="moroccan"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="spices"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Azama
@@ -62723,13 +62440,15 @@
 6492=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="moroccan"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="leather"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Mizab
 7221=
@@ -62953,7 +62672,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_adur_gushnasp"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -63050,7 +62768,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_esther"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -63207,7 +62924,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_zoroaster"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -66747,7 +66463,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ashshur"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -67036,7 +66751,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_shamash"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -67061,7 +66775,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -67120,39 +66833,40 @@
 917=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="babylonian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Babylon
 918=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_marduk"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="babylonian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="earthware"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Borsippa
 919=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_nabu"
+	civilization_value=5
+	culture="babylonian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="cloth"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Dilbat
@@ -67185,7 +66899,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ezekiel"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -67270,7 +66983,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_enlil"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -67341,38 +67053,41 @@
 935=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="sumerian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="steppe_horses"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Fara
 936=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="sumerian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
-#Orchoe
+#Uruk
 937=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_ishtar"
-	province_rank="settlement"
+	civilization_value=10
+	culture="sumerian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="marsh"
 	trade_goods="base_metals"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Nina
 938=
@@ -67404,7 +67119,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=3
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -67429,7 +67143,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ezra"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -67574,7 +67287,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -67599,7 +67311,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ea"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -67976,13 +67687,14 @@
 477=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="bulgarian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="wood"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Hammeum
 4111=
@@ -68132,13 +67844,14 @@
 4195=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="serbian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fur"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Siluvia
 4196=
@@ -68888,13 +68601,14 @@
 4809=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="romanian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="vegetables"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Piephigiana
 4810=
@@ -69324,7 +69038,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_horus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -69349,7 +69062,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_isis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -69912,12 +69624,13 @@
 639=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="meroitic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="earthware"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Epis
@@ -69936,24 +69649,27 @@
 641=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="meroitic"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="cloth"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Summarum
 642=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="meroitic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="horses"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Araba
@@ -70310,7 +70026,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -70335,7 +70050,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -70372,7 +70086,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -70409,7 +70122,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_sinifere"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -70422,7 +70134,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -70650,7 +70361,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -70711,7 +70421,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -71384,7 +71093,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -71409,7 +71117,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -71573,7 +71280,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -71634,7 +71340,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -71707,7 +71412,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -71828,7 +71532,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_joseph"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -71865,7 +71568,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_caleb_joshua"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -71912,14 +71614,14 @@
 687=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_samuel"
-	province_rank="settlement"
+	civilization_value=5
+	culture="hebrew"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="honey"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Thekoa
 688=
@@ -71963,7 +71665,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_abraham"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -72108,8 +71809,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_al_kutbay"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -72374,7 +72073,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_al_qaum"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -72515,13 +72213,15 @@
 3653=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="south_german"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="wood"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Carnuntum
 3918=
@@ -73019,25 +72719,28 @@
 4157=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="hungarian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="hemp"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Campona
 4158=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="hungarian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="hemp"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Floriana
 4159=
@@ -73500,11 +73203,12 @@
 {
 	barbarian_power=0
 	civilization_value=0
-	culture="barbarian"
+	culture="hungarian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="woad"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Laugaricio
@@ -73717,7 +73421,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_adur_berzen_mihr"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -74783,7 +74486,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_daniel"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -74964,7 +74666,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_adur_farnbag"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -75023,12 +74724,13 @@
 3406=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="persian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="hemp"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Shiragan
@@ -75289,7 +74991,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -75374,7 +75075,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -75411,7 +75111,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -75507,12 +75206,12 @@
 {
 	barbarian_power=0
 	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_anahita"
+	culture="persian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="wine"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Pylai Sousianes
@@ -75555,14 +75254,15 @@
 4951=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_asha"
-	province_rank="settlement"
+	civilization_value=10
+	culture="persian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="mountain"
 	trade_goods="glass"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Croatis
 4953=
@@ -75582,7 +75282,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -76261,25 +75960,27 @@
 4440=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="magadhi"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
 	trade_goods="silk"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Nalanda
 4442=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="magadhi"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="papyrus"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Nadikagama
@@ -76300,7 +76001,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_bodh"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -76337,7 +76037,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -76410,7 +76109,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_mahavir_jayanti"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -76543,7 +76241,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -76844,7 +76541,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -76893,7 +76589,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_parshvanatha"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -77170,7 +76865,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -77361,12 +77055,13 @@
 651=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="amhara"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="cattle"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Durai
@@ -77411,7 +77106,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -77448,7 +77142,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -77483,13 +77176,15 @@
 7506=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="amhara"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="earthware"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Oreine
 7507=
@@ -77629,7 +77324,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -77666,7 +77360,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="desert"
@@ -77703,7 +77396,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -77740,7 +77432,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -77753,7 +77444,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -77848,13 +77538,15 @@
 7536=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="amhara"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="papyrus"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Adefa
 7537=
@@ -77872,36 +77564,39 @@
 7538=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="amhara"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="horses"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #D'bark
 7539=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="amhara"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="wild_game"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Shire
 7540=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="amhara"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="fur"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Sakchenia
@@ -78662,7 +78357,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_ogmios"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -78781,13 +78475,14 @@
 3624=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="swiss"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="mountain"
 	trade_goods="iron"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Equestris
 3625=
@@ -78889,13 +78584,14 @@
 3633=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="swiss"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="vegetables"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Vitudurum
 3634=
@@ -80201,24 +79897,27 @@
 6188=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="hunnic"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="base_metals"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Arn
 6189=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="hunnic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="wood"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Kichpa
@@ -80237,12 +79936,13 @@
 6191=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="hunnic"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Syutnich
@@ -80623,7 +80323,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -80672,7 +80371,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -80709,7 +80407,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -81116,36 +80813,40 @@
 6090=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="ruthenian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="grain"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Aggrygh
 6091=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="ruthenianuthen"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="horses"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Gelts
 6092=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="ruthenian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="grain"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Mangyl
@@ -81850,7 +81551,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -81887,7 +81587,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -81936,7 +81635,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -81985,7 +81683,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -82034,7 +81731,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -82059,7 +81755,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -82106,12 +81801,13 @@
 3885=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="danish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fur"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Herulia Borealis
@@ -82120,25 +81816,25 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_nerthus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="fish"
 	tribesmen={ amount=5 }
 }
-#Herulia Orientalis
+#Copenhagen
 3887=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	civilization_value=10
+	culture="danish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="leather"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Uppakra
 6000=
@@ -82180,12 +81876,13 @@
 6003=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="danish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="hemp"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Burgundarholm
@@ -82206,7 +81903,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -82255,7 +81951,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -82458,12 +82153,13 @@
 6026=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="swedish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="wild_game"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Tivedia
@@ -82494,26 +82190,28 @@
 6029=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="swedish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="salt"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
-#Birka
+#Stockholm
 6030=
 {
 	barbarian_power=0
 	civilization_value=0
-	culture="barbarian"
-	port_building=1
-	province_rank="settlement"
+	culture="swedish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="fish"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Arosia
 6031=
@@ -82533,7 +82231,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_hludana"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -82606,7 +82303,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -82641,37 +82337,41 @@
 6041=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="norwegian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="woad"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Eunixia
 6042=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="norwegian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="fish"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
-#Arothia
+#Bergen?
 6043=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="norwegian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="fish"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Khiva
 5394=
@@ -84072,13 +83772,14 @@
 6682=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="parthian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="earthware"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Erbend
 6683=
@@ -84650,7 +84351,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_blessing_life"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -84697,13 +84397,15 @@
 6791=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="scythian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="mountain"
 	trade_goods="cattle"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Isfijab
 6792=
@@ -84941,24 +84643,26 @@
 7264=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="scythian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="fur"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Zintik
 7265=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="scythian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="hemp"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Qaram
@@ -85159,7 +84863,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_deborah"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -85170,26 +84873,27 @@
 743=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_melqart"
-	port_building=3
-	province_rank="settlement"
+	civilization_value=10
+	culture="phoenician"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="dye"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Ekdippa
 744=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="phoenician"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="glass"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Gelil
@@ -85208,12 +84912,13 @@
 746=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="phoenician"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="glass"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Sidun
@@ -85222,8 +84927,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_eshmun"
-	port_building=4
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -85296,7 +84999,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_el"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -85309,7 +85011,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_alilat"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -85418,7 +85119,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_baal"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -85453,15 +85153,14 @@
 766=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_baalat"
-	port_building=4
-	province_rank="settlement"
+	civilization_value=5
+	culture="phoenician"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="dye"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Botrys
 767=
@@ -85481,7 +85180,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -85590,7 +85288,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=3
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -85663,8 +85360,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_astarte"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -85701,7 +85396,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -85712,13 +85406,14 @@
 790=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="byzantine"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="glass"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Darkoush
 791=
@@ -85894,7 +85589,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_atargatis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -86111,7 +85805,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -86124,7 +85817,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -86185,7 +85877,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -86258,7 +85949,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -86319,7 +86009,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -86536,7 +86225,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_duillae"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -86921,7 +86609,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_eacus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -86958,7 +86645,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -87211,7 +86897,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -87344,7 +87029,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -87381,7 +87065,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -87406,7 +87089,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -87479,7 +87161,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -87492,7 +87173,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_goitosyrus"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -87541,7 +87221,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -87638,8 +87317,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_thagimasadas"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -87712,7 +87389,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="marsh"
@@ -87737,7 +87413,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -87834,7 +87509,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_api"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -88267,7 +87941,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_papaios"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -88436,8 +88109,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_hephaestus"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -88460,13 +88131,13 @@
 341=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="byzantine"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="fish"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Salmydessos
@@ -88497,12 +88168,13 @@
 345=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="byzantine"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="cloth"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Perinthos
@@ -88523,7 +88195,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"
@@ -88560,7 +88231,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -88633,7 +88303,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -88682,7 +88351,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -88863,7 +88531,6 @@
 	barbarian_power=0
 	civilization_value=10
 	culture="byzantine"
-	port_building=1
 	province_rank="city"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -89094,8 +88761,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_derzelas"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -89168,7 +88833,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -89215,13 +88879,14 @@
 4258=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="bulgarian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="stone"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Zikideba
 4259=
@@ -89265,7 +88930,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_sabazios"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -89338,7 +89002,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -89411,7 +89074,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -89722,14 +89384,14 @@
 5618=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_insight"
-	province_rank="settlement"
+	civilization_value=5
+	culture="tibetian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="hills"
 	trade_goods="earthware"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Tanglha
 5619=
@@ -90229,7 +89891,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_spirits_inspiration"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="mountain"
@@ -90350,7 +90011,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -90735,7 +90395,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -90808,7 +90467,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -90833,7 +90491,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_glanis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -90882,7 +90539,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -90943,7 +90599,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -91196,7 +90851,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -91207,13 +90861,14 @@
 549=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=5
+	culture="egyptian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="leather"
-	tribesmen={ amount=5 }
+	citizen={ amount=2 }
+	freemen={ amount=2 }
 }
 #Monkanei
 551=
@@ -91245,7 +90900,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_anubis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -91330,7 +90984,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_anhur"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -91343,7 +90996,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_osiris"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -91368,7 +91020,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_hathor"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -91415,38 +91066,41 @@
 567=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="egyptian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Kerameia
 568=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="egyptian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="stone"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Thebai Hekatompyloi
 569=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_amun"
-	province_rank="settlement"
+	civilization_value=10
+	culture="egyptian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="stone"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Memnoneia
 570=
@@ -91550,7 +91204,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -91587,7 +91240,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -92236,7 +91888,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -92261,7 +91912,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -92454,7 +92104,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_alcis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -92609,26 +92258,28 @@
 4864=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="russian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Venedicana
 4865=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	holy_site="omen_perkunas"
-	province_rank="settlement"
+	civilization_value=10
+	culture="russian"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="amber"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Vectia
 4898=
@@ -92754,24 +92405,26 @@
 6271=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="polish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="leather"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Kavera Venedia
 6272=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="polish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="wild_game"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Sopha
@@ -92786,17 +92439,19 @@
 	trade_goods="fur"
 	tribesmen={ amount=5 }
 }
-#Kunegria
+#Warsaw
 6274=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="polish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="grain"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Korotan
 6275=
@@ -92828,7 +92483,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_televelis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -92923,12 +92577,13 @@
 6285=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="russian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="salt"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Marone
@@ -93057,7 +92712,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_medeine"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -93154,7 +92808,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_saulia"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
@@ -93213,13 +92866,13 @@
 7830=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	port_building=1
+	civilization_value=5
+	culture="russian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="amber"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Galindia Orientalis
@@ -93238,12 +92891,13 @@
 7832=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="russian"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Venedia
@@ -93312,7 +92966,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -93385,7 +93038,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -93530,7 +93182,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="jungle"
@@ -93591,7 +93242,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="farmland"
@@ -94216,7 +93866,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	port_building=1
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
@@ -94379,17 +94028,19 @@
 	trade_goods="gems"
 	tribesmen={ amount=5 }
 }
-#Agrum
+#Krakow
 4890=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
-	province_rank="settlement"
+	civilization_value=10
+	culture="polish"
+	province_rank="city"
 	religion="default_pantheon"
 	terrain="forest"
 	trade_goods="wood"
-	tribesmen={ amount=5 }
+	citizen={ amount=5 }
+	freemen={ amount=3 }
+	slaves={ amount=2 }
 }
 #Ectonum
 4891=
@@ -94419,12 +94070,13 @@
 4893=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="polish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="woad"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Arsonis
@@ -94455,12 +94107,13 @@
 4896=
 {
 	barbarian_power=0
-	civilization_value=0
-	culture="barbarian"
+	civilization_value=5
+	culture="polish"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="plains"
 	trade_goods="vegetables"
+	freemen={ amount=5 }
 	tribesmen={ amount=5 }
 }
 #Lecrotiana
@@ -94481,7 +94134,6 @@
 	barbarian_power=0
 	civilization_value=0
 	culture="barbarian"
-	holy_site="omen_bendis"
 	province_rank="settlement"
 	religion="default_pantheon"
 	terrain="hills"

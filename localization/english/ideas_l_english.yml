@@ -1,0 +1,16 @@
+﻿l_english:
+ #Military Ideas
+ idea_survey:0 "Survey"
+ idea_discipline:0 "Discipline"
+ idea_agoge:0 "Agoge"
+ 
+ # Economic Ideas
+ idea_god_king:0 "God King"
+ idea_urban_panning:0 "Urban Planning"
+ idea_ilkum:0 "Ilkum"
+ 
+ #Diplomatic Ideas
+ idea_charismatic_leader:0 "Charismatic Leader"
+ 
+ #Wildcart Ideas
+ idea_strategos:0 "Strategos"

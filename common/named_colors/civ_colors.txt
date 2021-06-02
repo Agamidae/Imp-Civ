@@ -29,7 +29,7 @@ colors = {
 	white = rgb { 249 249 249 }
 	dark_grey = rgb { 83 83 83 }
 	grey = rgb { 174 174 174 }
-	city_state_black = { 31 31 31 }
+	city_state_black = rgb{ 31 31 31 }
 	nero = rgb { 24 24 24 }
 	pitch_black = rgb { 0 0 0 }
 }

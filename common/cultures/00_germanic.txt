@@ -97,7 +97,7 @@
 			}
 		
 		}
-		helvetian = {
+		swiss = {
 			male_names = {
 				Friedrich Otto Heinrich Werner Ferdinand Karl 
 				Alfred Benedikt Christoph Dietrich Engelbert Florian 

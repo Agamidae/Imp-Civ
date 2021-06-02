@@ -45,9 +45,10 @@ theocratic_republic = { #religious party
 	color = hsv { 0.6  0.7  0.5 }
 }
 
-oligarchic_republic = { #civic party
-	oratory_ideas = 2
-	civic_ideas = 1
+oligarchic_republic = { #Oligarchy
+	military_ideas = 2
+	religious_ideas = 1
+	oratory_ideas = 1
 	type = republic
 	
 	bonus = {	
@@ -65,10 +66,10 @@ oligarchic_republic = { #civic party
 	election_delay = 10
 	ruler_term = 5
 	
-	color = hsv { 0.6  0.75  0.6 }
+	color = light_green
 }
 
-democratic_republic = { #populist/stepping stone party
+democratic_republic = { #Democracy
 	military_ideas = 1
 	civic_ideas = 1
 	oratory_ideas = 1
@@ -86,14 +87,16 @@ democratic_republic = { #populist/stepping stone party
 	election_delay = 10
 	ruler_term = 5
 	
-	color = hsv { 0.6  0.85  0.9 }
+	color = cornflower_blue
 	
 	can_deify_ruler = no
 }
 
-plutocratic_republic = { #mercantile party
-	civic_ideas = 2
-	religious_ideas = 1			
+plutocratic_republic = { #Merchant Republic
+	military_ideas = 1
+	religious_ideas = 2
+	civic_ideas - 2
+	oratory_ideas = 1
 	type = republic
 	
 	bonus = {
@@ -111,14 +114,13 @@ plutocratic_republic = { #mercantile party
 	
 	can_deify_ruler = no
 	
-	color = hsv { 0.6  0.9  0.8 }
+	color = biloba_purple
 }
 
-athenian_republic = { # Mission Reward
-	military_ideas = 1
+athenian_republic = { # Classical Republic
+	religious_ideas = 2
 	civic_ideas = 1
 	oratory_ideas = 1
-	religious_ideas = 1
 	type = republic
 	
 	bonus = {
@@ -134,10 +136,10 @@ athenian_republic = { # Mission Reward
 	election_delay = 10
 	ruler_term = 5
 	
-	color = hsv { 0.62  0.87  0.88 }
+	color = violet
 }
 
-dictatorship = {
+dictatorship = { #Communism
 	military_ideas = 1
 	civic_ideas = 1
 	oratory_ideas = 1
@@ -157,15 +159,16 @@ dictatorship = {
 	
 	election_delay = 0
 	
-	color = hsv { 0  0.8  0.5 }
+	color = venice_red
 }
 
 #Monarchies:
 
-despotic_monarchy = { #stepping stone/starting type
+despotic_monarchy = { #Autocracy
 	military_ideas = 1
-	civic_ideas = 1
 	religious_ideas = 1
+	civic_ideas = 1
+	oratory_ideas = 1
 	type = monarchy
 	
 	bonus = {
@@ -182,11 +185,13 @@ despotic_monarchy = { #stepping stone/starting type
 	
 	ruler_consort_benefits = yes
 	
-	color = hsv { 0  0.85  0.4 }
+	color = magenta3
 }
 
-aristocratic_monarchy = {
+aristocratic_monarchy = { #Feudal Monarchy
 	military_ideas = 1
+	religious_ideas = 1
+	civic_ideas = 1
 	oratory_ideas = 2
 	type = monarchy
 	
@@ -204,7 +209,7 @@ aristocratic_monarchy = {
 	
 	ruler_consort_benefits = yes
 	
-	color = hsv { 0  0.8  0.3 }
+	color = witch_haze
 }
 
 stratocratic_monarchy = {
@@ -229,9 +234,11 @@ stratocratic_monarchy = {
 	color = hsv { 0  0.75  0.2 }
 }
 
-theocratic_monarchy = {
-	oratory_ideas = 1
+theocratic_monarchy = { #Theocracy
+	military_ideas = 2
 	religious_ideas = 2
+	civic_ideas = 1
+	oratory_ideas = 1
 	
 	bonus = {
 		omen_power = 0.15
@@ -245,7 +252,7 @@ theocratic_monarchy = {
 	
 	ruler_consort_benefits = yes
 	
-	color = hsv { 0  0.7  0.1 }
+	color = turq_blue
 }
 
 plutocratic_monarchy = {
@@ -267,7 +274,7 @@ plutocratic_monarchy = {
 	color = hsv { 0  0.9  0.5 }
 }
 
-imperium = {
+imperium = { #Fascism
 	military_ideas = 1
 	civic_ideas = 1
 	oratory_ideas = 1
@@ -291,7 +298,7 @@ imperium = {
 	ruler_consort_benefits = yes
 	
 	
-	color = hsv { 0.9  0.8  0.1 }
+	color = brown
 }
 
 imperial_cult = {
@@ -324,7 +331,8 @@ imperial_cult = {
 
 
 tribal_chiefdom = {
-	military_ideas = 2
+	military_ideas = 1
+	religious_ideas = 1
 	type = tribal
 	
 	allows_migration = yes
@@ -342,9 +350,9 @@ tribal_chiefdom = {
 	color = hsv { 0.333  0.8  0.2 }
 }
 
-tribal_kingdom = {
+tribal_kingdom = { #Tribalism start
 	military_ideas = 1
-	oratory_ideas = 1
+	religious_ideas = 1
 	type = tribal
 	
 	bonus = {
@@ -357,13 +365,12 @@ tribal_kingdom = {
 
 	election_delay = 0
 	
-	color = hsv { 0.333  0.85  0.35 }
+	color = dark_red
 }
 
 tribal_federation = {
-	oratory_ideas = 1
-	civic_ideas = 1
 	military_ideas = 1
+	religious_ideas = 1
 	type = tribal
 	
 
@@ -383,9 +390,7 @@ tribal_federation = {
 }
 
 city_state = {
-	military_ideas = 1
-	civic_ideas = 1
-	oratory_ideas = 1
+	religious_ideas = 1
 	type = city_state
 	
 	bonus = {
@@ -399,4 +404,6 @@ city_state = {
 
 	election_delay = 10
 	ruler_term = 3
+	
+	color = bus_yellow
 }

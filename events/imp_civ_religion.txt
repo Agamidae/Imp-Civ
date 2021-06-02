@@ -674,7 +674,7 @@ imp_rel.2 = {
 	trigger = {
 		owns = 2012
 		p:2012 = {
-			NOT = { has_variable = event_fired  }
+			has_ancient_wonder = "stonehenge"
 		}
 		NOT = { government = city_state }
 	}

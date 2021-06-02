@@ -1,0 +1,97 @@
+﻿########################################
+# Military Ideas
+########################################
+
+idea_survey = {
+	trigger = {
+		invention = military_tech_investment_inv_1 
+	}
+	army_movement_speed = 0.03
+	diplomatic_range_modifier = 0.1
+	group = military_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_military"
+}
+
+idea_discipline = {
+	trigger = {
+		invention = military_tech_investment_inv_1
+	}
+	land_morale_modifier = 0.05
+	discipline = 0.1
+	group = military_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_military"
+}
+################################################
+
+
+idea_agoge = {
+	trigger = {
+		invention = global_start_experience_inv_2
+	}
+	land_morale_modifier = 0.05
+	discipline = 0.1
+	group = military_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_military"
+}
+
+########################################
+# Economic Ideas
+########################################
+
+idea_god_king = {
+	trigger = {
+       invention = commerce_inv_1
+	}
+	ruler_popularity_gain = 0.2
+	global_tax_modifier = 0.2
+	group = religious_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_civic"
+}
+
+idea_urban_panning = {
+	trigger = {
+        invention = commerce_inv_1
+	}
+	price_found_city_cost_modifier = -0.2
+	global_population_capacity_modifier = 0.2
+	group = religious_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_civic"
+}
+#######################################################################
+
+idea_ilkum = {
+	trigger = {
+        invention = build_time_inv
+	}
+	build_cost = -0.2
+	build_time = -0.2
+	group = religious_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_civic"
+}
+########################################
+# Diplomatic Ideas
+########################################
+
+idea_charismatic_leader = {
+	trigger = {
+		civic_tech >= idea_tier_3
+	}
+	diplomatic_relations = 0.1
+	fabricate_claim_speed = -0.25
+	group = civic_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_civic"
+}
+
+########################################
+# Wildcart Ideas
+########################################
+idea_strategos = { #Sanctioned Privileges
+	trigger = {
+		oratory_tech >= idea_tier_3
+	}
+	recruit_general_cost_modifier = -0.05
+	general_loyalty = 0.05
+	
+	group = oratory_ideas
+	soundeffect = "event:/SFX/UI/Actions/sfx_ui_action_select_idea_oratory"
+}

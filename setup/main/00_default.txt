@@ -916,7 +916,7 @@ country = {
 			religion = default_pantheon
 			tribal_authority_laws = absolute_authority
 			diplomatic_stance=warmongering_stance
-			capital = 2038
+			capital = 2022
 			technology={
 				military_tech={ level=1 progress=0 }
 				civic_tech={ level=1 progress=0 }
@@ -925,7 +925,7 @@ country = {
 			}
 
 			own_control_core = {
-				2038 2018 2022
+				2022 2038 2018
 			}
 		}
 
@@ -936,7 +936,7 @@ country = {
 			religion = default_pantheon
 			tribal_authority_laws = absolute_authority
 			diplomatic_stance=warmongering_stance
-			capital = 2114
+			capital = 2115
 			technology={
 				military_tech={ level=1 progress=0 }
 				civic_tech={ level=1 progress=0 }
@@ -945,7 +945,7 @@ country = {
 			}
 
 			own_control_core = {
-				2114 2115 2111
+				2115 2114 2111
 			}
 		}
 
@@ -1117,7 +1117,7 @@ country = {
 		SPA = { #Sparta
 			family = 4
 			government = tribal_kingdom
-			primary_culture = peloponnesian
+			primary_culture = spartan
 			religion = default_pantheon
 			tribal_authority_laws = absolute_authority
 			diplomatic_stance=warmongering_stance
@@ -1215,7 +1215,7 @@ country = {
 			religion = default_pantheon
 			tribal_authority_laws = absolute_authority
 			diplomatic_stance=warmongering_stance
-			capital = 883
+			capital = 862
 			technology={
 				military_tech={ level=1 progress=0 }
 				civic_tech={ level=1 progress=0 }
@@ -1224,7 +1224,7 @@ country = {
 			}
 
 			own_control_core = {
-				883 882 955
+				862 863 861
 			}
 		}
 
@@ -1372,7 +1372,7 @@ country = {
 			}
 
 			own_control_core = {
-				6090 6081 6082
+				6090 6092 6091
 			}
 		}
 
@@ -1493,7 +1493,7 @@ country = {
 			}
 
 			own_control_core = {
-				4865 4864 6285
+				4865 4864 6285 7832 7830
 			}
 		}
 
@@ -1583,7 +1583,7 @@ country = {
 
 		#South Germany
 
-		AUS = { #Austria?
+		AUS = { #Austria
 			family = 22
 			government = tribal_kingdom
 			primary_culture = south_german
@@ -1729,7 +1729,7 @@ country = {
 
 		ANT = { #Antioch
 			government = city_state
-			primary_culture = macedonian
+			primary_culture = byzantine
 			religion = default_pantheon
 			capital = 790
 
@@ -1784,7 +1784,7 @@ country = {
 
 		GEN = { #Geneva #TBD
 			government = city_state
-			primary_culture = helvetian
+			primary_culture = swiss
 			religion = default_pantheon
 			capital = 3624
 
@@ -1795,7 +1795,7 @@ country = {
 
 		GRA = { #Granada #TBD
 			government = city_state
-			primary_culture = moorish
+			primary_culture = andalusian
 			religion = default_pantheon
 			capital = 1385
 
@@ -1806,7 +1806,7 @@ country = {
 
 		HAT = { #Hattusa #TBD
 			government = city_state
-			primary_culture = turkish
+			primary_culture = hittite
 			religion = default_pantheon
 			capital = 1841
 
@@ -1828,7 +1828,7 @@ country = {
 
 		KAB = { #Kabul #TBD
 			government = city_state
-			primary_culture = parthian
+			primary_culture = afghani
 			religion = default_pantheon
 			capital = 6608
 
@@ -1850,7 +1850,7 @@ country = {
 
 		MHJ = { #Mohenjo-daro #TBD
 			government = city_state
-			primary_culture = kanauji
+			primary_culture = punjabi
 			religion = default_pantheon
 			capital = 4365
 
@@ -1861,7 +1861,7 @@ country = {
 
 		GOA = { #Goa #TBD
 			government = city_state
-			primary_culture = kanauji
+			primary_culture = gujarati
 			religion = default_pantheon
 			capital = 6881
 
@@ -1872,7 +1872,7 @@ country = {
 
 		LHR = { #Lahore #TBD
 			government = city_state
-			primary_culture = kanauji
+			primary_culture = punjabi
 			religion = default_pantheon
 			capital = 7485
 
@@ -1894,7 +1894,7 @@ country = {
 
 		LHS = { #Lhasa #TBD
 			government = city_state
-			primary_culture = nepali
+			primary_culture = tibetian
 			religion = default_pantheon
 			capital = 5618
 
@@ -1905,7 +1905,7 @@ country = {
 
 		SMT = { #Somnath #TBD
 			government = city_state
-			primary_culture = kanauji
+			primary_culture = gujarati
 			religion = default_pantheon
 			capital = 6816
 
@@ -1995,10 +1995,10 @@ country = {
 			government = city_state
 			primary_culture = sicilian
 			religion = default_pantheon
-			capital = 101
+			capital = 84
 
 			own_control_core = 	{
-				101
+				84
 			}
 		}
 
@@ -2092,7 +2092,7 @@ country = {
 
 		ZUR = { #Zurich #TBD
 			government = city_state
-			primary_culture = helvetian
+			primary_culture = swiss
 			religion = default_pantheon
 			capital = 3633
 

@@ -97,7 +97,7 @@
 	}
 	culture = {
 		macedonian = {}
-		peloponnesian = {}
+		spartan = {}
 		athenian = {}
 		byzantine = {
 			male_names = {

@@ -92,7 +92,7 @@
 		}
 	}
 	
-	become_despotic_monarchy_tribal = {
+	gov_reform_1 = {
 		potential = {
 			num_of_cities >= 1
 			OR = { 
@@ -129,62 +129,45 @@
 				}
 			}
 		}
-		effect = {
-			set_variable = {
-				name = gov_switched
-				days = 7300
-			}
-			trigger_event = {
-				id = nation_forming.3
-				days = { 2190 7300 }
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1000
-			modifier = {
-				factor = 0
-				war = yes
-			}
-		}
-	}
-		
-	become_democracy_tribal = {
-		potential = {
-			num_of_cities >= 1
-			OR = {
-				government = tribal_kingdom
-				government = tribal_federation
-			}
-			is_ai = yes
-			NOT = {
-				has_variable = gov_switched
-			}
-		}
-		allow = {
-			stability >= 40
-			centralization >= 0
-			OR = {
-				capital_scope = { civilization_value >= 40 }
-				AND = {
-					capital_scope = { civilization_value >= 25 }
-					any_neighbour_country = {
-						is_republic = yes
-						NOT = {
-							has_variable = gov_switched
-						}
-					}
+		option = {
+			name = autocracy_event
+			effect = {
+				set_variable = {
+					name = gov_switched
+					days = 7300
+				}
+				trigger_event = {
+					id = nation_forming.3
+					days = { 2190 7300 }
 				}
 			}
 		}
-		effect = {
-			set_variable = {
-				name = gov_switched
-				days = 7300
+		
+		option = {
+			name = classic_republic_event
+			effect = {
+				set_variable = {
+					name = gov_switched
+					days = 7300
+				}
+				trigger_event = {
+					id = nation_forming.4
+					days = { 2190 7300 }
+				}
 			}
-			trigger_event = {
-				id = nation_forming.4
-				days = { 2190 7300 }
+		}
+		
+		option = {
+			name = oligarchy_event
+			effect = {
+				set_variable = {
+					name = gov_switched
+					days = 7300
+				}
+				trigger_event = {
+					id = nation_forming.5
+					days = { 2190 7300 }
+				}
 			}
 		}
 		

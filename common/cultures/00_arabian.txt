@@ -1,6 +1,6 @@
 ﻿arabian = {
 
-	color = hsv { 0.2750 0.8491 0.8314 }
+	color = hsv { 0.275 0.849 0.831 }
 	
 	primary = light_infantry
 	second = heavy_infantry
@@ -58,7 +58,7 @@
 	culture = {
 		egyptian_arabic = {}
 		moroccan = {}
-		moorish = {}
+		andalusian = {}
 		bedouin = {
 			male_names = {
 				Abu-Bakr Aarif Abdul-Gafur Abdul-Jaleel 

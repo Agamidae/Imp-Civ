@@ -189,6 +189,14 @@ nation_forming.4 = {
 	}
 	
 	immediate = {
+		add_country_modifier = {
+			name = civilized_tribe
+			duration = 7300
+		}
+		capital_scope = {
+			add_civilization_value = 5
+		}
+		add_2_free_province_investments = yes
 		if = {
 			limit = {
 				government = tribal_federation
@@ -198,18 +206,22 @@ nation_forming.4 = {
 		else = {
 			add_stability = -20
 		}
-		change_government = democratic_republic
+		change_government = athenian_republic
 		switch_government_type_event_clearup_effect = yes
-		if = {
-			limit = {
-				is_iron_man = yes
-				is_ai = no
-				NOT = {
-					has_variable = ach_tribal_assembly_var
-				}
-			}
-			set_variable = ach_tribal_assembly_var
-		}
+	}
+	
+}
+
+nation_forming.5 = {
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		has_land = yes
+		is_ai = yes
+	}
+	
+	immediate = {
 		add_country_modifier = {
 			name = civilized_tribe
 			duration = 7300
@@ -218,6 +230,17 @@ nation_forming.4 = {
 			add_civilization_value = 5
 		}
 		add_2_free_province_investments = yes
+		if = {
+			limit = {
+				government = tribal_federation
+			}
+			add_stability = -10
+		}
+		else = {
+			add_stability = -20
+		}
+		change_government = oligarchic_republic
+		switch_government_type_event_clearup_effect = yes
 	}
 	
 }
