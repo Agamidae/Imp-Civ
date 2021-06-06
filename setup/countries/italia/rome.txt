@@ -1,5 +1,5 @@
 ﻿color1 = rgb { 70 0 118 }
-color2 = rgb { 254 245 0 }
+color2 = rgb { 240 199 0 }
 
 ship_names = {
 	"Acqui Terme" Aemilia Albintimilium Alsium "Ante Amnem" Apollo Ardelica Arilica Ariolica Asti

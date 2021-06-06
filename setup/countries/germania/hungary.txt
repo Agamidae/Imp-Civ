@@ -1,5 +1,5 @@
-﻿color = rgb { 21 108 48 }
-color2 = rgb { 204 0 0 }
+﻿color1 = "dark_green"
+color2 = "pumkin"
 
 ship_names = {
 	#

@@ -1,0 +1,6 @@
+coat_of_arms_template_lists = {
+	all = {
+		
+		50 = flag_type_simple_emblem
+	}
+} 

@@ -1,5 +1,5 @@
-﻿color1 = rgb { 2 79 81 }
-color2 = rgb { 255 255 88 }
+﻿color1 = rgb { 21 87 96 }
+color2 = rgb { 234 225 157 }
 gender_equality = yes
 
 ship_names = {

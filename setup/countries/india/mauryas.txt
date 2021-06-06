@@ -1,5 +1,5 @@
-﻿color = rgb { 123  236  232 }
-color2 = rgb { 60 0 105 }
+﻿color1 = rgb { 116 219 202 }
+color2 = rgb { 146 36 121 }
 
 ship_names = {
 	Dharma

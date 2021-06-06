@@ -1,0 +1,6 @@
+pattern_texture_lists = {
+	
+	simple = {
+		20 = "pattern_solid.tga"
+	}
+}

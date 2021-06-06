@@ -1,5 +1,5 @@
-﻿color1 = rgb { 27 93 57 }
-color2 = rgb { 123 236 232 }
+﻿color1 = rgb { 53 98 78 }
+color2 = "turq_blue"
 
 ship_names = {
 }

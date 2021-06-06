@@ -1,5 +1,5 @@
 ﻿color1 = rgb { 64 76 134 }
-color2 = rgb { 226 141 24 }
+color2 = rgb { 248 162 2 }
 
 ship_names = {
 	Adonis Anath Asherah Astarte

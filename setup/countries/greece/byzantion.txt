@@ -1,5 +1,5 @@
-﻿color1 = rgb { 80 2 149 }
-color2 = rgb { 255 243 173 }
+﻿color1 = rgb { 112 41 99 }
+color2 = rgb { 234 225 157 }
 
 ship_names = {
 	Aglaia Agreuousa Aktis Andreia Anthera Anysis Apobasis Ariste Asklepias Aura
