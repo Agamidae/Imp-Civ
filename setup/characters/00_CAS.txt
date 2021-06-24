@@ -10,8 +10,8 @@
 		no_stats=yes
 		add_martial=6
 		add_charisma=12
-		add_finesse=9
-		add_zeal=6
+		add_finesse=7
+		add_zeal=9
 		no_traits=yes
 		add_trait="immortal"
 		add_trait="pious"

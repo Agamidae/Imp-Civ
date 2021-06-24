@@ -1,0 +1,25 @@
+﻿"PLC"={
+	country="PLC"
+	56={ #Jadwiga #Last char
+		first_name="Jadwiga"
+		family= c:PLC.fam:Anjou-Hungary
+		birth_date=82.10.16
+		female=yes
+		culture="polish"
+		religion="default_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=12
+		add_finesse=9
+		add_zeal=11
+		no_traits=yes
+		add_trait="immortal"
+		add_trait="pious"
+		add_gold=100
+		add_popularity=100
+		c:PLC={
+			set_as_ruler=char:56
+		}
+
+	}
+}

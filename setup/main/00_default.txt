@@ -346,6 +346,13 @@ family={
 			prestige=300
 			color=3
 		}
+		49 = {
+			key="Anjou-Hungary"
+			owner=PLC
+			culture = polish
+			prestige=300
+			color = 3
+		}
 	}
 }
 diplomacy = {
@@ -1451,6 +1458,7 @@ country = {
 		}
 		
 		PLC = { #Poland-Lithuania
+			family = 49
 			government = tribal_kingdom
 			primary_culture = polish
 			religion = default_pantheon
@@ -1462,10 +1470,6 @@ country = {
 				civic_tech={ level=1 progress=0 }
 				oratory_tech={ level=1 progress=0 }
 				religious_tech= { level=1 progress=0  }
-			}
-
-			historical_regnal_numbers = {
-				Casimir = 2
 			}
 
 			own_control_core = {
